@@ -13,12 +13,12 @@ Learning Objectives:
 - Manipulate data and objects using Python and Pandas.
 - Visualize data in Python using Matplotlib and Seaborn.
 
-Prerequisites:
-- None. 
-
 Participants will also be introduced to popular packages for machine learning and bioinformatics analyses in Python, and pointed towards resources to continue their learning. 
 
+:::::::::: prereq
+- none
+:::::::::::::::::
 
-This lesson is a template lesson that uses [The Carpentries Workbench][workbench]
+This lesson is based on [The Carpentries Workbench][workbench] template.
 
 
