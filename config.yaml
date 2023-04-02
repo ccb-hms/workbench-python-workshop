@@ -60,6 +60,7 @@ contact: 'christopher_magnano@hms.harvard.edu' # FIXME
 # Order of episodes in your lesson
 episodes: 
 - introduction.md
+- 02-variables.md
 
 # Information for Learners
 learners: 
