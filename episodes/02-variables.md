@@ -25,8 +25,6 @@ exercises: 5
 - Python is an interpreted programming language, and can be used interactively. 
 - **Values** are assigned to **variables** in Python using `=`.
 - You can use `print` to output variable values. 
-- Use an index to get a single character from a string.
-- Use a slice to get a substring.
 - Use meaningful variable names.
 
 
@@ -120,63 +118,6 @@ print('Age in three years:', age)
 ```output
 Age in three years: 45
 ```
-
-## Use an index to get a single character from a string.
-
-*   The characters (individual letters, numbers, and so on) in a string are
-    ordered. For example, the string `'AB'` is not the same as `'BA'`. Because of
-    this ordering, we can treat the string as a list of characters.
-*   Each position in the string (first, second, etc.) is given a number. This
-    number is called an **index** or sometimes a subscript.
-*   Indices are numbered from 0.
-*   Use the position's index in square brackets to get the character at that
-    position.
-    
-```python
-atom_name = 'helium'
-print(atom_name[0])
-python
-
-```output
-h
-```
-
-## Use a slice to get a substring.
-
-*   A part of a string is called a **substring**. A substring can be as short as a
-    single character.
-*   An item in a list is called an element. Whenever we treat a string as if it
-    were a list, the string's elements are its individual characters.
-*   A slice is a part of a string (or, more generally, a part of any list-like thing).
-*   We take a slice with the notation `[start:stop]`, where `start` is the integer
-    index of the first element we want and `stop` is the integer index of
-    the element _just after_ the last element we want.
-*   The difference between `stop` and `start` is the slice's length.
-*   Taking a slice does not change the contents of the original string. Instead,
-    taking a slice returns a copy of part of the original string.
-
-```python
-atom_name = 'sodium'
-print(atom_name[0:3])
-```
-
-```output
-sod
-```
-
-## Use the built-in function `len` to find the length of a string.
-
-```python
-print(len('helium'))
-```
-
-```output
-6
-```
-
-*   Nested functions are evaluated from the inside out,
-     like in mathematics.
-
 ## Python is case-sensitive.
 
 *   Python thinks that upper- and lower-case letters are different,
@@ -263,36 +204,6 @@ of `'left'`.
 :::
 
 ::: challenge
-## Indexing
-If you assign `a = 123`,
-what happens if you try to get the second digit of `a` via `a[1]`?
-
-::: solution
-Numbers are not strings or sequences and Python will raise an error if you try to perform an index operation on a
-number. In the [next lesson on types and type conversion]({{ page.root }}/03-types-conversion/#convert-numbers-and-strings)
-we will learn more about types and how to convert between different types. If you want the Nth digit of a number you
- can convert it into a string using the `str` built-in function and then perform an index operation on that string.
-
-```python
-a = 123
-print(a[1])
-```
-
-```output
-TypeError: 'int' object is not subscriptable
-```
-```python
-a = str(123)
-print(a[1])
-```
-
-```output
-2
-```
-:::
-:::
-
-::: challenge
 ## Choosing a Name
 
 Which is a better variable name, `m`, `min`, or `minutes`?
@@ -311,45 +222,3 @@ Hint: think about which code you would rather inherit from someone who is leavin
 :::
 :::
 
-::: challenge
-## Slicing practice
-What does the following program print?
-```python
-atom_name = 'carbon'
-print('atom_name[1:3] is:', atom_name[1:3])
-```
-
-::: solution
-```output
-atom_name[1:3] is: ar
-```
-::: challenge
-## Slicing concepts
-
-Given the following string:
- 
-```python
-species_name = "Acacia buxifolia"
-```
-
-What would these expressions return?
-
-1.  `species_name[2:8]`
-2.  `species_name[11:]` (without a value after the colon)
-3.  `species_name[:4]` (without a value before the colon)
-4.  `species_name[:]` (just a colon)
-5.  `species_name[11:-3]`
-6.  `species_name[-5:-3]`
-7.  What happens when you choose a `stop` value which is out of range? (i.e., try `species_name[0:20]` or `species_name[:103]`)
-
-::: solution
-
-1.  `species_name[2:8]` returns the substring `'acia b'`
-2.  `species_name[11:]` returns the substring `'folia'`, from position 11 until the end
-3.  `species_name[:4]` returns the substring `'Acac'`, from the start up to but not including position 4
-4.  `species_name[:]` returns the entire string `'Acacia buxifolia'`
-5.  `species_name[11:-3]` returns the substring `'fo'`, from the 11th position to the third last position
-6.  `species_name[-5:-3]` also returns the substring `'fo'`, from the fifth last position to the third last
-7.  If a part of the slice is out of range, the operation does not fail. `species_name[0:20]` gives the same result as `species_name[0:]`, and `species_name[:103]` gives the same result as `species_name[:]`
-:::
-:::
