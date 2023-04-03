@@ -25,6 +25,10 @@ exercises: 5
 - Python is an interpreted programming language, and can be used interactively. 
 - **Values** are assigned to **variables** in Python using `=`.
 - You can use `print` to output variable values. 
+- Use an index to get a single character from a string.
+- Use a slice to get a substring.
+- Use meaningful variable names.
+
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
