@@ -13,4 +13,4 @@ Learning Objectives:
 Participants will also be introduced to popular packages for machine learning and bioinformatics analyses in Python, and pointed towards resources to continue their learning. 
 
 
-This lesson is a template lesson that uses [The Carpentries Workbench][workbench]
+This lesson is a template lesson that uses [The Carpentries Workbench](https://carpentries.org/) [workbench](https://carpentries.github.io/workbench/)
