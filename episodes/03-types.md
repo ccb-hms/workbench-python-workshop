@@ -145,7 +145,7 @@ TypeError                                 Traceback (most recent call last)
 TypeError: object of type 'int' has no len()
 ```
 
-## <a name='convert-numbers-and-strings'></a> Must convert numbers to strings or vice versa when operating on them.
+## You must convert numbers to strings or vice versa when operating on them.
 
 *   Cannot add numbers and strings.
 
@@ -177,7 +177,7 @@ print(str(1) + '2')
 ```
 
 
-## Can mix integers and floats freely in operations.
+## You can mix integers and floats freely in operations.
 
 *   Integers and floating-point numbers can be mixed in arithmetic.
     *   Python 3 automatically converts integers to floats as needed.
@@ -285,7 +285,7 @@ first is 2 and second is 5
 :::
 :::
 
-:::
+::: challenge
  ## Division Types
 
  In Python 3, the `//` operator performs integer (whole-number) floor division, the `/` operator performs floating-point
@@ -420,7 +420,7 @@ third = "1.1"
 5. `int(first) + int(float(third))`
 6. `2.0 * second`
 
-## Solution
+::: solution
 Answer: 1 and 4
 :::
 :::
