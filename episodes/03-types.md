@@ -1,5 +1,5 @@
 ---
-title: "Welcome to Python"
+title: "Basic Types"
 teaching: 15
 exercises: 5
 ---
@@ -30,7 +30,6 @@ exercises: 5
 - Strings have a length (but numbers don't).
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
-```
 
 ## Every value has a type.
 
