@@ -61,6 +61,10 @@ contact: 'christopher_magnano@hms.harvard.edu' # FIXME
 episodes: 
 - introduction.md
 - 02-variables.md
+- 03-types.md
+- 04-using-functions.md
+- 05-lists.md
+- 06-loops.md
 
 # Information for Learners
 learners: 
