@@ -245,17 +245,17 @@ first is 2 and second is 5
 
 ::: solution
  
-  It is a float:
-  integers are automatically converted to floats as necessary.
- 
-  ```
-  result = 3.25 + 4
-  print(result, 'is', type(result))
-  ```
-  {: .language-python}
-  ```
-  7.25 is <class 'float'>
-  ```
+It is a float:
+integers are automatically converted to floats as necessary.
+
+```python
+result = 3.25 + 4
+print(result, 'is', type(result))
+```
+
+```output
+7.25 is <class 'float'>
+```
 :::
 :::
 
@@ -329,36 +329,33 @@ print(num_subjects, 'subjects,', num_per_survey, 'per survey:', num_surveys)
 :::
 :::
 
- ## Strings to Numbers
+## Strings to Numbers
+Where reasonable, `float()` will convert a string to a floating point number,
+and `int()` will convert a floating point number to an integer:
 
- Where reasonable, `float()` will convert a string to a floating point number,
- and `int()` will convert a floating point number to an integer:
+```python
+print("string to float:", float("3.4"))
+print("float to int:", int(3.4))
+```
 
- ```python
- print("string to float:", float("3.4"))
- print("float to int:", int(3.4))
- ```
+```output
+string to float: 3.4
+float to int: 3
+```
 
- ```output
- string to float: 3.4
- float to int: 3
- ```
-
- If the conversion doesn't make sense, however, an error message will occur.
-
- ```python
- print("string to float:", float("Hello world!"))
- ```
+If the conversion doesn't make sense, however, an error message will occur.
+```python
+print("string to float:", float("Hello world!"))
+```
 
 
- ```output
- ---------------------------------------------------------------------------
- ValueError                                Traceback (most recent call last)
- <ipython-input-5-df3b790bf0a2> in <module>
- ----> 1 print("string to float:", float("Hello world!"))
-
+```output
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+<ipython-input-5-df3b790bf0a2> in <module>
+----> 1 print("string to float:", float("Hello world!"))
  ValueError: could not convert string to float: 'Hello world!'
- ```
+```
 
 ::: challenge
 What do you expect the following program to do?
@@ -438,7 +435,7 @@ Answer: 1 and 4
 ```python
 atom_name = 'helium'
 print(atom_name[0])
-python
+```
 
 ```output
 h
@@ -479,7 +476,7 @@ print(len('helium'))
 
 *   Nested functions are evaluated from the inside out,
      like in mathematics.
-:::
+
 
 ::: challenge
 ## Indexing
@@ -523,6 +520,9 @@ print('atom_name[1:3] is:', atom_name[1:3])
 ```output
 atom_name[1:3] is: ar
 ```
+:::
+:::
+
 ::: challenge
 ## Slicing concepts
 
