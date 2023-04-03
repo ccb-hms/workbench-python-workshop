@@ -416,7 +416,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-02-variables"><p>Content from <a href="02-variables.html">Welcome to Python</a></p>
 <hr>
-<p> Last updated on 2023-04-02 | 
+<p> Last updated on 2023-04-03 | 
         
         <a href="https://github.com/ccb-hms/workbench-python-workshop/edit/main/episodes/02-variables.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -450,7 +450,369 @@ any links that you are not going to use.
 </div>
 </div>
 </div>
-</div></section>
+</div>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Keypoints<a class="anchor" aria-label="anchor" href="#keypoints1"></a>
+</h3>
+<div class="callout-content">
+<ul>
+<li>Python is an interpreted programming language, and can be used
+interactively.</li>
+<li>
+<strong>Values</strong> are assigned to <strong>variables</strong>
+in Python using <code>=</code>.</li>
+<li>You can use <code>print</code> to output variable values.</li>
+<li>Use meaningful variable names.</li>
+</ul>
+</div>
+</div>
+</div>
+<section id="variables-store-values."><h2 class="section-heading">Variables store values.<a class="anchor" aria-label="anchor" href="#variables-store-values."></a>
+</h2>
+<hr class="half-width">
+<ul>
+<li>
+<strong>Variables</strong> are names for values.</li>
+<li>In Python the <code>=</code> symbol assigns the value on the right
+to the name on the left.</li>
+<li>The variable is created when a value is assigned to it.</li>
+<li>Here, Python assigns an age to a variable <code>age</code> and a
+name in quotes to a variable <code>first_name</code>.</li>
+</ul>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="dv">42</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>first_name <span class="op">=</span> <span class="st">'Ahmed'</span></span></code></pre>
+</div>
+<ul>
+<li>Variable names
+<ul>
+<li>can <strong>only</strong> contain letters, digits, and underscore
+<code>_</code> (typically used to separate words in long variable
+names)</li>
+<li>cannot start with a digit</li>
+<li>are <strong>case sensitive</strong> (age, Age and AGE are three
+different variables)</li>
+</ul>
+</li>
+<li>Variable names that start with underscores like
+<code>__alistairs_real_age</code> have a special meaning so we won’t do
+that until we understand the convention.</li>
+</ul></section><section id="use-print-to-display-values."><h2 class="section-heading">Use <code>print</code> to display values.<a class="anchor" aria-label="anchor" href="#use-print-to-display-values."></a>
+</h2>
+<hr class="half-width">
+<ul>
+<li>Python has a built-in function called <code>print</code> that prints
+things as text.</li>
+<li>Call the function (i.e., tell Python to run it) by using its
+name.</li>
+<li>Provide values to the function (i.e., the things to print) in
+parentheses.</li>
+<li>To add a string to the printout, wrap the string in single or double
+quotes.</li>
+<li>The values passed to the function are called
+<strong>arguments</strong>
+</li>
+</ul>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(first_name, <span class="st">'is'</span>, age, <span class="st">'years old'</span>)</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>Ahmed is 42 years old</code></pre>
+</div>
+<ul>
+<li>
+<code>print</code> automatically puts a single space between items
+to separate them.</li>
+</ul></section><section id="variables-must-be-created-before-they-are-used."><h2 class="section-heading">Variables must be created before they are used.<a class="anchor" aria-label="anchor" href="#variables-must-be-created-before-they-are-used."></a>
+</h2>
+<hr class="half-width">
+<ul>
+<li>If a variable doesn’t exist yet, or if the name has been
+mis-spelled, Python reports an error. (Unlike some languages, which
+“guess” a default value.)</li>
+</ul>
+<div class="codewrapper sourceCode" id="cb4">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(last_name)</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+&lt;ipython-input-1-c1fbb4e96102&gt; in &lt;module&gt;()
+----&gt; 1 print(last_name)
+
+NameError: name 'last_name' is not defined</code></pre>
+</div>
+<ul>
+<li>The last line of an error message is usually the most
+informative.</li>
+<li>We will look at error messages in detail later.</li>
+</ul>
+<div id="callout1" class="callout callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="variables-persist-between-cells" class="callout-inner">
+<h3 class="callout-title">Variables Persist Between Cells<a class="anchor" aria-label="anchor" href="#callout1"></a>
+</h3>
+<div class="callout-content">
+<p>Be aware that it is the <em>order</em> of execution of cells that is
+important in a Jupyter notebook, not the order in which they appear.
+Python will remember <em>all</em> the code that was run previously,
+including any variables you have defined, irrespective of the order in
+the notebook. Therefore if you define variables lower down the notebook
+and then (re)run cells further up, those defined further down will still
+be present. As an example, create two cells with the following content,
+in this order:</p>
+<div class="codewrapper sourceCode" id="cb6">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(myval)</span></code></pre>
+</div>
+<div class="codewrapper sourceCode" id="cb7">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>myval <span class="op">=</span> <span class="dv">1</span></span></code></pre>
+</div>
+<p>If you execute this in order, the first cell will give an error.
+However, if you run the first cell <em>after</em> the second cell it
+will print out <code>1</code>. To prevent confusion, it can be helpful
+to use the <code>Kernel</code> -&gt; <code>Restart &amp; Run All</code>
+option which clears the interpreter and runs everything from a clean
+slate going top to bottom.</p>
+</div>
+</div>
+</div>
+</section><section id="variables-can-be-used-in-calculations."><h2 class="section-heading">Variables can be used in calculations.<a class="anchor" aria-label="anchor" href="#variables-can-be-used-in-calculations."></a>
+</h2>
+<hr class="half-width">
+<ul>
+<li>We can use variables in calculations just as if they were values.
+<ul>
+<li>Remember, we assigned the value <code>42</code> to <code>age</code>
+a few lines ago.</li>
+</ul>
+</li>
+</ul>
+<div class="codewrapper sourceCode" id="cb8">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> age <span class="op">+</span> <span class="dv">3</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Age in three years:'</span>, age)</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>Age in three years: 45</code></pre>
+</div>
+</section><section id="python-is-case-sensitive."><h2 class="section-heading">Python is case-sensitive.<a class="anchor" aria-label="anchor" href="#python-is-case-sensitive."></a>
+</h2>
+<hr class="half-width">
+<ul>
+<li>Python thinks that upper- and lower-case letters are different, so
+<code>Name</code> and <code>name</code> are different variables.</li>
+<li>There are conventions for using upper-case letters at the start of
+variable names so we will use lower-case letters for now.</li>
+</ul></section><section id="use-meaningful-variable-names."><h2 class="section-heading">Use meaningful variable names.<a class="anchor" aria-label="anchor" href="#use-meaningful-variable-names."></a>
+</h2>
+<hr class="half-width">
+<ul>
+<li>Python doesn’t care what you call variables as long as they obey the
+rules (alphanumeric characters and the underscore).</li>
+</ul>
+<div class="codewrapper sourceCode" id="cb10">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>flabadab <span class="op">=</span> <span class="dv">42</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>ewr_422_yY <span class="op">=</span> <span class="st">'Ahmed'</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ewr_422_yY, <span class="st">'is'</span>, flabadab, <span class="st">'years old'</span>)</span></code></pre>
+</div>
+<ul>
+<li>Use meaningful variable names to help other people understand what
+the program does.</li>
+<li>The most important “other person” is your future self.</li>
+</ul>
+<div id="challenge1" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div id="swapping-values" class="callout-inner">
+<h3 class="callout-title">Swapping Values<a class="anchor" aria-label="anchor" href="#challenge1"></a>
+</h3>
+<div class="callout-content">
+<p>Fill the table showing the values of the variables in this program
+<em>after</em> each statement is executed.</p>
+<div class="codewrapper sourceCode" id="cb11">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Command  # Value of x   # Value of y   # Value of swap #</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="fl">1.0</span>    <span class="co">#              #              #               #</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="fl">3.0</span>    <span class="co">#              #              #               #</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>swap <span class="op">=</span> x   <span class="co">#              #              #               #</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> y      <span class="co">#              #              #               #</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> swap   <span class="co">#              #              #               #</span></span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div id="accordionHint1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint1" aria-expanded="false" aria-controls="collapseHint1">
+  <h4 class="accordion-header" id="headingHint1">
+  Give me a hint
+  </h4>
+</button>
+<div id="collapseHint1" class="accordion-collapse collapse" data-bs-parent="#accordionHint1" aria-labelledby="headingHint1">
+<div class="accordion-body">
+<p>Try using this <a href="https://pythontutor.com/visualize.html#code=x%20%3D%201.0%20%20%20%0Ay%20%3D%203.0%20%0Aswap%20%3D%20x%20%0Ax%20%3D%20y%20%20%20%20%20%20%0Ay%20%3D%20swap%20&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false" class="external-link">python
+visualization tool</a> to visualize what happens in the code.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1">
+  Show me the solution
+  </h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div class="accordion-body">
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code><span><span class="co"># Command  # Value of x   # Value of y   # Value of swap #</span></span>
+<span><span class="va">x</span> <span class="op">=</span> <span class="fl">1.0</span>    <span class="co"># 1.0          # not defined  # not defined   #</span></span>
+<span><span class="va">y</span> <span class="op">=</span> <span class="fl">3.0</span>    <span class="co"># 1.0          # 3.0          # not defined   #</span></span>
+<span><span class="va">swap</span> <span class="op">=</span> <span class="va">x</span>   <span class="co"># 1.0          # 3.0          # 1.0           #</span></span>
+<span><span class="va">x</span> <span class="op">=</span> <span class="va">y</span>      <span class="co"># 3.0          # 3.0          # 1.0           #</span></span>
+<span><span class="va">y</span> <span class="op">=</span> <span class="va">swap</span>   <span class="co"># 3.0          # 1.0          # 1.0           #</span></span></code></pre>
+</div>
+<p>These three lines exchange the values in <code>x</code> and
+<code>y</code> using the <code>swap</code> variable for temporary
+storage. This is a fairly common programming idiom.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="challenge2" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div id="predicting-values" class="callout-inner">
+<h3 class="callout-title">Predicting Values<a class="anchor" aria-label="anchor" href="#challenge2"></a>
+</h3>
+<div class="callout-content">
+<p>What is the final value of <code>position</code> in the program
+below? (Try to predict the value without running the program, then check
+your prediction.)</p>
+<div class="codewrapper sourceCode" id="cb13">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>initial <span class="op">=</span> <span class="st">'left'</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>position <span class="op">=</span> initial</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>initial <span class="op">=</span> <span class="st">'right'</span></span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
+  <h4 class="accordion-header" id="headingSolution2">
+  Show me the solution
+  </h4>
+</button>
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div class="accordion-body">
+<div class="codewrapper sourceCode" id="cb14">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(position)</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code><span><span class="va">left</span></span></code></pre>
+</div>
+<p>The <code>initial</code> variable is assigned the value
+<code>'left'</code>. In the second line, the <code>position</code>
+variable also receives the string value <code>'left'</code>. In third
+line, the <code>initial</code> variable is given the value
+<code>'right'</code>, but the <code>position</code> variable retains its
+string value of <code>'left'</code>.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="challenge3" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div id="choosing-a-name" class="callout-inner">
+<h3 class="callout-title">Choosing a Name<a class="anchor" aria-label="anchor" href="#challenge3"></a>
+</h3>
+<div class="callout-content">
+<p>Which is a better variable name, <code>m</code>, <code>min</code>, or
+<code>minutes</code>? Why?</p>
+</div>
+</div>
+</div>
+<div id="accordionHint2" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint2" aria-expanded="false" aria-controls="collapseHint2">
+  <h4 class="accordion-header" id="headingHint2">
+  Give me a hint
+  </h4>
+</button>
+<div id="collapseHint2" class="accordion-collapse collapse" data-bs-parent="#accordionHint2" aria-labelledby="headingHint2">
+<div class="accordion-body">
+<p>Hint: think about which code you would rather inherit from someone
+who is leaving the lab:</p>
+<ol style="list-style-type: decimal">
+<li><code>ts = m * 60 + s</code></li>
+<li><code>tot_sec = min * 60 + sec</code></li>
+<li><code>total_seconds = minutes * 60 + seconds</code></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
+  <h4 class="accordion-header" id="headingSolution3">
+  Show me the solution
+  </h4>
+</button>
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div class="accordion-body">
+<p><code>minutes</code> is better because <code>min</code> might mean
+something like “minimum” (and actually is an existing built-in function
+in Python that we will cover later).</p>
+</div>
+</div>
+</div>
+</div>
+<!-- 
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use. 
+ -->
+</section></section>
 </div>
     </main>
 </div>
@@ -499,8 +861,8 @@ any links that you are not going to use.
   "url": "https://ccb-hms.github.io/workbench-python-workshop/aio.html",
   "identifier": "https://ccb-hms.github.io/workbench-python-workshop/aio.html",
   "dateCreated": "2023-04-01",
-  "dateModified": "2023-04-02",
-  "datePublished": "2023-04-02"
+  "dateModified": "2023-04-03",
+  "datePublished": "2023-04-03"
 }
 
   </script><script>
