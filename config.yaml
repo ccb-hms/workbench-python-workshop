@@ -69,12 +69,11 @@ episodes:
 # Information for Learners
 learners: 
 
-# Information for Learners
-home-exercises: 
-
 # Information for Instructors
 instructors: 
 
+# Learner Profiles
+profiles: 
 
 # Customisation ---------------------------------------------
 #
