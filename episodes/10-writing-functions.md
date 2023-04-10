@@ -177,7 +177,6 @@ def another_function
   print("So they are usually not too hard to fix.")
 ```
 
-
 ::: solution
 
 ```python
@@ -186,7 +185,6 @@ def another_function():
   print("But at least Python tells us about them!")
   print("So they are usually not too hard to fix.")
 ```
-
 :::
 :::
 
@@ -326,6 +324,7 @@ print(first_negative(my_list))
 ```output
 None
 ```
+:::
 :::
 
 ::: challenge
@@ -624,7 +623,6 @@ def calculate_life_quartile(exp):
 
 calculate_life_quartile(62.5)
 ```
-
 
 ```output
 2
