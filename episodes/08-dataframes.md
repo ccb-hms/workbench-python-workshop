@@ -348,8 +348,8 @@ import pandas as pd
 df = pd.read_csv('data/gapminder_gdp_europe.csv', index_col='country')
 ```
 
-
 Write an expression to find the Per Capita GDP of Serbia in 2007.
+
 ::: solution
 The selection can be done by using the labels for both the row ("Serbia") and the column ("gdpPercap_2007"):
 ```python
@@ -360,11 +360,10 @@ The output is
 ```output
 9786.534714
 ```
-
 :::
 :::
 
-:::challenge
+::: challenge
 ## Extent of Slicing
 
 1.  Do the two statements below produce the same output?

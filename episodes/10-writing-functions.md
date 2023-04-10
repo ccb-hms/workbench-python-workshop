@@ -291,7 +291,6 @@ def min_in_data(filename):
     data = pd.read_csv(filename)
     return data.min()
 ```
-
 :::
 :::
 
@@ -327,10 +326,9 @@ print(first_negative(my_list))
 ```output
 None
 ```
-
-:::
 :::
 
+::: challenge
 ## Calling by Name
 
 Earlier we saw this function:

@@ -103,7 +103,6 @@ DESCRIPTION
 FUNCTIONS
     acos(x, /)
         Return the arc cosine (measured in radians) of x.
-⋮ ⋮ ⋮
 ```
 
 
@@ -213,7 +212,6 @@ from random import sample
 print(sample(bases, 1)[0])
 ```
 
-
 Note that this function returns a list of values. We will learn about
 lists in [episode 11]({{ page.root }}/11-lists/).
 
@@ -225,8 +223,6 @@ from random import choice
 
 print(choice(bases))
 ```
-
-
 :::
 :::
 
@@ -259,10 +255,9 @@ n_bases = len(bases)
 idx = random.randrange(n_bases)
 print("random base", bases[idx], "base index", idx)
 ```
-
-:::
 :::
 
+::: challenge
 ## When Is Help Available?
 
 When a colleague of yours types `help(math)`,

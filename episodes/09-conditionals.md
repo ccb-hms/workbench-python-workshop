@@ -328,10 +328,9 @@ for v in values:
         largest = max(____, v)
 print(smallest, largest)
 ```
-
-
 What are the advantages and disadvantages of using this method
 to find the range of the data?
+
 ::: solution
 
 ```python
