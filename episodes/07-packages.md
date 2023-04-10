@@ -256,6 +256,7 @@ idx = random.randrange(n_bases)
 print("random base", bases[idx], "base index", idx)
 ```
 :::
+:::
 
 ::: challenge
 ## When Is Help Available?
