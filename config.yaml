@@ -63,9 +63,9 @@ episodes:
 - 02-variables.md
 - 03-types.md
 - 04-using-functions.md
-- 05-lists.md
-- 06-loops.md
-- 07-packages.md
+- 05-packages.md
+- 06-lists.md
+- 07-loops.md
 - 08-dataframes.md
 - 09-conditionals.md
 - 10-writing-functions.md

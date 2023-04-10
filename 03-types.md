@@ -1,7 +1,7 @@
 ---
 title: "Basic Types"
 teaching: 15
-exercises: 5
+exercises: 10
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions 
