@@ -1,6 +1,6 @@
 ---
 title: "Welcome to Python"
-teaching: 10
+teaching: 15
 exercises: 5
 ---
 

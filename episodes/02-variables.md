@@ -1,6 +1,6 @@
 ---
-title: "Welcome to Python"
-teaching: 15
+title: "Variables in Python"
+teaching: 20
 exercises: 5
 ---
 
