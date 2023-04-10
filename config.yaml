@@ -59,12 +59,16 @@ contact: 'christopher_magnano@hms.harvard.edu' # FIXME
 
 # Order of episodes in your lesson
 episodes: 
-- introduction.md
+- 01-introduction.md
 - 02-variables.md
 - 03-types.md
 - 04-using-functions.md
 - 05-lists.md
 - 06-loops.md
+- 07-packages.md
+- 08-dataframes.md
+- 09-conditionals.md
+- 10-writing-functions.md
 
 # Information for Learners
 learners: 
