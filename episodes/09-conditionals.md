@@ -1,7 +1,7 @@
 ---
 title: "Conditionals"
-teaching: 10
-exercises: 15
+teaching: 15
+exercises: 20
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions 

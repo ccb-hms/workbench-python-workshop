@@ -1,7 +1,7 @@
 ---
 title: "Pandas DataFrames"
-teaching: 15
-exercises: 15
+teaching: 20
+exercises: 20
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions 
