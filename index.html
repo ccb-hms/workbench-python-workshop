@@ -146,8 +146,9 @@
         
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
-        <ul><li><a href="#data-sets">Data Sets</a></li>
-<li><a href="#software-setup">Software Setup</a></li>
+        <ul><li><a href="#python-3">Python 3</a></li>
+<li><a href="#why-anaconda">Why Anaconda?</a></li>
+<li><a href="#installation">Installation</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
         
@@ -157,7 +158,7 @@
 <div class="accordion accordion-flush" id="accordionFlush2">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading2">
-        <a href="introduction.html">1. Using Markdown</a>
+        <a href="01-introduction.html">1. Welcome to Python</a>
     </div><!--/div.accordion-header-->
         
   </div><!--/div.accordion-item-->
@@ -208,6 +209,42 @@
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
+<div class="accordion accordion-flush" id="accordionFlush8">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading8">
+        <a href="07-packages.html">7. Libraries</a>
+    </div><!--/div.accordion-header-->
+        
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush9">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading9">
+        <a href="08-dataframes.html">8. Pandas DataFrames</a>
+    </div><!--/div.accordion-header-->
+        
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush10">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading10">
+        <a href="09-conditionals.html">9. Conditionals</a>
+    </div><!--/div.accordion-header-->
+        
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush11">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading11">
+        <a href="10-writing-functions.html">10. Writing Functions</a>
+    </div><!--/div.accordion-header-->
+        
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
                 </div>
               </div>
             </div>
@@ -249,11 +286,11 @@
         <!-- START: inst/pkgdown/templates/content-syllabus.html -->
   <div class="col-xl-8 col-lg-12 primary-content">
     <nav class="lesson-content mx-md-4" aria-label="Next Chapter"><!-- content for small screens --><div class="d-block d-sm-block d-md-none">
-        <a class="chapter-link float-end" href="introduction.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link float-end" href="01-introduction.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
       <div class="d-none d-sm-none d-md-block">
-        <a class="chapter-link float-end" href="introduction.html" rel="next">Next: Using Markdown... <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link float-end" href="01-introduction.html" rel="next">Next: Welcome to Python... <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <hr></nav><main id="main-content" class="main-content"><h1 class="schedule-heading">Summary and Setup</h1>
       
@@ -291,82 +328,82 @@ any links that you are not going to use.
  -->
 </div>
 
-      <section id="setup"><p>Setup instructions live in this document. Please specify the tools
-and the data sets the Learner needs to have installed.</p>
-<section id="data-sets"><h2 class="section-heading">Data Sets<a class="anchor" aria-label="anchor" href="#data-sets"></a>
+      <section id="setup"><section id="python-3"><h2 class="section-heading">Python 3<a class="anchor" aria-label="anchor" href="#python-3"></a>
 </h2>
-<hr class="half-width"><p>Download the <a href="data/data.zip">data zip file</a> and unzip it
-to your Desktop</p>
-</section><section id="software-setup"><h2 class="section-heading">Software Setup<a class="anchor" aria-label="anchor" href="#software-setup"></a>
+<hr class="half-width"><p style="text-align: justify;">
+It is sometimes claimed that biologist should use Python 2, because most
+biology related libraries in Python are written for that version. This
+is wrong. The reason why Python 2 is still out there is that following
+the release of Python 3.0 in December 2008, the CPython interpreter
+sustained several problems, and was not backward compatible. This meant
+that, any code written in Python 2, could <em>not</em> be run using
+Python 3 without modifications. By now, Python 2 is obsolete. Do not use
+it.
+</p>
+</section><section id="why-anaconda"><h2 class="section-heading">Why Anaconda?<a class="anchor" aria-label="anchor" href="#why-anaconda"></a>
 </h2>
-<hr class="half-width"><div id="discussion1" class="callout discussion">
-<div class="callout-square">
-<i class="callout-icon" data-feather="message-circle"></i>
-</div>
-<div id="details" class="callout-inner">
-<h3 class="callout-title">Details<a class="anchor" aria-label="anchor" href="#discussion1"></a>
-</h3>
-<div class="callout-content">
-<p>Setup for different systems can be presented in dropdown menus via a
-<code>solution</code> tag. They will join to this discussion block, so
-you can give a general overview of the software used in this lesson here
-and fill out the individual operating systems (and potentially add more,
-e.g. online setup) in the solutions blocks.</p>
-</div>
-</div>
-</div>
-<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
-  <h4 class="accordion-header" id="headingSolution1">
-  Windows
-  </h4>
-</button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
-<div class="accordion-body">
-<p>Use PuTTY</p>
-</div>
-</div>
-</div>
-</div>
-<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
-  <h4 class="accordion-header" id="headingSolution2">
-  MacOS
-  </h4>
-</button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
-<div class="accordion-body">
-<p>Use Terminal.app</p>
-</div>
-</div>
-</div>
-</div>
-<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
-  <h4 class="accordion-header" id="headingSolution3">
-  Linux
-  </h4>
-</button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
-<div class="accordion-body">
-<p>Use Terminal</p>
-</div>
-</div>
-</div>
-</div>
+<hr class="half-width"><p style="text-align: justify;">
+For the purpose of this course, we recommend the Anaconda distribution
+of Python released by the <a href="https://www.python.org/psf-landing/" class="external-link">Python Software
+Foundation</a>, and maintained by the <a href="https://anaconda.org/" class="external-link">Anaconda Cloud</a>.
+</p>
+<p style="text-align: justify;">
+Anaconda automatically installs many packages needed for scientific
+purposes (over 250 automatically installed). It is easy to install, and
+it takes care of dependencies between packages. This is particularly
+important because some of Python’s scientific libraries require Fortran–
+and C–based libraries, which may be challenging to install for
+beginners.
+</p>
+</section><section id="installation"><h2 class="section-heading">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+</h2>
+<hr class="half-width"><p style="text-align: justify;">
+To install the Anaconda distribution of Python, please visit the <a href="https://docs.anaconda.com/anaconda/install/" class="external-link">installation
+instructions</a> as outlined in the Anaconda <a href="https://docs.anaconda.com/anaconda/install/" class="external-link">documentations</a>,
+and follow the instructions for your operating system. Ensure that you
+use the Python 3.x graphical installer for Windows and MacOSX (there is
+no graphical installer for Linux). Once downloaded, you can proceed to
+install the distribution as you would any other application on your
+computer.
+</p>
+<p style="text-align: justify;">
+Anaconda Navigator is a desktop graphical user interface (GUI) included
+in Anaconda distribution that allows users to launch applications and
+manage conda packages, environments and channels without using
+command-line commands. Navigator can search for packages on Anaconda
+Cloud or in a local Anaconda Repository, install them in an environment,
+run the packages and update them. It is available for Windows, macOS and
+Linux.
+</p>
+<p>The following applications are available by default in Navigator:</p>
+<ul><li><p>JupyterLab</p></li>
+<li><p>Jupyter Notebook</p></li>
+<li><p>QtConsole</p></li>
+<li><p>Spyder</p></li>
+<li><p>Glue</p></li>
+<li><p>Orange</p></li>
+<li><p>RStudio</p></li>
+<li><p>Visual Studio Code</p></li>
+</ul><p>We recommend using JupyterLab for writing and practicing your
+codes.</p>
+<div class="section level3">
+<h3 id="starting-with-jupyterlab">Starting with JupyterLab<a class="anchor" aria-label="anchor" href="#starting-with-jupyterlab"></a></h3>
+<p>Here is the video to learn using JupyterLab</p>
+<p align="center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/sem75rYIrvM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+</p>
 <!-- 
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use. 
  -->
+</div>
 </section></section></main><nav class="bottom-pagination mx-md-4" aria-label="Next Chapter"><!-- content for small screens --><div class="d-block d-sm-block d-md-none">
-        <a class="chapter-link float-end" href="introduction.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link float-end" href="01-introduction.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
       <div class="d-none d-sm-none d-md-block">
-        <a class="chapter-link float-end" href="introduction.html" rel="next">Next: Using Markdown... <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link float-end" href="01-introduction.html" rel="next">Next: Welcome to Python... <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
     </nav></div>
 <!-- END  : inst/pkgdown/templates/content-syllabus.html -->
@@ -411,8 +448,8 @@ any links that you are not going to use.
   "url": "https://ccb-hms.github.io/workbench-python-workshop/index.html",
   "identifier": "https://ccb-hms.github.io/workbench-python-workshop/index.html",
   "dateCreated": "2023-04-01",
-  "dateModified": "2023-04-07",
-  "datePublished": "2023-04-07"
+  "dateModified": "2023-04-10",
+  "datePublished": "2023-04-10"
 }
 
   </script><script>
