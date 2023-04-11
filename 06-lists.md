@@ -177,7 +177,7 @@ as a nested list called `veg`:
 ![`veg` is represented as a shelf full of produce. There are three rows of vegetables
 on the shelf, and each row contains three baskets of vegetables. We can label
 each basket according to the type of vegetable it contains, so the top row
-contains (from left to right) lettuce, lettuce, and peppers.](../fig/05_groceries_veg.png)
+contains (from left to right) lettuce, lettuce, and peppers.](fig/05_groceries_veg.png)
 
 To store the contents of the shelf in a nested list, you write it this way:
 
@@ -192,7 +192,7 @@ you can reference each row on the shelf as a separate list. For example, `veg[2]
 represents the bottom row, which is a list of the baskets in that row.
 
 ![`veg` is now shown as a list of three rows, with `veg[0]` representing the top row of
-three baskets, `veg[1]` representing the second row, and `veg[2]` representing the bottom row.](../fig/05_groceries_veg0.png)
+three baskets, `veg[1]` representing the second row, and `veg[2]` representing the bottom row.](fig/05_groceries_veg0.png)
 
 Index operations using the image would work like this:
 
@@ -221,7 +221,7 @@ the specific basket (from left to right).
 ![`veg` is now shown as a two-dimensional grid, with each basket labeled according to
 its index in the nested list. The first index is the row number and the second
 index is the basket number, so `veg[1][3]` represents the basket on the far right
-side of the second row (basket 4 on row 2): zucchini](../fig/05_groceries_veg00.png)
+side of the second row (basket 4 on row 2): zucchini](fig/05_groceries_veg00.png)
 
 ```python
 print(veg[0][0])
