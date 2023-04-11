@@ -7,6 +7,7 @@ site: sandpaper::sandpaper_site
 This is a 4-session introductory Python workshop hosted by the Center for Computational Biomedicine at Harvard Medical School. 
 
 Learning Objectives:
+
 - Apply fundamentals of Python programming including variables, expressions, loops, and conditional statements.
 - Create modular Python scripts which handle file I/O, string manipulation, and object manipulation.
 - Manage Conda environments and lookup documentation to utilize built-in and 3rd party Python packages.
@@ -19,6 +20,7 @@ Participants will also be introduced to popular packages for machine learning an
 ## Day Schedule
 
 *Current status*: All lessons still need a final pass for polish and small fixes. 
+
 - The day 1 at home lessons are only about 10% done. 
 - The day 3 lessons using data need to have their datasets changed to use biological data. 
 - The plotting lesson (not pushed yet) has matplotlib but needs seaborn and some more biological examples like heatmaps. 
