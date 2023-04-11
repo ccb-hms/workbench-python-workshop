@@ -18,6 +18,12 @@ Participants will also be introduced to popular packages for machine learning an
 ::::::::::::::::::: instructor
 ## Day Schedule
 
+*Current status*: All lessons still need a final pass for polish and small fixes. 
+- The day 1 at home lessons are only about 10% done. 
+- The day 3 lessons using data need to have their datasets changed to use biological data. 
+- The plotting lesson (not pushed yet) has matplotlib but needs seaborn and some more biological examples like heatmaps. 
+- The application example lessons on days 3 and 4 have not been started, though I have existing notebooks I'm planning to base them on.
+
 ### Day 1
 
 - Introduction (20 min)
@@ -29,8 +35,8 @@ Participants will also be introduced to popular packages for machine learning an
 
 ### At-home Lessons 1
 
-- Strings
-- Objects
+- Strings *started*
+- Objects *not started*
 
 ### Day 2
 
@@ -42,28 +48,28 @@ Participants will also be introduced to popular packages for machine learning an
 
 ### At-home Lessons 2
 
-- Conda
+- Conda *some adjustment needed*
 - Dictionaries
 
 ### Day 3
 
-- Dataframes (40 min)
-- Conditionals (35 min)
+- Dataframes (40 min) *change dataset*
+- Conditionals (35 min) *change dataset*
 - Break (10 min)
 - Writing Functions (25 min)
-- Using scipy for statistics (10 min)
+- Using scipy for statistics (10 min) *not started*
 
 ### At-home Lessons 3
 
-- Data Wranging Practice
-- Preparing data for plotting
+- Data Wranging Practice *not started*
+- Preparing data for plotting *not started*
 
 ### Day 4
 
-- Plotting with Seaborn and Matplotlib (60 min)
+- Plotting with Seaborn and Matplotlib (60 min) *half-done*
 - Break (10 min)
-- Using scikit-learn for machine learning (20 min)
-- Using BioMart get gene annotations (15 min)
+- Using scikit-learn for machine learning (20 min) *half-done*
+- Using BioMart get gene annotations (15 min) *not started*
 - Wrap-up and next steps (15 min)
 
 ::::::::::::::::::::::::::::::
