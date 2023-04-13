@@ -6,15 +6,15 @@ exercises: 10
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- "How can I read tabular data?"
+- "What is an object?"
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- "Import the Pandas library."
-- "Use Pandas to load a simple CSV data set."
-- "Get some basic information about a Pandas DataFrame."
+- "Define objects."
+- "Use an object's methods."
+- "Call a constructor for an object."
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
