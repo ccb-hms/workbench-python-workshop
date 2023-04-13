@@ -87,7 +87,29 @@ TypeError                                 Traceback (most recent call last)
 
 TypeError: unsupported operand type(s) for -: 'str' and 'str'
 ```
+## Simple and compound types.
 
+We can broadly split different types into two categories in Python: *simple* types and *compound* types. 
+
+Simple types consist of a single value. 
+In Python, these simple types include:
+
+- `int`
+- `float`
+- `bool`
+- `NoneType`
+
+Compound types contain **multiple** values. 
+Compound types include:
+
+- `str`
+- `list`
+- `dictionary`
+- `tuple`
+- `set`
+
+In this lesson we will be learning about simple types and strings (`str`), which are made up of multiple characters. 
+We will go into more detail on other compound types in future lessons. 
 
 ## You can use the "+" and "*" operators on strings.
 

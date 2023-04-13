@@ -37,8 +37,8 @@ Participants will also be introduced to popular packages for machine learning an
 
 ### At-home Lessons 1
 
-- Strings *started*
-- Objects *not started*
+- Strings
+- Objects 
 
 ### Day 2
 
@@ -83,8 +83,13 @@ Participants will also be introduced to popular packages for machine learning an
 Materials for this workshop have been based on materials from the following:
 
 [Learn to Discover Basic Python](https://github.com/LearnToDiscover/Basic_Python_dev)
+
 [Programming with Python](https://swcarpentry.github.io/python-novice-inflammation/)
+
 [Plotting and Programming with Python](http://swcarpentry.github.io/python-novice-gapminder/)
-This lesson is based on [The Carpentries Workbench][workbench] template.
+
+[Introduction to Conda for (Data) Scientists ](https://github.com/carpentries-incubator/introduction-to-conda-for-data-scientists/)
+
+This lesson is based on [The Carpentries Workbench](https://carpentries.org/blog/2022/01/live-lesson-infrastructure/) template.
 
 

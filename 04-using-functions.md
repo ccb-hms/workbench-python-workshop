@@ -9,6 +9,7 @@ exercises: 10
 - "How can I use built-in functions?"
 - "How can I find out what they do?"
 - "What kind of errors can occur in programs?"
+
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
