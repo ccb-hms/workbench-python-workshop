@@ -120,16 +120,12 @@ to scroll down to find it.
 Here is a screenshot of an Anaconda Navigator page similar to the one that should open on either macOS
 or Windows.
 
-<p align='center'>
-  <img alt="Anaconda Navigator landing page" src="../fig/0_anaconda_navigator_landing_page.png" width="750"/>
-</p>
+![Anaconda Navigator landing page](fig/0_anaconda_navigator_landing_page.png)
 
 And here is a screenshot of a JupyterLab landing page that should be similar to the one that opens in your 
 default web browser after starting the JupyterLab server on either macOS or Windows.
 
-<p align='center'>
-  <img alt="JupyterLab landing page" src="../fig/0_jupyterlab_landing_page.png" width="750"/>
-</p>
+![Anaconda Navigator landing page](fig/0_jupyterlab_landing_page.png)
 
 ## The JupyterLab Interface
 
@@ -169,9 +165,7 @@ etc.
 
 A screenshot of the default Menu Bar is provided below.
 
-<p align='center'>
-    <img alt="JupyterLab Menu Bar" src="../fig/0_jupyterlab_menu_bar.png" width="750"/>
-</p>
+![JupyterLab Menu Bar](fig/0_jupyterlab_menu_bar.png)
 
 ### Left Sidebar
 
@@ -180,9 +174,7 @@ contents of the directory where the JupyterLab server was launched), a list of r
 and terminals, the command palette, and a list of open tabs in the main work area. A screenshot of 
 the default Left Side Bar is provided below.
 
-<p align='center'>
-    <img alt="JupyterLab Left Side Bar" src="../fig/0_jupyterlab_left_side_bar.png" width="250"/>
-</p>
+![JupyterLab Left Side Bar](fig/0_jupyterlab_left_side_bar.png)
 
 The left sidebar can be collapsed or expanded by selecting “Show Left Sidebar” in the View menu or 
 by clicking on the active sidebar tab.
@@ -193,9 +185,7 @@ The main work area in JupyterLab enables you to arrange documents (notebooks, te
 and other activities (terminals, code consoles, etc.) into panels of tabs that can be resized or 
 subdivided. A screenshot of the default Main Work Area is provided below.
 
-<p align='center'>
-    <img alt="JupyterLab Main Work Area" src="../fig/0_jupyterlab_main_work_area.png" width="750"/>
-</p>
+![JupyterLab Main Work Area](fig/0_jupyterlab_main_work_area.png)
 
 Drag a tab to the center of a tab panel to move the tab to the panel. Subdivide a tab panel by 
 dragging a tab to the left, right, top, or bottom of the panel. The work area has a single current 
@@ -222,9 +212,7 @@ Additional notes on Jupyter notebooks.
 Below is a screenshot of a Jupyter notebook running inside JupyterLab. If you are interested in 
 more details, then see the [official notebook documentation][jupyterlab-notebook-docs].
 
-<p align='center'>
-    <img alt="Example Jupyter Notebook" src="../fig/0_jupyterlab_notebook_screenshot.png" width="750"/>
-</p>
+![Example Jupyter Notebook](fig/0_jupyterlab_notebook_screenshot.png)
 
 ::: callout
 ## How It's Stored
@@ -240,9 +228,7 @@ more details, then see the [official notebook documentation][jupyterlab-notebook
 In the JupyterLab Main Work Area you can arrange documents into panels of tabs. Here is an 
 example from the [official documentation][jupyterlab].
 
-<p align='center'>
-   <img alt="Multi-panel JupyterLab" src="../fig/0_multipanel_jupyterlab_screenshot.png" width="750"/>
-</p>
+![Multi-panel JupyterLab](fig/0_multipanel_jupyterlab_screenshot.png)
 
 First, create a text file, Python console, and terminal window and arrange them into three 
 panels in the main work area. Next, create a notebook, terminal window, and text file and 
