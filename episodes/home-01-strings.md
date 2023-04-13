@@ -124,19 +124,6 @@ print(my_new_string)
 What a lovely dog.
 ```
 
-:::callout
-## Single vs. double quotes
-
-In python, you can use single quotes or double quotes to denote a string, but you need to use the same one for both the beginning and the end. 
-
-```python
-a = "mouse" # is a string
-a = 'mouse' # is a string
-a = "mouse'nt" # we can use a single quote inside double quotes without ending the string
-a = 'mouse" #This doesn't work
-```
-:::
-
 ## Build complex strings based on other variables using format.
 
 What if we want to use values inside of a string?

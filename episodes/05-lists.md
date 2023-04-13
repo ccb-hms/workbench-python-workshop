@@ -96,7 +96,7 @@ name[0] = 'd'
 ```
 
 
-```output
+```error
 ---------------------------------------------------------------------------
 TypeError                                 Traceback (most recent call last)
 <ipython-input-8-220df48aeb2e> in <module>()
@@ -106,7 +106,7 @@ TypeError                                 Traceback (most recent call last)
 TypeError: 'str' object does not support item assignment
 ```
 
-does not.
+does not. This is because a list is **mutable** while a string is **immutable**.
 
 ::: callout
 ## Mutable and immutable 
@@ -323,9 +323,8 @@ primes: [3, 5, 7, 2]
 odds: [3, 5, 7]
 ```
 
-Subsets of lists and strings can be accessed by specifying ranges of values in brackets,
-similar to how we accessed ranges of positions in a NumPy array.
-This is commonly referred to as "slicing" the list/string.
+Subsets of lists can be accessed by slicing, 
+similar to how we accessed ranges of positions in a strings.
 
 ```python
 binomial_name = 'Drosophila melanogaster'
