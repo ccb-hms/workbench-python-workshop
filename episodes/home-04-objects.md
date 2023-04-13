@@ -1,5 +1,5 @@
 ---
-title: "Reading tabular data"
+title: "Using Objects"
 teaching: 10
 exercises: 10
 ---
