@@ -48,8 +48,8 @@ We recommend using JupyterLab for writing and practicing your codes.
 
 
 ### Starting with JupyterLab
-Here is the video to learn using JupyterLab
+We will be going over how to use JupyterLab during our first session, but if you want to get started early here is an official video by Jupyter going over some uses and basic shortcuts in Jupyter Lab.
 
 <p align = "center">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/sem75rYIrvM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/A5YyoCKxEOU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </p>

@@ -16,5 +16,5 @@
 "episodes/10-writing-functions.md" "d8b89cc04920c9c671ec65b16f4a6c6d" "site/built/10-writing-functions.md" "2023-04-10"
 "instructors/instructor-notes.md" "cae72b6712578d74a49fea7513099f8c" "site/built/instructor-notes.md" "2023-03-16"
 "learners/reference.md" "1c7cc4e229304d9806a13f69ca1b8ba4" "site/built/reference.md" "2023-03-16"
-"learners/setup.md" "4c91eadbff9445a75de94f7e32141f7a" "site/built/setup.md" "2023-04-10"
+"learners/setup.md" "258e7bd82adb6a407171c28c71fb292e" "site/built/setup.md" "2023-04-13"
 "profiles/learner-profiles.md" "60b93493cf1da06dfd63255d73854461" "site/built/learner-profiles.md" "2022-04-22"
