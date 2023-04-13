@@ -42,7 +42,10 @@ exercises: 10
 # This sentence isn't executed by Python.
 adjustment = 0.5   # Neither is this - anything after '#' is ignored.
 ```
+Comments are important for the **readability** of your code. 
+They are where you can explain what your code is doing, decisions you made, and things to watch out for when using the code. 
 
+Well-commented code will be easier to use by others, and by you if you are returning to code you wrote months or years ago. 
 
 ## A function may take zero or more arguments.
 
@@ -80,6 +83,8 @@ result = print('example')
 print('result of print is', result)
 ```
 
+Note that even though we set the result of print equal to a variable, printing still occurs. 
+
 ```output
 example
 result of print is None
@@ -114,7 +119,7 @@ print(min('a', 'A', '0'))
 print(max(1, 'a'))
 ```
 
-```output
+```error
 TypeError                                 Traceback (most recent call last)
 <ipython-input-52-3f049acf3762> in <module>
 ----> 1 print(max(1, 'a'))
@@ -129,7 +134,7 @@ TypeError: '>' not supported between instances of 'str' and 'int'
 *   By default, rounds to zero decimal places.
 
 ```python
-round(3.712)
+print(round(3.712))
 ```
 
 ```output
@@ -140,7 +145,7 @@ round(3.712)
 *   We can specify the number of decimal places we want.
 
 ```python
-round(3.712, 1)
+print(round(3.712, 1))
 ```
 
 ```output
@@ -226,7 +231,7 @@ round(number, ndigits=None)
 name = 'Feng
 ```
 
-```output
+```error
   File "<ipython-input-56-f42768451d55>", line 2
     name = 'Feng
                 ^
@@ -239,7 +244,7 @@ SyntaxError: EOL while scanning string literal
 age = = 52
 ```
 
-```output
+```error
   File "<ipython-input-57-ccc3df3cf902>", line 2
     age = = 52
           ^
@@ -253,7 +258,7 @@ SyntaxError: invalid syntax
 print("hello world"
 ```
 
-```output
+```error
   File "<ipython-input-6-d1cc229bf815>", line 1
     print ("hello world"
                         ^
@@ -277,7 +282,7 @@ age = 53
 remaining = 100 - aege # mis-spelled 'age'
 ```
 
-```output
+```error
 NameError                                 Traceback (most recent call last)
 <ipython-input-59-1214fb6c55fc> in <module>
       1 age = 53
@@ -343,6 +348,8 @@ c
 print(max(rich, poor))
 ```
 
+`max` for strings ranks them alphabetically. 
+
 ```output
 tin
 ```
@@ -357,7 +364,7 @@ print(max(len(rich), len(poor)))
 
 `max(len(rich), poor)` throws a TypeError. This turns into `max(4, 'tin')` and 
 as we discussed earlier a string and integer cannot meaningfully be compared.
-```output
+```error
 TypeError                                 Traceback (most recent call last)
 <ipython-input-65-bc82ad05177a> in <module>
 ----> 1 max(len(rich), poor)

@@ -18,6 +18,7 @@ exercises: 10
 - Explain key differences between integers and floating point numbers.
 - Explain key differences between numbers and character strings.
 - Use built-in functions to convert between integers, floating point numbers, and strings.
+- Subset a string using slicing. 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -174,7 +175,7 @@ TypeError: object of type 'int' has no len()
 print(1 + '2')
 ```
 
-```output
+```error
 ---------------------------------------------------------------------------
 TypeError                                 Traceback (most recent call last)
 <ipython-input-4-fe4f54a023c6> in <module>()
@@ -183,8 +184,7 @@ TypeError                                 Traceback (most recent call last)
 TypeError: unsupported operand type(s) for +: 'int' and 'str'
 ```
 
-
-*   Not allowed because it's ambiguous: should `1 + '2'` be `3` or `'12'`?
+*   The result here would be `3` if both values were considered `int`s, and `'12'` if both values were considered strings. Due to this ambiguity addition is not allowed between strings and integers.
 *   Some types can be converted to other types by using the type name as a function.
 
 ```python
@@ -307,7 +307,7 @@ print(result, 'is', type(result))
 :::
 
 ::: challenge
- ## Division Types
+## Division Types
 
  In Python 3, the `//` operator performs integer (whole-number) floor division, the `/` operator performs floating-point
  division, and the `%` (or *modulo*) operator calculates and returns the remainder from integer division:
@@ -325,28 +325,30 @@ print(result, 'is', type(result))
  5 % 3: 2
  ```
 
- If `num_subjects` is the number of subjects taking part in a study,
- and `num_per_survey` is the number that can take part in a single survey,
- write an expression that calculates the number of surveys needed
- to reach everyone once.
+Imagine that you are buying cages for mice. 
+`num_mice` is the number of mice you need cages for,
+and `num_per_cage` is the maximum number of mice which can live in a single cage.
+Write an expression that calculates the exact number of cages you need to purchase. 
+
+ ```python
+num_mice = 56
+num_per_cage = 3
+```
 
 ::: solution
-  We want the minimum number of surveys that reaches everyone once, which is
-  the rounded up value of `num_subjects/ num_per_survey`. This is 
+  We want the number of cages to house all of our mice, which is the rounded up result of `num_mice / num_per_cage`. This is 
   equivalent to performing a floor division with `//` and adding 1. Before
-  the division we need to subtract 1 from the number of subjects to deal with 
-  the case where `num_subjects` is evenly divisible by `num_per_survey`.
+  the division we need to subtract 1 from the number of mice to deal with 
+  the case where `num_mice` is evenly divisible by `num_per_cage`.
 
 ```python
-num_subjects = 600
-num_per_survey = 42
-num_surveys = (num_subjects - 1) // num_per_survey + 1
+num_cages = ((num_mice - 1) // num_per_cage) + 1
 
-print(num_subjects, 'subjects,', num_per_survey, 'per survey:', num_surveys)
+print(num_mice, 'mice,', num_per_cage, 'per cage:', num_cages, 'cages')
 ```
 
 ```output
-600 subjects, 42 per survey: 15
+56 mice, 3 per cage: 19 cages
 ```
 :::
 :::
@@ -356,22 +358,24 @@ Where reasonable, `float()` will convert a string to a floating point number,
 and `int()` will convert a floating point number to an integer:
 
 ```python
-print("string to float:", float("3.4"))
-print("float to int:", int(3.4))
+print("string to float:", float("3.6"))
+print("float to int:", int(3.6))
 ```
 
 ```output
 string to float: 3.4
 float to int: 3
 ```
+Note that converting a `float` to an `int` does not round the result, but instead truncates it by removing everything past the decimal point. 
 
 If the conversion doesn't make sense, however, an error message will occur.
+
 ```python
 print("string to float:", float("Hello world!"))
 ```
 
 
-```output
+```error
 ---------------------------------------------------------------------------
 ValueError                                Traceback (most recent call last)
 <ipython-input-5-df3b790bf0a2> in <module>
@@ -387,7 +391,7 @@ What does it actually do?
 Why do you think it does that?
 
 ```python
-print("fractional string to int:", int("3.4"))
+print("fractional string to int:", int("3.6"))
 ```
  
 ::: solution
@@ -396,10 +400,10 @@ convert the string "3.4" to 3.4 and an additional type conversion to 3. After al
 magic - isn't that part of its charm?
  
 ```python
-int("3.4")
+int("3.6")
 ```
 
-```output
+```error
 ---------------------------------------------------------------------------
 ValueError                                Traceback (most recent call last)
 <ipython-input-2-ec6729dfccdc> in <module>
@@ -410,7 +414,7 @@ ValueError: invalid literal for int() with base 10: '3.4'
 However, Python 3 throws an error. Why? To be consistent, possibly. If you ask Python to perform two consecutive
 typecasts, you must convert it explicitly in code.
 ```python
-int(float("3.4"))
+int(float("3.6"))
 ```
 
 ```output
@@ -455,12 +459,12 @@ Answer: 1 and 4
     position.
     
 ```python
-atom_name = 'helium'
+atom_name = 'sodium'
 print(atom_name[0])
 ```
 
 ```output
-h
+s
 ```
 
 ## Use a slice to get a substring.
@@ -469,8 +473,8 @@ h
     single character.
 *   An item in a list is called an element. Whenever we treat a string as if it
     were a list, the string's elements are its individual characters.
-*   A slice is a part of a string (or, more generally, a part of any list-like thing).
-*   We take a slice with the notation `[start:stop]`, where `start` is the integer
+*   Slicing gets a part of a string (or, more generally, a part of any list-like thing).
+*   Slicing uses the notation `[start:stop]`, where `start` is the integer
     index of the first element we want and `stop` is the integer index of
     the element _just after_ the last element we want.
 *   The difference between `stop` and `start` is the slice's length.
@@ -489,7 +493,7 @@ sod
 ## Use the built-in function `len` to find the length of a string.
 
 ```python
-print(len('helium'))
+print(len('sodium'))
 ```
 
 ```output

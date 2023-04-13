@@ -52,11 +52,32 @@ first_name = 'Ahmed'
 
 ## Use `print` to display values.
 
+::: callout
+A **string** is the **type** which stores text in Python. 
+Strings can be thought of as sequenced or *string*s of individual characters (and using the words string this way actually goes back to a printing term in the pre-computer era). 
+We will be learning more about types and strings in other lessons. 
+:::
+
 *   Python has a built-in function called `print` that prints things as text.
 *   Call the function (i.e., tell Python to run it) by using its name.
 *   Provide values to the function (i.e., the things to print) in parentheses.
 *   To add a string to the printout, wrap the string in single or double quotes.
 *   The values passed to the function are called **arguments**
+
+::: callout
+## Single vs. double quotes
+
+In python, you can use single quotes or double quotes to denote a string, but you need to use the same one for both the beginning and the end. 
+
+```python
+a = "mouse" # is a string
+a = 'mouse' # is a string
+a = "mouse'nt" # we can use a single quote inside double quotes without ending the string
+a = 'mouse" #This doesn't work
+```
+:::
+
+In Python, 
 
 ```python
 print(first_name, 'is', age, 'years old')
@@ -66,6 +87,19 @@ Ahmed is 42 years old
 ```
 
 *   `print` automatically puts a single space between items to separate them.
+
+In when using Jupyter notebooks, we can also simply write a variable name and its value will be displayed:
+
+```python
+age
+```
+
+```output
+42
+```
+
+However, this will not work in other programming environments or when running scripts.
+We will be displaying variables using both methods throughout this workshop. 
 
 ## Variables must be created before they are used.
 
