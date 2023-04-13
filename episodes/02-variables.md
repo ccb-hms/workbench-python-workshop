@@ -75,7 +75,7 @@ Ahmed is 42 years old
 ```python
 print(last_name)
 ```
-```output
+```error
 ---------------------------------------------------------------------------
 NameError                                 Traceback (most recent call last)
 <ipython-input-1-c1fbb4e96102> in <module>()
