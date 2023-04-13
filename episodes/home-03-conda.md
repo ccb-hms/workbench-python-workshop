@@ -1,406 +1,404 @@
 ---
 title: "Managing Python Environments"
-teaching: 10
+teaching: 30
 exercises: 10
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- "How can I read tabular data?"
+- "How do I manage different sets of packages?"
+- "How do I install new packages?"
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- "Import the Pandas library."
-- "Use Pandas to load a simple CSV data set."
-- "Get some basic information about a Pandas DataFrame."
+- "Understand how Conda environments can improve your research workflow."
+- "Create a new environment."
+- "Activate (deactivate) a particular environment."
+- "Install packages into existing environments using Conda (+pip)."
+- "Specify the installation location of an environment."
+- "List all of the existing environments on your machine."
+- "List all of the installed packages within a particular environment."
+- "Delete an entire environment."
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: keypoints
 
-- "Use the Pandas library to get basic statistics out of tabular data."
-- "Use `index_col` to specify that a column's values should be used as row headings."
-- "Use `DataFrame.info` to find out more about a dataframe."
-- "The `DataFrame.columns` variable stores information about the dataframe's columns."
-- "Use `DataFrame.T` to transpose a dataframe."
-- "Use `DataFrame.describe` to get summary statistics about data."
+- "A Conda environment is a directory that contains a specific collection of Conda packages that you have installed."
+- "You create (remove) a new environment using the `conda create` (`conda remove`) commands."
+- "You activate (deactivate) an environment using the `conda activate` (`conda deactivate`) commands."
+- "You install packages into environments using `conda install`; you install packages into an active environment using `pip install`."
+- "You should install each environment as a sub-directory inside its corresponding project directory"
+- "Use the `conda env list` command to list existing environments and their respective locations."
+- "Use the `conda list` command to list all of the packages installed in an environment."
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Use the Pandas library to do statistics on tabular data.
+## What is a Conda environment
 
-*   [Pandas](https://pandas.pydata.org/) is a widely-used Python library for statistics, particularly on tabular data.
-*   Borrows many features from R's dataframes.
-    *   A 2-dimensional table whose columns have names
-        and potentially have different data types.
-*   Load it with `import pandas as pd`. The alias pd is commonly used for Pandas.
-*   Read a Comma Separated Values (CSV) data file with `pd.read_csv`.
-    *   Argument is the name of the file to be read.
-    *   Assign result to a variable to store the data that was read.
-
-```python
-import pandas as pd
-
-data = pd.read_csv('data/gapminder_gdp_oceania.csv')
-print(data)
-```
-
-```output
-       country  gdpPercap_1952  gdpPercap_1957  gdpPercap_1962  \
-0    Australia     10039.59564     10949.64959     12217.22686
-1  New Zealand     10556.57566     12247.39532     13175.67800
-
-   gdpPercap_1967  gdpPercap_1972  gdpPercap_1977  gdpPercap_1982  \
-0     14526.12465     16788.62948     18334.19751     19477.00928
-1     14463.91893     16046.03728     16233.71770     17632.41040
-
-   gdpPercap_1987  gdpPercap_1992  gdpPercap_1997  gdpPercap_2002  \
-0     21888.88903     23424.76683     26997.93657     30687.75473
-1     19007.19129     18363.32494     21050.41377     23189.80135
-
-   gdpPercap_2007
-0     34435.36744
-1     25185.00911
-```
-
-
-*   The columns in a dataframe are the observed variables, and the rows are the observations.
-*   Pandas uses backslash `\` to show wrapped lines when output is too wide to fit the screen.
+A [Conda environment](https://docs.conda.io/projects/conda/en/latest/user-guide/concepts/environments.html) 
+is a directory that contains a specific collection of Conda packages that you have installed. For 
+example, you may be working on a research project that requires NumPy 1.18 and its dependencies, 
+while another environment associated with an finished project has NumPy 1.12 (perhaps because 
+version 1.12 was the most current version of NumPy at the time the project finished). If you 
+change one environment, your other environments are not affected. You can easily activate or 
+deactivate environments, which is how you switch between them.
 
 ::: callout
-## File Not Found
+## Avoid installing packages into your `base` Conda environment
 
-Our lessons store their data files in a `data` sub-directory,
-which is why the path to the file is `data/gapminder_gdp_oceania.csv`.
-If you forget to include `data/`,
-or if you include it but your copy of the file is somewhere else,
-you will get a [runtime error]({{ page.root }}/04-built-in/#runtime-error)
-that ends with a line like this:
-
-```output
-FileNotFoundError: [Errno 2] No such file or directory: 'data/gapminder_gdp_oceania.csv'
-```
+Conda has a default environment called `base` that include a Python installation and some core 
+system libraries and dependencies of Conda. It is a "best practice" to avoid installing 
+additional packages into your `base` software environment. Additional packages needed for a new 
+project should always be installed into a newly created Conda environment.
 :::
 
-## Use `index_col` to specify that a column's values should be used as row headings.
+## Creating environments
 
-*   Row headings are numbers (0 and 1 in this case).
-*   Really want to index by country.
-*   Pass the name of the column to `read_csv` as its `index_col` parameter to do this.
+To create a new environment for Python development using `conda` you can use the `conda create` 
+command.
 
-```python
-data = pd.read_csv('data/gapminder_gdp_oceania.csv', index_col='country')
-print(data)
+```bash
+$ conda create --name python3-env python
 ```
 
-```output
-             gdpPercap_1952  gdpPercap_1957  gdpPercap_1962  gdpPercap_1967  \
-country
-Australia       10039.59564     10949.64959     12217.22686     14526.12465
-New Zealand     10556.57566     12247.39532     13175.67800     14463.91893
+For a list of all commands, take a look at [Conda general commands](https://docs.conda.io/projects/conda/en/latest/commands.html).
 
-             gdpPercap_1972  gdpPercap_1977  gdpPercap_1982  gdpPercap_1987  \
-country
-Australia       16788.62948     18334.19751     19477.00928     21888.88903
-New Zealand     16046.03728     16233.71770     17632.41040     19007.19129
+It is a good idea to give your environment a meaningful name in order to help yourself remember 
+the purpose of the environment. While naming things can be difficult, `$PROJECT_NAME-env` is a 
+good convention to follow. Sometimes also the specific version of a package why you had to create a new environment is a good name
 
-             gdpPercap_1992  gdpPercap_1997  gdpPercap_2002  gdpPercap_2007
-country
-Australia       23424.76683     26997.93657     30687.75473     34435.36744
-New Zealand     18363.32494     21050.41377     23189.80135     25185.00911
+The command above will create a new Conda environment called "python3" and install the most recent 
+version of Python. If you wish, you can specify a particular version of packages for `conda` to 
+install when creating the environment.
+
+```bash
+$ conda create --name python36-env python=3.6
 ```
 
+::: callout
+## Always specify a version number for each package you wish to install
 
-## Use the `DataFrame.info()` method to find out more about a dataframe.
+In order to make your results more reproducible and to make it easier for research colleagues to 
+recreate your Conda environments on their machines it is a "best practice" to always explicitly 
+specify the version number for each package that you install into an environment. If you are not 
+sure exactly which version of a package you want to use, then you can use search to see what 
+versions are available using the `conda search` command.
 
-```python
-data.info()
+```bash
+$ conda search $PACKAGE_NAME
 ```
 
-```output
-<class 'pandas.core.frame.DataFrame'>
-Index: 2 entries, Australia to New Zealand
-Data columns (total 12 columns):
-gdpPercap_1952    2 non-null float64
-gdpPercap_1957    2 non-null float64
-gdpPercap_1962    2 non-null float64
-gdpPercap_1967    2 non-null float64
-gdpPercap_1972    2 non-null float64
-gdpPercap_1977    2 non-null float64
-gdpPercap_1982    2 non-null float64
-gdpPercap_1987    2 non-null float64
-gdpPercap_1992    2 non-null float64
-gdpPercap_1997    2 non-null float64
-gdpPercap_2002    2 non-null float64
-gdpPercap_2007    2 non-null float64
-dtypes: float64(12)
-memory usage: 208.0+ bytes
+So, for example, if you wanted to see which versions of 
+[Scikit-learn](https://scikit-learn.org/stable/), a popular Python library for machine learning,
+were available, you would run the following. 
+
+```bash
+$ conda search scikit-learn
 ```
 
+As always you can run `conda search --help` to learn about available options.
+:::
 
-*   This is a `DataFrame`
-*   Two rows named `'Australia'` and `'New Zealand'`
-*   Twelve columns, each of which has two actual 64-bit floating point values.
-    *   We will talk later about null values, which are used to represent missing observations.
-*   Uses 208 bytes of memory.
+You can create a Conda environment and install multiple packages by listing the packages 
+that you wish to install.
 
-## The `DataFrame.columns` variable stores information about the dataframe's columns.
-
-*   Note that this is data, *not* a method.  (It doesn't have parentheses.)
-    *   Like `math.pi`.
-    *   So do not use `()` to try to call it.
-*   Called a *member variable*, or just *member*.
-
-```python
-print(data.columns)
+```bash
+$ conda create --name basic-scipy-env ipython=7.13 matplotlib=3.1 numpy=1.18 scipy=1.4
 ```
-
-```output
-Index(['gdpPercap_1952', 'gdpPercap_1957', 'gdpPercap_1962', 'gdpPercap_1967',
-       'gdpPercap_1972', 'gdpPercap_1977', 'gdpPercap_1982', 'gdpPercap_1987',
-       'gdpPercap_1992', 'gdpPercap_1997', 'gdpPercap_2002', 'gdpPercap_2007'],
-      dtype='object')
-```
-
-
-## Use `DataFrame.T` to transpose a dataframe.
-
-*   Sometimes want to treat columns as rows and vice versa.
-*   Transpose (written `.T`) doesn't copy the data, just changes the program's view of it.
-*   Like `columns`, it is a member variable.
-
-```python
-print(data.T)
-```
-
-```output
-country           Australia  New Zealand
-gdpPercap_1952  10039.59564  10556.57566
-gdpPercap_1957  10949.64959  12247.39532
-gdpPercap_1962  12217.22686  13175.67800
-gdpPercap_1967  14526.12465  14463.91893
-gdpPercap_1972  16788.62948  16046.03728
-gdpPercap_1977  18334.19751  16233.71770
-gdpPercap_1982  19477.00928  17632.41040
-gdpPercap_1987  21888.88903  19007.19129
-gdpPercap_1992  23424.76683  18363.32494
-gdpPercap_1997  26997.93657  21050.41377
-gdpPercap_2002  30687.75473  23189.80135
-gdpPercap_2007  34435.36744  25185.00911
-```
-
-## Use `DataFrame.describe()` to get summary statistics about data.
-
-`DataFrame.describe()` gets the summary statistics of only the columns that have numerical data. 
-All other columns are ignored, unless you use the argument `include='all'`.
-```python
-print(data.describe())
-```
-
-```output
-       gdpPercap_1952  gdpPercap_1957  gdpPercap_1962  gdpPercap_1967  \
-count        2.000000        2.000000        2.000000        2.000000
-mean     10298.085650    11598.522455    12696.452430    14495.021790
-std        365.560078      917.644806      677.727301       43.986086
-min      10039.595640    10949.649590    12217.226860    14463.918930
-25%      10168.840645    11274.086022    12456.839645    14479.470360
-50%      10298.085650    11598.522455    12696.452430    14495.021790
-75%      10427.330655    11922.958888    12936.065215    14510.573220
-max      10556.575660    12247.395320    13175.678000    14526.124650
-
-       gdpPercap_1972  gdpPercap_1977  gdpPercap_1982  gdpPercap_1987  \
-count         2.00000        2.000000        2.000000        2.000000
-mean      16417.33338    17283.957605    18554.709840    20448.040160
-std         525.09198     1485.263517     1304.328377     2037.668013
-min       16046.03728    16233.717700    17632.410400    19007.191290
-25%       16231.68533    16758.837652    18093.560120    19727.615725
-50%       16417.33338    17283.957605    18554.709840    20448.040160
-75%       16602.98143    17809.077557    19015.859560    21168.464595
-max       16788.62948    18334.197510    19477.009280    21888.889030
-
-       gdpPercap_1992  gdpPercap_1997  gdpPercap_2002  gdpPercap_2007
-count        2.000000        2.000000        2.000000        2.000000
-mean     20894.045885    24024.175170    26938.778040    29810.188275
-std       3578.979883     4205.533703     5301.853680     6540.991104
-min      18363.324940    21050.413770    23189.801350    25185.009110
-25%      19628.685413    22537.294470    25064.289695    27497.598692
-50%      20894.045885    24024.175170    26938.778040    29810.188275
-75%      22159.406358    25511.055870    28813.266385    32122.777857
-max      23424.766830    26997.936570    30687.754730    34435.367440
-```
-
-*   Not particularly useful with just two records,
-    but very helpful when there are thousands.
+ 
+When `conda` installs a package into an environment it also installs any required dependencies. 
+For example, even though Python is not listed as a packaged to install into the 
+`basic-scipy-env` environment above, `conda` will still install Python into the environment 
+because it is a required dependency of at least one of the listed packages.
 
 ::: challenge
-## Reading Other Data
+## Creating a new environment
 
-Read the data in `gapminder_gdp_americas.csv`
-(which should be in the same directory as `gapminder_gdp_oceania.csv`)
-into a variable called `americas`
-and display its summary statistics.
+Create a new environment called "machine-learning-env" with Python and the most current versions 
+of [IPython](https://ipython.org/), [Matplotlib](https://matplotlib.org/), 
+[Pandas](https://pandas.pydata.org/), [Numba](https://numba.pydata.org/) and 
+[Scikit-Learn](https://scikit-learn.org/stable/index.html).
 
 ::: solution
-To read in a CSV, we use `pd.read_csv` and pass the filename `'data/gapminder_gdp_americas.csv'` to it.
-We also once again pass the column name `'country'` to the parameter `index_col` in order to index by country.
-The summary statistics can be displayed with the `DataFrame.describe()` method.
-```python
-americas = pd.read_csv('data/gapminder_gdp_americas.csv', index_col='country')
-americas.describe()
+
+In order to create a new environment you use the `conda create` command as follows.
+
+```bash
+$ conda create --name machine-learning-env \
+ ipython \
+ matplotlib \
+ pandas \
+ python \
+ scikit-learn \
+ numba
+```
+
+
+Since no version numbers are provided for any of the Python packages, Conda will download the 
+most current, mutually compatible versions of the requested packages. However, since it is best 
+practice to always provide explicit version numbers, you should prefer the following solution.
+
+```bash
+$ conda create --name machine-learning-env \
+ ipython=7.19 \
+ matplotlib=3.3 \
+ pandas=1.2 \
+ python=3.8 \
+ scikit-learn=0.23 \
+ numba=0.51
+```
+
+
+However, please be aware that the version numbers for each packages may not be the latest available and would need to be adjusted.
+
+:::
+:::
+
+## Activating an existing environment
+
+Activating environments is essential to making the software in environments work well (or 
+sometimes at all!). Activation of an environment does two things.
+
+1. Adds entries to `PATH` for the environment.
+2. Runs any activation scripts that the environment may contain.
+
+Step 2 is particularly important as activation scripts are how packages can set arbitrary 
+environment variables that may be necessary for their operation. Aou activate the 
+`basic-scipy-env` environment by name using the `activate` command.
+
+```bash
+$ conda activate basic-scipy-env
+```
+
+
+You can see that an environment has been activated because the shell prompt will now include the 
+name of the active environment.
+
+```bash
+(basic-scipy-env) $
+```
+
+## Deactivate the current environment
+
+To deactivate the currently active environment use the Conda `deactivate` command as follows.
+
+```bash
+(basic-scipy-env) $ conda deactivate
+```
+
+
+You can see that an environment has been deactivated because the shell prompt will no longer 
+include the name of the previously active environment.
+
+```bash
+$
+```
+
+::: callout
+## Returning to the `base` environment
+
+To return to the `base` Conda environment, it's better to call `conda activate` with no 
+environment specified, rather than to use `deactivate`. If you run `conda deactivate` from your 
+`base` environment, you may lose the ability to run `conda` commands at all. **Don't worry if 
+you encounter this undesirable state! Just start a new shell.**
+:::
+
+::: challenge
+## Activate an existing environment by name
+
+Activate the `machine-learning-env` environment created in the previous challenge by name.
+
+::: solution
+
+In order to activate an existing environment by name you use the `conda activate` command as 
+follows.
+
+```bash
+$ conda activate machine-learning-env
 ```
 :::
 :::
 
 ::: challenge
-## Inspecting Data
+## Deactivate the active environment
 
-After reading the data for the Americas,
-use `help(americas.head)` and `help(americas.tail)`
-to find out what `DataFrame.head` and `DataFrame.tail` do.
-
-1.  What method call will display the first three rows of this data?
-2.  What method call will display the last three columns of this data?
-    (Hint: you may need to change your view of the data.)
+Deactivate the `machine-learning-env` environment that you activated in the previous challenge.
 
 ::: solution
-1. We can check out the first five rows of `americas` by executing `americas.head()`
-   (allowing us to view the head of the DataFrame). We can specify the number of rows we wish
-   to see by specifying the parameter `n` in our call
-   to `americas.head()`. To view the first three rows, execute:
 
-   ```python
-   americas.head(n=3)
-   ```
+In order to deactivate the active environment you use the `conda deactivate` command.
 
-   ```output
-             continent  gdpPercap_1952  gdpPercap_1957  gdpPercap_1962  \
-   country
-   Argentina  Americas     5911.315053     6856.856212     7133.166023
-   Bolivia    Americas     2677.326347     2127.686326     2180.972546
-   Brazil     Americas     2108.944355     2487.365989     3336.585802
-
-              gdpPercap_1967  gdpPercap_1972  gdpPercap_1977  gdpPercap_1982  \
-   country
-   Argentina     8052.953021     9443.038526    10079.026740     8997.897412
-   Bolivia       2586.886053     2980.331339     3548.097832     3156.510452
-   Brazil        3429.864357     4985.711467     6660.118654     7030.835878
-
-              gdpPercap_1987  gdpPercap_1992  gdpPercap_1997  gdpPercap_2002  \
-   country
-   Argentina     9139.671389     9308.418710    10967.281950     8797.640716
-   Bolivia       2753.691490     2961.699694     3326.143191     3413.262690
-   Brazil        7807.095818     6950.283021     7957.980824     8131.212843
-
-              gdpPercap_2007
-   country
-   Argentina    12779.379640
-   Bolivia       3822.137084
-   Brazil        9065.800825
-   ```
-
-2. To check out the last three rows of `americas`, we would use the command,
-   `americas.tail(n=3)`, analogous to `head()` used above. However, here we want to look at
-   the last three columns so we need to change our view and then use `tail()`. To do so, we
-    create a new DataFrame in which rows and columns are switched:
-
-   ```python
-   americas_flipped = americas.T
-   ```
-
-   We can then view the last three columns of `americas` by viewing the last three rows
-   of `americas_flipped`:
-   ```python
-   americas_flipped.tail(n=3)
-   ```
-
-   ```output
-   country        Argentina  Bolivia   Brazil   Canada    Chile Colombia  \
-   gdpPercap_1997   10967.3  3326.14  7957.98  28954.9  10118.1  6117.36
-   gdpPercap_2002   8797.64  3413.26  8131.21    33329  10778.8  5755.26
-   gdpPercap_2007   12779.4  3822.14   9065.8  36319.2  13171.6  7006.58
-
-   country        Costa Rica     Cuba Dominican Republic  Ecuador    ...     \
-   gdpPercap_1997    6677.05  5431.99             3614.1  7429.46    ...
-   gdpPercap_2002    7723.45  6340.65            4563.81  5773.04    ...
-   gdpPercap_2007    9645.06   8948.1            6025.37  6873.26    ...
-
-   country          Mexico Nicaragua   Panama Paraguay     Peru Puerto Rico  \
-   gdpPercap_1997   9767.3   2253.02  7113.69   4247.4  5838.35     16999.4
-   gdpPercap_2002  10742.4   2474.55  7356.03  3783.67  5909.02     18855.6
-   gdpPercap_2007  11977.6   2749.32  9809.19  4172.84  7408.91     19328.7
-
-   country        Trinidad and Tobago United States  Uruguay Venezuela
-   gdpPercap_1997             8792.57       35767.4  9230.24   10165.5
-   gdpPercap_2002             11460.6       39097.1     7727   8605.05
-   gdpPercap_2007             18008.5       42951.7  10611.5   11415.8
-   ```
-
-   
-   This shows the data that we want, but we may prefer to display three columns instead of three rows,
-   so we can flip it back:
-   ```python
-   americas_flipped.tail(n=3).T    
-   ```
-   
-   __Note:__ we could have done the above in a single line of code by 'chaining' the commands:
-   ```python
-   americas.T.tail(n=3).T
-   ```
-
+```bash
+(active-environment-name) $ conda deactivate
+```
 :::
 :::
+
+## Installing a package into an existing environment
+
+You can install a package into an existing environment using the `conda install` command. This 
+command accepts a list of package specifications (i.e., `numpy=1.18`) and installs a set of 
+packages consistent with those specifications *and* compatible with the underlying environment. If 
+full compatibility cannot be assured, an error is reported and the environment is *not* changed.
+
+By default the `conda install` command will install packages into the current, active environment. 
+The following would activate the `basic-scipy-env` we created above and install 
+[Numba](https://numba.pydata.org/), an open source JIT compiler that translates a subset of Python 
+and NumPy code into fast machine code, into the active environment.
+
+```bash
+$ conda activate basic-scipy-env
+$ conda install numba
+```
+
+As was the case when listing packages to install when using the `conda create` command, if version 
+numbers are not explicitly provided, Conda will attempt to install the newest versions of any 
+requested packages. To accomplish this, Conda may need to update some packages that are already 
+installed or install additional packages. It is always a good idea to explicitly provide version 
+numbers when installing packages with the `conda install` command. For example, the following would 
+install a particular version of Scikit-Learn, into the current, active environment. 
+
+```bash
+$ conda install scikit-learn=0.22
+```
+
+::: callout
+## Freezing installed packages
+
+To prevent existing packages from being updating when using the `conda install` command, you can 
+use the `--freeze-installed` option. This may force Conda to install older versions of the 
+requested packages in order to maintain compatibility with previously installed packages. Using 
+the `--freeze-installed` option does not prevent additional dependency packages from being 
+installed.
+:::
+
+## Where do Conda environments live?
+
+Environments created with `conda`, by default, live in the `envs/` folder of your `miniconda3` (or `anaconda3`) directory the absolute path to which will look something the following: `/Users/$USERNAME/miniconda3/envs` or `C:\Users\$USERNAME\Anaconda3`.
+
+Running `ls` (linux) / `dir` (Windows) on your anaconda `envs/` directory will list out the directories containing the existing Conda environments.
+
+## How do I specify a location for a Conda environment?
+
+You can control where a Conda environment lives by providing a path to a target directory when 
+creating the environment. For example to following command will create  a new environment in a 
+sub-directory of the current working directory called `env`.
+
+```bash
+$ conda create --prefix ./env ipython=7.13 matplotlib=3.1 pandas=1.0 python=3.6
+```
+
+You activate an environment created with a prefix using the same command used to activate 
+environments created by name.
+
+```bash
+$ conda activate ./env
+```
+
+It is often a good idea to specify a path to a sub-directory of your project directory when 
+creating an environment. Why?
+
+1.  Makes it easy to tell if your project utilizes an isolated environment by including the 
+    environment as a sub-directory.
+2.  Makes your project more self-contained as everything *including the required software* is 
+    contained in a single project directory.
+
+An additional benefit of creating your project's environment inside a sub-directory is that you 
+can then use the same name for all your environments; if you keep all of your environments in 
+your `~/miniconda3/env/` folder, you’ll have to give each of them a different name.
+
+## Listing existing environments
+
+Now that you have created a number of Conda environments on your local machine you have probably 
+forgotten the names of all of the environments and exactly where they live. Fortunately, there is 
+a `conda` command to list all of your existing environments together with their locations.
+
+```bash
+$ conda env list
+```
+
+## Listing the contents of an environment
+
+In addition to forgetting names and locations of Conda environments, at some point you will 
+probably forget exactly what has been installed in a particular Conda environment. Again, there is 
+a `conda` command for listing the contents on an environment. To list the contents of the 
+`basic-scipy-env` that you created above, run the following command.
+
+```bash
+$ conda list --name basic-scipy-env
+```
+
+If you created your Conda environment using the `--prefix` option to install packages into a 
+particular directory, then you will need to use that prefix in order for `conda` to locate the 
+environment on your machine.
+
+```bash
+$ conda list --prefix /path/to/conda-env
+```
 
 ::: challenge
-## Reading Files in Other Directories
+## Listing the contents of a particular environment.
 
-The data for your current project is stored in a file called `microbes.csv`,
-which is located in a folder called `field_data`.
-You are doing analysis in a notebook called `analysis.ipynb`
-in a sibling folder called `thesis`:
-
-```output
-your_home_directory
-+-- field_data/
-|   +-- microbes.csv
-+-- thesis/
-    +-- analysis.ipynb
-```
-
-What value(s) should you pass to `read_csv` to read `microbes.csv` in `analysis.ipynb`?
+List the packages installed in the `machine-learning-env` environment that you created in a 
+previous challenge.
 
 ::: solution
-We need to specify the path to the file of interest in the call to `pd.read_csv`. We first need to 'jump' out of
-the folder `thesis` using '../' and then into the folder `field_data` using 'field_data/'. Then we can specify the filename `microbes.csv.
-The result is as follows:
-```python
-data_microbes = pd.read_csv('../field_data/microbes.csv')
+
+You can list the packages and their versions installed in `machine-learning-env` using the 
+`conda list` command as follows.
+
+```bash
+$ conda list --name machine-learning-env
 ```
 
+To list the packages and their versions installed in the active environment leave off 
+the `--name` or `--prefix` option.
+
+```bash
+$ conda list
+```
 :::
 :::
+
+## Deleting entire environments
+
+Occasionally, you will want to delete an entire environment. Perhaps you were experimenting with 
+`conda` commands and you created an environment you have no intention of using; perhaps you no 
+longer need an existing environment and just want to get rid of cruft on your machine. Whatever 
+the reason, the command to delete an environment is the following.
+
+```bash
+$ conda remove --name my-first-conda-env --all
+```
+
+
+If you wish to delete and environment that you created with a `--prefix` option, then you will 
+need to provide the prefix again when removing the environment.
+
+```bash
+$ conda remove --prefix /path/to/conda-env/ --all
+```
 
 ::: challenge
-## Writing Data
+## Delete an entire environment
 
-As well as the `read_csv` function for reading data from a file,
-Pandas provides a `to_csv` function to write dataframes to files.
-Applying what you've learned about reading from files,
-write one of your dataframes to a file called `processed.csv`.
-You can use `help` to get information on how to use `to_csv`.
+Delete the entire "basic-scipy-env" environment.
+
 ::: solution
-In order to write the DataFrame `americas` to a file called `processed.csv`, execute the following command:
-```python
-americas.to_csv('processed.csv')
+
+In order to delete an entire environment you use the `conda remove` command as follows.
+
+```bash
+$ conda remove --name basic-scipy-env --all --yes
 ```
 
-For help on `to_csv`, you could execute, for example:
-```python
-help(americas.to_csv)
-```
 
-Note that `help(to_csv)` throws an error! This is a subtlety and is due to the fact that `to_csv` is NOT a function in 
-and of itself and the actual call is `americas.to_csv`. 
+This command will remove all packages from the named environment before removing the 
+environment itself. The use of the `--yes` flag short-circuits the confirmation prompt (and 
+should be used with caution).
+
 :::
 :::

@@ -88,6 +88,8 @@ Materials for this workshop have been based on materials from the following:
 
 [Plotting and Programming with Python](http://swcarpentry.github.io/python-novice-gapminder/)
 
+[Introduction to Conda for (Data) Scientists ](https://github.com/carpentries-incubator/introduction-to-conda-for-data-scientists/)
+
 This lesson is based on [The Carpentries Workbench](https://carpentries.org/blog/2022/01/live-lesson-infrastructure/) template.
 
 
