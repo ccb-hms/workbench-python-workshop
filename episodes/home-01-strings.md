@@ -31,16 +31,25 @@ exercises: 15
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Strings are a compound type.
-
 ## Strings can be indexed and sliced.
+
+As we saw in class during the [types](03-types.md) lesson, strings in Python can be **indexed** and **sliced**
+
+```python
+my_string = "What a lovely day."
+
+# Indexing
+my_string[2]
+
+# Slicing
+my_string[1:3]
+my_string[:3] # Same as my_string[0:3]
+my_string[1:] # Same as my_string[1:len(my_string)]
+```
 
 ## Strings are immutable.
 
-::: callout
-## Immutable vs. mutable
-
-:::
+We will talk about this concept in more detail when we explore [lists](06-lists.md)
 
 ## Build complex strings based on other variables using format.
 
