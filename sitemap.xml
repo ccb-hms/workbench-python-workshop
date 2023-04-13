@@ -34,10 +34,22 @@
     <loc>https://ccb-hms.github.io/workbench-python-workshop/08-dataframes.html</loc>
   </url>
   <url>
+    <loc>https://ccb-hms.github.io/workbench-python-workshop/08-loading.html</loc>
+  </url>
+  <url>
     <loc>https://ccb-hms.github.io/workbench-python-workshop/09-conditionals.html</loc>
   </url>
   <url>
+    <loc>https://ccb-hms.github.io/workbench-python-workshop/09-dataframes.html</loc>
+  </url>
+  <url>
+    <loc>https://ccb-hms.github.io/workbench-python-workshop/10-conditionals.html</loc>
+  </url>
+  <url>
     <loc>https://ccb-hms.github.io/workbench-python-workshop/10-writing-functions.html</loc>
+  </url>
+  <url>
+    <loc>https://ccb-hms.github.io/workbench-python-workshop/11-writing-functions.html</loc>
   </url>
   <url>
     <loc>https://ccb-hms.github.io/workbench-python-workshop/404.html</loc>
@@ -50,6 +62,18 @@
   </url>
   <url>
     <loc>https://ccb-hms.github.io/workbench-python-workshop/aio.html</loc>
+  </url>
+  <url>
+    <loc>https://ccb-hms.github.io/workbench-python-workshop/home-01-strings.html</loc>
+  </url>
+  <url>
+    <loc>https://ccb-hms.github.io/workbench-python-workshop/home-02-objects.html</loc>
+  </url>
+  <url>
+    <loc>https://ccb-hms.github.io/workbench-python-workshop/home-03-conda.html</loc>
+  </url>
+  <url>
+    <loc>https://ccb-hms.github.io/workbench-python-workshop/home-04-dictionaries.html</loc>
   </url>
   <url>
     <loc>https://ccb-hms.github.io/workbench-python-workshop/images.html</loc>
@@ -91,10 +115,22 @@
     <loc>https://ccb-hms.github.io/workbench-python-workshop/instructor/08-dataframes.html</loc>
   </url>
   <url>
+    <loc>https://ccb-hms.github.io/workbench-python-workshop/instructor/08-loading.html</loc>
+  </url>
+  <url>
     <loc>https://ccb-hms.github.io/workbench-python-workshop/instructor/09-conditionals.html</loc>
   </url>
   <url>
+    <loc>https://ccb-hms.github.io/workbench-python-workshop/instructor/09-dataframes.html</loc>
+  </url>
+  <url>
+    <loc>https://ccb-hms.github.io/workbench-python-workshop/instructor/10-conditionals.html</loc>
+  </url>
+  <url>
     <loc>https://ccb-hms.github.io/workbench-python-workshop/instructor/10-writing-functions.html</loc>
+  </url>
+  <url>
+    <loc>https://ccb-hms.github.io/workbench-python-workshop/instructor/11-writing-functions.html</loc>
   </url>
   <url>
     <loc>https://ccb-hms.github.io/workbench-python-workshop/instructor/404.html</loc>
@@ -107,6 +143,18 @@
   </url>
   <url>
     <loc>https://ccb-hms.github.io/workbench-python-workshop/instructor/aio.html</loc>
+  </url>
+  <url>
+    <loc>https://ccb-hms.github.io/workbench-python-workshop/instructor/home-01-strings.html</loc>
+  </url>
+  <url>
+    <loc>https://ccb-hms.github.io/workbench-python-workshop/instructor/home-02-objects.html</loc>
+  </url>
+  <url>
+    <loc>https://ccb-hms.github.io/workbench-python-workshop/instructor/home-03-conda.html</loc>
+  </url>
+  <url>
+    <loc>https://ccb-hms.github.io/workbench-python-workshop/instructor/home-04-dictionaries.html</loc>
   </url>
   <url>
     <loc>https://ccb-hms.github.io/workbench-python-workshop/instructor/images.html</loc>

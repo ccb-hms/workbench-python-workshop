@@ -85,11 +85,11 @@
   Introduction to Data Analysis with Python
 </div>
 
-<aside class="col-md-12 lesson-progress"><div style="width: 16%" class="percentage">
-    16%
+<aside class="col-md-12 lesson-progress"><div style="width: 11%" class="percentage">
+    11%
   </div>
   <div class="progress incubator">
-    <div class="progress-bar incubator" role="progressbar" style="width: 16%" aria-valuenow="16" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar incubator" role="progressbar" style="width: 11%" aria-valuenow="11" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
     </div>
   </div>
 </aside><div class="container">
@@ -177,6 +177,7 @@
 value.</a></li>
 <li><a href="#types-control-what-operations-or-methods-can-be-performed-on-a-given-value.">Types control what operations (or methods) can be performed on a
 given value.</a></li>
+<li><a href="#simple-and-compound-types.">Simple and compound types.</a></li>
 <li><a href="#you-can-use-the-and-operators-on-strings.">You can use the “+” and “*” operators on strings.</a></li>
 <li><a href="#strings-have-a-length-but-numbers-dont.">Strings have a length (but numbers don’t).</a></li>
 <li><a href="#you-must-convert-numbers-to-strings-or-vice-versa-when-operating-on-them.">You must convert numbers to strings or vice versa when operating on
@@ -206,7 +207,7 @@ string.</a></li>
 <div class="accordion accordion-flush" id="accordionFlush6">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading6">
-        <a href="05-packages.html">5. Libraries</a>
+        <a href="home-01-strings.html">5. String Manipulation</a>
     </div><!--/div.accordion-header-->
         
   </div><!--/div.accordion-item-->
@@ -215,7 +216,7 @@ string.</a></li>
 <div class="accordion accordion-flush" id="accordionFlush7">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading7">
-        <a href="06-lists.html">6. Lists</a>
+        <a href="home-02-objects.html">6. Using Objects</a>
     </div><!--/div.accordion-header-->
         
   </div><!--/div.accordion-item-->
@@ -224,7 +225,7 @@ string.</a></li>
 <div class="accordion accordion-flush" id="accordionFlush8">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading8">
-        <a href="07-loops.html">7. For Loops</a>
+        <a href="05-lists.html">7. Lists</a>
     </div><!--/div.accordion-header-->
         
   </div><!--/div.accordion-item-->
@@ -233,7 +234,7 @@ string.</a></li>
 <div class="accordion accordion-flush" id="accordionFlush9">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading9">
-        <a href="08-dataframes.html">8. Pandas DataFrames</a>
+        <a href="06-loops.html">8. For Loops</a>
     </div><!--/div.accordion-header-->
         
   </div><!--/div.accordion-item-->
@@ -242,7 +243,7 @@ string.</a></li>
 <div class="accordion accordion-flush" id="accordionFlush10">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading10">
-        <a href="09-conditionals.html">9. Conditionals</a>
+        <a href="07-packages.html">9. Libraries</a>
     </div><!--/div.accordion-header-->
         
   </div><!--/div.accordion-item-->
@@ -251,7 +252,52 @@ string.</a></li>
 <div class="accordion accordion-flush" id="accordionFlush11">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading11">
-        <a href="10-writing-functions.html">10. Writing Functions</a>
+        <a href="08-loading.html">10. Reading tabular data</a>
+    </div><!--/div.accordion-header-->
+        
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush12">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading12">
+        <a href="home-03-conda.html">11. Managing Python Environments</a>
+    </div><!--/div.accordion-header-->
+        
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush13">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading13">
+        <a href="home-04-dictionaries.html">12. Dictionaries</a>
+    </div><!--/div.accordion-header-->
+        
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush14">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading14">
+        <a href="09-dataframes.html">13. Pandas DataFrames</a>
+    </div><!--/div.accordion-header-->
+        
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush15">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading15">
+        <a href="10-conditionals.html">14. Conditionals</a>
+    </div><!--/div.accordion-header-->
+        
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush16">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading16">
+        <a href="11-writing-functions.html">15. Writing Functions</a>
     </div><!--/div.accordion-header-->
         
   </div><!--/div.accordion-item-->
@@ -308,7 +354,7 @@ string.</a></li>
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Basic Types</h1>
-        <p> Last updated on 2023-04-10 | 
+        <p> Last updated on 2023-04-13 | 
         
         <a href="https://github.com/ccb-hms/workbench-python-workshop/edit/main/episodes/03-types.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -438,6 +484,26 @@ TypeError                                 Traceback (most recent call last)
 
 TypeError: unsupported operand type(s) for -: 'str' and 'str'</code></pre>
 </div>
+</section><section id="simple-and-compound-types."><h2 class="section-heading">Simple and compound types.<a class="anchor" aria-label="anchor" href="#simple-and-compound-types."></a>
+</h2>
+<hr class="half-width"><p>We can broadly split different types into two categories in Python:
+<em>simple</em> types and <em>compound</em> types.</p>
+<p>Simple types consist of a single value. In Python, these simple types
+include:</p>
+<ul><li><code>int</code></li>
+<li><code>float</code></li>
+<li><code>bool</code></li>
+<li><code>NoneType</code></li>
+</ul><p>Compound types contain <strong>multiple</strong> values. Compound
+types include:</p>
+<ul><li><code>str</code></li>
+<li><code>list</code></li>
+<li><code>dictionary</code></li>
+<li><code>tuple</code></li>
+<li><code>set</code></li>
+</ul><p>In this lesson we will be learning about simple types and strings
+(<code>str</code>), which are made up of multiple characters. We will go
+into more detail on other compound types in future lessons.</p>
 </section><section id="you-can-use-the-and-operators-on-strings."><h2 class="section-heading">You can use the “+” and “*” operators on strings.<a class="anchor" aria-label="anchor" href="#you-can-use-the-and-operators-on-strings."></a>
 </h2>
 <hr class="half-width"><ul><li>“Adding” character strings concatenates them.</li>
@@ -594,7 +660,7 @@ changes.</li>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>It is a floating-point number (often abbreviated “float”). It is
 possible to find out by using the built-in function
@@ -633,7 +699,7 @@ possible to find out by using the built-in function
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>It is a float: integers are automatically converted to floats as
 necessary.</p>
@@ -681,7 +747,7 @@ than using an integer?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>The answers to the questions are: 1. Integer, since the number of
 days would lie between 1 and 365. 2. Floating point, since fractional
@@ -738,7 +804,7 @@ of surveys needed to reach everyone once.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p>We want the minimum number of surveys that reaches everyone once,
 which is the rounded up value of
@@ -824,7 +890,7 @@ ValueError                                Traceback (most recent call last)
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <p>What do you expect this program to do? It would not be so
 unreasonable to expect the Python 3 <code>int</code> command to convert
@@ -896,7 +962,7 @@ it explicitly in code.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
 <div class="accordion-body">
 <p>Answer: 1 and 4</p>
 </div>
@@ -990,7 +1056,7 @@ the second digit of <code>a</code> via <code>a[1]</code>?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
+<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
 <div class="accordion-body">
 <p>Numbers are not strings or sequences and Python will raise an error
 if you try to perform an index operation on a number. In the <a href="../%7B%7B%20page.root%20%7D%7D/03-types-conversion/#convert-numbers-and-strings">next
@@ -1050,7 +1116,7 @@ string.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution8" class="accordion-collapse collapse" aria-labelledby="headingSolution8" data-bs-parent="#accordionSolution8">
+<div id="collapseSolution8" class="accordion-collapse collapse" data-bs-parent="#accordionSolution8" aria-labelledby="headingSolution8">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1100,7 +1166,7 @@ of range? (i.e., try <code>species_name[0:20]</code> or
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution9" class="accordion-collapse collapse" aria-labelledby="headingSolution9" data-bs-parent="#accordionSolution9">
+<div id="collapseSolution9" class="accordion-collapse collapse" data-bs-parent="#accordionSolution9" aria-labelledby="headingSolution9">
 <div class="accordion-body">
 <ol style="list-style-type: decimal"><li>
 <code>species_name[2:8]</code> returns the substring
@@ -1190,7 +1256,7 @@ any links that you are not going to use.
   "url": "https://ccb-hms.github.io/workbench-python-workshop/instructor/03-types.html",
   "identifier": "https://ccb-hms.github.io/workbench-python-workshop/instructor/03-types.html",
   "dateCreated": "2023-04-01",
-  "dateModified": "2023-04-10",
+  "dateModified": "2023-04-13",
   "datePublished": "2023-04-13"
 }
 
