@@ -37,8 +37,8 @@ Participants will also be introduced to popular packages for machine learning an
 
 ### At-home Lessons 1
 
-- Strings *started*
-- Objects *not started*
+- Strings
+- Objects 
 
 ### Day 2
 
