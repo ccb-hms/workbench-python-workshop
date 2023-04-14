@@ -43,36 +43,14 @@ What makes Pandas so attractive is the powerful interface to access individual r
 of the table, proper handling of missing values, and relational-databases operations
 between DataFrames.
 
-## Dataset we will be using
+## Data description
 
-We are going to use part of the data published by [Blackmore *et al.*
+We will be using the same data as the previous lesson from [Blackmore *et al.*
 (2017)](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5544260/), *The
 effect of upper-respiratory infection on transcriptomic changes in the
-CNS*. The goal of the study was to determine the effect of an
-upper-respiratory infection on changes in RNA transcription occurring
-in the cerebellum and spinal cord post infection. Gender matched eight
-week old C57BL/6 mice were inoculated with saline or with Influenza A by
-intranasal route and transcriptomic changes in the cerebellum and
-spinal cord tissues were evaluated by RNA-seq at days 0
-(non-infected), 4 and 8.
+CNS*. 
 
-The dataset is stored as a comma-separated values (CSV) file.  Each row
-holds information for a single RNA expression measurement, and the first eleven
-columns represent:
-
-| Column     | Description                                                                                  |
-| ---------- | -------------------------------------------------------------------------------------------- |
-| gene       | The name of the gene that was measured                                                       |
-| sample     | The name of the sample the gene expression was measured in                                   |
-| expression | The value of the gene expression                                                             |
-| organism   | The organism/species - here all data stem from mice                                          |
-| age        | The age of the mouse (all mice were 8 weeks here)                                            |
-| sex        | The sex of the mouse                                                                         |
-| infection  | The infection state of the mouse, i.e. infected with Influenza A or not infected.            |
-| strain     | The Influenza A strain; C57BL/6 in all cases.                                                |
-| time       | The duration of the infection (in days).                                                     |
-| tissue     | The tissue that was used for the gene expression experiment, i.e. cerebellum or spinal cord. |
-| mouse      | The mouse unique identifier.                                                                 |
+However, this data file consists only of the expression data in a gene x sample matrix. 
 
 ## Selecting values
 
@@ -86,17 +64,11 @@ uniquely identifies its *entry* in the DataFrame.
 
 *   Can specify location by numerical index analogously to 2D version of character selection in strings.
 
-::: callout
-## TODO 
-
-Add this file to our repo as well so we're not relying on this location.
-:::
-
 ```python
 import pandas as pd
 
-url = "https://github.com/carpentries-incubator/bioc-intro/raw/main/episodes/data/rnaseq.csv"
-expression_df = pd.read_csv(url, index_col=0)
+url = "https://raw.githubusercontent.com/ccb-hms/workbench-python-workshop/main/episodes/data/rnaseq.csv"
+rnaseq_df = pd.read_csv(url, index_col=0)
 print(expression_df.iloc[0, 0])
 ```
 
@@ -104,17 +76,42 @@ print(expression_df.iloc[0, 0])
 GSM2545336
 ```
 
+Note how here we used the index of the gene column as opposed to its name. 
+It is often safer to use names instead of indices so that your code is robust to changes in the data layout, but sometimes indices are necessary.
 
 ## Use `DataFrame.loc[..., ...]` to select values by their (entry) label.
 
 *   Can specify location by row and/or column name.
 
 ```python
-print(data.loc["Albania", "gdpPercap_1952"])
+print(rnaseq_df.loc["Cyp2d22", "phenotype_description"])
 ```
 
 ```output
-1601.056136
+gene
+Cyp2d22    abnormal skin morphology
+Cyp2d22    abnormal skin morphology
+Cyp2d22    abnormal skin morphology
+Cyp2d22    abnormal skin morphology
+Cyp2d22    abnormal skin morphology
+Cyp2d22    abnormal skin morphology
+Cyp2d22    abnormal skin morphology
+Cyp2d22    abnormal skin morphology
+Cyp2d22    abnormal skin morphology
+Cyp2d22    abnormal skin morphology
+Cyp2d22    abnormal skin morphology
+Cyp2d22    abnormal skin morphology
+Cyp2d22    abnormal skin morphology
+Cyp2d22    abnormal skin morphology
+Cyp2d22    abnormal skin morphology
+Cyp2d22    abnormal skin morphology
+Cyp2d22    abnormal skin morphology
+Cyp2d22    abnormal skin morphology
+Cyp2d22    abnormal skin morphology
+Cyp2d22    abnormal skin morphology
+Cyp2d22    abnormal skin morphology
+Cyp2d22    abnormal skin morphology
+Name: phenotype_description, dtype: object
 ```
 
 ## Use `:` on its own to mean all columns or all rows.
