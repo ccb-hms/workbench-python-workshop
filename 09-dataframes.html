@@ -276,6 +276,7 @@ a named slice.</a></li>
 <li><a href="#result-of-slicing-can-be-used-in-further-operations.">Result of slicing can be used in further operations.</a></li>
 <li><a href="#use-comparisons-to-select-data-based-on-value.">Use comparisons to select data based on value.</a></li>
 <li><a href="#select-values-or-nan-using-a-boolean-mask.">Select values or NaN using a Boolean mask.</a></li>
+<li><a href="#using-multiple-dataframes">Using multiple dataframes</a></li>
 <li><a href="#group-by-split-apply-combine">Group By: split-apply-combine</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
@@ -711,7 +712,7 @@ methods like <code>min</code> and <code>max</code> igonre
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>We still see <code>NaN</code> because GSM2545337 and GSM2545340 only
 have a single value over 1000 in this subset. The standard deviation
@@ -723,7 +724,7 @@ have a single value over 1000 in this subset. The standard deviation
 </div>
 </div>
 </div>
-</section><section id="group-by-split-apply-combine"><h2 class="section-heading">Group By: split-apply-combine<a class="anchor" aria-label="anchor" href="#group-by-split-apply-combine"></a>
+</section><section id="using-multiple-dataframes"><h2 class="section-heading">Using multiple dataframes<a class="anchor" aria-label="anchor" href="#using-multiple-dataframes"></a>
 </h2>
 <hr class="half-width"><p>Pandas vectorizing methods and grouping operations are features that
 provide users much flexibility to analyse their data.</p>
@@ -789,50 +790,76 @@ GSM2545337    1765.508820
 GSM2545347    1805.396201
 dtype: float64</code></pre>
 </div>
+<p>Now let’s say we want to do something a bit more complicated. As
+opposed to getting the top 10 genes across all samples, we want to
+instead get genes which have high expression for each timepoint.</p>
+<p>To do that, we need to load in the sample metadata as a separate
+dataframe:</p>
 <div class="codewrapper sourceCode" id="cb27">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>mask_higher <span class="op">=</span> data <span class="op">&gt;</span> rnaseq_df.mean()</span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>wealth_score <span class="op">=</span> mask_higher.aggregate(<span class="st">'sum'</span>, axis<span class="op">=</span><span class="dv">1</span>) <span class="op">/</span> <span class="bu">len</span>(rnaseq_df.columns)</span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(wealth_score)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://raw.githubusercontent.com/ccb-hms/workbench-python-workshop/main/episodes/data/metadata.csv"</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>metadata <span class="op">=</span> pd.read_csv(url, index_col<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(metadata)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>country
-Albania                   0.000000
-Austria                   1.000000
-Belgium                   1.000000
-Bosnia and Herzegovina    0.000000
-Bulgaria                  0.000000
-Croatia                   0.000000
-Czech Republic            0.500000
-Denmark                   1.000000
-Finland                   1.000000
-France                    1.000000
-Germany                   1.000000
-Greece                    0.333333
-Hungary                   0.000000
-Iceland                   1.000000
-Ireland                   0.333333
-Italy                     0.500000
-Montenegro                0.000000
-Netherlands               1.000000
-Norway                    1.000000
-Poland                    0.000000
-Portugal                  0.000000
-Romania                   0.000000
-Serbia                    0.000000
-Slovak Republic           0.000000
-Slovenia                  0.333333
-Spain                     0.333333
-Sweden                    1.000000
-Switzerland               1.000000
-Turkey                    0.000000
-United Kingdom            1.000000
-dtype: float64</code></pre>
+<pre class="output" tabindex="0"><code>                organism  age     sex    infection   strain  time      tissue  \
+sample                                                                          
+GSM2545336  Mus musculus    8  Female   InfluenzaA  C57BL/6     8  Cerebellum   
+GSM2545337  Mus musculus    8  Female  NonInfected  C57BL/6     0  Cerebellum   
+GSM2545338  Mus musculus    8  Female  NonInfected  C57BL/6     0  Cerebellum   
+GSM2545339  Mus musculus    8  Female   InfluenzaA  C57BL/6     4  Cerebellum   
+GSM2545340  Mus musculus    8    Male   InfluenzaA  C57BL/6     4  Cerebellum   
+GSM2545341  Mus musculus    8    Male   InfluenzaA  C57BL/6     8  Cerebellum   
+GSM2545342  Mus musculus    8  Female   InfluenzaA  C57BL/6     8  Cerebellum   
+GSM2545343  Mus musculus    8    Male  NonInfected  C57BL/6     0  Cerebellum   
+GSM2545344  Mus musculus    8  Female   InfluenzaA  C57BL/6     4  Cerebellum   
+GSM2545345  Mus musculus    8    Male   InfluenzaA  C57BL/6     4  Cerebellum   
+GSM2545346  Mus musculus    8    Male   InfluenzaA  C57BL/6     8  Cerebellum   
+GSM2545347  Mus musculus    8    Male   InfluenzaA  C57BL/6     8  Cerebellum   
+GSM2545348  Mus musculus    8  Female  NonInfected  C57BL/6     0  Cerebellum   
+GSM2545349  Mus musculus    8    Male  NonInfected  C57BL/6     0  Cerebellum   
+GSM2545350  Mus musculus    8    Male   InfluenzaA  C57BL/6     4  Cerebellum   
+GSM2545351  Mus musculus    8  Female   InfluenzaA  C57BL/6     8  Cerebellum   
+GSM2545352  Mus musculus    8  Female   InfluenzaA  C57BL/6     4  Cerebellum   
+GSM2545353  Mus musculus    8  Female  NonInfected  C57BL/6     0  Cerebellum   
+GSM2545354  Mus musculus    8    Male  NonInfected  C57BL/6     0  Cerebellum   
+GSM2545362  Mus musculus    8  Female   InfluenzaA  C57BL/6     4  Cerebellum   
+GSM2545363  Mus musculus    8    Male   InfluenzaA  C57BL/6     4  Cerebellum   
+GSM2545380  Mus musculus    8  Female   InfluenzaA  C57BL/6     8  Cerebellum   
+
+            mouse  
+sample             
+GSM2545336     14  
+GSM2545337      9  
+GSM2545338     10  
+GSM2545339     15  
+GSM2545340     18  
+GSM2545341      6  
+GSM2545342      5  
+GSM2545343     11  
+GSM2545344     22  
+GSM2545345     13  
+GSM2545346     23  
+GSM2545347     24  
+GSM2545348      8  
+GSM2545349      7  
+GSM2545350      1  
+GSM2545351     16  
+GSM2545352     21  
+GSM2545353      4  
+GSM2545354      2  
+GSM2545362     20  
+GSM2545363     12  
+GSM2545380     19  
+</code></pre>
 </div>
-<p>Finally, for each group in the <code>wealth_score</code> table, we
+<p>To select</p>
+</section><section id="group-by-split-apply-combine"><h2 class="section-heading">Group By: split-apply-combine<a class="anchor" aria-label="anchor" href="#group-by-split-apply-combine"></a>
+</h2>
+<hr class="half-width"><p>Finally, for each group in the <code>wealth_score</code> table, we
 sum their (financial) contribution across the years surveyed using
 chained methods:</p>
 <div class="codewrapper sourceCode" id="cb29">
@@ -889,7 +916,7 @@ GDP data for Europe has been loaded:</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>The selection can be done by using the labels for both the row
 (“Serbia”) and the column (“gdpPercap_2007”):</p>
@@ -935,7 +962,7 @@ numerical slices and named slices in Pandas?</li>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>No, they do not produce the same output! The output of the first
 statement is:</p>
@@ -996,7 +1023,7 @@ in <code>first</code>, <code>second</code>, etc.?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <p>Let’s go through this piece of code line by line.</p>
 <div class="codewrapper sourceCode" id="cb38">
@@ -1080,7 +1107,7 @@ these methods?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
 <p>For each column in <code>data</code>, <code>idxmin</code> will return
 the index value corresponding to each column’s minimum;
@@ -1118,7 +1145,7 @@ capita for that country in 1952.</li>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
 <div class="accordion-body">
 <p>1:</p>
 <div class="codewrapper sourceCode" id="cb44">
@@ -1179,7 +1206,7 @@ of row and column ranges</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
+<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
 <div class="accordion-body">
 <p>1. Access a single column:</p>
 <div class="codewrapper sourceCode" id="cb48">
@@ -1368,7 +1395,7 @@ European countries for each year that information is available.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution8" class="accordion-collapse collapse" data-bs-parent="#accordionSolution8" aria-labelledby="headingSolution8">
+<div id="collapseSolution8" class="accordion-collapse collapse" aria-labelledby="headingSolution8" data-bs-parent="#accordionSolution8">
 <div class="accordion-body">
 <p>Among many choices, <code>dir()</code> lists the
 <code>median()</code> function as a possibility. Thus,</p>
