@@ -285,33 +285,6 @@ print(result)
 :::
 
 ::: challenge
-## Processing Small Files
-
-Modify this program so that it only processes files with fewer than 50 records.
-
-```python
-import glob
-import pandas as pd
-for filename in glob.glob('data/*.csv'):
-    contents = pd.read_csv(filename)
-    ____:
-        print(filename, len(contents))
-```
-
-::: solution
-
-```python
-import glob
-import pandas as pd
-for filename in glob.glob('data/*.csv'):
-    contents = pd.read_csv(filename)
-    if len(contents) < 50:
-        print(filename, len(contents))
-```
-:::
-:::
-
-::: challenge
 ## Initializing
 
 Modify this program so that it finds the largest and smallest values in the list

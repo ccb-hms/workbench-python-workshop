@@ -305,7 +305,7 @@ We still see `NaN` because GSM2545337 and GSM2545340 only have a single value ov
 :::
 :::
 
-## Group By: split-apply-combine
+## Using multiple dataframes
 
 Pandas vectorizing methods and grouping operations are features that provide users 
 much flexibility to analyse their data.
@@ -366,47 +366,73 @@ GSM2545347    1805.396201
 dtype: float64
 ```
 
+Now let's say we want to do something a bit more complicated. 
+As opposed to getting the top 10 genes across all samples, we want to instead get genes which have high expression for each timepoint. 
+
+To do that, we need to load in the sample metadata as a separate dataframe:
+
 ```python
-mask_higher = data > rnaseq_df.mean()
-wealth_score = mask_higher.aggregate('sum', axis=1) / len(rnaseq_df.columns)
-print(wealth_score)
+url = "https://raw.githubusercontent.com/ccb-hms/workbench-python-workshop/main/episodes/data/metadata.csv"
+metadata = pd.read_csv(url, index_col=0)
+print(metadata)
 ```
 
 ```output
-country
-Albania                   0.000000
-Austria                   1.000000
-Belgium                   1.000000
-Bosnia and Herzegovina    0.000000
-Bulgaria                  0.000000
-Croatia                   0.000000
-Czech Republic            0.500000
-Denmark                   1.000000
-Finland                   1.000000
-France                    1.000000
-Germany                   1.000000
-Greece                    0.333333
-Hungary                   0.000000
-Iceland                   1.000000
-Ireland                   0.333333
-Italy                     0.500000
-Montenegro                0.000000
-Netherlands               1.000000
-Norway                    1.000000
-Poland                    0.000000
-Portugal                  0.000000
-Romania                   0.000000
-Serbia                    0.000000
-Slovak Republic           0.000000
-Slovenia                  0.333333
-Spain                     0.333333
-Sweden                    1.000000
-Switzerland               1.000000
-Turkey                    0.000000
-United Kingdom            1.000000
-dtype: float64
+                organism  age     sex    infection   strain  time      tissue  \
+sample                                                                          
+GSM2545336  Mus musculus    8  Female   InfluenzaA  C57BL/6     8  Cerebellum   
+GSM2545337  Mus musculus    8  Female  NonInfected  C57BL/6     0  Cerebellum   
+GSM2545338  Mus musculus    8  Female  NonInfected  C57BL/6     0  Cerebellum   
+GSM2545339  Mus musculus    8  Female   InfluenzaA  C57BL/6     4  Cerebellum   
+GSM2545340  Mus musculus    8    Male   InfluenzaA  C57BL/6     4  Cerebellum   
+GSM2545341  Mus musculus    8    Male   InfluenzaA  C57BL/6     8  Cerebellum   
+GSM2545342  Mus musculus    8  Female   InfluenzaA  C57BL/6     8  Cerebellum   
+GSM2545343  Mus musculus    8    Male  NonInfected  C57BL/6     0  Cerebellum   
+GSM2545344  Mus musculus    8  Female   InfluenzaA  C57BL/6     4  Cerebellum   
+GSM2545345  Mus musculus    8    Male   InfluenzaA  C57BL/6     4  Cerebellum   
+GSM2545346  Mus musculus    8    Male   InfluenzaA  C57BL/6     8  Cerebellum   
+GSM2545347  Mus musculus    8    Male   InfluenzaA  C57BL/6     8  Cerebellum   
+GSM2545348  Mus musculus    8  Female  NonInfected  C57BL/6     0  Cerebellum   
+GSM2545349  Mus musculus    8    Male  NonInfected  C57BL/6     0  Cerebellum   
+GSM2545350  Mus musculus    8    Male   InfluenzaA  C57BL/6     4  Cerebellum   
+GSM2545351  Mus musculus    8  Female   InfluenzaA  C57BL/6     8  Cerebellum   
+GSM2545352  Mus musculus    8  Female   InfluenzaA  C57BL/6     4  Cerebellum   
+GSM2545353  Mus musculus    8  Female  NonInfected  C57BL/6     0  Cerebellum   
+GSM2545354  Mus musculus    8    Male  NonInfected  C57BL/6     0  Cerebellum   
+GSM2545362  Mus musculus    8  Female   InfluenzaA  C57BL/6     4  Cerebellum   
+GSM2545363  Mus musculus    8    Male   InfluenzaA  C57BL/6     4  Cerebellum   
+GSM2545380  Mus musculus    8  Female   InfluenzaA  C57BL/6     8  Cerebellum   
+
+            mouse  
+sample             
+GSM2545336     14  
+GSM2545337      9  
+GSM2545338     10  
+GSM2545339     15  
+GSM2545340     18  
+GSM2545341      6  
+GSM2545342      5  
+GSM2545343     11  
+GSM2545344     22  
+GSM2545345     13  
+GSM2545346     23  
+GSM2545347     24  
+GSM2545348      8  
+GSM2545349      7  
+GSM2545350      1  
+GSM2545351     16  
+GSM2545352     21  
+GSM2545353      4  
+GSM2545354      2  
+GSM2545362     20  
+GSM2545363     12  
+GSM2545380     19  
+
 ```
 
+To select 
+
+## Group By: split-apply-combine
 
 Finally, for each group in the `wealth_score` table, we sum their (financial) contribution
 across the years surveyed using chained methods:
