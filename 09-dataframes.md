@@ -67,7 +67,7 @@ uniquely identifies its *entry* in the DataFrame.
 ```python
 import pandas as pd
 
-url = "https://raw.githubusercontent.com/ccb-hms/workbench-python-workshop/main/episodes/data/rnaseq.csv"
+url = "https://raw.githubusercontent.com/ccb-hms/workbench-python-workshop/main/episodes/data/expression_matrix.csv"
 rnaseq_df = pd.read_csv(url, index_col=0)
 print(expression_df.iloc[0, 0])
 ```
