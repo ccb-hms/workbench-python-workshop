@@ -809,46 +809,6 @@ You can use these functions whenever you want to get the row index of the minimu
 :::
 
 ::: challenge
-## Practice with Selection
-
-Assume Pandas has been imported and the Gapminder GDP data for Europe has been loaded.
-Write an expression to select each of the following:
-
-1.  GDP per capita for all countries in 1982.
-2.  GDP per capita for Denmark for all years.
-3.  GDP per capita for all countries for years *after* 1985.
-4.  GDP per capita for each country in 2007 as a multiple of 
-    GDP per capita for that country in 1952.
-
-::: solution
-1:
-```python
-rnaseq_df['gdpPercap_1982']
-```
-
-
-2:
-```python
-rnaseq_df.loc['Denmark',:]
-```
-
-
-3:
-```python
-rnaseq_df.loc[:,'gdpPercap_1985':]
-```
-
-Pandas is smart enough to recognize the number at the end of the column label and does not give you an error, although no column named `gdpPercap_1985` actually exists. This is useful if new columns are added to the CSV file later.
-
-4:
-```python
-rnaseq_df['gdpPercap_2007']/rnaseq_df['gdpPercap_1952']
-```
-
-:::
-:::
-
-::: challenge
 ## Many Ways of Access
 
 There are at least two ways of accessing a value or slice of a DataFrame: by name or index.
@@ -995,47 +955,6 @@ rnaseq_df.iloc[:, col1_index:col2_index].loc["row1":"row2"]
 ```
 :::
 :::
-
-::: challenge
-## Exploring available methods using the `dir()` function
-
-Python includes a `dir()` function that can be used to display all of the available methods (functions) that are built into a data object.  In Episode 4, we used some methods with a string. But we can see many more are available by using `dir()`:
-
-```python
-my_string = 'Hello world!'   # creation of a string object 
-dir(my_string)
-```
-
-
-This command returns:
-
-```output
-['__add__',
-...
-'__subclasshook__',
-'capitalize',
-'casefold',
-'center',
-...
-'upper',
-'zfill']
-```
-
-
-You can use `help()` or <kbd>Shift</kbd>+<kbd>Tab</kbd> to get more information about what these methods do.
-
-Assume Pandas has been imported and the Gapminder GDP data for Europe has been loaded as `data`.  Then, use `dir()` 
-to find the function that prints out the median per-capita GDP across all European countries for each year that information is available.
-
-::: solution
-Among many choices, `dir()` lists the `median()` function as a possibility.  Thus,
-```python
-rnaseq_df.median()
-```
-
-:::
-:::
-
 
 [pandas-dataframe]: https://pandas.pyrnaseq_df.org/pandas-docs/stable/generated/pandas.DataFrame.html
 [pandas-series]: https://pandas.pyrnaseq_df.org/pandas-docs/stable/generated/pandas.Series.html
