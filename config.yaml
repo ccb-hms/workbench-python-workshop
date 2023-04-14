@@ -71,8 +71,8 @@ episodes:
 - 08-loading.md
 - home-03-conda.md
 - home-04-dictionaries.md
-- 09-dataframes.md
-- 10-conditionals.md
+- 09-conditionals.md
+- 10-dataframes.md
 - 11-writing-functions.md
 # - 12-scipy-stats.md
 # - home-05-reshaping-data.md #pivoting 
