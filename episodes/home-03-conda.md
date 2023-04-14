@@ -265,6 +265,44 @@ install a particular version of Scikit-Learn, into the current, active environme
 $ conda install scikit-learn=0.22
 ```
 
+::: checklist
+## Using your environment in Jupyter
+
+We need to perform a few extra steps to make our conda environments available in Jupyter Lab. 
+
+First, we're going to break convention and install the `nb_conda_kernels` into our base environment.
+
+```bash
+$ conda activate base
+$ conda install nb_conda_kernels
+```
+
+Now for any environment we want to be available in Jupyter Lab we simply install the `ipykernel` package.
+
+```bash
+$ conda activate basic-scipy-env
+$ conda install ipykernel
+```
+
+We then want to go back to our base environment and start Jupyter Lab:
+
+```bash
+$ conda activate base
+$ jupyter lab
+```
+
+Now, from Jupyter Lab our environments should be available as a **kernel**. 
+You can change your kernel in the top-right of the screen:
+
+![Changing the kernel](fig/home03-jupyter-changing-kernel.png)
+
+And you should see your conda environments available:
+
+![Selecting conda kernels in Jupyer Lab](fig/home03-jupyter-selecting-kernel.png)
+
+::: 
+
+
 ::: callout
 ## Freezing installed packages
 
