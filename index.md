@@ -55,8 +55,8 @@ Participants will also be introduced to popular packages for machine learning an
 
 ### Day 3
 
+- Conditionals (35 min) 
 - Dataframes (40 min) *change dataset*
-- Conditionals (35 min) *change dataset*
 - Break (10 min)
 - Writing Functions (25 min)
 - Using scipy for statistics (10 min) *not started*
