@@ -6,24 +6,24 @@ exercises: 15
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- "How can I create my own functions?"
-- "How can I use functions to write better programs?"
+- How can I create my own functions?
+- How can I use functions to write better programs?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- "Explain and identify the difference between function definition and function call."
-- "Write a function that takes a small, fixed number of arguments and produces a single result."
+- Explain and identify the difference between function definition and function call.
+- Write a function that takes a small, fixed number of arguments and produces a single result.
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: keypoints
 
-- "Break programs down into functions to make them easier to understand."
-- "Define a function using `def` with a name, parameters, and a block of code."
-- "Defining a function does not run it."
-- "Arguments in a function call are matched to its defined parameters."
-- "Functions may return a result to their caller using `return`."
+- Break programs down into functions to make them easier to understand.
+- Define a function using `def` with a name, parameters, and a block of code.
+- Defining a function does not run it.
+- Arguments in a function call are matched to its defined parameters.
+- Functions may return a result to their caller using `return`.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -523,7 +523,7 @@ def calculate_life_quartile(exp):
         # This observation is in the fourth quartile
        return 4
     else:
-        # This observation has bad data
+        # This observation has bad dataS
        return None
 
 calculate_life_quartile(62.5)

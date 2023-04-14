@@ -6,31 +6,31 @@ exercises: 15
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- "How can I store many values together?"
-- "How do I access items stored in a list?"
-- "How are variables assigned to lists different than variables assigned to values?"
+- How can I store many values together?
+- How do I access items stored in a list?
+- How are variables assigned to lists different than variables assigned to values?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- "Explain what a list is."
-- "Create and index lists of simple values."
-- "Change the values of individual elements"
-- "Append values to an existing list"
-- "Reorder and slice list elements"
-- "Create and manipulate nested lists"
+- Explain what a list is.
+- Create and index lists of simple values.
+- Change the values of individual elements
+- Append values to an existing list
+- Reorder and slice list elements
+- Create and manipulate nested lists
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: keypoints
 
-- "`[value1, value2, value3, ...]` creates a list."
-- "Lists can contain any Python object, including lists (i.e., list of lists)."
-- "Lists are indexed and sliced with square brackets (e.g., list[0] and
-list[2:9]), in the same way as strings and arrays."
-- "Lists are mutable (i.e., their values can be changed in place)."
-- "Strings are immutable (i.e., the characters in them cannot be changed)."
+- `[value1, value2, value3, ...]` creates a list.
+- Lists can contain any Python object, including lists (i.e., list of lists).
+- Lists are indexed and sliced with square brackets (e.g., list[0] and
+list[2:9]), in the same way as strings and arrays.
+- Lists are mutable (i.e., their values can be changed in place).
+- Strings are immutable (i.e., the characters in them cannot be changed).
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 

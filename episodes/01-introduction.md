@@ -6,30 +6,30 @@ exercises: 5
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- "How can I run Python programs?"
+- How can I run Python programs?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- "Launch the JupyterLab server." 
-- "Create a new Python script." 
-- "Create a Jupyter notebook."
-- "Shutdown the JupyterLab server."
-- "Understand the difference between a Python script and a Jupyter notebook."
-- "Create Markdown cells in a notebook."
-- "Create and run Python cells in a notebook."
+- Launch the JupyterLab server. 
+- Create a new Python script. 
+- Create a Jupyter notebook.
+- Shutdown the JupyterLab server.
+- Understand the difference between a Python script and a Jupyter notebook.
+- Create Markdown cells in a notebook.
+- Create and run Python cells in a notebook.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: keypoints
 
-- "Python scripts are plain text files."
-- "Use the Jupyter Notebook for editing and running Python."
-- "The Notebook has Command and Edit modes."
-- "Use the keyboard and mouse to select and edit cells."
-- "The Notebook will turn Markdown into pretty-printed documentation."
-- "Markdown does most of what HTML does."
+- Python scripts are plain text files.
+- Use the Jupyter Notebook for editing and running Python.
+- The Notebook has Command and Edit modes.
+- Use the keyboard and mouse to select and edit cells.
+- The Notebook will turn Markdown into pretty-printed documentation.
+- Markdown does most of what HTML does.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 

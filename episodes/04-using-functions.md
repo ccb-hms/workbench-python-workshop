@@ -6,32 +6,32 @@ exercises: 10
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- "How can I use built-in functions?"
-- "How can I find out what they do?"
-- "What kind of errors can occur in programs?"
+- How can I use built-in functions?
+- How can I find out what they do?
+- What kind of errors can occur in programs?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- "Explain the purpose of functions."
-- "Correctly call built-in Python functions."
-- "Correctly nest calls to built-in functions."
-- "Use help to display documentation for built-in functions."
-- "Correctly describe situations in which SyntaxError and NameError occur."
+- Explain the purpose of functions.
+- Correctly call built-in Python functions.
+- Correctly nest calls to built-in functions.
+- Use help to display documentation for built-in functions.
+- Correctly describe situations in which SyntaxError and NameError occur.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: keypoints
 
-- "Use comments to add documentation to programs."
-- "A function may take zero or more arguments."
-- "Commonly-used built-in functions include `max`, `min`, and `round`."
-- "Functions may only work for certain (combinations of) arguments."
-- "Functions may have default values for some arguments."
-- "Use the built-in function `help` to get help for a function."
-- "Python reports a syntax error when it can't understand the source of a program."
-- "Python reports a runtime error when something goes wrong while a program is executing."
+- Use comments to add documentation to programs.
+- A function may take zero or more arguments.
+- Commonly-used built-in functions include `max`, `min`, and `round`.
+- Functions may only work for certain (combinations of) arguments.
+- Functions may have default values for some arguments.
+- Use the built-in function `help` to get help for a function.
+- Python reports a syntax error when it can't understand the source of a program.
+- Python reports a runtime error when something goes wrong while a program is executing.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 

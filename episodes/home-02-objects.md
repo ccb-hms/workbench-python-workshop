@@ -6,24 +6,24 @@ exercises: 10
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- "What is an object?"
+- What is an object?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- "Define objects."
-- "Use an object's methods."
-- "Call a constructor for an object."
+- Define objects.
+- Use an object's methods.
+- Call a constructor for an object.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: keypoints
 
-- "Objects are entities with both **data** and **methods**"
-- "Methods are unique to objects, and so methods with the same name may work differently on different objects."
-- "You can create an object using a **constructor**."
-- "Objects need to be explicitly copied."
+- Objects are entities with both **data** and **methods**
+- Methods are unique to objects, and so methods with the same name may work differently on different objects.
+- You can create an object using a **constructor**.
+- Objects need to be explicitly copied.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 

@@ -6,33 +6,33 @@ exercises: 10
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- "How do I manage different sets of packages?"
-- "How do I install new packages?"
+- How do I manage different sets of packages?
+- How do I install new packages?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- "Understand how Conda environments can improve your research workflow."
-- "Create a new environment."
-- "Activate (deactivate) a particular environment."
-- "Install packages into existing environments using Conda (+pip)."
-- "Specify the installation location of an environment."
-- "List all of the existing environments on your machine."
-- "List all of the installed packages within a particular environment."
-- "Delete an entire environment."
+- Understand how Conda environments can improve your research workflow.
+- Create a new environment.
+- Activate (deactivate) a particular environment.
+- Install packages into existing environments using Conda (+pip).
+- Specify the installation location of an environment.
+- List all of the existing environments on your machine.
+- List all of the installed packages within a particular environment.
+- Delete an entire environment.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: keypoints
 
-- "A Conda environment is a directory that contains a specific collection of Conda packages that you have installed."
-- "You create (remove) a new environment using the `conda create` (`conda remove`) commands."
-- "You activate (deactivate) an environment using the `conda activate` (`conda deactivate`) commands."
-- "You install packages into environments using `conda install`; you install packages into an active environment using `pip install`."
-- "You should install each environment as a sub-directory inside its corresponding project directory"
-- "Use the `conda env list` command to list existing environments and their respective locations."
-- "Use the `conda list` command to list all of the packages installed in an environment."
+- A Conda environment is a directory that contains a specific collection of Conda packages that you have installed.
+- You create (remove) a new environment using the `conda create` (`conda remove`) commands.
+- You activate (deactivate) an environment using the `conda activate` (`conda deactivate`) commands.
+- You install packages into environments using `conda install`; you install packages into an active environment using `pip install`.
+- You should install each environment as a sub-directory inside its corresponding project directory
+- Use the `conda env list` command to list existing environments and their respective locations.
+- Use the `conda list` command to list all of the packages installed in an environment.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 

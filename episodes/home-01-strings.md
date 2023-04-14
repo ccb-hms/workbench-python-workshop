@@ -6,25 +6,25 @@ exercises: 15
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- "How can I manipulate text?"
-- "How can I create neat and dynamic text output?"
+- How can I manipulate text?
+- How can I create neat and dynamic text output?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- "Extract substrings of interest."
-- "Format dynamic strings using f-strings."
-- "Explore Python's built-in string functions"
+- Extract substrings of interest.
+- Format dynamic strings using f-strings.
+- Explore Python's built-in string functions
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: keypoints
 
-- "Strings can be indexed and sliced."
-- "Strings cannot be directly altered."
-- "You can build complex strings based on other variables using f-strings and format."
-- "Python has a variety of useful built-in string functions."
+- Strings can be indexed and sliced.
+- Strings cannot be directly altered.
+- You can build complex strings based on other variables using f-strings and format.
+- Python has a variety of useful built-in string functions.
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Strings can be indexed and sliced.
