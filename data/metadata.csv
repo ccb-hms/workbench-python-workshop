@@ -1,0 +1,23 @@
+sample,expression,organism,age,sex,infection,strain,time,tissue,mouse
+GSM2545336,2,Mus musculus,8,Female,InfluenzaA,C57BL/6,8,Cerebellum,14
+GSM2545337,1,Mus musculus,8,Female,NonInfected,C57BL/6,0,Cerebellum,9
+GSM2545338,1,Mus musculus,8,Female,NonInfected,C57BL/6,0,Cerebellum,10
+GSM2545339,0,Mus musculus,8,Female,InfluenzaA,C57BL/6,4,Cerebellum,15
+GSM2545340,1,Mus musculus,8,Male,InfluenzaA,C57BL/6,4,Cerebellum,18
+GSM2545341,2,Mus musculus,8,Male,InfluenzaA,C57BL/6,8,Cerebellum,6
+GSM2545342,0,Mus musculus,8,Female,InfluenzaA,C57BL/6,8,Cerebellum,5
+GSM2545343,1,Mus musculus,8,Male,NonInfected,C57BL/6,0,Cerebellum,11
+GSM2545344,1,Mus musculus,8,Female,InfluenzaA,C57BL/6,4,Cerebellum,22
+GSM2545345,2,Mus musculus,8,Male,InfluenzaA,C57BL/6,4,Cerebellum,13
+GSM2545346,1,Mus musculus,8,Male,InfluenzaA,C57BL/6,8,Cerebellum,23
+GSM2545347,2,Mus musculus,8,Male,InfluenzaA,C57BL/6,8,Cerebellum,24
+GSM2545348,1,Mus musculus,8,Female,NonInfected,C57BL/6,0,Cerebellum,8
+GSM2545349,1,Mus musculus,8,Male,NonInfected,C57BL/6,0,Cerebellum,7
+GSM2545350,1,Mus musculus,8,Male,InfluenzaA,C57BL/6,4,Cerebellum,1
+GSM2545351,1,Mus musculus,8,Female,InfluenzaA,C57BL/6,8,Cerebellum,16
+GSM2545352,1,Mus musculus,8,Female,InfluenzaA,C57BL/6,4,Cerebellum,21
+GSM2545353,1,Mus musculus,8,Female,NonInfected,C57BL/6,0,Cerebellum,4
+GSM2545354,1,Mus musculus,8,Male,NonInfected,C57BL/6,0,Cerebellum,2
+GSM2545362,[0 3],Mus musculus,8,Female,InfluenzaA,C57BL/6,4,Cerebellum,20
+GSM2545363,1,Mus musculus,8,Male,InfluenzaA,C57BL/6,4,Cerebellum,12
+GSM2545380,2,Mus musculus,8,Female,InfluenzaA,C57BL/6,8,Cerebellum,19
