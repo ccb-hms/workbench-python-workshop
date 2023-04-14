@@ -540,10 +540,13 @@ a different, more efficient way of doing the same thing, and that is by
 is an example, using the definition above.
 
 ```python
-data = pd.read_csv('data/gapminder_all.csv')
-data['life_qrtl'] = data['lifeExp_1952'].apply(calculate_life_quartile)
-```
 
+{'lifeExp_1992': {'Argentina': 71.868,   'Bolivia': 59.957,   'Brazil': 67.057,   'Canada': 77.95,   'Chile': 74.126,   'Colombia': 68.421,   'Costa Rica': 75.713,   'Cuba': 74.414,   'Dominican Republic': 68.457,   'Ecuador': 69.613,   'El Salvador': 66.798,   'Guatemala': 63.373,   'Haiti': 55.089,   'Honduras': 66.399,   'Jamaica': 71.766,   'Mexico': 71.455,   'Nicaragua': 65.843,   'Panama': 72.462,   'Paraguay': 68.225,   'Peru': 66.458,   'Puerto Rico': 73.911,   'Trinidad and Tobago': 69.862,   'United States': 76.09,   'Uruguay': 72.752,   'Venezuela': 71.15},  'lifeExp_2007': {'Argentina': 75.32,   'Bolivia': 65.554,   'Brazil': 72.39,   'Canada': 80.653,   'Chile': 78.553,   'Colombia': 72.889,   'Costa Rica': 78.782,   'Cuba': 78.273,   'Dominican Republic': 72.235,   'Ecuador': 74.994,   'El Salvador': 71.878,   'Guatemala': 70.259,   'Haiti': 60.916,   'Honduras': 70.198,   'Jamaica': 72.567,   'Mexico': 76.195,   'Nicaragua': 72.899,   'Panama': 75.537,   'Paraguay': 71.752,   'Peru': 71.421,   'Puerto Rico': 78.746,   'Trinidad and Tobago': 69.819,   'United States': 78.242,   'Uruguay': 76.384,   'Venezuela': 73.747}}
+
+data['life_qrtl_1992'] = data['lifeExp_1992'].apply(calculate_life_quartile)
+data['life_qrtl_2007'] = data['lifeExp_2007'].apply(calculate_life_quartile)
+print(data.iloc[:,2:])
+```
 
 There is a lot in that second line, so let's take it piece by piece.
 On the right side of the `=` we start with `data['lifeExp']`, which is the
