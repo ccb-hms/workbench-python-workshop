@@ -263,7 +263,7 @@
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
         <ul><li><a href="#note-about-pandas-dataframesseries">Note about Pandas DataFrames/Series</a></li>
-<li><a href="#dataset-we-will-be-using">Dataset we will be using</a></li>
+<li><a href="#data-description">Data description</a></li>
 <li><a href="#selecting-values">Selecting values</a></li>
 <li><a href="#use-dataframe.iloc...-...-to-select-values-by-their-entry-position">Use <code>DataFrame.iloc[..., ...]</code> to select values by their
 (entry) position</a></li>
@@ -422,47 +422,14 @@ Series/DataFrames.</p>
 <p>What makes Pandas so attractive is the powerful interface to access
 individual records of the table, proper handling of missing values, and
 relational-databases operations between DataFrames.</p>
-</section><section id="dataset-we-will-be-using"><h2 class="section-heading">Dataset we will be using<a class="anchor" aria-label="anchor" href="#dataset-we-will-be-using"></a>
+</section><section id="data-description"><h2 class="section-heading">Data description<a class="anchor" aria-label="anchor" href="#data-description"></a>
 </h2>
-<hr class="half-width"><p>We are going to use part of the data published by <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5544260/" class="external-link">Blackmore
+<hr class="half-width"><p>We will be using the same data as the previous lesson from <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5544260/" class="external-link">Blackmore
 <em>et al.</em> (2017)</a>, <em>The effect of upper-respiratory
-infection on transcriptomic changes in the CNS</em>. The goal of the
-study was to determine the effect of an upper-respiratory infection on
-changes in RNA transcription occurring in the cerebellum and spinal cord
-post infection. Gender matched eight week old C57BL/6 mice were
-inoculated with saline or with Influenza A by intranasal route and
-transcriptomic changes in the cerebellum and spinal cord tissues were
-evaluated by RNA-seq at days 0 (non-infected), 4 and 8.</p>
-<p>The dataset is stored as a comma-separated values (CSV) file. Each
-row holds information for a single RNA expression measurement, and the
-first eleven columns represent:</p>
-<table class="table"><colgroup><col width="9%"><col width="90%"></colgroup><thead><tr class="header"><th>Column</th>
-<th>Description</th>
-</tr></thead><tbody><tr class="odd"><td>gene</td>
-<td>The name of the gene that was measured</td>
-</tr><tr class="even"><td>sample</td>
-<td>The name of the sample the gene expression was measured in</td>
-</tr><tr class="odd"><td>expression</td>
-<td>The value of the gene expression</td>
-</tr><tr class="even"><td>organism</td>
-<td>The organism/species - here all data stem from mice</td>
-</tr><tr class="odd"><td>age</td>
-<td>The age of the mouse (all mice were 8 weeks here)</td>
-</tr><tr class="even"><td>sex</td>
-<td>The sex of the mouse</td>
-</tr><tr class="odd"><td>infection</td>
-<td>The infection state of the mouse, i.e. infected with Influenza A or
-not infected.</td>
-</tr><tr class="even"><td>strain</td>
-<td>The Influenza A strain; C57BL/6 in all cases.</td>
-</tr><tr class="odd"><td>time</td>
-<td>The duration of the infection (in days).</td>
-</tr><tr class="even"><td>tissue</td>
-<td>The tissue that was used for the gene expression experiment,
-i.e. cerebellum or spinal cord.</td>
-</tr><tr class="odd"><td>mouse</td>
-<td>The mouse unique identifier.</td>
-</tr></tbody></table></section><section id="selecting-values"><h2 class="section-heading">Selecting values<a class="anchor" aria-label="anchor" href="#selecting-values"></a>
+infection on transcriptomic changes in the CNS</em>.</p>
+<p>However, this data file consists only of the expression data in a
+gene x sample matrix.</p>
+</section><section id="selecting-values"><h2 class="section-heading">Selecting values<a class="anchor" aria-label="anchor" href="#selecting-values"></a>
 </h2>
 <hr class="half-width"><p>To access a value at the position <code>[i,j]</code> of a DataFrame,
 we have two options, depending on what is the meaning of <code>i</code>
@@ -475,26 +442,13 @@ its <em>entry</em> in the DataFrame.</p>
 </h2>
 <hr class="half-width"><ul><li>Can specify location by numerical index analogously to 2D version of
 character selection in strings.</li>
-</ul><div id="callout1" class="callout callout">
-<div class="callout-square">
-<i class="callout-icon" data-feather="bell"></i>
-</div>
-<div id="todo" class="callout-inner">
-<h3 class="callout-title">TODO<a class="anchor" aria-label="anchor" href="#callout1"></a>
-</h3>
-<div class="callout-content">
-<p>Add this file to our repo as well so we’re not relying on this
-location.</p>
-</div>
-</div>
-</div>
-<div class="codewrapper sourceCode" id="cb1">
+</ul><div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://github.com/carpentries-incubator/bioc-intro/raw/main/episodes/data/rnaseq.csv"</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>expression_df <span class="op">=</span> pd.read_csv(url, index_col<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://raw.githubusercontent.com/ccb-hms/workbench-python-workshop/main/episodes/data/rnaseq.csv"</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>rnaseq_df <span class="op">=</span> pd.read_csv(url, index_col<span class="op">=</span><span class="dv">0</span>)</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(expression_df.iloc[<span class="dv">0</span>, <span class="dv">0</span>])</span></code></pre>
 </div>
 <div class="codewrapper">
@@ -502,6 +456,10 @@ location.</p>
 </h3>
 <pre class="output" tabindex="0"><code><span><span class="va">GSM2545336</span></span></code></pre>
 </div>
+<p>Note how here we used the index of the gene column as opposed to its
+name. It is often safer to use names instead of indices so that your
+code is robust to changes in the data layout, but sometimes indices are
+necessary.</p>
 </section><section id="use-dataframe.loc...-...-to-select-values-by-their-entry-label."><h2 class="section-heading">Use <code>DataFrame.loc[..., ...]</code> to select values by their
 (entry) label.<a class="anchor" aria-label="anchor" href="#use-dataframe.loc...-...-to-select-values-by-their-entry-label."></a>
 </h2>
@@ -509,12 +467,35 @@ location.</p>
 </ul><div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data.loc[<span class="st">"Albania"</span>, <span class="st">"gdpPercap_1952"</span>])</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(rnaseq_df.loc[<span class="st">"Cyp2d22"</span>, <span class="st">"phenotype_description"</span>])</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code><span><span class="fl">1601.056136</span></span></code></pre>
+<pre class="output" tabindex="0"><code>gene
+Cyp2d22    abnormal skin morphology
+Cyp2d22    abnormal skin morphology
+Cyp2d22    abnormal skin morphology
+Cyp2d22    abnormal skin morphology
+Cyp2d22    abnormal skin morphology
+Cyp2d22    abnormal skin morphology
+Cyp2d22    abnormal skin morphology
+Cyp2d22    abnormal skin morphology
+Cyp2d22    abnormal skin morphology
+Cyp2d22    abnormal skin morphology
+Cyp2d22    abnormal skin morphology
+Cyp2d22    abnormal skin morphology
+Cyp2d22    abnormal skin morphology
+Cyp2d22    abnormal skin morphology
+Cyp2d22    abnormal skin morphology
+Cyp2d22    abnormal skin morphology
+Cyp2d22    abnormal skin morphology
+Cyp2d22    abnormal skin morphology
+Cyp2d22    abnormal skin morphology
+Cyp2d22    abnormal skin morphology
+Cyp2d22    abnormal skin morphology
+Cyp2d22    abnormal skin morphology
+Name: phenotype_description, dtype: object</code></pre>
 </div>
 </section><section id="use-on-its-own-to-mean-all-columns-or-all-rows."><h2 class="section-heading">Use <code>:</code> on its own to mean all columns or all rows.<a class="anchor" aria-label="anchor" href="#use-on-its-own-to-mean-all-columns-or-all-rows."></a>
 </h2>
