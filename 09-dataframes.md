@@ -69,11 +69,11 @@ import pandas as pd
 
 url = "https://raw.githubusercontent.com/ccb-hms/workbench-python-workshop/main/episodes/data/expression_matrix.csv"
 rnaseq_df = pd.read_csv(url, index_col=0)
-print(expression_df.iloc[0, 0])
+print(rnaseq_df.iloc[0, 0])
 ```
 
 ```output
-GSM2545336
+1230
 ```
 
 Note how here we used the index of the gene column as opposed to its name. 
@@ -84,34 +84,11 @@ It is often safer to use names instead of indices so that your code is robust to
 *   Can specify location by row and/or column name.
 
 ```python
-print(rnaseq_df.loc["Cyp2d22", "phenotype_description"])
+print(rnaseq_df.loc["Cyp2d22", "GSM2545351"])
 ```
 
 ```output
-gene
-Cyp2d22    abnormal skin morphology
-Cyp2d22    abnormal skin morphology
-Cyp2d22    abnormal skin morphology
-Cyp2d22    abnormal skin morphology
-Cyp2d22    abnormal skin morphology
-Cyp2d22    abnormal skin morphology
-Cyp2d22    abnormal skin morphology
-Cyp2d22    abnormal skin morphology
-Cyp2d22    abnormal skin morphology
-Cyp2d22    abnormal skin morphology
-Cyp2d22    abnormal skin morphology
-Cyp2d22    abnormal skin morphology
-Cyp2d22    abnormal skin morphology
-Cyp2d22    abnormal skin morphology
-Cyp2d22    abnormal skin morphology
-Cyp2d22    abnormal skin morphology
-Cyp2d22    abnormal skin morphology
-Cyp2d22    abnormal skin morphology
-Cyp2d22    abnormal skin morphology
-Cyp2d22    abnormal skin morphology
-Cyp2d22    abnormal skin morphology
-Cyp2d22    abnormal skin morphology
-Name: phenotype_description, dtype: object
+3678
 ```
 
 ## Use `:` on its own to mean all columns or all rows.
@@ -119,62 +96,88 @@ Name: phenotype_description, dtype: object
 *   Just like Python's usual slicing notation.
 
 ```python
-print(data.loc["Albania", :])
+print(rnaseq_df.loc["Cyp2d22", :])
 ```
 
 ```output
-gdpPercap_1952    1601.056136
-gdpPercap_1957    1942.284244
-gdpPercap_1962    2312.888958
-gdpPercap_1967    2760.196931
-gdpPercap_1972    3313.422188
-gdpPercap_1977    3533.003910
-gdpPercap_1982    3630.880722
-gdpPercap_1987    3738.932735
-gdpPercap_1992    2497.437901
-gdpPercap_1997    3193.054604
-gdpPercap_2002    4604.211737
-gdpPercap_2007    5937.029526
-Name: Albania, dtype: float64
+GSM2545336    4060
+GSM2545337    1616
+GSM2545338    1603
+GSM2545339    1901
+GSM2545340    2171
+GSM2545341    3349
+GSM2545342    3122
+GSM2545343    2008
+GSM2545344    2254
+GSM2545345    2277
+GSM2545346    2985
+GSM2545347    3452
+GSM2545348    1883
+GSM2545349    2014
+GSM2545350    2417
+GSM2545351    3678
+GSM2545352    2920
+GSM2545353    2216
+GSM2545354    1821
+GSM2545362    2842
+GSM2545363    2011
+GSM2545380    4019
+Name: Cyp2d22, dtype: int64
 ```
 
-
-*   Would get the same result printing `data.loc["Albania"]` (without a second index).
+*   We would get the same result printing `rnaseq_df.loc["Albania"]` (without a second index).
 
 ```python
-print(data.loc[:, "gdpPercap_1952"])
+print(rnaseq_df.loc[:, "GSM2545351"])
 ```
 
 ```output
-country
-Albania                    1601.056136
-Austria                    6137.076492
-Belgium                    8343.105127
-⋮ ⋮ ⋮
-Switzerland               14734.232750
-Turkey                     1969.100980
-United Kingdom             9979.508487
-Name: gdpPercap_1952, dtype: float64
+gene
+AI504432    1136
+AW046200      67
+AW551984     584
+Aamp        4813
+Abca12         4
+            ... 
+Zkscan3     1661
+Zranb1      8223
+Zranb3       208
+Zscan22      433
+Zw10        1436
+Name: GSM2545351, Length: 1474, dtype: int64
 ```
 
 
-*   Would get the same result printing `data["gdpPercap_1952"]`
-*   Also get the same result printing `data.gdpPercap_1952` (not recommended, because easily confused with `.` notation for methods)
+*   We would get the same result printing `rnaseq_df["GSM2545351"]`
+*   We would also get the same result printing `rnaseq_df.GSM2545351` (not recommended, because easily confused with `.` notation for methods)
 
 ## Select multiple columns or rows using `DataFrame.loc` and a named slice.
 
 ```python
-print(data.loc['Italy':'Poland', 'gdpPercap_1962':'gdpPercap_1972'])
+print(rnaseq_df.loc['Nadk':'Nid1', 'GSM2545337':'GSM2545341'])
 ```
 
 ```output
-             gdpPercap_1962  gdpPercap_1967  gdpPercap_1972
-country
-Italy           8243.582340    10022.401310    12269.273780
-Montenegro      4649.593785     5907.850937     7778.414017
-Netherlands    12790.849560    15363.251360    18794.745670
-Norway         13450.401510    16361.876470    18965.055510
-Poland          5338.752143     6557.152776     8006.506993
+         GSM2545337  GSM2545338  GSM2545339  GSM2545340  GSM2545341
+gene                                                               
+Nadk           2285        2237        2286        2398        2201
+Nap1l5        18287       17176       21950       18655       19160
+Nbeal1         2230        2030        2053        1970        1910
+Nbl1           2033        1859        1772        2439        3720
+Ncf2             76          60          83          73          61
+Nck2            683         706         690         644         648
+Ncmap            37          40          46          51         138
+Ncoa2          5053        4374        4406        4814        5311
+Ndufa10        4218        3921        4268        3980        3631
+Ndufs1         7042        6672        7413        7090        6943
+Neto1           214         183         383         217         164
+Nfkbia          740         897         724         873        1000
+Nfya           1003         962         944         919         587
+Ngb              56          46         135          63          50
+Ngef            498         407         587         410         193
+Ngp              50          18         131          47          27
+Nid1           1521        1395         862         795         673
+
 ```
 
 
@@ -191,26 +194,30 @@ everything up to but not including the final index.
 *   E.g., calculate max of a slice.
 
 ```python
-print(data.loc['Italy':'Poland', 'gdpPercap_1962':'gdpPercap_1972'].max())
+print(rnaseq_df.loc['Nadk':'Nid1', 'GSM2545337':'GSM2545341'].max())
 ```
 
 ```output
-gdpPercap_1962    13450.40151
-gdpPercap_1967    16361.87647
-gdpPercap_1972    18965.05551
-dtype: float64
+GSM2545337    18287
+GSM2545338    17176
+GSM2545339    21950
+GSM2545340    18655
+GSM2545341    19160
+dtype: int64
 ```
 
 
 ```python
-print(data.loc['Italy':'Poland', 'gdpPercap_1962':'gdpPercap_1972'].min())
+print(rnaseq_df.loc['Nadk':'Nid1', 'GSM2545337':'GSM2545341'].min())
 ```
 
 ```output
-gdpPercap_1962    4649.593785
-gdpPercap_1967    5907.850937
-gdpPercap_1972    7778.414017
-dtype: float64
+GSM2545337    37
+GSM2545338    18
+GSM2545339    46
+GSM2545340    47
+GSM2545341    27
+dtype: int64
 ```
 
 
@@ -221,31 +228,31 @@ dtype: float64
 
 ```python
 # Use a subset of data to keep output readable.
-subset = data.loc['Italy':'Poland', 'gdpPercap_1962':'gdpPercap_1972']
+subset = rnaseq_df.iloc[:5, :5]
 print('Subset of data:\n', subset)
 
-# Which values were greater than 10000 ?
-print('\nWhere are values large?\n', subset > 10000)
+# Which values were greater than 1000 ?
+print('\nWhere are values large?\n', subset > 1000)
 ```
 
 ```output
 Subset of data:
-             gdpPercap_1962  gdpPercap_1967  gdpPercap_1972
-country
-Italy           8243.582340    10022.401310    12269.273780
-Montenegro      4649.593785     5907.850937     7778.414017
-Netherlands    12790.849560    15363.251360    18794.745670
-Norway         13450.401510    16361.876470    18965.055510
-Poland          5338.752143     6557.152776     8006.506993
+           GSM2545336  GSM2545337  GSM2545338  GSM2545339  GSM2545340
+gene                                                                
+AI504432        1230        1085         969        1284         966
+AW046200          83         144         129         121         141
+AW551984         670         265         202         682         246
+Aamp            5621        4049        3797        4375        4095
+Abca12             5           8           1           5           3
 
 Where are values large?
-            gdpPercap_1962 gdpPercap_1967 gdpPercap_1972
-country
-Italy                False           True           True
-Montenegro           False          False          False
-Netherlands           True           True           True
-Norway                True           True           True
-Poland               False          False          False
+           GSM2545336  GSM2545337  GSM2545338  GSM2545339  GSM2545340
+gene                                                                
+AI504432        True        True       False        True       False
+AW046200       False       False       False       False       False
+AW551984       False       False       False       False       False
+Aamp            True        True        True        True        True
+Abca12         False       False       False       False       False
 ```
 
 
@@ -254,57 +261,114 @@ Poland               False          False          False
 *   A frame full of Booleans is sometimes called a *mask* because of how it can be used.
 
 ```python
-mask = subset > 10000
+mask = subset > 1000
 print(subset[mask])
 ```
 
 ```output
-             gdpPercap_1962  gdpPercap_1967  gdpPercap_1972
-country
-Italy                   NaN     10022.40131     12269.27378
-Montenegro              NaN             NaN             NaN
-Netherlands     12790.84956     15363.25136     18794.74567
-Norway          13450.40151     16361.87647     18965.05551
-Poland                  NaN             NaN             NaN
+          GSM2545336  GSM2545337  GSM2545338  GSM2545339  GSM2545340
+gene                                                                
+AI504432      1230.0      1085.0         NaN      1284.0         NaN
+AW046200         NaN         NaN         NaN         NaN         NaN
+AW551984         NaN         NaN         NaN         NaN         NaN
+Aamp          5621.0      4049.0      3797.0      4375.0      4095.0
+Abca12           NaN         NaN         NaN         NaN         NaN
 ```
 
 
 *   Get the value where the mask is true, and NaN (Not a Number) where it is false.
-*   Useful because NaNs are ignored by operations like max, min, average, etc.
+*   **NaNs are ignored by operations like max, min, average, etc.** This is different than in other programming languages such as R but makes using masks in this way very useful. 
+*   The behavior towards NaN values can be changed with the `skipna` argument for most pandas methods and functions.
 
 ```python
-print(subset[subset > 10000].describe())
+print(subset[subset > 1000].describe())
 ```
 
 ```output
-       gdpPercap_1962  gdpPercap_1967  gdpPercap_1972
-count        2.000000        3.000000        3.000000
-mean     13120.625535    13915.843047    16676.358320
-std        466.373656     3408.589070     3817.597015
-min      12790.849560    10022.401310    12269.273780
-25%      12955.737547    12692.826335    15532.009725
-50%      13120.625535    15363.251360    18794.745670
-75%      13285.513523    15862.563915    18879.900590
-max      13450.401510    16361.876470    18965.055510
+        GSM2545336   GSM2545337  GSM2545338   GSM2545339  GSM2545340
+count     2.000000     2.000000         1.0     2.000000         1.0
+mean   3425.500000  2567.000000      3797.0  2829.500000      4095.0
+std    3104.905876  2095.864499         NaN  2185.667061         NaN
+min    1230.000000  1085.000000      3797.0  1284.000000      4095.0
+25%    2327.750000  1826.000000      3797.0  2056.750000      4095.0
+50%    3425.500000  2567.000000      3797.0  2829.500000      4095.0
+75%    4523.250000  3308.000000      3797.0  3602.250000      4095.0
+max    5621.000000  4049.000000      3797.0  4375.000000      4095.0
 ```
 
+::: discussion
+
+Why are there still `NaN`s in this output, when in Pandas methods like `min` and `max` igonre `Nan` by default?
+
+::: solution
+We still see `NaN` because GSM2545337 and GSM2545340 only have a single value over 1000 in this subset. The standard deviation (`std`) is undefined for a single value. 
+:::
+:::
 
 ## Group By: split-apply-combine
 
 Pandas vectorizing methods and grouping operations are features that provide users 
 much flexibility to analyse their data.
 
-For instance, let's say we want to have a clearer view on how the European countries 
-split themselves according to their GDP.
+For instance, let's say we want to take a look at genes which are highly expressed over time.
 
-1.  We may have a glance by splitting the countries in two groups during the years surveyed,
-    those who presented a GDP *higher* than the European average and those with a *lower* GDP.
-2.  We then estimate a *wealthy score* based on the historical (from 1962 to 2007) values,
-    where we account how many times a country has participated in the groups of *lower* or *higher* GDP
+To start, let's take a look at the top genes by mean expression.
+First we calculate mean expression per gene:
 
 ```python
-mask_higher = data > data.mean()
-wealth_score = mask_higher.aggregate('sum', axis=1) / len(data.columns)
+mean_exp = rnaseq_df.mean()
+print(mean_exp.head())
+```
+
+```output
+GSM2545336    2062.191995
+GSM2545337    1765.508820
+GSM2545338    1667.990502
+GSM2545339    1696.120760
+GSM2545340    1681.834464
+dtype: float64
+```
+
+Notice that that this is printing differently than when we printed `Dataframe`s.
+Methods which return single values such as `mean` by default return a `Series` instead of a `Dataframe`. 
+
+```python
+print(type(mean_exp))
+```
+
+```output
+<class 'pandas.core.series.Series'>
+```
+
+We can think of a series as a single-column dataframe. 
+Series, since they only contain a single column, are indexed like lists: `series[start:end]`. 
+
+Now, we can use the `sort_values` method and look at the top 10 genes. 
+Note that `sort_values` when used on a `Dataframe` with multiple columns needs a `by` argument to specify what column it should be sorted by. 
+
+
+```python
+mean_exp = mean_exp.sort_values()
+mean_exp[:10]
+```
+
+```output
+GSM2545342    1594.116689
+GSM2545341    1637.532564
+GSM2545338    1667.990502
+GSM2545340    1681.834464
+GSM2545346    1692.774084
+GSM2545339    1696.120760
+GSM2545345    1700.161465
+GSM2545344    1712.440299
+GSM2545337    1765.508820
+GSM2545347    1805.396201
+dtype: float64
+```
+
+```python
+mask_higher = data > rnaseq_df.mean()
+wealth_score = mask_higher.aggregate('sum', axis=1) / len(rnaseq_df.columns)
 print(wealth_score)
 ```
 
@@ -348,7 +412,7 @@ Finally, for each group in the `wealth_score` table, we sum their (financial) co
 across the years surveyed using chained methods:
 
 ```python
-print(data.groupby(wealth_score).sum())
+print(rnaseq_df.groupby(wealth_score).sum())
 ```
 
 ```output
@@ -501,8 +565,8 @@ When would you use these methods?
 
 ```python
 data = pd.read_csv('data/gapminder_gdp_europe.csv', index_col='country')
-print(data.idxmin())
-print(data.idxmax())
+print(rnaseq_df.idxmin())
+print(rnaseq_df.idxmax())
 ```
 
 
@@ -529,26 +593,26 @@ Write an expression to select each of the following:
 ::: solution
 1:
 ```python
-data['gdpPercap_1982']
+rnaseq_df['gdpPercap_1982']
 ```
 
 
 2:
 ```python
-data.loc['Denmark',:]
+rnaseq_df.loc['Denmark',:]
 ```
 
 
 3:
 ```python
-data.loc[:,'gdpPercap_1985':]
+rnaseq_df.loc[:,'gdpPercap_1985':]
 ```
 
 Pandas is smart enough to recognize the number at the end of the column label and does not give you an error, although no column named `gdpPercap_1985` actually exists. This is useful if new columns are added to the CSV file later.
 
 4:
 ```python
-data['gdpPercap_2007']/data['gdpPercap_1952']
+rnaseq_df['gdpPercap_2007']/rnaseq_df['gdpPercap_1952']
 ```
 
 :::
@@ -574,130 +638,130 @@ Suggest different ways of doing the following operations on a DataFrame:
 1\. Access a single column:
 ```python
 # by name
-data["col_name"]   # as a Series
-data[["col_name"]] # as a DataFrame
+rnaseq_df["col_name"]   # as a Series
+rnaseq_df[["col_name"]] # as a DataFrame
 
 # by name using .loc
-data.T.loc["col_name"]  # as a Series
-data.T.loc[["col_name"]].T  # as a DataFrame
+rnaseq_df.T.loc["col_name"]  # as a Series
+rnaseq_df.T.loc[["col_name"]].T  # as a DataFrame
 
 # Dot notation (Series)
-data.col_name
+rnaseq_df.col_name
 
 # by index (iloc)
-data.iloc[:, col_index]   # as a Series
-data.iloc[:, [col_index]] # as a DataFrame
+rnaseq_df.iloc[:, col_index]   # as a Series
+rnaseq_df.iloc[:, [col_index]] # as a DataFrame
 
 # using a mask
-data.T[data.T.index == "col_name"].T
+rnaseq_df.T[rnaseq_df.T.index == "col_name"].T
 ```
 
 
 2\. Access a single row:
 ```python
 # by name using .loc
-data.loc["row_name"] # as a Series
-data.loc[["row_name"]] # as a DataFrame
+rnaseq_df.loc["row_name"] # as a Series
+rnaseq_df.loc[["row_name"]] # as a DataFrame
 
 # by name
-data.T["row_name"] # as a Series
-data.T[["row_name"]].T # as a DataFrame
+rnaseq_df.T["row_name"] # as a Series
+rnaseq_df.T[["row_name"]].T # as a DataFrame
 
 # by index
-data.iloc[row_index]   # as a Series
-data.iloc[[row_index]]   # as a DataFrame
+rnaseq_df.iloc[row_index]   # as a Series
+rnaseq_df.iloc[[row_index]]   # as a DataFrame
 
 # using mask
-data[data.index == "row_name"]
+rnaseq_df[rnaseq_df.index == "row_name"]
 ```
 
 
 3\. Access an individual DataFrame element:
 ```python
 # by column/row names
-data["column_name"]["row_name"]         # as a Series
+rnaseq_df["column_name"]["row_name"]         # as a Series
 
-data[["col_name"]].loc["row_name"]  # as a Series
-data[["col_name"]].loc[["row_name"]]  # as a DataFrame
+rnaseq_df[["col_name"]].loc["row_name"]  # as a Series
+rnaseq_df[["col_name"]].loc[["row_name"]]  # as a DataFrame
 
-data.loc["row_name"]["col_name"]  # as a value
-data.loc[["row_name"]]["col_name"]  # as a Series
-data.loc[["row_name"]][["col_name"]]  # as a DataFrame
+rnaseq_df.loc["row_name"]["col_name"]  # as a value
+rnaseq_df.loc[["row_name"]]["col_name"]  # as a Series
+rnaseq_df.loc[["row_name"]][["col_name"]]  # as a DataFrame
 
-data.loc["row_name", "col_name"]  # as a value
-data.loc[["row_name"], "col_name"]  # as a Series. Preserves index. Column name is moved to `.name`.
-data.loc["row_name", ["col_name"]]  # as a Series. Index is moved to `.name.` Sets index to column name.
-data.loc[["row_name"], ["col_name"]]  # as a DataFrame (preserves original index and column name)
+rnaseq_df.loc["row_name", "col_name"]  # as a value
+rnaseq_df.loc[["row_name"], "col_name"]  # as a Series. Preserves index. Column name is moved to `.name`.
+rnaseq_df.loc["row_name", ["col_name"]]  # as a Series. Index is moved to `.name.` Sets index to column name.
+rnaseq_df.loc[["row_name"], ["col_name"]]  # as a DataFrame (preserves original index and column name)
 
 # by column/row names: Dot notation
-data.col_name.row_name
+rnaseq_df.col_name.row_name
 
 # by column/row indices
-data.iloc[row_index, col_index] # as a value
-data.iloc[[row_index], col_index] # as a Series. Preserves index. Column name is moved to `.name`
-data.iloc[row_index, [col_index]] # as a Series. Index is moved to `.name.` Sets index to column name.
-data.iloc[[row_index], [col_index]] # as a DataFrame (preserves original index and column name)
+rnaseq_df.iloc[row_index, col_index] # as a value
+rnaseq_df.iloc[[row_index], col_index] # as a Series. Preserves index. Column name is moved to `.name`
+rnaseq_df.iloc[row_index, [col_index]] # as a Series. Index is moved to `.name.` Sets index to column name.
+rnaseq_df.iloc[[row_index], [col_index]] # as a DataFrame (preserves original index and column name)
 
 # column name + row index
-data["col_name"][row_index]
-data.col_name[row_index]
-data["col_name"].iloc[row_index]
+rnaseq_df["col_name"][row_index]
+rnaseq_df.col_name[row_index]
+rnaseq_df["col_name"].iloc[row_index]
 
 # column index + row name
-data.iloc[:, [col_index]].loc["row_name"]  # as a Series
-data.iloc[:, [col_index]].loc[["row_name"]]  # as a DataFrame
+rnaseq_df.iloc[:, [col_index]].loc["row_name"]  # as a Series
+rnaseq_df.iloc[:, [col_index]].loc[["row_name"]]  # as a DataFrame
 
 # using masks
-data[data.index == "row_name"].T[data.T.index == "col_name"].T
+rnaseq_df[rnaseq_df.index == "row_name"].T[rnaseq_df.T.index == "col_name"].T
 ```
 
 4\. Access several columns:
 ```python
 # by name
-data[["col1", "col2", "col3"]]
-data.loc[:, ["col1", "col2", "col3"]]
+rnaseq_df[["col1", "col2", "col3"]]
+rnaseq_df.loc[:, ["col1", "col2", "col3"]]
 
 # by index
-data.iloc[:, [col1_index, col2_index, col3_index]]
+rnaseq_df.iloc[:, [col1_index, col2_index, col3_index]]
 ```
 
 5\. Access several rows
 ```python
 # by name
-data.loc[["row1", "row2", "row3"]]
+rnaseq_df.loc[["row1", "row2", "row3"]]
 
 # by index
-data.iloc[[row1_index, row2_index, row3_index]]
+rnaseq_df.iloc[[row1_index, row2_index, row3_index]]
 ```
 
 6\. Access a subset of specific rows and columns
 ```python
 # by names
-data.loc[["row1", "row2", "row3"], ["col1", "col2", "col3"]]
+rnaseq_df.loc[["row1", "row2", "row3"], ["col1", "col2", "col3"]]
 
 # by indices
-data.iloc[[row1_index, row2_index, row3_index], [col1_index, col2_index, col3_index]]
+rnaseq_df.iloc[[row1_index, row2_index, row3_index], [col1_index, col2_index, col3_index]]
 
 # column names + row indices
-data[["col1", "col2", "col3"]].iloc[[row1_index, row2_index, row3_index]]
+rnaseq_df[["col1", "col2", "col3"]].iloc[[row1_index, row2_index, row3_index]]
 
 # column indices + row names
-data.iloc[:, [col1_index, col2_index, col3_index]].loc[["row1", "row2", "row3"]]
+rnaseq_df.iloc[:, [col1_index, col2_index, col3_index]].loc[["row1", "row2", "row3"]]
 ```
 
 7\. Access a subset of row and column ranges
 ```python
 # by name
-data.loc["row1":"row2", "col1":"col2"]
+rnaseq_df.loc["row1":"row2", "col1":"col2"]
 
 # by index
-data.iloc[row1_index:row2_index, col1_index:col2_index]
+rnaseq_df.iloc[row1_index:row2_index, col1_index:col2_index]
 
 # column names + row indices
-data.loc[:, "col1_name":"col2_name"].iloc[row1_index:row2_index]
+rnaseq_df.loc[:, "col1_name":"col2_name"].iloc[row1_index:row2_index]
 
 # column indices + row names
-data.iloc[:, col1_index:col2_index].loc["row1":"row2"]
+rnaseq_df.iloc[:, col1_index:col2_index].loc["row1":"row2"]
 ```
 :::
 :::
@@ -736,13 +800,13 @@ to find the function that prints out the median per-capita GDP across all Europe
 ::: solution
 Among many choices, `dir()` lists the `median()` function as a possibility.  Thus,
 ```python
-data.median()
+rnaseq_df.median()
 ```
 
 :::
 :::
 
 
-[pandas-dataframe]: https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html
-[pandas-series]: https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.html
+[pandas-dataframe]: https://pandas.pyrnaseq_df.org/pandas-docs/stable/generated/pandas.DataFrame.html
+[pandas-series]: https://pandas.pyrnaseq_df.org/pandas-docs/stable/generated/pandas.Series.html
 [numpy]: http://www.numpy.org/
