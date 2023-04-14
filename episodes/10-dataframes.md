@@ -367,7 +367,7 @@ dtype: float64
 ```
 
 Now let's say we want to do something a bit more complicated. 
-As opposed to getting the top 10 genes across all samples, we want to instead get genes which have high expression for each timepoint. 
+As opposed to getting the top 10 genes across all samples, we want to instead get genes which had the highest absolute expression change from 0 to 4 days. 
 
 To do that, we need to load in the sample metadata as a separate dataframe:
 
@@ -429,63 +429,193 @@ GSM2545363     12
 GSM2545380     19  
 
 ```
-
-To select 
-
-## Group By: split-apply-combine
-
-Finally, for each group in the `wealth_score` table, we sum their (financial) contribution
-across the years surveyed using chained methods:
+Time is a property of the samples, not of the genes. 
+While we could add another row to our dataframe indicating time, it makes more sense to flip our dataframe and add it as a column.
+We will learn about other ways to combine dataframes in a future lesson, but for now since `metadata` and `rnadeq_df` have the same index values we can use the following syntax:
 
 ```python
-print(rnaseq_df.groupby(wealth_score).sum())
+filled_df = rnaseq_df.T
+flipped_df['time'] = metadata['time']
+print(flipped_df.head())
 ```
 
 ```output
-          gdpPercap_1952  gdpPercap_1957  gdpPercap_1962  gdpPercap_1967  \
-0.000000    36916.854200    46110.918793    56850.065437    71324.848786   
-0.333333    16790.046878    20942.456800    25744.935321    33567.667670   
-0.500000    11807.544405    14505.000150    18380.449470    21421.846200   
-1.000000   104317.277560   127332.008735   149989.154201   178000.350040   
+gene        AI504432  AW046200  AW551984  Aamp  Abca12  Abcc8  Abhd14a  Abi2  \
+GSM2545336      1230        83       670  5621       5   2210      490  5627   
+GSM2545337      1085       144       265  4049       8   1966      495  4383   
+GSM2545338       969       129       202  3797       1   2181      474  4107   
+GSM2545339      1284       121       682  4375       5   2362      468  4062   
+GSM2545340       966       141       246  4095       3   2475      489  4289   
 
-          gdpPercap_1972  gdpPercap_1977  gdpPercap_1982  gdpPercap_1987  \
-0.000000    88569.346898   104459.358438   113553.768507   119649.599409   
-0.333333    45277.839976    53860.456750    59679.634020    64436.912960   
-0.500000    25377.727380    29056.145370    31914.712050    35517.678220   
-1.000000   215162.343140   241143.412730   263388.781960   296825.131210   
+gene        Abi3bp  Abl2  ...  Zfp92  Zfp941  Zfyve28  Zgrf1  Zkscan3  Zranb1  \
+GSM2545336     807  2392  ...     91     910     3747    644     1732    8837   
+GSM2545337    1144  2133  ...     46     654     2568    335     1840    5306   
+GSM2545338    1028  1891  ...     19     560     2635    347     1800    5106   
+GSM2545339     935  1645  ...     50     782     2623    405     1751    5306   
+GSM2545340     879  1926  ...     48     696     3140    549     2056    5896   
 
-          gdpPercap_1992  gdpPercap_1997  gdpPercap_2002  gdpPercap_2007  
-0.000000    92380.047256   103772.937598   118590.929863   149577.357928  
-0.333333    67918.093220    80876.051580   102086.795210   122803.729520  
-0.500000    36310.666080    40723.538700    45564.308390    51403.028210  
-1.000000   315238.235970   346930.926170   385109.939210   427850.333420
+gene        Zranb3  Zscan22  Zw10  time  
+GSM2545336     207      483  1479     8  
+GSM2545337     179      535  1394     0  
+GSM2545338     199      533  1279     0  
+GSM2545339     208      462  1376     4  
+GSM2545340     184      439  1568     4 
+```
+
+## Group By: split-apply-combine
+
+We can now **group** our data by timepoint using `groupby`. 
+`groupby` will combine our data by one or more columns, and then any summarizing functions we call such as `mean` or `max` will be performed on each group. 
+
+```python
+grouped_time = flipped_df.groupby('time')
+print(grouped_time.mean())
+```
+
+```output
+gene     AI504432    AW046200    AW551984         Aamp    Abca12        Abcc8  \
+time                                                                            
+0     1033.857143  155.285714  238.000000  4602.571429  5.285714  2576.428571   
+4     1104.500000  152.375000  302.250000  4870.000000  4.250000  2608.625000   
+8     1014.000000   81.000000  342.285714  4762.571429  4.142857  2291.571429   
+
+gene     Abhd14a         Abi2       Abi3bp         Abl2  ...      Zfp810  \
+time                                                     ...               
+0     591.428571  4880.571429  1174.571429  2170.142857  ...  537.000000   
+4     546.750000  4902.875000  1060.625000  2077.875000  ...  629.125000   
+8     432.428571  4945.285714   762.285714  2131.285714  ...  940.428571   
+
+gene      Zfp92      Zfp941      Zfyve28       Zgrf1      Zkscan3   Zranb1  \
+time                                                                         
+0     36.857143  673.857143  3162.428571  398.571429  2105.571429  6014.00   
+4     43.000000  770.875000  3284.250000  450.125000  1981.500000  6464.25   
+8     49.000000  765.571429  3649.571429  635.571429  1664.428571  8187.00   
+
+gene      Zranb3     Zscan22         Zw10  
+time                                       
+0     191.142857  607.428571  1546.285714  
+4     196.750000  534.500000  1555.125000  
+8     191.428571  416.428571  1476.428571  
+
+[3 rows x 1474 columns]
+```
+
+Another way to easily make a Dataframe after using `groupby` is to use Pandas' aggregation function called `agg`. 
+Let's also flip the data back. 
+
+```python
+time_means = grouped_time.agg('mean').T
+print(time_means.head())
+```
+
+```output
+time                0         4            8
+gene                                        
+AI504432  1033.857143  1104.500  1014.000000
+AW046200   155.285714   152.375    81.000000
+AW551984   238.000000   302.250   342.285714
+Aamp      4602.571429  4870.000  4762.571429
+Abca12       5.285714     4.250     4.142857
+```
+
+Let's also make the column names someting more legible using `rename`.
+
+```python
+time_means = time_means.rename(columns={0: "day_0", 4: "day_4", 8: "day_8"})
+print(time_means.head())
+```
+
+```output
+time            day_0     day_4        day_8
+gene                                        
+AI504432  1033.857143  1104.500  1014.000000
+AW046200   155.285714   152.375    81.000000
+AW551984   238.000000   302.250   342.285714
+Aamp      4602.571429  4870.000  4762.571429
+Abca12       5.285714     4.250     4.142857
+```
+
+Now we can calculate the difference between 0 and 4 days:
+
+```python
+time_means['diff_4_0'] = time_means['day_4'] - time_means['day_0']
+print(time_means.head())
+```
+
+```output
+time            day_0     day_4        day_8    diff_4_0
+gene                                                    
+AI504432  1033.857143  1104.500  1014.000000   70.642857
+AW046200   155.285714   152.375    81.000000   -2.910714
+AW551984   238.000000   302.250   342.285714   64.250000
+Aamp      4602.571429  4870.000  4762.571429  267.428571
+Abca12       5.285714     4.250     4.142857   -1.035714
+```
+
+And get the top genes. 
+This time we'll use the `nlargest` method instead of sorting:
+
+```python
+print(time_means.nlargest(10, 'diff_4_0'))
+```
+
+```output
+time           day_0      day_4         day_8     diff_4_0
+gene                                                      
+Glul    48123.285714  55357.500  73947.857143  7234.214286
+Sparc   35429.571429  38832.000  56105.714286  3402.428571
+Atp1b1  57350.714286  60364.250  59229.000000  3013.535714
+Apod    11575.428571  14506.500  31458.142857  2931.071429
+Ttyh1   21453.571429  24252.500  30457.428571  2798.928571
+Mt1      7601.428571  10112.375  14397.285714  2510.946429
+Etnppl   4516.714286   6702.875   8208.142857  2186.160714
+Kif5a   36079.571429  37911.750  33410.714286  1832.178571
+Pink1   15454.571429  17252.375  23305.285714  1797.803571
+Itih3    2467.714286   3976.500   5534.571429  1508.785714
 ```
 
 
 ::: challenge
-## Selection of Individual Values
+## Creating new columns
 
-Assume Pandas has been imported into your notebook
-and the Gapminder GDP data for Europe has been loaded:
+We looked at the absolute expression change when finding top genes, but typically we actually want to look at the log (base 2) fold chage. 
+
+The log fold change from `x` to `y` can be calculated as either:
+
+$log(y) - log(x)$ 
+
+or as 
+
+$log(\frac{y}{x})$ 
+
+Try calculating the log fold change from 0 to 4 and 0 to 8 days, and store the result as two new columns in `time_means`
+
+We will need the `log2` function from the `numpy` package to do this:
 
 ```python
-import pandas as pd
-
-df = pd.read_csv('data/gapminder_gdp_europe.csv', index_col='country')
+import numpy as np
+np.log2(time_means['day_0'])
 ```
-
-Write an expression to find the Per Capita GDP of Serbia in 2007.
 
 ::: solution
-The selection can be done by using the labels for both the row ("Serbia") and the column ("gdpPercap_2007"):
+
 ```python
-print(df.loc['Serbia', 'gdpPercap_2007'])
+import numpy as np
+time_means['logfc_0_4'] = np.log2(time_means['day_4']) - np.log2(time_means['day_0'])
+time_means['logfc_0_8'] = np.log2(time_means['day_8']) - np.log2(time_means['day_0'])
+print(time_means.head())
 ```
 
-The output is
 ```output
-9786.534714
+time            day_0     day_4        day_8    diff_4_0  logfc_0_4  logfc_0_8
+gene                                                                          
+AI504432  1033.857143  1104.500  1014.000000   70.642857   0.095357  -0.027979
+AW046200   155.285714   152.375    81.000000   -2.910714  -0.027299  -0.938931
+AW551984   238.000000   302.250   342.285714   64.250000   0.344781   0.524240
+Aamp      4602.571429  4870.000  4762.571429  267.428571   0.081482   0.049301
+Abca12       5.285714     4.250     4.142857   -1.035714  -0.314636  -0.351472
 ```
+
 :::
 :::
 
@@ -496,34 +626,53 @@ The output is
 2.  Based on this,
     what rule governs what is included (or not) in numerical slices and named slices in Pandas?
 
-```python
-print(df.iloc[0:2, 0:2])
-print(df.loc['Albania':'Belgium', 'gdpPercap_1952':'gdpPercap_1962'])
+Here's metadata as a reminder:
+
+```
+                organism  age     sex    infection   strain  time      tissue  \
+sample                                                                          
+GSM2545336  Mus musculus    8  Female   InfluenzaA  C57BL/6     8  Cerebellum   
+GSM2545337  Mus musculus    8  Female  NonInfected  C57BL/6     0  Cerebellum   
+GSM2545338  Mus musculus    8  Female  NonInfected  C57BL/6     0  Cerebellum   
+GSM2545339  Mus musculus    8  Female   InfluenzaA  C57BL/6     4  Cerebellum   
+GSM2545340  Mus musculus    8    Male   InfluenzaA  C57BL/6     4  Cerebellum   
+
+            mouse  
+sample             
+GSM2545336     14  
+GSM2545337      9  
+GSM2545338     10  
+GSM2545339     15  
+GSM2545340     18  
 ```
 
+```python
+print(metadata.iloc[0:2, 0:2])
+print(metadata.loc['GSM2545336':'GSM2545338', 'organism':'sex'])
+```
 
 ::: solution
 No, they do not produce the same output! The output of the first statement is:
 ```output
-        gdpPercap_1952  gdpPercap_1957
-country                                
-Albania     1601.056136     1942.284244
-Austria     6137.076492     8842.598030
+                organism  age
+sample                       
+GSM2545336  Mus musculus    8
+GSM2545337  Mus musculus    8
 ```
 
 The second statement gives:
 ```output
-        gdpPercap_1952  gdpPercap_1957  gdpPercap_1962
-country                                                
-Albania     1601.056136     1942.284244     2312.888958
-Austria     6137.076492     8842.598030    10750.721110
-Belgium     8343.105127     9714.960623    10991.206760
+                organism  age     sex
+sample                               
+GSM2545336  Mus musculus    8  Female
+GSM2545337  Mus musculus    8  Female
+GSM2545338  Mus musculus    8  Female
 ```
 
 Clearly, the second statement produces an additional column and an additional row compared to the first statement.  
 What conclusion can we draw? We see that a numerical slice, 0:2, *omits* the final index (i.e. index 2)
 in the range provided,
-while a named slice, 'gdpPercap_1952':'gdpPercap_1962', *includes* the final element.
+while a named slice, 'GSM2545336':'GSM2545338', *includes* the final element.
 :::
 :::
 
@@ -534,10 +683,10 @@ Explain what each line in the following short program does:
 what is in `first`, `second`, etc.?
 
 ```python
-first = pd.read_csv('data/gapminder_all.csv', index_col='country')
-second = first[first['continent'] == 'Americas']
-third = second.drop('Puerto Rico')
-fourth = third.drop('continent', axis = 1)
+first = metadata.copy(deep=True)
+second = first[first['sex'] == 'Female']
+third = second.drop('GSM2545338')
+fourth = third.drop('sex', axis = 1)
 fourth.to_csv('result.csv')
 ```
 
@@ -545,34 +694,36 @@ fourth.to_csv('result.csv')
 ::: solution
 Let's go through this piece of code line by line.
 ```python
-first = pd.read_csv('data/gapminder_all.csv', index_col='country')
+first = metadata.copy(deep=True)
 ```
 
-This line loads the dataset containing the GDP data from all countries into a dataframe called 
-`first`. The `index_col='country'` parameter selects which column to use as the 
-row labels in the dataframe.  
+This line makes a copy of the metadata dataframe.
+While we probably don't need to make sure `deep=True` here, as non of our columns are more complex or compound objects, it never hurts to be safe. 
+ 
 ```python
-second = first[first['continent'] == 'Americas']
+second = first[first['sex'] == 'Female']
 ```
 
-This line makes a selection: only those rows of `first` for which the 'continent' column matches 
-'Americas' are extracted. Notice how the Boolean expression inside the brackets, 
-`first['continent'] == 'Americas'`, is used to select only those rows where the expression is true. 
+This line makes a selection: only those rows of `first` for which the 'sex' column matches 
+'Female' are extracted. Notice how the Boolean expression inside the brackets, 
+`first['sex'] == 'Female'`, is used to select only those rows where the expression is true. 
 Try printing this expression! Can you print also its individual True/False elements? 
 (hint: first assign the expression to a variable)
+
 ```python
-third = second.drop('Puerto Rico')
+third = second.drop('GSM2545338')
 ```
 
-As the syntax suggests, this line drops the row from `second` where the label is 'Puerto Rico'. The 
+As the syntax suggests, this line drops the row from `second` where the label is 'GSM2545338'. The 
 resulting dataframe `third` has one row less than the original dataframe `second`.
+
 ```python
-fourth = third.drop('continent', axis = 1)
+fourth = third.drop('sex', axis = 1)
 ```
 
 Again we apply the drop function, but in this case we are dropping not a row but a whole column. 
-To accomplish this, we need to specify also the `axis` parameter (we want to drop the second column 
-which has index 1).
+To accomplish this, we need to specify also the `axis` parameter (axis is by default set to 0 for rows, and we change it to 1 for columns).
+
 ```python
 fourth.to_csv('result.csv')
 ```
@@ -590,13 +741,66 @@ Explain in simple terms what `idxmin` and `idxmax` do in the short program below
 When would you use these methods?
 
 ```python
-data = pd.read_csv('data/gapminder_gdp_europe.csv', index_col='country')
+print("idxmin:")
 print(rnaseq_df.idxmin())
+print("idxmax:")
 print(rnaseq_df.idxmax())
 ```
 
 
 ::: solution
+
+```output
+idxmin:
+GSM2545336       Cfhr2
+GSM2545337       Cfhr2
+GSM2545338        Aox2
+GSM2545339       Ascl5
+GSM2545340       Ascl5
+GSM2545341    BC055402
+GSM2545342       Cryga
+GSM2545343       Ascl5
+GSM2545344        Aox2
+GSM2545345    BC055402
+GSM2545346        Cpa6
+GSM2545347       Cfhr2
+GSM2545348       Acmsd
+GSM2545349     Fam124b
+GSM2545350       Cryga
+GSM2545351       Glrp1
+GSM2545352       Cfhr2
+GSM2545353       Ascl5
+GSM2545354       Ascl5
+GSM2545362       Cryga
+GSM2545363    Adamts19
+GSM2545380       Ascl5
+dtype: object
+idxmax:
+GSM2545336    Glul
+GSM2545337    Plp1
+GSM2545338    Plp1
+GSM2545339    Plp1
+GSM2545340    Plp1
+GSM2545341    Glul
+GSM2545342    Glul
+GSM2545343    Plp1
+GSM2545344    Plp1
+GSM2545345    Plp1
+GSM2545346    Glul
+GSM2545347    Glul
+GSM2545348    Plp1
+GSM2545349    Plp1
+GSM2545350    Plp1
+GSM2545351    Glul
+GSM2545352    Plp1
+GSM2545353    Plp1
+GSM2545354    Plp1
+GSM2545362    Plp1
+GSM2545363    Plp1
+GSM2545380    Glul
+dtype: object
+```
+
 For each column in `data`, `idxmin` will return the index value corresponding to each column's minimum;
 `idxmax` will do accordingly the same for each column's maximum value.
 
