@@ -6,24 +6,24 @@ exercises: 20
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- "How can programs do different things for different data?"
+- How can programs do different things for different data?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- "Correctly write programs that use if and else statements and simple Boolean expressions (without logical operators)."
-- "Trace the execution of unnested conditionals and conditionals inside loops."
+- Correctly write programs that use if and else statements and simple Boolean expressions (without logical operators).
+- Trace the execution of unnested conditionals and conditionals inside loops.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: keypoints
 
-- "Use `if` statements to control whether or not a block of code is executed."
-- "Conditionals are often used inside loops."
-- "Use `else` to execute a block of code when an `if` condition is *not* true."
-- "Use `elif` to specify additional tests."
-- "Conditions are tested once, in order."
+- Use `if` statements to control whether or not a block of code is executed.
+- Conditionals are often used inside loops.
+- Use `else` to execute a block of code when an `if` condition is *not* true.
+- Use `elif` to specify additional tests.
+- Conditions are tested once, in order.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 

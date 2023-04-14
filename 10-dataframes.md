@@ -6,27 +6,27 @@ exercises: 20
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- "How can I perform statistical analysis of tabular data?"
+- How can I perform statistical analysis of tabular data?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- "Select individual values from a Pandas dataframe."
-- "Select entire rows or entire columns from a dataframe."
-- "Select a subset of both rows and columns from a dataframe in a single operation."
-- "Select a subset of a dataframe by a single Boolean criterion."
+- Select individual values from a Pandas dataframe.
+- Select entire rows or entire columns from a dataframe.
+- Select a subset of both rows and columns from a dataframe in a single operation.
+- Select a subset of a dataframe by a single Boolean criterion.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: keypoints
 
-- "Use `DataFrame.iloc[..., ...]` to select values by integer location."
-- "Use `:` on its own to mean all columns or all rows."
-- "Select multiple columns or rows using `DataFrame.loc` and a named slice."
-- "Result of slicing can be used in further operations."
-- "Use comparisons to select data based on value."
-- "Select values or NaN using a Boolean mask."
+- Use `DataFrame.iloc[..., ...]` to select values by integer location.
+- Use `:` on its own to mean all columns or all rows.
+- Select multiple columns or rows using `DataFrame.loc` and a named slice.
+- Result of slicing can be used in further operations.
+- Use comparisons to select data based on value.
+- Select values or NaN using a Boolean mask.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 

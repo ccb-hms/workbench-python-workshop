@@ -19,7 +19,7 @@ Participants will also be introduced to popular packages for machine learning an
 ::::::::::::::::::: instructor
 ## Day Schedule
 
-*Current status*: All lessons still need a final pass for polish and small fixes. 
+*Current status*: Days 2 and 3 lessons still need a final pass for polish and small fixes. 
 
 - We need to add instructions for using conda environments in jupyter
 - The plotting lesson (not pushed yet) has matplotlib but needs seaborn and some more biological examples like heatmaps. 
