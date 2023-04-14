@@ -449,6 +449,8 @@ Answer: 1 and 4
 
 ## Use an index to get a single character from a string.
 
+![Python uses 0-based indexing.](fig/03_0-based_indexing.png)
+
 *   The characters (individual letters, numbers, and so on) in a string are
     ordered. For example, the string `'AB'` is not the same as `'BA'`. Because of
     this ordering, we can treat the string as a list of characters.

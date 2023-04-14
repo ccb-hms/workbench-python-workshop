@@ -40,49 +40,133 @@ exercises: 10
     *   Argument is the name of the file to be read.
     *   Assign result to a variable to store the data that was read.
 
+## Data description
+
+We are going to use part of the data published by [Blackmore *et al.*
+(2017)](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5544260/), *The
+effect of upper-respiratory infection on transcriptomic changes in the
+CNS*. The goal of the study was to determine the effect of an
+upper-respiratory infection on changes in RNA transcription occurring
+in the cerebellum and spinal cord post infection. Gender matched eight
+week old C57BL/6 mice were inoculated with saline or with Influenza A by
+intranasal route and transcriptomic changes in the cerebellum and
+spinal cord tissues were evaluated by RNA-seq at days 0
+(non-infected), 4 and 8.
+
+The dataset is stored as a comma-separated values (CSV) file.  Each row
+holds information for a single RNA expression measurement, and the first eleven
+columns represent:
+
+| Column     | Description                                                                                  |
+| ---------- | -------------------------------------------------------------------------------------------- |
+| gene       | The name of the gene that was measured                                                       |
+| sample     | The name of the sample the gene expression was measured in                                   |
+| expression | The value of the gene expression                                                             |
+| organism   | The organism/species - here all data stem from mice                                          |
+| age        | The age of the mouse (all mice were 8 weeks here)                                            |
+| sex        | The sex of the mouse                                                                         |
+| infection  | The infection state of the mouse, i.e. infected with Influenza A or not infected.            |
+| strain     | The Influenza A strain; C57BL/6 in all cases.                                                |
+| time       | The duration of the infection (in days).                                                     |
+| tissue     | The tissue that was used for the gene expression experiment, i.e. cerebellum or spinal cord. |
+| mouse      | The mouse unique identifier.                                                                 |
+
+::: callout
+## TODO 
+
+Add this file to our repo as well so we're not relying on this location.
+:::
+
 ```python
 import pandas as pd
 
-data = pd.read_csv('data/gapminder_gdp_oceania.csv')
-print(data)
+url = "https://github.com/carpentries-incubator/bioc-intro/raw/main/episodes/data/rnaseq.csv"
+rnaseq_df = pd.read_csv(url)
+print(rnaseq_df)
 ```
 
 ```output
-       country  gdpPercap_1952  gdpPercap_1957  gdpPercap_1962  \
-0    Australia     10039.59564     10949.64959     12217.22686
-1  New Zealand     10556.57566     12247.39532     13175.67800
+gene      sample  expression      organism  age     sex   infection  \
+0          Asl  GSM2545336        1170  Mus musculus    8  Female  InfluenzaA   
+1         Apod  GSM2545336       36194  Mus musculus    8  Female  InfluenzaA   
+2      Cyp2d22  GSM2545336        4060  Mus musculus    8  Female  InfluenzaA   
+3         Klk6  GSM2545336         287  Mus musculus    8  Female  InfluenzaA   
+4        Fcrls  GSM2545336          85  Mus musculus    8  Female  InfluenzaA   
+...        ...         ...         ...           ...  ...     ...         ...   
+32423    Mgst3  GSM2545380        2151  Mus musculus    8  Female  InfluenzaA   
+32424   Lrrc52  GSM2545380           5  Mus musculus    8  Female  InfluenzaA   
+32425     Rxrg  GSM2545380          49  Mus musculus    8  Female  InfluenzaA   
+32426    Lmx1a  GSM2545380          72  Mus musculus    8  Female  InfluenzaA   
+32427     Pbx1  GSM2545380        4795  Mus musculus    8  Female  InfluenzaA   
 
-   gdpPercap_1967  gdpPercap_1972  gdpPercap_1977  gdpPercap_1982  \
-0     14526.12465     16788.62948     18334.19751     19477.00928
-1     14463.91893     16046.03728     16233.71770     17632.41040
+        strain  time      tissue  mouse  ENTREZID  \
+0      C57BL/6     8  Cerebellum     14    109900   
+1      C57BL/6     8  Cerebellum     14     11815   
+2      C57BL/6     8  Cerebellum     14     56448   
+3      C57BL/6     8  Cerebellum     14     19144   
+4      C57BL/6     8  Cerebellum     14     80891   
+...        ...   ...         ...    ...       ...   
+32423  C57BL/6     8  Cerebellum     19     66447   
+32424  C57BL/6     8  Cerebellum     19    240899   
+32425  C57BL/6     8  Cerebellum     19     20183   
+32426  C57BL/6     8  Cerebellum     19    110648   
+32427  C57BL/6     8  Cerebellum     19     18514   
 
-   gdpPercap_1987  gdpPercap_1992  gdpPercap_1997  gdpPercap_2002  \
-0     21888.88903     23424.76683     26997.93657     30687.75473
-1     19007.19129     18363.32494     21050.41377     23189.80135
+                                                 product     ensembl_gene_id  \
+0         argininosuccinate lyase, transcript variant X1  ENSMUSG00000025533   
+1                 apolipoprotein D, transcript variant 3  ENSMUSG00000022548   
+2      cytochrome P450, family 2, subfamily d, polype...  ENSMUSG00000061740   
+3      kallikrein related-peptidase 6, transcript var...  ENSMUSG00000050063   
+4      Fc receptor-like S, scavenger receptor, transc...  ENSMUSG00000015852   
+...                                                  ...                 ...   
+32423             microsomal glutathione S-transferase 3  ENSMUSG00000026688   
+32424                  leucine rich repeat containing 52  ENSMUSG00000040485   
+32425    retinoid X receptor gamma, transcript variant 1  ENSMUSG00000015843   
+32426  LIM homeobox transcription factor 1 alpha, tra...  ENSMUSG00000026686   
+32427  pre B cell leukemia homeobox 1, transcript var...  ENSMUSG00000052534   
 
-   gdpPercap_2007
-0     34435.36744
-1     25185.00911
+      external_synonym chromosome_name    gene_biotype  \
+0        2510006M18Rik               5  protein_coding   
+1                  NaN              16  protein_coding   
+2                 2D22              15  protein_coding   
+3                 Bssp               7  protein_coding   
+4        2810439C17Rik               3  protein_coding   
+...                ...             ...             ...   
+32423    2010012L10Rik               1  protein_coding   
+32424    4930413P14Rik               1  protein_coding   
+32425            Nr2b3               1  protein_coding   
+32426           Lmx1.1               1  protein_coding   
+32427    2310056B04Rik               1  protein_coding   
+
+                                   phenotype_description  \
+0                  abnormal circulating amino acid level   
+1                             abnormal lipid homeostasis   
+2                               abnormal skin morphology   
+3                                abnormal cytokine level   
+4        decreased CD8-positive alpha-beta T cell number   
+...                                                  ...   
+32423                  decreased mean corpuscular volume   
+32424                          abnormal sperm physiology   
+32425                       abnormal bone mineralization   
+32426                            abnormal bony labyrinth   
+32427  abnormal adrenal gland zona fasciculata morpho...   
+
+      hsapiens_homolog_associated_gene_name  
+0                                       ASL  
+1                                      APOD  
+2                                    CYP2D6  
+3                                      KLK6  
+4                                     FCRL2  
+...                                     ...  
+32423                                 MGST3  
+32424                                LRRC52  
+32425                                  RXRG  
+32426                                 LMX1A  
+32427                                  PBX1  
+
 ```
-
-
 *   The columns in a dataframe are the observed variables, and the rows are the observations.
 *   Pandas uses backslash `\` to show wrapped lines when output is too wide to fit the screen.
-
-::: callout
-## File Not Found
-
-Our lessons store their data files in a `data` sub-directory,
-which is why the path to the file is `data/gapminder_gdp_oceania.csv`.
-If you forget to include `data/`,
-or if you include it but your copy of the file is somewhere else,
-you will get a [runtime error]({{ page.root }}/04-built-in/#runtime-error)
-that ends with a line like this:
-
-```output
-FileNotFoundError: [Errno 2] No such file or directory: 'data/gapminder_gdp_oceania.csv'
-```
-:::
 
 ## Use `index_col` to specify that a column's values should be used as row headings.
 
@@ -91,57 +175,137 @@ FileNotFoundError: [Errno 2] No such file or directory: 'data/gapminder_gdp_ocea
 *   Pass the name of the column to `read_csv` as its `index_col` parameter to do this.
 
 ```python
-data = pd.read_csv('data/gapminder_gdp_oceania.csv', index_col='country')
-print(data)
+rnaseq_df = pd.read_csv(url, index_col='gene')
+print(rnaseq_df)
 ```
 
 ```output
-             gdpPercap_1952  gdpPercap_1957  gdpPercap_1962  gdpPercap_1967  \
-country
-Australia       10039.59564     10949.64959     12217.22686     14526.12465
-New Zealand     10556.57566     12247.39532     13175.67800     14463.91893
+             sample  expression      organism  age     sex   infection  \
+gene                                                                     
+Asl      GSM2545336        1170  Mus musculus    8  Female  InfluenzaA   
+Apod     GSM2545336       36194  Mus musculus    8  Female  InfluenzaA   
+Cyp2d22  GSM2545336        4060  Mus musculus    8  Female  InfluenzaA   
+Klk6     GSM2545336         287  Mus musculus    8  Female  InfluenzaA   
+Fcrls    GSM2545336          85  Mus musculus    8  Female  InfluenzaA   
+...             ...         ...           ...  ...     ...         ...   
+Mgst3    GSM2545380        2151  Mus musculus    8  Female  InfluenzaA   
+Lrrc52   GSM2545380           5  Mus musculus    8  Female  InfluenzaA   
+Rxrg     GSM2545380          49  Mus musculus    8  Female  InfluenzaA   
+Lmx1a    GSM2545380          72  Mus musculus    8  Female  InfluenzaA   
+Pbx1     GSM2545380        4795  Mus musculus    8  Female  InfluenzaA   
 
-             gdpPercap_1972  gdpPercap_1977  gdpPercap_1982  gdpPercap_1987  \
-country
-Australia       16788.62948     18334.19751     19477.00928     21888.88903
-New Zealand     16046.03728     16233.71770     17632.41040     19007.19129
+          strain  time      tissue  mouse  ENTREZID  \
+gene                                                  
+Asl      C57BL/6     8  Cerebellum     14    109900   
+Apod     C57BL/6     8  Cerebellum     14     11815   
+Cyp2d22  C57BL/6     8  Cerebellum     14     56448   
+Klk6     C57BL/6     8  Cerebellum     14     19144   
+Fcrls    C57BL/6     8  Cerebellum     14     80891   
+...          ...   ...         ...    ...       ...   
+Mgst3    C57BL/6     8  Cerebellum     19     66447   
+Lrrc52   C57BL/6     8  Cerebellum     19    240899   
+Rxrg     C57BL/6     8  Cerebellum     19     20183   
+Lmx1a    C57BL/6     8  Cerebellum     19    110648   
+Pbx1     C57BL/6     8  Cerebellum     19     18514   
 
-             gdpPercap_1992  gdpPercap_1997  gdpPercap_2002  gdpPercap_2007
-country
-Australia       23424.76683     26997.93657     30687.75473     34435.36744
-New Zealand     18363.32494     21050.41377     23189.80135     25185.00911
+                                                   product  \
+gene                                                         
+Asl         argininosuccinate lyase, transcript variant X1   
+Apod                apolipoprotein D, transcript variant 3   
+Cyp2d22  cytochrome P450, family 2, subfamily d, polype...   
+Klk6     kallikrein related-peptidase 6, transcript var...   
+Fcrls    Fc receptor-like S, scavenger receptor, transc...   
+...                                                    ...   
+Mgst3               microsomal glutathione S-transferase 3   
+Lrrc52                   leucine rich repeat containing 52   
+Rxrg       retinoid X receptor gamma, transcript variant 1   
+Lmx1a    LIM homeobox transcription factor 1 alpha, tra...   
+Pbx1     pre B cell leukemia homeobox 1, transcript var...   
+
+            ensembl_gene_id external_synonym chromosome_name    gene_biotype  \
+gene                                                                           
+Asl      ENSMUSG00000025533    2510006M18Rik               5  protein_coding   
+Apod     ENSMUSG00000022548              NaN              16  protein_coding   
+Cyp2d22  ENSMUSG00000061740             2D22              15  protein_coding   
+Klk6     ENSMUSG00000050063             Bssp               7  protein_coding   
+Fcrls    ENSMUSG00000015852    2810439C17Rik               3  protein_coding   
+...                     ...              ...             ...             ...   
+Mgst3    ENSMUSG00000026688    2010012L10Rik               1  protein_coding   
+Lrrc52   ENSMUSG00000040485    4930413P14Rik               1  protein_coding   
+Rxrg     ENSMUSG00000015843            Nr2b3               1  protein_coding   
+Lmx1a    ENSMUSG00000026686           Lmx1.1               1  protein_coding   
+Pbx1     ENSMUSG00000052534    2310056B04Rik               1  protein_coding   
+
+                                     phenotype_description  \
+gene                                                         
+Asl                  abnormal circulating amino acid level   
+Apod                            abnormal lipid homeostasis   
+Cyp2d22                           abnormal skin morphology   
+Klk6                               abnormal cytokine level   
+Fcrls      decreased CD8-positive alpha-beta T cell number   
+...                                                    ...   
+Mgst3                    decreased mean corpuscular volume   
+Lrrc52                           abnormal sperm physiology   
+Rxrg                          abnormal bone mineralization   
+Lmx1a                              abnormal bony labyrinth   
+Pbx1     abnormal adrenal gland zona fasciculata morpho...   
+
+        hsapiens_homolog_associated_gene_name  
+gene                                           
+Asl                                       ASL  
+Apod                                     APOD  
+Cyp2d22                                CYP2D6  
+Klk6                                     KLK6  
+Fcrls                                   FCRL2  
+...                                       ...  
+Mgst3                                   MGST3  
+Lrrc52                                 LRRC52  
+Rxrg                                     RXRG  
+Lmx1a                                   LMX1A  
+Pbx1                                     PBX1  
+
+[32428 rows x 18 columns]
+
 ```
 
 
 ## Use the `DataFrame.info()` method to find out more about a dataframe.
 
 ```python
-data.info()
+rnaseq_df.info()
 ```
 
 ```output
 <class 'pandas.core.frame.DataFrame'>
-Index: 2 entries, Australia to New Zealand
-Data columns (total 12 columns):
-gdpPercap_1952    2 non-null float64
-gdpPercap_1957    2 non-null float64
-gdpPercap_1962    2 non-null float64
-gdpPercap_1967    2 non-null float64
-gdpPercap_1972    2 non-null float64
-gdpPercap_1977    2 non-null float64
-gdpPercap_1982    2 non-null float64
-gdpPercap_1987    2 non-null float64
-gdpPercap_1992    2 non-null float64
-gdpPercap_1997    2 non-null float64
-gdpPercap_2002    2 non-null float64
-gdpPercap_2007    2 non-null float64
-dtypes: float64(12)
-memory usage: 208.0+ bytes
+Index: 32428 entries, Asl to Pbx1
+Data columns (total 18 columns):
+ #   Column                                 Non-Null Count  Dtype 
+---  ------                                 --------------  ----- 
+ 0   sample                                 32428 non-null  object
+ 1   expression                             32428 non-null  int64 
+ 2   organism                               32428 non-null  object
+ 3   age                                    32428 non-null  int64 
+ 4   sex                                    32428 non-null  object
+ 5   infection                              32428 non-null  object
+ 6   strain                                 32428 non-null  object
+ 7   time                                   32428 non-null  int64 
+ 8   tissue                                 32428 non-null  object
+ 9   mouse                                  32428 non-null  int64 
+ 10  ENTREZID                               32428 non-null  int64 
+ 11  product                                31240 non-null  object
+ 12  ensembl_gene_id                        32428 non-null  object
+ 13  external_synonym                       26620 non-null  object
+ 14  chromosome_name                        32428 non-null  object
+ 15  gene_biotype                           32428 non-null  object
+ 16  phenotype_description                  21912 non-null  object
+ 17  hsapiens_homolog_associated_gene_name  28138 non-null  object
+dtypes: int64(5), object(13)
+memory usage: 4.7+ MB
+
 ```
 
-
 *   This is a `DataFrame`
-*   Two rows named `'Australia'` and `'New Zealand'`
+*   32428
 *   Twelve columns, each of which has two actual 64-bit floating point values.
     *   We will talk later about null values, which are used to represent missing observations.
 *   Uses 208 bytes of memory.
