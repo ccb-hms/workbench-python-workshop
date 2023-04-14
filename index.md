@@ -21,8 +21,7 @@ Participants will also be introduced to popular packages for machine learning an
 
 *Current status*: All lessons still need a final pass for polish and small fixes. 
 
-- The day 1 at home lessons are only about 10% done. 
-- The day 3 lessons using data need to have their datasets changed to use biological data. 
+- We need to add instructions for using conda environments in jupyter
 - The plotting lesson (not pushed yet) has matplotlib but needs seaborn and some more biological examples like heatmaps. 
 - The application example lessons on days 3 and 4 have not been started, though I have existing notebooks I'm planning to base them on.
 
@@ -56,7 +55,7 @@ Participants will also be introduced to popular packages for machine learning an
 ### Day 3
 
 - Conditionals (35 min) 
-- Dataframes (40 min) *change dataset*
+- Dataframes (40 min) 
 - Break (10 min)
 - Writing Functions (25 min)
 - Using scipy for statistics (10 min) *not started*
