@@ -71,6 +71,8 @@ columns represent:
 | tissue     | The tissue that was used for the gene expression experiment, i.e. cerebellum or spinal cord. |
 | mouse      | The mouse unique identifier.                                                                 |
 
+We will be seeing different parts of this total dataset in different lessons, such as just the expression data or sample data. 
+Later, we will learn how to convert between these different data layouts.
 For this lesson, we will only be using a subset of the total dataset. 
 
 ```python
