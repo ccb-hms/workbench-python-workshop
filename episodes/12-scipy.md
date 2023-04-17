@@ -6,550 +6,215 @@ exercises: 15
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- How do I us distributions?
+- How do I use distributions?
 - How do I perform statistical tests?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- Explore 
+- Explore the `scipy` library.
+- Define and sample from a distribution. 
+- Perform a t-test on prepared data. 
+
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: keypoints
 
-- Break programs down into functions to make them easier to understand.
-- Define a function using `def` with a name, parameters, and a block of code.
-- Defining a function does not run it.
-- Arguments in a function call are matched to its defined parameters.
-- Functions may return a result to their caller using `return`.
+- 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Break programs down into functions to make them easier to understand.
+## Sci-py is a package with a variety of scientific computing functionality. 
 
-*   Human beings can only keep a few items in working memory at a time.
-*   Understand larger/more complicated ideas by understanding and combining pieces.
-    *   Components in a machine.
-    *   Lemmas when proving theorems.
-*   Functions serve the same purpose in programs.
-    *   *Encapsulate* complexity so that we can treat it as a single "thing".
-*   Also enables *re-use*.
-    *   Write one time, use many times.
+[SciPy](https://scipy.org/) contains a variety of scientific computing modules. 
+It has modules for:
 
-## Define a function using `def` with a name, parameters, and a block of code.
+- Integration (scipy.integrate)
+- Optimization (scipy.optimize)
+- Interpolation (scipy.interpolate)
+- Fourier Transforms (scipy.fft)
+- Signal Processing (scipy.signal)
+- Linear Algebra (scipy.linalg)
+- Compressed Sparse Graph Routines (scipy.sparse.csgraph)
+- Spatial data structures and algorithms (scipy.spatial)
+- Statistics (scipy.stats)
+- Multidimensional image processing (scipy.ndimage)
 
-*   Begin the definition of a new function with `def`.
-*   Followed by the name of the function.
-    *   Must obey the same rules as variable names.
-*   Then *parameters* in parentheses.
-    *   Empty parentheses if the function doesn't take any inputs.
-    *   We will discuss this in detail in a moment.
-*   Then a colon.
-*   Then an indented block of code.
+We are only going to look at some of the functionality in `scipy.stats`. 
+
+Let's load the module and take a look. Note that the output is not shown here as it is very long. 
 
 ```python
-def print_greeting():
-    print('Hello!')
-    print('The weather is nice today.')
-    print('Right?')
+import scipy.stats as stats
+
+help(stats)
 ```
 
+This is a lot, but we can see that `scipy.stats` has a variety of different distributions and functions available for performing statistics. 
 
-## Defining a function does not run it.
+## Sampling from a distribution
 
-*   Defining a function does not run it.
-    *   Like assigning a value to a variable.
-*   Must call the function to execute the code it contains.
+One common reason use a distribution is if we want to generate some random with some kind of structure. 
+Python has a [built-in random module](https://docs.python.org/3/library/random.html) which can perform some basic tasks like getting uniform random numbers or shuffling a list, but we need more power to generate more complicated random data. 
+
+Distributions in scipy share a set of methods. 
+Some of the important ones are:
+
+- `rvs` which generates random numbers from the distribution. 
+- `pdf` which gets the probability density function. 
+- `cdf` which gets the cumulative distribution function.
+- `stats` which reports various properties of the distribution. 
+
+Scipy's convention is not to create distribution objects, but to pass parameters as needed into each of these functions. 
+For instance, to generate 100 normally distributed variables with a mean of 8 and a standard deviation of 3, we call `stats.norm.rvs` with those parameters as `loc` and `scale`, respectively. 
 
 ```python
-print_greeting()
+stats.norm.rvs(size=100, loc=8, scale=3)
 ```
 
 ```output
-Hello!
+array([10.81294892,  9.35960484,  4.13064284,  5.01349956, 11.91542804,
+        4.40831262,  7.873177  ,  2.80427116,  6.93137287,  8.6260419 ,
+       10.48824661,  4.03472414, 10.01449037,  7.37493941,  6.8729883 ,
+        8.8247789 ,  6.9956787 ,  8.2084562 ,  9.4272925 ,  8.14680254,
+        1.61100441,  7.14171227,  6.83756279, 13.15778935,  5.87752233,
+       11.53910465,  9.7899608 , 10.99998659,  5.67069185,  4.43542582,
+        8.05798467,  4.56883381, 11.2219477 ,  9.49666323,  6.09194101,
+       10.0844057 , 10.3107259 ,  5.50683223,  9.97121225, 10.71650187,
+        7.11465757,  1.81891326,  5.11893454,  5.7602409 ,  7.21754014,
+        8.79988949, 10.37762164, 14.33689265,  6.33571171,  8.06869862,
+        8.54040514,  7.70807529, 11.35719793,  9.60738274,  6.02998292,
+        5.68116531,  2.35490176, 10.74582778,  9.8661685 , 13.39578467,
+       10.04354226,  7.28494967, 10.16128058, -0.59049207,  7.2093563 ,
+        6.81705905,  5.95187581,  7.51137727, 12.00011092, 10.99417942,
+        7.84189409,  1.51154885,  5.85094646,  9.24591807, 10.0216898 ,
+        9.79350275,  7.26730344,  4.94176518,  9.06454997,  2.99129021,
+       10.8972046 , 12.51642136,  7.31422469,  4.54086114,  4.36204651,
+        8.33272365,  9.53609612,  7.21441855,  8.58643188,  7.67419071,
+       10.36948034,  4.405381  ,  8.16845496,  2.9752478 ,  5.93608394,
+        4.91781677, 11.60177026,  7.97727669,  8.43215961,  6.97469055])
 ```
 
+::: callout
+### Numpy arrays
 
-## Arguments in a function call are matched to its defined parameters.
+Note that the output isn't a list or pandas object, but is something called an `array`. 
+This is an object in the [NumPy](https://numpy.org/) package. 
+NumPy objects are used by most scientific packages in Python such as pandas, scikit-learn, and scipy. 
+It provides a variety of objects and funcionality for performing fast numeric operations. 
 
-*   Functions are most useful when they can operate on different data.
-*   Specify *parameters* when defining a function.
-    *   These become variables when the function is executed.
-    *   Are assigned the arguments in the call (i.e., the values passed to the function).
-    *   If you don't name the arguments when using them in the call, the arguments will be matched to
-parameters in the order the parameters are defined in the function.
-
-```python
-def print_date(year, month, day):
-    joined = str(year) + '/' + str(month) + '/' + str(day)
-    print(joined)
-
-print_date(1871, 3, 19)
-```
-
-```output
-1871/3/19
-```
-
-
-Or, we can name the arguments when we call the function, which allows us to
-specify them in any order and adds clarity to the call site; otherwise as
-one is reading the code they might forget if the second argument is the month
-or the day for example.
-```python
-print_date(month=3, day=19, year=1871)
-```
-
-```output
-1871/3/19
-```
-
-
-*   Via [Twitter](https://twitter.com/minisciencegirl/status/693486088963272705):
-    `()` contains the ingredients for the function
-    while the body contains the recipe.
-
-## Functions may return a result to their caller using `return`.
-
-*   Use `return ...` to give a value back to the caller.
-*   May occur anywhere in the function.
-*   But functions are easier to understand if `return` occurs:
-    *   At the start to handle special cases.
-    *   At the very end, with a final result.
-
-```python
-def average(values):
-    if len(values) == 0:
-        return None
-    return sum(values) / len(values)
-```
-
-
-```python
-a = average([1, 3, 4])
-print('average of actual values:', a)
-```
-
-```output
-average of actual values: 2.6666666666666665
-```
-
-
-```python
-print('average of empty list:', average([]))
-```
-
-```output
-average of empty list: None
-```
-
-
-*   Remember: [every function returns something]({{ page.root }}/04-built-in/).
-*   A function that doesn't explicitly `return` a value automatically returns `None`.
-
-```python
-result = print_date(1871, 3, 19)
-print('result of call is:', result)
-```
-
-```output
-1871/3/19
-result of call is: None
-```
-
-
-::: challenge
-## Identifying Syntax Errors
-
-1. Read the code below and try to identify what the errors are
-   *without* running it.
-2. Run the code and read the error message.
-   Is it a `SyntaxError` or an `IndentationError`?
-3. Fix the error.
-4. Repeat steps 2 and 3 until you have fixed all the errors.
-
-```python
-def another_function
-  print("Syntax errors are annoying.")
-   print("But at least python tells us about them!")
-  print("So they are usually not too hard to fix.")
-```
-
-::: solution
-
-```python
-def another_function():
-  print("Syntax errors are annoying.")
-  print("But at least Python tells us about them!")
-  print("So they are usually not too hard to fix.")
-```
-:::
+Numpy arrays can be indexed and manipulated like Python lists in most instances, but provide extra functionality.
+We will not be going into more detail about numpy during this workshop.
 :::
 
-::: challenge
-## Definition and Use
+## Performing a t-test with scipy 
 
-What does the following program print?
-
-```python
-def report(pressure):
-    print('pressure is', pressure)
-
-print('calling', report, 22.5)
-```
-
-::: solution
-
-```output
-calling <function report at 0x7fd128ff1bf8> 22.5
-``` 
-
-
-A function call always needs parenthesis, otherwise you get memory address of the function object. So, if we wanted to call the function named report, and give it the value 22.5 to report on, we could have our function call as follows
-```python
-print("calling")
-report(22.5)
-```
-
-```output
-calling
-pressure is 22.5
-```
-
-:::
-:::
-
-::: challenge
-## Order of Operations
-
-1. What's wrong in this example?
-
-    ```python
-    result = print_time(11, 37, 59)
-
-    def print_time(hour, minute, second):
-       time_string = str(hour) + ':' + str(minute) + ':' + str(second)
-       print(time_string)
-    ```
-
-2. After fixing the problem above, explain why running this example code:
-
-    ```python
-    result = print_time(11, 37, 59)
-    print('result of call is:', result)
-    ```
-
-    gives this output:
-
-    ```output
-    11:37:59
-    result of call is: None
-    ```
-
-3. Why is the result of the call `None`?
-
-::: solution
-
-1. The problem with the example is that the function `print_time()` is defined *after* the call to the function is made. Python
-doesn't know how to resolve the name `print_time` since it hasn't been defined yet and will raise a `NameError` e.g.,
-`NameError: name 'print_time' is not defined`
-
-2. The first line of output `11:37:59` is printed by the first line of code, `result = print_time(11, 37, 59)` that binds the value 
-returned by invoking `print_time` to the variable `result`. The second line is from the second print call to print the contents 
-of the `result` variable.
-
-3. `print_time()` does not explicitly `return` a value, so it automatically returns `None`.
-
-:::
-:::
-
-::: challenge
-## Encapsulation
-
-Fill in the blanks to create a function that takes a single filename as an argument,
-loads the data in the file named by the argument,
-and returns the minimum value in that data.
+First, let's load up a small toy dataset looking at how mouse weight responded to a particular treatment. 
+This data contains 4 columns, the mouse label/number, whether or not it was treated, its sex and its weight. 
 
 ```python
 import pandas as pd
 
-def min_in_data(____):
-    data = ____
-    return ____
-```
-
-::: solution
-
-```python
-import pandas as pd
-
-def min_in_data(filename):
-    data = pd.read_csv(filename)
-    return data.min()
-```
-:::
-:::
-
-::: challenge
-## Find the First
-
-Fill in the blanks to create a function that takes a list of numbers as an argument
-and returns the first negative value in the list.
-What does your function do if the list is empty? What if the list has no negative numbers?
-
-```python
-def first_negative(values):
-    for v in ____:
-        if ____:
-            return ____
-```
-
-::: solution
-
-```python
-def first_negative(values):
-    for v in values:
-        if v < 0:
-            return v
-```
-
-If an empty list or a list with all positive values is passed to this function, it returns `None`:
-```python
-my_list = []
-print(first_negative(my_list))
+url = "https://raw.githubusercontent.com/ccb-hms/workbench-python-workshop/main/episodes/data/mouse_weight_data.csv"
+mouse_df = pd.read_csv(url, index_col="Mouse")
+print(mouse_df)
 ```
 
 ```output
-None
+       Treated Sex  Weight
+Mouse                     
+1         True   M      22
+2         True   F      25
+3         True   M      27
+4         True   F      23
+5         True   M      23
+6         True   F      24
+7         True   M      26
+8         True   F      24
+9         True   M      27
+10        True   F      27
+11        True   M      25
+12        True   F      27
+13        True   M      26
+14        True   F      24
+15        True   M      26
+16       False   F      25
+17       False   M      29
+18       False   F      28
+19       False   M      27
+20       False   F      28
+21       False   M      25
+22       False   F      23
+23       False   M      24
+24       False   F      30
+25       False   M      24
+26       False   F      30
+27       False   M      30
+28       False   F      28
+29       False   M      27
+30       False   F      24
 ```
-:::
-:::
 
-::: challenge
-## Calling by Name
-
-Earlier we saw this function:
+We can start by seeing if the mean weight is different between the groups:
 
 ```python
-def print_date(year, month, day):
-    joined = str(year) + '/' + str(month) + '/' + str(day)
-    print(joined)
+treated_mean = mouse_df[mouse_df["Treated"]]["Weight"].mean()
+untreated_mean = mouse_df[~mouse_df["Treated"]]["Weight"].mean()
+print(f"Treated mean weight: {treated_mean:0.0f}g\nUntreated mean weight: {untreated_mean:0.0f}g")
 ```
 
-We saw that we can call the function using *named arguments*, like this:
-```python
-print_date(day=1, month=2, year=2003)
+```output
+Treated mean weight: 25g
+Untreated mean weight: 27g
 ```
+We can see that there is a slight different, but it's unclear if it is real or just a source of randomnes in the data. 
 
+::: callout
+## The newline character
 
-1.  What does `print_date(day=1, month=2, year=2003)` print?
-2.  When have you seen a function call like this before?
-3.  When and why is it useful to call functions this way?
-
-::: solution
-
-1. `2003/2/1`
-2. We saw examples of using *named arguments* when working with the pandas library. For example, when reading in a dataset 
-using `data = pd.read_csv('data/gapminder_gdp_europe.csv', index_col='country')`, the last argument `index_col` is a 
-named argument.  
-3. Using named arguments can make code more readable since one can see from the function call what name the different arguments 
-have inside the function. It can also reduce the chances of passing arguments in the wrong order, since by using named arguments 
-the order doesn't matter.
-:::
-:::
-
-::: challenge
-## Encapsulation of an If/Print Block
-
-The code below will run on a label-printer for chicken eggs.  A digital scale will report a chicken egg mass (in grams) 
-to the computer and then the computer will print a label.
-
-```python
-import random
-for i in range(10):
-
-    # simulating the mass of a chicken egg
-    # the (random) mass will be 70 +/- 20 grams
-    mass = 70 + 20.0 * (2.0 * random.random() - 1.0)
-
-    print(mass)
-
-    # egg sizing machinery prints a label
-    if mass >= 85:
-        print("jumbo")
-    elif mass >= 70:
-        print("large")
-    elif mass < 70 and mass >= 55:
-        print("medium")
-    else:
-        print("small")
-```
-
-
-
-The if-block that classifies the eggs might be useful in other situations,
-so to avoid repeating it, we could fold it into a function, `get_egg_label()`.
-Revising the program to use the function would give us this:
-
-```python
-# revised version
-import random
-for i in range(10):
-
-    # simulating the mass of a chicken egg
-    # the (random) mass will be 70 +/- 20 grams
-    mass = 70 + 20.0 * (2.0 * random.random() - 1.0)
-
-    print(mass, get_egg_label(mass))
-
-```
-
-
-1. Create a function definition for `get_egg_label()` that will work with the revised program above.  Note that the `get_egg_label()` function's return value will be important. Sample output from the above program would be `71.23 large`.
-2. A dirty egg might have a mass of more than 90 grams, and a spoiled or broken egg will probably have a mass that's less than 50 grams.  Modify your `get_egg_label()` function to account for these error conditions. Sample output could be `25 too light, probably spoiled`.
-
-::: solution
-
-```python
-def get_egg_label(mass):
-    # egg sizing machinery prints a label
-    egg_label = "Unlabelled"
-    if mass >= 90:
-        egg_label = "warning: egg might be dirty"
-    elif mass >= 85:
-        egg_label = "jumbo"
-    elif mass >= 70:
-        egg_label = "large"
-    elif mass < 70 and mass >= 55:
-        egg_label = "medium"
-    elif mass < 50:
-        egg_label = "too light, probably spoiled"
-    else:
-        egg_label = "small"
-    return egg_label
-```
-
-:::
-:::
-
-::: challenge
-## Simulating a dynamical system
-
-In mathematics, a [dynamical system](https://en.wikipedia.org/wiki/Dynamical_system) is a system
-in which a function describes the time dependence of a point in a geometrical space. A canonical
-example of a dynamical system is the [logistic map](https://en.wikipedia.org/wiki/Logistic_map),
-a growth model that computes a new population density (between  0 and 1) based on the current
-density. In the model, time takes discrete values 0, 1, 2, ...
-
-1. Define a function called `logistic_map` that takes two inputs: `x`, representing the current
-   population (at time `t`), and a parameter `r = 1`. This function should return a value 
-   representing the state of the system (population) at time `t + 1`, using the mapping function:
-
-   `f(t+1) = r * f(t) * [1 - f(t)]`
-
-2. Using a `for` or `while` loop, iterate the `logistic_map` function defined in part 1, starting
-   from an initial population of 0.5, for a period of time `t_final = 10`. Store the intermediate
-   results in a list so that after the loop terminates you have accumulated a sequence of values
-   representing the state of the logistic map at times `t = [0,1,...,t_final]` (11 values in total).
-   Print this list to see the evolution of the population.
-
-3. Encapsulate the logic of your loop into a function called `iterate` that takes the initial
-   population as its first input, the parameter `t_final` as its second input and the parameter
-   `r` as its third input. The function should return the list of values representing the state of
-   the logistic map at times `t = [0,1,...,t_final]`. Run this function for periods `t_final = 100`
-   and `1000` and print some of the values. Is the population trending toward a steady state?
-
-::: solution
-
-1. ```python
-   def logistic_map(x, r):
-       return r * x * (1 - x)
-   ```
-
-
-2. ```python
-   initial_population = 0.5
-   t_final = 10
-   r = 1.0
-   population = [initial_population]
-   for t in range(t_final):
-       population.append( logistic_map(population[t], r) )
-   ```
-
-
-3. ```python
-   def iterate(initial_population, t_final, r):
-       population = [initial_population]
-       for t in range(t_final):
-           population.append( logistic_map(population[t], r) )
-       return population
-
-   for period in (10, 100, 1000):
-       population = iterate(0.5, period, 1)
-       print(population[-1])
-   ```
-
-   ```output
-   0.06945089389714401
-   0.009395779870614648
-   0.0009913908614406382
-   ```
-
-   The population seems to be approaching zero.
-:::
+`\n` is a special character called the newline character. 
+It tells Python to go to a new line of text. 
+`\n` is univeral to almost all programming languages. 
 :::
 
 ::: callout
-## Using Functions With Conditionals in Pandas
-
-Functions will often contain conditionals.  Here is a short example that
-will indicate which quartile the argument is in based on hand-coded values
-for the quartile cut points.
-
-```python
-def calculate_life_quartile(exp):
-    if exp < 58.41:
-        # This observation is in the first quartile
-        return 1
-    elif exp >= 58.41 and exp < 67.05:
-        # This observation is in the second quartile
-       return 2
-    elif exp >= 67.05 and exp < 71.70:
-        # This observation is in the third quartile
-       return 3
-    elif exp >= 71.70:
-        # This observation is in the fourth quartile
-       return 4
-    else:
-        # This observation has bad dataS
-       return None
-
-calculate_life_quartile(62.5)
-```
-
-```output
-2
-```
-
-
-That function would typically be used within a `for` loop, but Pandas has
-a different, more efficient way of doing the same thing, and that is by
-*applying* a function to a dataframe or a portion of a dataframe.  Here
-is an example, using the definition above.
-
-```python
-
-{'lifeExp_1992': {'Argentina': 71.868,   'Bolivia': 59.957,   'Brazil': 67.057,   'Canada': 77.95,   'Chile': 74.126,   'Colombia': 68.421,   'Costa Rica': 75.713,   'Cuba': 74.414,   'Dominican Republic': 68.457,   'Ecuador': 69.613,   'El Salvador': 66.798,   'Guatemala': 63.373,   'Haiti': 55.089,   'Honduras': 66.399,   'Jamaica': 71.766,   'Mexico': 71.455,   'Nicaragua': 65.843,   'Panama': 72.462,   'Paraguay': 68.225,   'Peru': 66.458,   'Puerto Rico': 73.911,   'Trinidad and Tobago': 69.862,   'United States': 76.09,   'Uruguay': 72.752,   'Venezuela': 71.15},  'lifeExp_2007': {'Argentina': 75.32,   'Bolivia': 65.554,   'Brazil': 72.39,   'Canada': 80.653,   'Chile': 78.553,   'Colombia': 72.889,   'Costa Rica': 78.782,   'Cuba': 78.273,   'Dominican Republic': 72.235,   'Ecuador': 74.994,   'El Salvador': 71.878,   'Guatemala': 70.259,   'Haiti': 60.916,   'Honduras': 70.198,   'Jamaica': 72.567,   'Mexico': 76.195,   'Nicaragua': 72.899,   'Panama': 75.537,   'Paraguay': 71.752,   'Peru': 71.421,   'Puerto Rico': 78.746,   'Trinidad and Tobago': 69.819,   'United States': 78.242,   'Uruguay': 76.384,   'Venezuela': 73.747}}
-
-data['life_qrtl_1992'] = data['lifeExp_1992'].apply(calculate_life_quartile)
-data['life_qrtl_2007'] = data['lifeExp_2007'].apply(calculate_life_quartile)
-print(data.iloc[:,2:])
-```
-
-There is a lot in that second line, so let's take it piece by piece.
-On the right side of the `=` we start with `data['lifeExp']`, which is the
-column in the dataframe called `data` labeled `lifExp`.  We use the
-`apply()` to do what it says, apply the `calculate_life_quartile` to the
-value of this column for every row in the dataframe.
+Though before we saw that in Python `!` is how we indicate logical NOT, for pandas boolean series we have to use the `~` character to invert every boolean in the series. 
 :::
+
+Let's perform a t-test to check for a significant difference. 
+A one-sample t-test is performed using `ttest_1samp`. 
+As we want to compare two groups, we will need to use perform a two-sample t-test using `ttest_ind`.
+
+```python
+treated_weights = mouse_df[mouse_df["Treated"]]["Weight"]
+untreated_weights = mouse_df[~mouse_df["Treated"]]["Weight"]
+
+stats.ttest_ind(treated_weights, untreated_weights)
+```
+```output
+Ttest_indResult(statistic=-2.2617859482443694, pvalue=0.03166586638057747)
+```
+Our p-value is about 0.03.
+
+There are a number of arguments we could use to change the test, such as accounting for unequal variance and single-sides tests which can be found [here](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_ind.html)
+
+::: challenge
+
+Peform a t-test looking at whether there is a different by sex as opposed to treatment. 
+
+::: solution
+
+```python
+m_weights = mouse_df[mouse_df["Sex"] == "M"]["Weight"]
+f_weights = mouse_df[mouse_df["Sex"] == "F"]["Weight"]
+
+stats.ttest_ind(m_weights, f_weights)
+```
+```output
+Ttest_indResult(statistic=-0.16005488537123244, pvalue=0.8739869209422747)
+```
+
+:::
+:::
+
