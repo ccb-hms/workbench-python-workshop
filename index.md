@@ -16,6 +16,52 @@ Learning Objectives:
 
 Participants will also be introduced to popular packages for machine learning and bioinformatics analyses in Python, and pointed towards resources to continue their learning. 
 
+## Week 1 Schedule
+
+### Session 1: April 18 from 2:00pm - 4:00pm
+- [Introduction to Python and Jupyter](episodes/01-introduction.md)
+- [Variables](episodes/02-variables.md)
+- Break
+- [Types](episodes/03-types.md)
+- [Built-in functions](episodes/04-using-functions.md)
+- Wrap-up
+
+### Self-Guided Sessions 1
+- [Strings](episodes/home-01-strings.md)
+- [Objects](episodes/home-02-objects.md)
+
+### Session 2: April 20 from 2:00pm - 4:00pm
+- [Lists](episodes/05-lists.md)
+- [Loops](episodes/06-loops.md)
+- Break 
+- [Libraries](episodes/07-packages.md)
+- [Loading Data](episodes/08-loading.md)
+- Wrap-up
+
+### Self-Guided Sessions 2
+- [Managing environments with Conda](episodes/home-03-conda.md)
+- [Dictionaries](episodes/home-04-dictionaries.md)
+
+## Week 2 Schedule
+
+### Session 3: April 25 from 2:00pm - 4:00pm
+- [Conditionals](episodes/09-conditionals.md)
+- [Dataframes](episodes/10-dataframes.md)
+- Break
+- [Writing Functions](episodes/11-writing-functions.md)
+- [Using scipy for statistics](episodes/12-scipy.md)
+
+### Self-Guided Sessions 3
+- [Reshaping data](episodes/home-05-reshaping-data.md)
+- [Combining Data](episodes/home-06-combining-data.md)
+
+### Session 4: April 27 from 2:00pm - 4:00pm
+- Plotting with Seaborn and Matplotlib
+- Break (10 min)
+- Using scikit-learn for machine learning
+- Using BioMart get gene annotations
+- Wrap-up and next steps
+
 ::::::::::::::::::: instructor
 ## Day Schedule
 
