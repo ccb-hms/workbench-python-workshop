@@ -49,7 +49,7 @@ Participants will also be introduced to popular packages for machine learning an
 
 ### At-home Lessons 2
 
-- Conda *some adjustment needed*
+- Conda 
 - Dictionaries
 
 ### Day 3
@@ -58,7 +58,7 @@ Participants will also be introduced to popular packages for machine learning an
 - Dataframes (40 min) 
 - Break (10 min)
 - Writing Functions (25 min)
-- Using scipy for statistics (10 min) *not started*
+- Using scipy for statistics (10 min) 
 
 ### At-home Lessons 3
 
