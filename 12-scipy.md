@@ -1,7 +1,7 @@
 ---
 title: "Perform Statistical Tests with Scipy"
-teaching: 10
-exercises: 15
+teaching: 7
+exercises: 3
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions 
@@ -21,7 +21,8 @@ exercises: 15
 
 ::::::::::::::::::::::::::::::::::::: keypoints
 
-- 
+- Scipy is a package with a variety of scientific computing functionality.
+- Scipy.stats contains functionality for distributions and statistical tests. 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -179,6 +180,8 @@ It tells Python to go to a new line of text.
 :::
 
 ::: callout
+## `~` in Pandas
+
 Though before we saw that in Python `!` is how we indicate logical NOT, for pandas boolean series we have to use the `~` character to invert every boolean in the series. 
 :::
 
