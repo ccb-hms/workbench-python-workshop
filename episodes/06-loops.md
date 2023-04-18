@@ -168,15 +168,15 @@ a range is not a list: range(0, 3)
     2.  Update the variable with values from a collection.
 
 ```python
-# Sum the first 10 integers.
-total = 0
-for number in range(10):
-   total = total + (number + 1)
-print(total)
+# Sum the first 5 integers.
+my_sum = 0 # Line 1
+for number in range(5): # Line 2
+   my_sum = my_sum + (number + 1) # Line 3
+print(my_sum) # Line 4
 ```
 
 ```output
-55
+15
 ```
 
 *   Read `total = total + (number + 1)` as:
@@ -184,13 +184,34 @@ print(total)
     *   Add that to the current value of the accumulator variable `total`.
     *   Assign that to `total`, replacing the current value.
 *   We have to add `number + 1` because `range` produces 0..9, not 1..10.
+    * You could also have used `number` and `range(11)`.
+
+We can *trace* the program output by looking at which line of code is being executed and what each variable's value is at each line:
+
+| Line No | Variables              |
+|---------|------------------------|
+| 1       | my_sum = 0             |
+| 2       | my_sum = 0 number = 0  |
+| 3       | my_sum = 1 number = 0  |
+| 2       | my_sum = 1 number = 1  |
+| 3       | my_sum = 3 number = 1  |
+| 2       | my_sum = 3 number = 2  |
+| 3       | my_sum = 6 number = 2  |
+| 2       | my_sum = 6 number = 3  |
+| 3       | my_sum = 10 number = 3 |
+| 2       | my_sum = 10 number = 4 |
+| 3       | my_sum = 15 number = 4 |
+| 4       | my_sum = 15 number = 4 |
+
+Let's double check our work by [visualizing the code](https://pythontutor.com/visualize.html#code=%23%20Sum%20the%20first%205%20integers.%0Amy_sum%20%3D%200%20%23%20Line%201%0Afor%20number%20in%20range%285%29%3A%20%23%20Line%202%0A%20%20%20my_sum%20%3D%20my_sum%20%2B%20%28number%20%2B%201%29%20%23%20Line%203%0Aprint%28my_sum%29%20%23%20Line%204&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false).
 
 ::: challenge
 ## Classifying Errors
 
 Is an indentation error a syntax error or a runtime error?
+
 ::: solution
-An IndentationError is a syntax error. Programs with syntax errors cannot be started.
+An indentation error (`IndentationError`) is a syntax error. Programs with syntax errors cannot be started.
 A program with a runtime error will start but an error will be thrown under certain conditions.
 :::
 :::
@@ -198,13 +219,13 @@ A program with a runtime error will start but an error will be thrown under cert
 ::: challenge
 ## Tracing Execution
 
-Create a table showing the numbers of the lines that are executed when this program runs,
+Trace through the following code and create a table showing the lines that are executed when this program runs,
 and the values of the variables after each line is executed.
 
 ```python
-total = 0
-for char in "tin":
-    total = total + 1
+total = 0 # Line 1
+for char in "tin": # Line 2
+    total = total + 1 # Line 3
 ```
 
 ::: solution
@@ -309,8 +330,9 @@ print(result)
 :::
 
 ::: challenge
-## Starting from the list `["red", "green", "blue"]`, create the acronym `"RGB"` using
-a for loop.
+## String accumulation
+
+Starting from the list `["red", "green", "blue"]`, create the acronym `"RGB"` using a for loop.
 
 ::: hint
 You may need to use a string method to properly format the acronym.
@@ -367,6 +389,10 @@ print(cumulative)
    variable that should have been defined but was not?
 3. Fix the error.
 4. Repeat steps 2 and 3, until you have fixed all the errors.
+
+This is a first taste of **if statements**. 
+We will be going into more detail on if statements in future lessons. 
+No errors in this code have to do with how the if statement is being used. 
 
 ```python
 for number in range(10):
