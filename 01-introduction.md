@@ -47,6 +47,21 @@ This has several advantages:
 
 Each notebook contains one or more cells that contain code, text, or images.
 
+::: callout
+## Scripts vs. Notebooks vs. Programs
+
+A notebook, as described above, is a combination of text, figures, results, and code in a single document. 
+In contrast a script is a file containing only code (and comments). 
+A python script has the extension `.py`, while a python notebook has the extension `.ipynb`. 
+Python notebooks are built ontop of Python and are not considered a part of the Python language, but an extension to it. 
+Cells in a notebook can be run interactively while a script is run all at once, typically by calling it at the command line. 
+
+A program is a set of machine instructions which are executed together. 
+We can think about both Python scripts and notebooks as being programs.
+It should be noted, however, that in computer science the terms *programming* and *scripting* are defined more formally, and no Python code would be considered a program under these definitions. 
+
+:::
+
 ## Getting Started with JupyterLab
 
 JupyterLab is an application with a web-based user interface from [Project Jupyter][jupyter] that 
@@ -244,13 +259,14 @@ right, top, or bottom of the panel.
 :::
 :::
 
+::: callout
 ## Code vs. Text
 
 Jupyter mixes code and text in different types of blocks, called cells. We often use the term
 "code" to mean "the source code of software written in a language such as Python".
 A "code cell" in a Notebook is a cell that contains software;
 a "text cell" is one that contains ordinary prose written for human beings.
-{: .callout}
+:::
 
 ## The Notebook has Command and Edit modes.
 
@@ -453,12 +469,12 @@ Or use [named links][data_carpentry].
 Create a nested list in a Markdown cell in a notebook that looks like this:
 
 1.  Get funding.
-2.  Do work.
+1.  Do work.
     *   Design experiment.
     *   Collect data.
     *   Analyze.
-3.  Write up.
-4.  Publish.
+1.  Write up.
+1.  Publish.
 
 ::: solution
 
@@ -466,12 +482,12 @@ This challenge integrates both the numbered list and bullet list.
 Note that the bullet list is indented 2 spaces so that it is inline with the items of the numbered list.
 ```
 1.  Get funding.
-2.  Do work.
+1.  Do work.
     *   Design experiment.
     *   Collect data.
     *   Analyze.
-3.  Write up.
-4.  Publish.
+1.  Write up.
+1.  Publish.
 ```
 :::
 :::

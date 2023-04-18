@@ -125,6 +125,13 @@ print(full_name)
 Ahmed Walsh
 ```
 
+::: callout
+## The empty string
+
+We can initialize a string to contain no letter, `empty = ""`.
+This is called the **empty string**, and is often used when we want to build up a string character by character
+:::
+
 
 *   Multiplying a character string by an integer _N_ creates a new string that consists of that character string repeated  _N_ times.
     *   Since multiplication is repeated addition.

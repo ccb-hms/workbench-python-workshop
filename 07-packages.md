@@ -41,11 +41,15 @@ exercises: 10
 *   We will see later how to write new libraries.
 
 ::: callout
-## Libraries and modules
+## Libraries, packages, and modules
 
-A library is a collection of modules, but the terms are often used
-interchangeably, especially since many libraries only consist of a single
-module, so don't worry if you mix them.
+A module is a typically defined set of code located within a single Python file which is intended to be imported into scripts or other modules.
+A package is a set of related modules, often contained in a single directory. 
+A library is a more general term referring to a collection of modules and packages.
+For instance, the [Python Standard Library](https://docs.python.org/3/library/index.html) contains functionality from compressing files to parallel programming.
+
+However, these definitions are not particularly formal or strict. 
+Module, package, and library are often used interchangeably, especially since many libraries only consist of a single module.
 :::
 
 
@@ -137,9 +141,8 @@ print('cos(pi) is', m.cos(m.pi))
 cos(pi) is -1.0
 ```
 
-
-*   Commonly used for libraries that are frequently used or have long names.
-    *   E.g., the `matplotlib` plotting library is often aliased as `mpl`.
+*   Allows less typing for long and/or frequently used packages. 
+    *   E.g., the `matplotlib.pyplot` plotting package is often aliased as `plt`.
 *   But can make programs harder to understand,
     since readers must learn your program's aliases.
 
@@ -172,10 +175,11 @@ You want to select a random character from a string:
 bases = 'ACTTGCTTGAC'
 ```
 
-
 1. Which [standard library][stdlib] module could help you?
 2. Which function would you select from that module? Are there alternatives?
 3. Try to write a program that uses the function.
+
+While you can use `help` from within Jupyter Lab, often when working with Python searching on the internet can yield a faster result. 
 
 ::: solution
 
@@ -192,7 +196,6 @@ from random import randrange
 random_index = randrange(len(bases))
 print(bases[random_index])
 ```
-
 
 or more compactly:
 

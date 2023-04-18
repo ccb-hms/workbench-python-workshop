@@ -48,6 +48,11 @@ print('odds are:', odds)
 odds are: [1, 3, 5, 7]
 ```
 
+::: callout
+## The empty list
+Similar to an empty string, we can create an empty list with a `len` of 0 and no elements.
+We create an empty list as `empty_list = []` or `empty_list = list()`, and it is useful when we want to build up a list element by element. 
+:::
 
 We can access elements of a list using indices -- numbered positions of elements in the list.
 These positions are numbered starting at 0, so the first element has an index of 0.
@@ -248,6 +253,8 @@ sample_ages = [10, 12.5, 'Unknown']
 ```
 :::
 
+## Manipulating Lists
+
 There are many ways to change the contents of lists besides assigning new values to
 individual elements:
 
@@ -328,8 +335,8 @@ similar to how we accessed ranges of positions in a strings.
 
 ```python
 binomial_name = 'Drosophila melanogaster'
-group = binomial_name[0:10]
-print('group:', group)
+genus = binomial_name[0:10]
+print('genus:', genus)
 
 species = binomial_name[11:23]
 print('species:', species)
@@ -344,7 +351,7 @@ print('last:', last)
 
 
 ```output
-group: Drosophila
+genus: Drosophila
 species: melanogaster
 autosomes: ['2', '3', '4']
 last: 4
@@ -468,13 +475,13 @@ date = 'Monday 4 January 2016'
 day = date[0:6]
 print('Using 0 to begin range:', day)
 day = date[:6]
-print('Omitting beginning index:', day)
+print('Or omit the beginning index to slice from 0:', day)
 ```
 
 
 ```output
 Using 0 to begin range: Monday
-Omitting beginning index: Monday
+Or omit the beginning index to slice from 0: Monday
 ```
 
 And similarly, you can omit the ending index in the range to take a slice to the very end of the
@@ -487,15 +494,46 @@ print('With known last position:', sond)
 sond = months[8:len(months)]
 print('Using len() to get last entry:', sond)
 sond = months[8:]
-print('Omitting ending index:', sond)
+print('Or omit the final index to go to the end of the list:', sond)
 ```
-
 
 ```output
 With known last position: ['sep', 'oct', 'nov', 'dec']
 Using len() to get last entry: ['sep', 'oct', 'nov', 'dec']
-Omitting ending index: ['sep', 'oct', 'nov', 'dec']
+Or omit the final index to go to the end of the list: ['sep', 'oct', 'nov', 'dec']
 ```
+
+::: callout
+## Going past `len`
+
+Python does not consider it an error to go past the end of a list when slicing. 
+Python will juse slice until the end of the list:
+
+```python
+months[:30]
+```
+
+```output
+['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec']
+```
+
+However, trying to get a single item from a list at an index greater than its length will result in an error:
+
+```python
+months[30]
+```
+
+```error
+---------------------------------------------------------------------------
+IndexError                                Traceback (most recent call last)
+Input In [5], in <cell line: 1>()
+----> 1 months[30]
+
+IndexError: list index out of range
+```
+
+
+:::
 
 ::: challenge
 ## Overloading

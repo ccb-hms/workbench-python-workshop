@@ -54,7 +54,7 @@ first_name = 'Ahmed'
 
 ::: callout
 A **string** is the **type** which stores text in Python. 
-Strings can be thought of as sequenced or *string*s of individual characters (and using the words string this way actually goes back to a printing term in the pre-computer era). 
+Strings can be thought of as sequences or *string*s of individual characters (and using the words string this way actually goes back to a printing term in the pre-computer era). 
 We will be learning more about types and strings in other lessons. 
 :::
 
@@ -67,7 +67,7 @@ We will be learning more about types and strings in other lessons.
 ::: callout
 ## Single vs. double quotes
 
-In python, you can use single quotes or double quotes to denote a string, but you need to use the same one for both the beginning and the end. 
+In Python, you can use single quotes or double quotes to denote a string, but you need to use the same one for both the beginning and the end. 
 
 ```python
 a = "mouse" # is a string
