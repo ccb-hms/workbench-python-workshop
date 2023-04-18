@@ -27,317 +27,158 @@ exercises: 15
 - Python has a variety of useful built-in string functions.
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Strings can be indexed and sliced.
+## Wide data and long data
 
-As we saw in class during the [types](03-types.md) lesson, strings in Python can be **indexed** and **sliced**
+We've so far seen our gene expression dataset in two distinct formats which we used for different purposes. 
+
+Our original dataset contains a single count value per row, and has all metadata included:
 
 ```python
-my_string = "What a lovely day."
+import pandas as pd
 
-# Indexing
-my_string[2]
+url = "https://raw.githubusercontent.com/ccb-hms/workbench-python-workshop/main/episodes/data/rnaseq_reduced.csv"
+rnaseq_df = pd.read_csv(url)
+print(rnaseq_df)
 ```
 
 ```output
-'a'
+         gene      sample  expression  time
+0         Asl  GSM2545336        1170     8
+1        Apod  GSM2545336       36194     8
+2     Cyp2d22  GSM2545336        4060     8
+3        Klk6  GSM2545336         287     8
+4       Fcrls  GSM2545336          85     8
+...       ...         ...         ...   ...
+7365    Mgst3  GSM2545340        1563     4
+7366   Lrrc52  GSM2545340           2     4
+7367     Rxrg  GSM2545340          26     4
+7368    Lmx1a  GSM2545340          81     4
+7369     Pbx1  GSM2545340        3805     4
+
+[7370 rows x 4 columns]
+
 ```
 
+Data in this format is referred to as **long** data. 
+
+We also looked at a version of the same data which only contained expression data, where each sample was a column:
+
 ```python
-# Slicing
-my_string[1:3]
+url = "https://raw.githubusercontent.com/ccb-hms/workbench-python-workshop/main/episodes/data/expression_matrix.csv"
+expression_matrix = pd.read_csv(url, index_col=0)
+print(expression_matrix.iloc[:10, :5])
 ```
 
 ```output
-'ha'
+          GSM2545336  GSM2545337  GSM2545338  GSM2545339  GSM2545340
+gene                                                                
+AI504432        1230        1085         969        1284         966
+AW046200          83         144         129         121         141
+AW551984         670         265         202         682         246
+Aamp            5621        4049        3797        4375        4095
+Abca12             5           8           1           5           3
+Abcc8           2210        1966        2181        2362        2475
+Abhd14a          490         495         474         468         489
+Abi2            5627        4383        4107        4062        4289
+Abi3bp           807        1144        1028         935         879
+Abl2            2392        2133        1891        1645        1926
 ```
 
+Data in this format is referred to as **wide** data. 
+
+Each format has its pros and cons, and we often need to switch between the two. 
+Wide data is more human readable, and allows for easy comparision across different samples, such as finding the genes with the highest average expression. 
+However, wide data requires any sample metadata to exist as a separate dataframe. 
+Thus it is much more difficult to examine sample metadata, such as calculating the mean expression at a particular timepoint. 
+
+In contrast, long data is considered less human readable. 
+We have to first aggregate our data by gene if we want to do something like calculate average expression. 
+However, we can easily group the data by whatever sample metadata we wish. 
+We will also see in the next session that long data is the preferred format for plotting.
+
+Wide and long data also handle missing data differently. 
+In long data, and values which don't exist for a particular sample simply aren't rows in the dataset. 
+Thus, our data does not have `null` values, but it is harder to tell where data is missing. 
+In wide data, there is a matrix position for every combination of sample and gene. 
+Thus, any missing data is shown as a `null` value. 
+This can be more difficult to deal with, but makes missing data clear. 
+
+## Convert from wide to long with `melt`.
+
+![Melt goes from wide to long data](fig/home05_melt.png)
+
+We can convert from wide data to long data using [melt](https://pandas.pydata.org/docs/reference/api/pandas.melt.html). 
+`melt` takes in the arguments `var_name` and `value_name`, which are strings that name the two created columns. 
+We also typically want to set the `ignore_index` argument to `False`, otherwise pandas will drop the dataframe index. 
+
+We could also allow pandas to drop the index, if there is some other column we want the new rows to be named by, and pass that in instead as the `id_vars` argument. 
+
 ```python
-my_string[:3] # Same as my_string[0:3]
+long_data = expression_matrix.melt(var_name="sample", value_name="expression", ignore_index=False)
+print(long_data)
 ```
 
 ```output
-'Wha'
+              sample  expression
+gene                            
+AI504432  GSM2545336        1230
+AW046200  GSM2545336          83
+AW551984  GSM2545336         670
+Aamp      GSM2545336        5621
+Abca12    GSM2545336           5
+...              ...         ...
+Zkscan3   GSM2545380        1900
+Zranb1    GSM2545380        9942
+Zranb3    GSM2545380         202
+Zscan22   GSM2545380         527
+Zw10      GSM2545380        1664
+
+[32428 rows x 2 columns]
 ```
+ 
+## Convert from long to wide with `pivot`.
+
+![Pivot_table goes from long to wide](fig/home05_pivot_table.png)
+
+To go the other way, we want to use the [pivot_table](https://pandas.pydata.org/docs/reference/api/pandas.pivot_table.html) method.
+
+This method takes in a `columns` the column to get new column names from, `values`, what to populate the matrix with, and `index`, what the row names of the wide data should be. 
 
 ```python
-my_string[1:] # Same as my_string[1:len(my_string)]
+wide_data = rnaseq_df.pivot_table(columns = "sample", values = "expression", index = "gene")
+print(wide_data)
 ```
 
 ```output
-'hat a lovely day.'
-```
-## Strings are immutable.
+sample    GSM2545336  GSM2545337  GSM2545338  GSM2545339  GSM2545340
+gene                                                                
+AI504432        1230        1085         969        1284         966
+AW046200          83         144         129         121         141
+AW551984         670         265         202         682         246
+Aamp            5621        4049        3797        4375        4095
+Abca12             5           8           1           5           3
+...              ...         ...         ...         ...         ...
+Zkscan3         1732        1840        1800        1751        2056
+Zranb1          8837        5306        5106        5306        5896
+Zranb3           207         179         199         208         184
+Zscan22          483         535         533         462         439
+Zw10            1479        1394        1279        1376        1568
 
-We will talk about this concept in more detail when we explore [lists](05-lists.md).
-However, for now it is important to note that strings, like simple types, *cannot have their values be altered* in Python. 
-Instead, a new value is created. 
-
-For simple types, this behavior isn't that noticable:
-
-```python
-x = 10
-# While this line appears to be changing the value 10 to 11, in reality a new integer with the value 11 is created and assigned to x. 
-x = x + 1
-x
-```
-
-```output
-11
+[1474 rows x 5 columns]
 ```
 
-However, for strings we can easily cause errors if we attempt to change them directly:
-
-```python
-# This attempts to change the last character to 'g' 
-my_string[-1] = "g"
-```
-
-```error
----------------------------------------------------------------------
-TypeError                           Traceback (most recent call last)
-Input In [6], in <cell line: 1>()
-----> 1 my_string[-1] = "g"
-
-TypeError: 'str' object does not support item assignment
-```
-
-Thus, we need to learn ways in Python to manipulate and build strings. 
-In this instance, we can build a new string using indexing:
-
-```python
-my_new_string = my_string[:-2] + "g"
-my_new_string
-```
-
-```output
-'What a lovely dag'
-```
-
-Or use the built-in function `str.replace()` if we wanted to replace a larger portion of the string.
-
-```python
-my_new_string = my_string.replace("day", 'dog')
-print(my_new_string)
-```
-
-```output
-What a lovely dog.
-```
-
-## Build complex strings based on other variables using format.
-
-What if we want to use values inside of a string?
-For instance, say we want to print a sentence denoting how many and the percent of samples we dropped and kept as a part of a quality control analysis. 
-
-Suppose we have variables denoting how many samples and dropped samples we have:
-
-```python
-good_samples = 964
-bad_samples = 117
-percent_dropped = bad_samples/(good_samples + bad_samples)
-```
-
-One option would be to simply put everything in `print`:
-
-```python
-print("Dropped", percent_dropped, "percent samples")
-```
-
-```output
-Dropped 0.10823311748381129 percent samples
-```
-
-Or we could convert and use addition:
-
-```python
-out_str = "Dropped " + str(percent_dropped) + "% samples"
-print(out_str)
-```
-
-```output
-Dropped 0.10823311748381129% samples
-```
-
-However, both of these options don't give us as much control over how the percent is displayed. 
-Python uses systems called **string formatting** and **f-strings** to give us greater control. 
-
-We can use Python's built-in `format` function to create better-looking text:
-
-```python
-print('Dropped {0:.2%} of samples, with {1:n} samples remaining.'.format(percent_dropped, good_samples))
-```
-
-```output
-Dropped 10.82% of samples, with 964 samples remaining.
-```
-
-Calls to format have a number of components:
-
-- The use of brackets `{}` to create *replacement fields*.
-- The index inside each bracket (0 and 1) to denote the index of the variable to use. 
-- Format instructions. `.2%` indicates that we want to format the number as a percent with 2 decimal places. `n` indicates that we want to format as a number. 
-- `format` we call format on the string, and as arguments give it the variables we want to use. The order of variables here are the indices referenced in replacement fields. 
-
-For instance, we can switch or repeat indices:
-
-```python
-print('Dropped {1:.2%} of samples, with {0:n} samples remaining.'.format(percent_dropped, good_samples))
-print('Dropped {0:.2%} of samples, with {0:n} samples remaining.'.format(percent_dropped, good_samples))
-```
-
-```output
-Dropped 96400.00% of samples, with 964 samples remaining.
-Dropped 10.82% of samples, with 0.108233 samples remaining.
-```
-
-Python has a shorthand for using format called `f-strings`. 
-These strings let us directly use variables and create expressions inside of strings. 
-We denote an `f-string` by putting `f` in front of the string definition:
-
-```python
-print(f'Dropped {percent_dropped:.2%} of samples, with {good_samples:n} samples remaining.')
-print(f'Dropped {100*(bad_samples/(good_samples + bad_samples)):.2f}% of samples, with {good_samples:n} samples remaining.')
-```
-
-```output
-Dropped 10.82% of samples, with 964 samples remaining.
-Dropped 10.82% of samples, with 964 samples remaining.
-```
-
-Here, `{100*(bad_samples/(good_samples + bad_samples)):.2f}` is treated as an expression, and then printed as a **f**loat with 2 digits. 
-
-Full documenation on all of the string formatting mini-language can be found [here](https://docs.python.org/3/library/string.html#string-formatting).
-
-
-## Python has many useful built-in functions for string manipulation.
-
-Python has many built-in methods for manipulating strings; simple and powerful text manipulation is considered one of Python's strengths.
-We will go over some of the more common and useful functions here, but be aware that there are many more you can find in the [official documentation](https://docs.python.org/3/library/string.html).
-
-### Dealing with whitespace
-
-`str.strip()` strips the whitespace from the beginning and ending of a string. 
-This is especially useful when reading in files which might have hidden spaces or tabs at the end of lines. 
-
-```python
-"  a   \t\t".strip()
-```
-Note that `\t` denotes a tab character. 
-
-```output
-'a'
-```
-
-`str.split()` strips a string up into a list of strings by some character. 
-By default it uses whitespace, but we can give any set character to split by. 
-We will learn how to use lists in the next session. 
-
-```python
-"My favorite sentence I hope nothing bad happens to it".split()
-```
-
-```output
-['My',
- 'favorite',
- 'sentence',
- 'I',
- 'hope',
- 'nothing',
- 'bad',
- 'happens',
- 'to',
- 'it']
- ```
-
- ```python
- "2023-:04-:12".split('-:')
- ```
-
- ```output
- ['2023', '04', '12']
- ```
-
-### Pattern matching
-
-`str.find()` find the first occurrence of the specified string inside the search string, and `str.rfind()` finds the last. 
-
-```python
-"(collected)ENSG00000010404(inprogress)ENSG000000108888".find('ENSG')
-```
-
-```output
-11
-```
-
-```python
-"(collected)ENSG00000010404(inprogress)ENSG000000108888".rfind('ENSG')
-```
-
-```output
-38
-```
-
-`str.startswith()` and `str.endswith()` perform a simlar function but return a `bool` based on whether or not the string starts or ends with a particular string. 
-
-```python
-"(collected)ENSG00000010404".startswith('ENSG')
-```
-
-```output
-False
-```
-
-```python
-"ENSG00000010404".startswith('ENSG')
-```
-
-```output
-True
-```
-
-### Case
-
-`str.upper()`, `str.lower()`, `str.capitalize()`, and `str.title()` all change the capitalization of strings. 
-
-```python
-my_string = "liters (coffee) per minute"
-print(my_string.lower())
-print(my_string.upper())
-print(my_string.capitalize())
-print(my_string.title())
-```
-
-```output
-liters (coffee) per minute
-LITERS (COFFEE) PER MINUTE
-Liters (coffee) per minute
-Liters (Coffee) Per Minute
-```
+Note that any columns in the dataframe which are not used as values are dropped. 
 
 ::: challenge
 
-A common problem when analyzing data is that multiple features of the data will be stored as a column name or single string. 
+Create a dataframe of the rnaseq dataset where each row is a gene and each column is a timepoint instead of a sample. 
+The values in each column should be the mean count accross all samples at that timepoint. 
 
-For instance, consider the following column headers:
+::: hint
 
-```
-WT_0Min_1	WT_0Min_2	X.RAB7A_0Min_1	X.RAB7A_0Min_2	WT_5Min_1	WT_5Min_2	X.RAB7A_5Min_1	X.RAB7A_5Min_2	X.NPC1_5Min_1	X.NPC1_5Min_2
-```
+Take a look at the `aggfunc` argument in [pivot_table](https://pandas.pydata.org/docs/reference/api/pandas.pivot_table.html). 
+What is the default?
 
-There are two variables of interest, the time, 0, 5, or 60 minutes post-infection, and the genotype, WT, NPC1 knockout and RAB7A knockout. We also have replicate information at the end of each column header. 
-For now, let's just try extracting the timepoint, genotype, and replicate from a single column header. 
+:::
 
-Given the string:
-```python
-sample_info = "X.RAB7A_0Min_1"
-```
-
-Try to print the string:
-
-```
-Sample is 0min RABA7A knockout, replicate 1. 
-```
-
-Using f-strings, slicing and indexing, and built-in string functions. 
-You can try to use lists as a challenge, but its fine to instead get each piece of information separately from `sample_info`. 
 :::
