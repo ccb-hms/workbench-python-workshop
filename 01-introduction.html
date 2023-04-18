@@ -160,7 +160,6 @@
 <li><a href="#the-jupyterlab-interface">The JupyterLab Interface</a></li>
 <li><a href="#creating-a-python-script">Creating a Python script</a></li>
 <li><a href="#creating-a-jupyter-notebook">Creating a Jupyter Notebook</a></li>
-<li><a href="#code-vs.-text">Code vs. Text</a></li>
 <li><a href="#the-notebook-has-command-and-edit-modes.">The Notebook has Command and Edit modes.</a></li>
 <li><a href="#closing-jupyterlab">Closing JupyterLab</a></li>
         </ul></div><!--/div.accordion-body-->
@@ -373,7 +372,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Welcome to Python</h1>
-        <p> Last updated on 2023-04-14 | 
+        <p> Last updated on 2023-04-18 | 
         
         <a href="https://github.com/ccb-hms/workbench-python-workshop/edit/main/episodes/01-introduction.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -446,6 +445,31 @@ to display figures next to the code that produces them to tell a
 complete story of the analysis.</p>
 <p>Each notebook contains one or more cells that contain code, text, or
 images.</p>
+<div id="callout1" class="callout callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="scripts-vs.-notebooks-vs.-programs" class="callout-inner">
+<h3 class="callout-title">Scripts vs. Notebooks vs. Programs<a class="anchor" aria-label="anchor" href="#callout1"></a>
+</h3>
+<div class="callout-content">
+<p>A notebook, as described above, is a combination of text, figures,
+results, and code in a single document. In contrast a script is a file
+containing only code (and comments). A python script has the extension
+<code>.py</code>, while a python notebook has the extension
+<code>.ipynb</code>. Python notebooks are built ontop of Python and are
+not considered a part of the Python language, but an extension to it.
+Cells in a notebook can be run interactively while a script is run all
+at once, typically by calling it at the command line.</p>
+<p>A program is a set of machine instructions which are executed
+together. We can think about both Python scripts and notebooks as being
+programs. It should be noted, however, that in computer science the
+terms <em>programming</em> and <em>scripting</em> are defined more
+formally, and no Python code would be considered a program under these
+definitions.</p>
+</div>
+</div>
+</div>
 <section id="getting-started-with-jupyterlab"><h2 class="section-heading">Getting Started with JupyterLab<a class="anchor" aria-label="anchor" href="#getting-started-with-jupyterlab"></a>
 </h2>
 <hr class="half-width"><p>JupyterLab is an application with a web-based user interface from
@@ -465,12 +489,12 @@ The JupyterLab server sends messages to your web browser. * The
 JupyterLab server does the work and the web browser renders the result.
 * You will type code into the browser and see the result when the web
 page talks to the JupyterLab server.</p>
-<div id="callout1" class="callout callout">
+<div id="callout2" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="jupyterlab-what-about-jupyter-notebooks" class="callout-inner">
-<h3 class="callout-title">JupyterLab? What about Jupyter notebooks?<a class="anchor" aria-label="anchor" href="#callout1"></a>
+<h3 class="callout-title">JupyterLab? What about Jupyter notebooks?<a class="anchor" aria-label="anchor" href="#callout2"></a>
 </h3>
 <div class="callout-content">
 <p>JupyterLab is the <a href="https://jupyterlab.readthedocs.io/en/stable/getting_started/overview.html#overview" class="external-link">next
@@ -583,12 +607,12 @@ control of JupyterLab settings and configuration options.</li>
 <li>
 <strong>Help:</strong> A list of JupyterLab and kernel help
 links.</li>
-</ul><div id="callout2" class="callout callout">
+</ul><div id="callout3" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="kernels" class="callout-inner">
-<h3 class="callout-title">Kernels<a class="anchor" aria-label="anchor" href="#callout2"></a>
+<h3 class="callout-title">Kernels<a class="anchor" aria-label="anchor" href="#callout3"></a>
 </h3>
 <div class="callout-content">
 <p>The JupyterLab <a href="https://jupyterlab.readthedocs.io/en/stable/user/documents_kernels.html" class="external-link">docs</a>
@@ -657,12 +681,12 @@ command line.</li>
 </ul><p>Below is a screenshot of a Jupyter notebook running inside
 JupyterLab. If you are interested in more details, then see the <a href="https://jupyterlab.readthedocs.io/en/stable/user/notebook.html" class="external-link">official
 notebook documentation</a>.</p>
-<figure><img src="fig/0_jupyterlab_notebook_screenshot.png" alt="" class="figure mx-auto d-block"><figcaption>Example Jupyter Notebook</figcaption></figure><div id="callout3" class="callout callout">
+<figure><img src="fig/0_jupyterlab_notebook_screenshot.png" alt="" class="figure mx-auto d-block"><figcaption>Example Jupyter Notebook</figcaption></figure><div id="callout4" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="how-its-stored" class="callout-inner">
-<h3 class="callout-title">How It’s Stored<a class="anchor" aria-label="anchor" href="#callout3"></a>
+<h3 class="callout-title">How It’s Stored<a class="anchor" aria-label="anchor" href="#callout4"></a>
 </h3>
 <div class="callout-content">
 <ul><li>The notebook file is stored in a format called JSON.</li>
@@ -710,13 +734,22 @@ bottom of the panel.</p>
 </div>
 </div>
 </div>
-</section><section id="code-vs.-text"><h2 class="section-heading">Code vs. Text<a class="anchor" aria-label="anchor" href="#code-vs.-text"></a>
-</h2>
-<hr class="half-width"><p>Jupyter mixes code and text in different types of blocks, called
+<div id="callout5" class="callout callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="code-vs.-text" class="callout-inner">
+<h3 class="callout-title">Code vs. Text<a class="anchor" aria-label="anchor" href="#callout5"></a>
+</h3>
+<div class="callout-content">
+<p>Jupyter mixes code and text in different types of blocks, called
 cells. We often use the term “code” to mean “the source code of software
 written in a language such as Python”. A “code cell” in a Notebook is a
 cell that contains software; a “text cell” is one that contains ordinary
-prose written for human beings. {: .callout}</p>
+prose written for human beings.</p>
+</div>
+</div>
+</div>
 </section><section id="the-notebook-has-command-and-edit-modes."><h2 class="section-heading">The Notebook has Command and Edit modes.<a class="anchor" aria-label="anchor" href="#the-notebook-has-command-and-edit-modes."></a>
 </h2>
 <hr class="half-width"><ul><li>If you press <kbd>Esc</kbd> and <kbd>Return</kbd> alternately, the
@@ -924,12 +957,12 @@ this:</p>
 Note that the bullet list is indented 2 spaces so that it is inline with
 the items of the numbered list.</p>
 <pre><code>1.  Get funding.
-2.  Do work.
+1.  Do work.
     *   Design experiment.
     *   Collect data.
     *   Analyze.
-3.  Write up.
-4.  Publish.</code></pre>
+1.  Write up.
+1.  Publish.</code></pre>
 </div>
 </div>
 </div>
@@ -1142,7 +1175,7 @@ any links that you are not going to use.
   "url": "https://ccb-hms.github.io/workbench-python-workshop/01-introduction.html",
   "identifier": "https://ccb-hms.github.io/workbench-python-workshop/01-introduction.html",
   "dateCreated": "2023-04-01",
-  "dateModified": "2023-04-14",
+  "dateModified": "2023-04-18",
   "datePublished": "2023-04-18"
 }
 

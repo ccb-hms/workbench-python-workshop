@@ -374,7 +374,7 @@ and the body must be indented.</a></li>
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>For Loops</h1>
-        <p> Last updated on 2023-04-14 | 
+        <p> Last updated on 2023-04-18 | 
         
         <a href="https://github.com/ccb-hms/workbench-python-workshop/edit/main/episodes/06-loops.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -592,16 +592,16 @@ string, or the empty list.</li>
 </ul><div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sum the first 10 integers.</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>total <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> number <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>   total <span class="op">=</span> total <span class="op">+</span> (number <span class="op">+</span> <span class="dv">1</span>)</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(total)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sum the first 5 integers.</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>my_sum <span class="op">=</span> <span class="dv">0</span> <span class="co"># Line 1</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> number <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>): <span class="co"># Line 2</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>   my_sum <span class="op">=</span> my_sum <span class="op">+</span> (number <span class="op">+</span> <span class="dv">1</span>) <span class="co"># Line 3</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_sum) <span class="co"># Line 4</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code><span><span class="fl">55</span></span></code></pre>
+<pre class="output" tabindex="0"><code><span><span class="fl">15</span></span></code></pre>
 </div>
 <ul><li>Read <code>total = total + (number + 1)</code> as:
 <ul><li>Add 1 to the current value of the loop variable
@@ -611,41 +611,50 @@ string, or the empty list.</li>
 <li>Assign that to <code>total</code>, replacing the current value.</li>
 </ul></li>
 <li>We have to add <code>number + 1</code> because <code>range</code>
-produces 0..9, not 1..10.</li>
-</ul><div id="discussion1" class="callout discussion">
-<div class="callout-square">
-<i class="callout-icon" data-feather="message-circle"></i>
-</div>
-<div id="classifying-errors" class="callout-inner">
-<h3 class="callout-title">Classifying Errors<a class="anchor" aria-label="anchor" href="#discussion1"></a>
-</h3>
-<div class="callout-content">
-<p>Is an indentation error a syntax error or a runtime error? :::
-solution An IndentationError is a syntax error. Programs with syntax
-errors cannot be started. A program with a runtime error will start but
-an error will be thrown under certain conditions.</p>
-</div>
-</div>
-</div>
-<p>:::</p>
+produces 0..9, not 1..10.
+<ul><li>You could also have used <code>number</code> and
+<code>range(11)</code>.</li>
+</ul></li>
+</ul><p>We can <em>trace</em> the program output by looking at which line of
+code is being executed and what each variable’s value is at each
+line:</p>
+<table class="table"><thead><tr class="header"><th>Line No</th>
+<th>Variables</th>
+</tr></thead><tbody><tr class="odd"><td>1</td>
+<td>my_sum = 0</td>
+</tr><tr class="even"><td>2</td>
+<td>my_sum = 0 number = 0</td>
+</tr><tr class="odd"><td>3</td>
+<td>my_sum = 1 number = 0</td>
+</tr><tr class="even"><td>2</td>
+<td>my_sum = 1 number = 1</td>
+</tr><tr class="odd"><td>3</td>
+<td>my_sum = 3 number = 1</td>
+</tr><tr class="even"><td>2</td>
+<td>my_sum = 3 number = 2</td>
+</tr><tr class="odd"><td>3</td>
+<td>my_sum = 6 number = 2</td>
+</tr><tr class="even"><td>2</td>
+<td>my_sum = 6 number = 3</td>
+</tr><tr class="odd"><td>3</td>
+<td>my_sum = 10 number = 3</td>
+</tr><tr class="even"><td>2</td>
+<td>my_sum = 10 number = 4</td>
+</tr><tr class="odd"><td>3</td>
+<td>my_sum = 15 number = 4</td>
+</tr><tr class="even"><td>4</td>
+<td>my_sum = 15 number = 4</td>
+</tr></tbody></table><p>Let’s double check our work by <a href="https://pythontutor.com/visualize.html#code=%23%20Sum%20the%20first%205%20integers.%0Amy_sum%20%3D%200%20%23%20Line%201%0Afor%20number%20in%20range%285%29%3A%20%23%20Line%202%0A%20%20%20my_sum%20%3D%20my_sum%20%2B%20%28number%20%2B%201%29%20%23%20Line%203%0Aprint%28my_sum%29%20%23%20Line%204&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false" class="external-link">visualizing
+the code</a>.</p>
 <div id="challenge1" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
-<div id="tracing-execution" class="callout-inner">
-<h3 class="callout-title">Tracing Execution<a class="anchor" aria-label="anchor" href="#challenge1"></a>
+<div id="classifying-errors" class="callout-inner">
+<h3 class="callout-title">Classifying Errors<a class="anchor" aria-label="anchor" href="#challenge1"></a>
 </h3>
 <div class="callout-content">
-<p>Create a table showing the numbers of the lines that are executed
-when this program runs, and the values of the variables after each line
-is executed.</p>
-<div class="codewrapper sourceCode" id="cb16">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>total <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> char <span class="kw">in</span> <span class="st">"tin"</span>:</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    total <span class="op">=</span> total <span class="op">+</span> <span class="dv">1</span></span></code></pre>
-</div>
+<p>Is an indentation error a syntax error or a runtime error?</p>
 </div>
 </div>
 </div>
@@ -656,7 +665,45 @@ is executed.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div class="accordion-body">
+<p>An indentation error (<code>IndentationError</code>) is a syntax
+error. Programs with syntax errors cannot be started. A program with a
+runtime error will start but an error will be thrown under certain
+conditions.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="challenge2" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div id="tracing-execution" class="callout-inner">
+<h3 class="callout-title">Tracing Execution<a class="anchor" aria-label="anchor" href="#challenge2"></a>
+</h3>
+<div class="callout-content">
+<p>Trace through the following code and create a table showing the lines
+that are executed when this program runs, and the values of the
+variables after each line is executed.</p>
+<div class="codewrapper sourceCode" id="cb16">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>total <span class="op">=</span> <span class="dv">0</span> <span class="co"># Line 1</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> char <span class="kw">in</span> <span class="st">"tin"</span>: <span class="co"># Line 2</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    total <span class="op">=</span> total <span class="op">+</span> <span class="dv">1</span> <span class="co"># Line 3</span></span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
+  <h4 class="accordion-header" id="headingSolution2">
+  Show me the solution
+  </h4>
+</button>
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <table class="table"><thead><tr class="header"><th>Line no</th>
 <th>Variables</th>
@@ -678,12 +725,12 @@ is executed.</p>
 </div>
 </div>
 </div>
-<div id="challenge2" class="callout challenge">
+<div id="challenge3" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="reversing-a-string" class="callout-inner">
-<h3 class="callout-title">Reversing a String<a class="anchor" aria-label="anchor" href="#challenge2"></a>
+<h3 class="callout-title">Reversing a String<a class="anchor" aria-label="anchor" href="#challenge3"></a>
 </h3>
 <div class="callout-content">
 <p>Fill in the blanks in the program below so that it prints “nit” (the
@@ -700,14 +747,14 @@ reverse of the original character string “tin”).</p>
 </div>
 </div>
 </div>
-<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
-  <h4 class="accordion-header" id="headingSolution2">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
+  <h4 class="accordion-header" id="headingSolution3">
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -722,12 +769,12 @@ reverse of the original character string “tin”).</p>
 </div>
 </div>
 </div>
-<div id="challenge3" class="callout challenge">
+<div id="challenge4" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="practice-accumulating" class="callout-inner">
-<h3 class="callout-title">Practice Accumulating<a class="anchor" aria-label="anchor" href="#challenge3"></a>
+<h3 class="callout-title">Practice Accumulating<a class="anchor" aria-label="anchor" href="#challenge4"></a>
 </h3>
 <div class="callout-content">
 <p>Fill in the blanks in each of the programs below to produce the
@@ -744,14 +791,14 @@ indicated result.</p>
 </div>
 </div>
 </div>
-<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSolution4" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
-  <h4 class="accordion-header" id="headingSolution3">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
+  <h4 class="accordion-header" id="headingSolution4">
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb20">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -774,14 +821,14 @@ indicated result.</p>
 <span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>    lengths.____(____)</span>
 <span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lengths)</span></code></pre>
 </div>
-<div id="accordionSolution4" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSolution5" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
-  <h4 class="accordion-header" id="headingSolution4">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
+  <h4 class="accordion-header" id="headingSolution5">
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb22">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -806,14 +853,14 @@ indicated result.</p>
 <span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>    ____</span>
 <span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result)</span></code></pre>
 </div>
-<div id="accordionSolution5" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSolution6" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
-  <h4 class="accordion-header" id="headingSolution5">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution6" aria-expanded="false" aria-controls="collapseSolution6">
+  <h4 class="accordion-header" id="headingSolution6">
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb24">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -829,17 +876,16 @@ indicated result.</p>
 </div>
 </div>
 <p>:::</p>
-<div id="challenge4" class="callout challenge">
+<div id="challenge5" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
-<div id="starting-from-the-list-red-green-blue-create-the-acronym-rgb-using" class="callout-inner">
-<h3 class="callout-title">Starting from the list
-<code>["red", "green", "blue"]</code>, create the acronym
-<code>"RGB"</code> using<a class="anchor" aria-label="anchor" href="#challenge4"></a>
+<div id="string-accumulation" class="callout-inner">
+<h3 class="callout-title">String accumulation<a class="anchor" aria-label="anchor" href="#challenge5"></a>
 </h3>
 <div class="callout-content">
-<p>a for loop.</p>
+<p>Starting from the list <code>["red", "green", "blue"]</code>, create
+the acronym <code>"RGB"</code> using a for loop.</p>
 </div>
 </div>
 </div>
@@ -850,7 +896,7 @@ indicated result.</p>
   Give me a hint
   </h4>
 </button>
-<div id="collapseHint1" class="accordion-collapse collapse" aria-labelledby="headingHint1" data-bs-parent="#accordionHint1">
+<div id="collapseHint1" class="accordion-collapse collapse" data-bs-parent="#accordionHint1" aria-labelledby="headingHint1">
 <div class="accordion-body">
 <p>You may need to use a string method to properly format the
 acronym.</p>
@@ -858,14 +904,14 @@ acronym.</p>
 </div>
 </div>
 </div>
-<div id="accordionSolution6" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSolution7" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution6" aria-expanded="false" aria-controls="collapseSolution6">
-  <h4 class="accordion-header" id="headingSolution6">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution7" aria-expanded="false" aria-controls="collapseSolution7">
+  <h4 class="accordion-header" id="headingSolution7">
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
+<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -879,12 +925,12 @@ acronym.</p>
 </div>
 </div>
 </div>
-<div id="challenge5" class="callout challenge">
+<div id="challenge6" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="cumulative-sum" class="callout-inner">
-<h3 class="callout-title">Cumulative Sum<a class="anchor" aria-label="anchor" href="#challenge5"></a>
+<h3 class="callout-title">Cumulative Sum<a class="anchor" aria-label="anchor" href="#challenge6"></a>
 </h3>
 <div class="callout-content">
 <p>Reorder and properly indent the lines of code below so that they
@@ -904,14 +950,14 @@ print a list with the cumulative sum of data. The result should be
 </div>
 </div>
 </div>
-<div id="accordionSolution7" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSolution8" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution7" aria-expanded="false" aria-controls="collapseSolution7">
-  <h4 class="accordion-header" id="headingSolution7">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution8" aria-expanded="false" aria-controls="collapseSolution8">
+  <h4 class="accordion-header" id="headingSolution8">
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
+<div id="collapseSolution8" class="accordion-collapse collapse" data-bs-parent="#accordionSolution8" aria-labelledby="headingSolution8">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb27">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -928,12 +974,12 @@ print a list with the cumulative sum of data. The result should be
 </div>
 </div>
 </div>
-<div id="challenge6" class="callout challenge">
+<div id="challenge7" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="identifying-variable-name-errors" class="callout-inner">
-<h3 class="callout-title">Identifying Variable Name Errors<a class="anchor" aria-label="anchor" href="#challenge6"></a>
+<h3 class="callout-title">Identifying Variable Name Errors<a class="anchor" aria-label="anchor" href="#challenge7"></a>
 </h3>
 <div class="callout-content">
 <ol style="list-style-type: decimal"><li>Read the code below and try to identify what the errors are
@@ -944,7 +990,10 @@ quotes, a misspelled variable, or a variable that should have been
 defined but was not?</li>
 <li>Fix the error.</li>
 <li>Repeat steps 2 and 3, until you have fixed all the errors.</li>
-</ol><div class="codewrapper sourceCode" id="cb28">
+</ol><p>This is a first taste of <strong>if statements</strong>. We will be
+going into more detail on if statements in future lessons. No errors in
+this code have to do with how the if statement is being used.</p>
+<div class="codewrapper sourceCode" id="cb28">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> number <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
@@ -958,14 +1007,14 @@ defined but was not?</li>
 </div>
 </div>
 </div>
-<div id="accordionSolution8" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSolution9" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution8" aria-expanded="false" aria-controls="collapseSolution8">
-  <h4 class="accordion-header" id="headingSolution8">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution9" aria-expanded="false" aria-controls="collapseSolution9">
+  <h4 class="accordion-header" id="headingSolution9">
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution8" class="accordion-collapse collapse" aria-labelledby="headingSolution8" data-bs-parent="#accordionSolution8">
+<div id="collapseSolution9" class="accordion-collapse collapse" data-bs-parent="#accordionSolution9" aria-labelledby="headingSolution9">
 <div class="accordion-body">
 <ul><li>Python variable names are case sensitive: <code>number</code> and
 <code>Number</code> refer to different variables.</li>
@@ -989,12 +1038,12 @@ not the undefined variable <code>a</code>.</li>
 </div>
 </div>
 </div>
-<div id="challenge7" class="callout challenge">
+<div id="challenge8" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="identifying-item-errors" class="callout-inner">
-<h3 class="callout-title">Identifying Item Errors<a class="anchor" aria-label="anchor" href="#challenge7"></a>
+<h3 class="callout-title">Identifying Item Errors<a class="anchor" aria-label="anchor" href="#challenge8"></a>
 </h3>
 <div class="callout-content">
 <ol style="list-style-type: decimal"><li>Read the code below and try to identify what the errors are
@@ -1011,14 +1060,14 @@ it?</li>
 </div>
 </div>
 </div>
-<div id="accordionSolution9" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSolution10" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution9" aria-expanded="false" aria-controls="collapseSolution9">
-  <h4 class="accordion-header" id="headingSolution9">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution10" aria-expanded="false" aria-controls="collapseSolution10">
+  <h4 class="accordion-header" id="headingSolution10">
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution9" class="accordion-collapse collapse" aria-labelledby="headingSolution9" data-bs-parent="#accordionSolution9">
+<div id="collapseSolution10" class="accordion-collapse collapse" data-bs-parent="#accordionSolution10" aria-labelledby="headingSolution10">
 <div class="accordion-body">
 <p>This list has 4 elements and the index to access the last element in
 the list is <code>3</code>.</p>
@@ -1089,7 +1138,7 @@ any links that you are not going to use.
   "url": "https://ccb-hms.github.io/workbench-python-workshop/instructor/06-loops.html",
   "identifier": "https://ccb-hms.github.io/workbench-python-workshop/instructor/06-loops.html",
   "dateCreated": "2023-04-01",
-  "dateModified": "2023-04-14",
+  "dateModified": "2023-04-18",
   "datePublished": "2023-04-18"
 }
 

@@ -445,7 +445,7 @@
         
 <section id="aio-01-introduction"><p>Content from <a href="01-introduction.html">Welcome to Python</a></p>
 <hr>
-<p> Last updated on 2023-04-14 | 
+<p> Last updated on 2023-04-18 | 
         
         <a href="https://github.com/ccb-hms/workbench-python-workshop/edit/main/episodes/01-introduction.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time <i aria-hidden="true" data-feather="clock"></i> 20 minutes </p>
@@ -519,6 +519,31 @@ to display figures next to the code that produces them to tell a
 complete story of the analysis.</p>
 <p>Each notebook contains one or more cells that contain code, text, or
 images.</p>
+<div id="callout1" class="callout callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="scripts-vs.-notebooks-vs.-programs" class="callout-inner">
+<h3 class="callout-title">Scripts vs. Notebooks vs. Programs<a class="anchor" aria-label="anchor" href="#callout1"></a>
+</h3>
+<div class="callout-content">
+<p>A notebook, as described above, is a combination of text, figures,
+results, and code in a single document. In contrast a script is a file
+containing only code (and comments). A python script has the extension
+<code>.py</code>, while a python notebook has the extension
+<code>.ipynb</code>. Python notebooks are built ontop of Python and are
+not considered a part of the Python language, but an extension to it.
+Cells in a notebook can be run interactively while a script is run all
+at once, typically by calling it at the command line.</p>
+<p>A program is a set of machine instructions which are executed
+together. We can think about both Python scripts and notebooks as being
+programs. It should be noted, however, that in computer science the
+terms <em>programming</em> and <em>scripting</em> are defined more
+formally, and no Python code would be considered a program under these
+definitions.</p>
+</div>
+</div>
+</div>
 <section id="getting-started-with-jupyterlab"><h2 class="section-heading">Getting Started with JupyterLab<a class="anchor" aria-label="anchor" href="#getting-started-with-jupyterlab"></a>
 </h2>
 <hr class="half-width">
@@ -539,12 +564,12 @@ The JupyterLab server sends messages to your web browser. * The
 JupyterLab server does the work and the web browser renders the result.
 * You will type code into the browser and see the result when the web
 page talks to the JupyterLab server.</p>
-<div id="callout1" class="callout callout">
+<div id="callout2" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="jupyterlab-what-about-jupyter-notebooks" class="callout-inner">
-<h3 class="callout-title">JupyterLab? What about Jupyter notebooks?<a class="anchor" aria-label="anchor" href="#callout1"></a>
+<h3 class="callout-title">JupyterLab? What about Jupyter notebooks?<a class="anchor" aria-label="anchor" href="#callout2"></a>
 </h3>
 <div class="callout-content">
 <p>JupyterLab is the <a href="https://jupyterlab.readthedocs.io/en/stable/getting_started/overview.html#overview" class="external-link">next
@@ -668,12 +693,12 @@ control of JupyterLab settings and configuration options.</li>
 <strong>Help:</strong> A list of JupyterLab and kernel help
 links.</li>
 </ul>
-<div id="callout2" class="callout callout">
+<div id="callout3" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="kernels" class="callout-inner">
-<h3 class="callout-title">Kernels<a class="anchor" aria-label="anchor" href="#callout2"></a>
+<h3 class="callout-title">Kernels<a class="anchor" aria-label="anchor" href="#callout3"></a>
 </h3>
 <div class="callout-content">
 <p>The JupyterLab <a href="https://jupyterlab.readthedocs.io/en/stable/user/documents_kernels.html" class="external-link">docs</a>
@@ -754,12 +779,12 @@ command line.</li>
 <p>Below is a screenshot of a Jupyter notebook running inside
 JupyterLab. If you are interested in more details, then see the <a href="https://jupyterlab.readthedocs.io/en/stable/user/notebook.html" class="external-link">official
 notebook documentation</a>.</p>
-<figure><img src="../fig/0_jupyterlab_notebook_screenshot.png" alt="" class="figure mx-auto d-block"><figcaption>Example Jupyter Notebook</figcaption></figure><div id="callout3" class="callout callout">
+<figure><img src="../fig/0_jupyterlab_notebook_screenshot.png" alt="" class="figure mx-auto d-block"><figcaption>Example Jupyter Notebook</figcaption></figure><div id="callout4" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="how-its-stored" class="callout-inner">
-<h3 class="callout-title">How It’s Stored<a class="anchor" aria-label="anchor" href="#callout3"></a>
+<h3 class="callout-title">How It’s Stored<a class="anchor" aria-label="anchor" href="#callout4"></a>
 </h3>
 <div class="callout-content">
 <ul>
@@ -809,14 +834,22 @@ bottom of the panel.</p>
 </div>
 </div>
 </div>
-</section><section id="code-vs.-text"><h2 class="section-heading">Code vs. Text<a class="anchor" aria-label="anchor" href="#code-vs.-text"></a>
-</h2>
-<hr class="half-width">
+<div id="callout5" class="callout callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="code-vs.-text" class="callout-inner">
+<h3 class="callout-title">Code vs. Text<a class="anchor" aria-label="anchor" href="#callout5"></a>
+</h3>
+<div class="callout-content">
 <p>Jupyter mixes code and text in different types of blocks, called
 cells. We often use the term “code” to mean “the source code of software
 written in a language such as Python”. A “code cell” in a Notebook is a
 cell that contains software; a “text cell” is one that contains ordinary
-prose written for human beings. {: .callout}</p>
+prose written for human beings.</p>
+</div>
+</div>
+</div>
 </section><section id="the-notebook-has-command-and-edit-modes."><h2 class="section-heading">The Notebook has Command and Edit modes.<a class="anchor" aria-label="anchor" href="#the-notebook-has-command-and-edit-modes."></a>
 </h2>
 <hr class="half-width">
@@ -1054,12 +1087,12 @@ this:</p>
 Note that the bullet list is indented 2 spaces so that it is inline with
 the items of the numbered list.</p>
 <pre><code>1.  Get funding.
-2.  Do work.
+1.  Do work.
     *   Design experiment.
     *   Collect data.
     *   Analyze.
-3.  Write up.
-4.  Publish.</code></pre>
+1.  Write up.
+1.  Publish.</code></pre>
 </div>
 </div>
 </div>
@@ -1224,7 +1257,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-02-variables"><p>Content from <a href="02-variables.html">Variables in Python</a></p>
 <hr>
-<p> Last updated on 2023-04-13 | 
+<p> Last updated on 2023-04-18 | 
         
         <a href="https://github.com/ccb-hms/workbench-python-workshop/edit/main/episodes/02-variables.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time <i aria-hidden="true" data-feather="clock"></i> 25 minutes </p>
@@ -1324,7 +1357,7 @@ that until we understand the convention.</li>
 </h3>
 <div class="callout-content">
 <p>A <strong>string</strong> is the <strong>type</strong> which stores
-text in Python. Strings can be thought of as sequenced or
+text in Python. Strings can be thought of as sequences or
 <em>string</em>s of individual characters (and using the words string
 this way actually goes back to a printing term in the pre-computer era).
 We will be learning more about types and strings in other lessons.</p>
@@ -1352,7 +1385,7 @@ quotes.</li>
 <h3 class="callout-title">Single vs. double quotes<a class="anchor" aria-label="anchor" href="#callout2"></a>
 </h3>
 <div class="callout-content">
-<p>In python, you can use single quotes or double quotes to denote a
+<p>In Python, you can use single quotes or double quotes to denote a
 string, but you need to use the same one for both the beginning and the
 end.</p>
 <div class="codewrapper sourceCode" id="cb2">
@@ -1539,7 +1572,7 @@ the program does.</li>
   Give me a hint
   </h4>
 </button>
-<div id="collapseHint1" class="accordion-collapse collapse" data-bs-parent="#accordionHint1" aria-labelledby="headingHint1">
+<div id="collapseHint1" class="accordion-collapse collapse" aria-labelledby="headingHint1" data-bs-parent="#accordionHint1">
 <div class="accordion-body">
 <p>Try using this <a href="https://pythontutor.com/visualize.html#code=x%20%3D%201.0%20%20%20%0Ay%20%3D%203.0%20%0Aswap%20%3D%20x%20%0Ax%20%3D%20y%20%20%20%20%20%20%0Ay%20%3D%20swap%20&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false" class="external-link">python
 visualization tool</a> to visualize what happens in the code.</p>
@@ -1554,7 +1587,7 @@ visualization tool</a> to visualize what happens in the code.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1601,7 +1634,7 @@ your prediction.)</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1643,7 +1676,7 @@ string value of <code>'left'</code>.</p>
   Give me a hint
   </h4>
 </button>
-<div id="collapseHint2" class="accordion-collapse collapse" data-bs-parent="#accordionHint2" aria-labelledby="headingHint2">
+<div id="collapseHint2" class="accordion-collapse collapse" aria-labelledby="headingHint2" data-bs-parent="#accordionHint2">
 <div class="accordion-body">
 <p>Hint: think about which code you would rather inherit from someone
 who is leaving the lab:</p>
@@ -1663,7 +1696,7 @@ who is leaving the lab:</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p><code>minutes</code> is better because <code>min</code> might mean
 something like “minimum” (and actually is an existing built-in function
@@ -1678,7 +1711,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-03-types"><p>Content from <a href="03-types.html">Basic Types</a></p>
 <hr>
-<p> Last updated on 2023-04-14 | 
+<p> Last updated on 2023-04-18 | 
         
         <a href="https://github.com/ccb-hms/workbench-python-workshop/edit/main/episodes/03-types.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time <i aria-hidden="true" data-feather="clock"></i> 25 minutes </p>
@@ -1861,6 +1894,21 @@ into more detail on other compound types in future lessons.</p>
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code>Ahmed Walsh</code></pre>
+</div>
+<div id="callout1" class="callout callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="the-empty-string" class="callout-inner">
+<h3 class="callout-title">The empty string<a class="anchor" aria-label="anchor" href="#callout1"></a>
+</h3>
+<div class="callout-content">
+<p>We can initialize a string to contain no letter,
+<code>empty = ""</code>. This is called the <strong>empty
+string</strong>, and is often used when we want to build up a string
+character by character</p>
+</div>
+</div>
 </div>
 <ul>
 <li>Multiplying a character string by an integer <em>N</em> creates a
@@ -3026,7 +3074,7 @@ happen, when is each function called, etc.</li>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li>Order of operations:
@@ -3079,7 +3127,7 @@ message? If it runs, does its result make any sense?</li>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb30">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3148,7 +3196,7 @@ TypeError: '&gt;' not supported between instances of 'str' and 'int'</code></pre
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p><code>max</code> and <code>min</code> return TypeErrors in this case
 because the correct number of parameters was not supplied. If it just
@@ -3181,7 +3229,7 @@ simpler way to do this in a later episode.)</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb37">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3923,7 +3971,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-05-lists"><p>Content from <a href="05-lists.html">Lists</a></p>
 <hr>
-<p> Last updated on 2023-04-14 | 
+<p> Last updated on 2023-04-18 | 
         
         <a href="https://github.com/ccb-hms/workbench-python-workshop/edit/main/episodes/05-lists.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time <i aria-hidden="true" data-feather="clock"></i> 45 minutes </p>
@@ -4001,6 +4049,21 @@ separating the values with commas:</p>
 </h3>
 <pre class="output" tabindex="0"><code>odds are: [1, 3, 5, 7]</code></pre>
 </div>
+<div id="callout1" class="callout callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="the-empty-list" class="callout-inner">
+<h3 class="callout-title">The empty list<a class="anchor" aria-label="anchor" href="#callout1"></a>
+</h3>
+<div class="callout-content">
+<p>Similar to an empty string, we can create an empty list with a
+<code>len</code> of 0 and no elements. We create an empty list as
+<code>empty_list = []</code> or <code>empty_list = list()</code>, and it
+is useful when we want to build up a list element by element.</p>
+</div>
+</div>
+</div>
 <p>We can access elements of a list using indices – numbered positions
 of elements in the list. These positions are numbered starting at 0, so
 the first element has an index of 0.</p>
@@ -4060,12 +4123,12 @@ TypeError: 'str' object does not support item assignment</code></pre>
 </div>
 <p>does not. This is because a list is <strong>mutable</strong> while a
 string is <strong>immutable</strong>.</p>
-<div id="callout1" class="callout callout">
+<div id="callout2" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="mutable-and-immutable" class="callout-inner">
-<h3 class="callout-title">Mutable and immutable<a class="anchor" aria-label="anchor" href="#callout1"></a>
+<h3 class="callout-title">Mutable and immutable<a class="anchor" aria-label="anchor" href="#callout2"></a>
 </h3>
 <div class="callout-content">
 <p>Data which can be modified in place is called <a href="../%7B%7B%20page.root%20%7D%7D/reference.html#mutable">mutable</a>,
@@ -4125,12 +4188,12 @@ writing your code.</p>
 </div>
 </div>
 </div>
-<div id="callout2" class="callout callout">
+<div id="callout3" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="nested-lists" class="callout-inner">
-<h3 class="callout-title">Nested Lists<a class="anchor" aria-label="anchor" href="#callout2"></a>
+<h3 class="callout-title">Nested Lists<a class="anchor" aria-label="anchor" href="#callout3"></a>
 </h3>
 <div class="callout-content">
 <p>Since a list can contain any Python variables, it can even contain
@@ -4203,12 +4266,12 @@ second index represents the specific basket (from left to right). <img src="../f
 </div>
 </div>
 </div>
-<div id="callout3" class="callout callout">
+<div id="callout4" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="heterogeneous-lists" class="callout-inner">
-<h3 class="callout-title">Heterogeneous Lists<a class="anchor" aria-label="anchor" href="#callout3"></a>
+<h3 class="callout-title">Heterogeneous Lists<a class="anchor" aria-label="anchor" href="#callout4"></a>
 </h3>
 <div class="callout-content">
 <p>Lists in Python can contain elements of different types. Example:</p>
@@ -4220,6 +4283,9 @@ second index represents the specific basket (from left to right). <img src="../f
 </div>
 </div>
 </div>
+</section><section id="manipulating-lists"><h2 class="section-heading">Manipulating Lists<a class="anchor" aria-label="anchor" href="#manipulating-lists"></a>
+</h2>
+<hr class="half-width">
 <p>There are many ways to change the contents of lists besides assigning
 new values to individual elements:</p>
 <div class="codewrapper sourceCode" id="cb23">
@@ -4303,8 +4369,8 @@ accessed ranges of positions in a strings.</p>
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>binomial_name <span class="op">=</span> <span class="st">'Drosophila melanogaster'</span></span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>group <span class="op">=</span> binomial_name[<span class="dv">0</span>:<span class="dv">10</span>]</span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'group:'</span>, group)</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>genus <span class="op">=</span> binomial_name[<span class="dv">0</span>:<span class="dv">10</span>]</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'genus:'</span>, genus)</span>
 <span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>species <span class="op">=</span> binomial_name[<span class="dv">11</span>:<span class="dv">23</span>]</span>
 <span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'species:'</span>, species)</span>
@@ -4319,7 +4385,7 @@ accessed ranges of positions in a strings.</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>group: Drosophila
+<pre class="output" tabindex="0"><code>genus: Drosophila
 species: melanogaster
 autosomes: ['2', '3', '4']
 last: 4</code></pre>
@@ -4365,7 +4431,7 @@ your approach to make it more robust.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>Use negative indices to count elements from the end of a container
 (such as list or string):</p>
@@ -4448,7 +4514,7 @@ through the end of the string)?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>To obtain every other character you need to provide a slice with the
 step size of 2:</p>
@@ -4478,13 +4544,13 @@ omit the first index in the range:</p>
 <span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>day <span class="op">=</span> date[<span class="dv">0</span>:<span class="dv">6</span>]</span>
 <span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Using 0 to begin range:'</span>, day)</span>
 <span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>day <span class="op">=</span> date[:<span class="dv">6</span>]</span>
-<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Omitting beginning index:'</span>, day)</span></code></pre>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Or omit the beginning index to slice from 0:'</span>, day)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code>Using 0 to begin range: Monday
-Omitting beginning index: Monday</code></pre>
+Or omit the beginning index to slice from 0: Monday</code></pre>
 </div>
 <p>And similarly, you can omit the ending index in the range to take a
 slice to the very end of the sequence:</p>
@@ -4497,14 +4563,54 @@ slice to the very end of the sequence:</p>
 <span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>sond <span class="op">=</span> months[<span class="dv">8</span>:<span class="bu">len</span>(months)]</span>
 <span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Using len() to get last entry:'</span>, sond)</span>
 <span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a>sond <span class="op">=</span> months[<span class="dv">8</span>:]</span>
-<span id="cb48-7"><a href="#cb48-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Omitting ending index:'</span>, sond)</span></code></pre>
+<span id="cb48-7"><a href="#cb48-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Or omit the final index to go to the end of the list:'</span>, sond)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code>With known last position: ['sep', 'oct', 'nov', 'dec']
 Using len() to get last entry: ['sep', 'oct', 'nov', 'dec']
-Omitting ending index: ['sep', 'oct', 'nov', 'dec']</code></pre>
+Or omit the final index to go to the end of the list: ['sep', 'oct', 'nov', 'dec']</code></pre>
+</div>
+<div id="callout5" class="callout callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="going-past-len" class="callout-inner">
+<h3 class="callout-title">Going past <code>len</code><a class="anchor" aria-label="anchor" href="#callout5"></a>
+</h3>
+<div class="callout-content">
+<p>Python does not consider it an error to go past the end of a list
+when slicing. Python will juse slice until the end of the list:</p>
+<div class="codewrapper sourceCode" id="cb50">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>months[:<span class="dv">30</span>]</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec']</code></pre>
+</div>
+<p>However, trying to get a single item from a list at an index greater
+than its length will result in an error:</p>
+<div class="codewrapper sourceCode" id="cb52">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>months[<span class="dv">30</span>]</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="error" tabindex="0"><code>---------------------------------------------------------------------------
+IndexError                                Traceback (most recent call last)
+Input In [5], in &lt;cell line: 1&gt;()
+----&gt; 1 months[30]
+
+IndexError: list index out of range</code></pre>
+</div>
+</div>
+</div>
 </div>
 <div id="challenge3" class="callout challenge">
 <div class="callout-square">
@@ -4518,12 +4624,12 @@ Omitting ending index: ['sep', 'oct', 'nov', 'dec']</code></pre>
 lists, it means “concatenate”. Given that, what do you think the
 multiplication operator <code>*</code> does on lists? In particular,
 what will be the output of the following code?</p>
-<div class="codewrapper sourceCode" id="cb50">
+<div class="codewrapper sourceCode" id="cb54">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>counts <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">10</span>]</span>
-<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>repeats <span class="op">=</span> counts <span class="op">*</span> <span class="dv">2</span></span>
-<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(repeats)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>counts <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">10</span>]</span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>repeats <span class="op">=</span> counts <span class="op">*</span> <span class="dv">2</span></span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(repeats)</span></code></pre>
 </div>
 <ol style="list-style-type: decimal">
 <li><code>[2, 4, 6, 8, 10, 2, 4, 6, 8, 10]</code></li>
@@ -4544,7 +4650,7 @@ things depending on what it’s applied to.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>The multiplication operator <code>*</code> used on a list replicates
 elements of the list and concatenates them together:</p>
@@ -4555,10 +4661,10 @@ elements of the list and concatenates them together:</p>
 </div>
 <p>{: .output}</p>
 <p>It’s equivalent to:</p>
-<div class="codewrapper sourceCode" id="cb52">
+<div class="codewrapper sourceCode" id="cb56">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>counts <span class="op">+</span> counts</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>counts <span class="op">+</span> counts</span></code></pre>
 </div>
 </div>
 </div>
@@ -4570,7 +4676,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-06-loops"><p>Content from <a href="06-loops.html">For Loops</a></p>
 <hr>
-<p> Last updated on 2023-04-14 | 
+<p> Last updated on 2023-04-18 | 
         
         <a href="https://github.com/ccb-hms/workbench-python-workshop/edit/main/episodes/06-loops.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time <i aria-hidden="true" data-feather="clock"></i> 25 minutes </p>
@@ -4826,16 +4932,16 @@ string, or the empty list.</li>
 <div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sum the first 10 integers.</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>total <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> number <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>   total <span class="op">=</span> total <span class="op">+</span> (number <span class="op">+</span> <span class="dv">1</span>)</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(total)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sum the first 5 integers.</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>my_sum <span class="op">=</span> <span class="dv">0</span> <span class="co"># Line 1</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> number <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>): <span class="co"># Line 2</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>   my_sum <span class="op">=</span> my_sum <span class="op">+</span> (number <span class="op">+</span> <span class="dv">1</span>) <span class="co"># Line 3</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_sum) <span class="co"># Line 4</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code><span><span class="fl">55</span></span></code></pre>
+<pre class="output" tabindex="0"><code><span><span class="fl">15</span></span></code></pre>
 </div>
 <ul>
 <li>Read <code>total = total + (number + 1)</code> as:
@@ -4848,42 +4954,83 @@ string, or the empty list.</li>
 </ul>
 </li>
 <li>We have to add <code>number + 1</code> because <code>range</code>
-produces 0..9, not 1..10.</li>
+produces 0..9, not 1..10.
+<ul>
+<li>You could also have used <code>number</code> and
+<code>range(11)</code>.</li>
 </ul>
-<div id="discussion1" class="callout discussion">
-<div class="callout-square">
-<i class="callout-icon" data-feather="message-circle"></i>
-</div>
-<div id="classifying-errors" class="callout-inner">
-<h3 class="callout-title">Classifying Errors<a class="anchor" aria-label="anchor" href="#discussion1"></a>
-</h3>
-<div class="callout-content">
-<p>Is an indentation error a syntax error or a runtime error? :::
-solution An IndentationError is a syntax error. Programs with syntax
-errors cannot be started. A program with a runtime error will start but
-an error will be thrown under certain conditions.</p>
-</div>
-</div>
-</div>
-<p>:::</p>
+</li>
+</ul>
+<p>We can <em>trace</em> the program output by looking at which line of
+code is being executed and what each variable’s value is at each
+line:</p>
+<table class="table">
+<thead><tr class="header">
+<th>Line No</th>
+<th>Variables</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>my_sum = 0</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>my_sum = 0 number = 0</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>my_sum = 1 number = 0</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>my_sum = 1 number = 1</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>my_sum = 3 number = 1</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>my_sum = 3 number = 2</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>my_sum = 6 number = 2</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>my_sum = 6 number = 3</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>my_sum = 10 number = 3</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>my_sum = 10 number = 4</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>my_sum = 15 number = 4</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>my_sum = 15 number = 4</td>
+</tr>
+</tbody>
+</table>
+<p>Let’s double check our work by <a href="https://pythontutor.com/visualize.html#code=%23%20Sum%20the%20first%205%20integers.%0Amy_sum%20%3D%200%20%23%20Line%201%0Afor%20number%20in%20range%285%29%3A%20%23%20Line%202%0A%20%20%20my_sum%20%3D%20my_sum%20%2B%20%28number%20%2B%201%29%20%23%20Line%203%0Aprint%28my_sum%29%20%23%20Line%204&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false" class="external-link">visualizing
+the code</a>.</p>
 <div id="challenge1" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
-<div id="tracing-execution" class="callout-inner">
-<h3 class="callout-title">Tracing Execution<a class="anchor" aria-label="anchor" href="#challenge1"></a>
+<div id="classifying-errors" class="callout-inner">
+<h3 class="callout-title">Classifying Errors<a class="anchor" aria-label="anchor" href="#challenge1"></a>
 </h3>
 <div class="callout-content">
-<p>Create a table showing the numbers of the lines that are executed
-when this program runs, and the values of the variables after each line
-is executed.</p>
-<div class="codewrapper sourceCode" id="cb16">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>total <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> char <span class="kw">in</span> <span class="st">"tin"</span>:</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    total <span class="op">=</span> total <span class="op">+</span> <span class="dv">1</span></span></code></pre>
-</div>
+<p>Is an indentation error a syntax error or a runtime error?</p>
 </div>
 </div>
 </div>
@@ -4894,7 +5041,45 @@ is executed.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div class="accordion-body">
+<p>An indentation error (<code>IndentationError</code>) is a syntax
+error. Programs with syntax errors cannot be started. A program with a
+runtime error will start but an error will be thrown under certain
+conditions.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="challenge2" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div id="tracing-execution" class="callout-inner">
+<h3 class="callout-title">Tracing Execution<a class="anchor" aria-label="anchor" href="#challenge2"></a>
+</h3>
+<div class="callout-content">
+<p>Trace through the following code and create a table showing the lines
+that are executed when this program runs, and the values of the
+variables after each line is executed.</p>
+<div class="codewrapper sourceCode" id="cb16">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>total <span class="op">=</span> <span class="dv">0</span> <span class="co"># Line 1</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> char <span class="kw">in</span> <span class="st">"tin"</span>: <span class="co"># Line 2</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    total <span class="op">=</span> total <span class="op">+</span> <span class="dv">1</span> <span class="co"># Line 3</span></span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
+  <h4 class="accordion-header" id="headingSolution2">
+  Show me the solution
+  </h4>
+</button>
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <table class="table">
 <thead><tr class="header">
@@ -4936,12 +5121,12 @@ is executed.</p>
 </div>
 </div>
 </div>
-<div id="challenge2" class="callout challenge">
+<div id="challenge3" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="reversing-a-string" class="callout-inner">
-<h3 class="callout-title">Reversing a String<a class="anchor" aria-label="anchor" href="#challenge2"></a>
+<h3 class="callout-title">Reversing a String<a class="anchor" aria-label="anchor" href="#challenge3"></a>
 </h3>
 <div class="callout-content">
 <p>Fill in the blanks in the program below so that it prints “nit” (the
@@ -4958,14 +5143,14 @@ reverse of the original character string “tin”).</p>
 </div>
 </div>
 </div>
-<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
-  <h4 class="accordion-header" id="headingSolution2">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
+  <h4 class="accordion-header" id="headingSolution3">
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -4980,12 +5165,12 @@ reverse of the original character string “tin”).</p>
 </div>
 </div>
 </div>
-<div id="challenge3" class="callout challenge">
+<div id="challenge4" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="practice-accumulating" class="callout-inner">
-<h3 class="callout-title">Practice Accumulating<a class="anchor" aria-label="anchor" href="#challenge3"></a>
+<h3 class="callout-title">Practice Accumulating<a class="anchor" aria-label="anchor" href="#challenge4"></a>
 </h3>
 <div class="callout-content">
 <p>Fill in the blanks in each of the programs below to produce the
@@ -5002,14 +5187,14 @@ indicated result.</p>
 </div>
 </div>
 </div>
-<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSolution4" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
-  <h4 class="accordion-header" id="headingSolution3">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
+  <h4 class="accordion-header" id="headingSolution4">
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb20">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -5032,14 +5217,14 @@ indicated result.</p>
 <span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>    lengths.____(____)</span>
 <span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lengths)</span></code></pre>
 </div>
-<div id="accordionSolution4" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSolution5" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
-  <h4 class="accordion-header" id="headingSolution4">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
+  <h4 class="accordion-header" id="headingSolution5">
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb22">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -5064,14 +5249,14 @@ indicated result.</p>
 <span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>    ____</span>
 <span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result)</span></code></pre>
 </div>
-<div id="accordionSolution5" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSolution6" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
-  <h4 class="accordion-header" id="headingSolution5">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution6" aria-expanded="false" aria-controls="collapseSolution6">
+  <h4 class="accordion-header" id="headingSolution6">
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb24">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -5087,17 +5272,16 @@ indicated result.</p>
 </div>
 </div>
 <p>:::</p>
-<div id="challenge4" class="callout challenge">
+<div id="challenge5" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
-<div id="starting-from-the-list-red-green-blue-create-the-acronym-rgb-using" class="callout-inner">
-<h3 class="callout-title">Starting from the list
-<code>["red", "green", "blue"]</code>, create the acronym
-<code>"RGB"</code> using<a class="anchor" aria-label="anchor" href="#challenge4"></a>
+<div id="string-accumulation" class="callout-inner">
+<h3 class="callout-title">String accumulation<a class="anchor" aria-label="anchor" href="#challenge5"></a>
 </h3>
 <div class="callout-content">
-<p>a for loop.</p>
+<p>Starting from the list <code>["red", "green", "blue"]</code>, create
+the acronym <code>"RGB"</code> using a for loop.</p>
 </div>
 </div>
 </div>
@@ -5108,7 +5292,7 @@ indicated result.</p>
   Give me a hint
   </h4>
 </button>
-<div id="collapseHint1" class="accordion-collapse collapse" aria-labelledby="headingHint1" data-bs-parent="#accordionHint1">
+<div id="collapseHint1" class="accordion-collapse collapse" data-bs-parent="#accordionHint1" aria-labelledby="headingHint1">
 <div class="accordion-body">
 <p>You may need to use a string method to properly format the
 acronym.</p>
@@ -5116,14 +5300,14 @@ acronym.</p>
 </div>
 </div>
 </div>
-<div id="accordionSolution6" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSolution7" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution6" aria-expanded="false" aria-controls="collapseSolution6">
-  <h4 class="accordion-header" id="headingSolution6">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution7" aria-expanded="false" aria-controls="collapseSolution7">
+  <h4 class="accordion-header" id="headingSolution7">
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
+<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -5137,12 +5321,12 @@ acronym.</p>
 </div>
 </div>
 </div>
-<div id="challenge5" class="callout challenge">
+<div id="challenge6" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="cumulative-sum" class="callout-inner">
-<h3 class="callout-title">Cumulative Sum<a class="anchor" aria-label="anchor" href="#challenge5"></a>
+<h3 class="callout-title">Cumulative Sum<a class="anchor" aria-label="anchor" href="#challenge6"></a>
 </h3>
 <div class="callout-content">
 <p>Reorder and properly indent the lines of code below so that they
@@ -5162,14 +5346,14 @@ print a list with the cumulative sum of data. The result should be
 </div>
 </div>
 </div>
-<div id="accordionSolution7" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSolution8" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution7" aria-expanded="false" aria-controls="collapseSolution7">
-  <h4 class="accordion-header" id="headingSolution7">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution8" aria-expanded="false" aria-controls="collapseSolution8">
+  <h4 class="accordion-header" id="headingSolution8">
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
+<div id="collapseSolution8" class="accordion-collapse collapse" data-bs-parent="#accordionSolution8" aria-labelledby="headingSolution8">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb27">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -5186,12 +5370,12 @@ print a list with the cumulative sum of data. The result should be
 </div>
 </div>
 </div>
-<div id="challenge6" class="callout challenge">
+<div id="challenge7" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="identifying-variable-name-errors" class="callout-inner">
-<h3 class="callout-title">Identifying Variable Name Errors<a class="anchor" aria-label="anchor" href="#challenge6"></a>
+<h3 class="callout-title">Identifying Variable Name Errors<a class="anchor" aria-label="anchor" href="#challenge7"></a>
 </h3>
 <div class="callout-content">
 <ol style="list-style-type: decimal">
@@ -5204,6 +5388,9 @@ defined but was not?</li>
 <li>Fix the error.</li>
 <li>Repeat steps 2 and 3, until you have fixed all the errors.</li>
 </ol>
+<p>This is a first taste of <strong>if statements</strong>. We will be
+going into more detail on if statements in future lessons. No errors in
+this code have to do with how the if statement is being used.</p>
 <div class="codewrapper sourceCode" id="cb28">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -5218,14 +5405,14 @@ defined but was not?</li>
 </div>
 </div>
 </div>
-<div id="accordionSolution8" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSolution9" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution8" aria-expanded="false" aria-controls="collapseSolution8">
-  <h4 class="accordion-header" id="headingSolution8">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution9" aria-expanded="false" aria-controls="collapseSolution9">
+  <h4 class="accordion-header" id="headingSolution9">
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution8" class="accordion-collapse collapse" aria-labelledby="headingSolution8" data-bs-parent="#accordionSolution8">
+<div id="collapseSolution9" class="accordion-collapse collapse" data-bs-parent="#accordionSolution9" aria-labelledby="headingSolution9">
 <div class="accordion-body">
 <ul>
 <li>Python variable names are case sensitive: <code>number</code> and
@@ -5251,12 +5438,12 @@ not the undefined variable <code>a</code>.</li>
 </div>
 </div>
 </div>
-<div id="challenge7" class="callout challenge">
+<div id="challenge8" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="identifying-item-errors" class="callout-inner">
-<h3 class="callout-title">Identifying Item Errors<a class="anchor" aria-label="anchor" href="#challenge7"></a>
+<h3 class="callout-title">Identifying Item Errors<a class="anchor" aria-label="anchor" href="#challenge8"></a>
 </h3>
 <div class="callout-content">
 <ol style="list-style-type: decimal">
@@ -5275,14 +5462,14 @@ it?</li>
 </div>
 </div>
 </div>
-<div id="accordionSolution9" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSolution10" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution9" aria-expanded="false" aria-controls="collapseSolution9">
-  <h4 class="accordion-header" id="headingSolution9">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution10" aria-expanded="false" aria-controls="collapseSolution10">
+  <h4 class="accordion-header" id="headingSolution10">
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution9" class="accordion-collapse collapse" aria-labelledby="headingSolution9" data-bs-parent="#accordionSolution9">
+<div id="collapseSolution10" class="accordion-collapse collapse" data-bs-parent="#accordionSolution10" aria-labelledby="headingSolution10">
 <div class="accordion-body">
 <p>This list has 4 elements and the index to access the last element in
 the list is <code>3</code>.</p>
@@ -5302,7 +5489,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-07-packages"><p>Content from <a href="07-packages.html">Libraries</a></p>
 <hr>
-<p> Last updated on 2023-04-14 | 
+<p> Last updated on 2023-04-18 | 
         
         <a href="https://github.com/ccb-hms/workbench-python-workshop/edit/main/episodes/07-packages.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time <i aria-hidden="true" data-feather="clock"></i> 20 minutes </p>
@@ -5386,13 +5573,20 @@ Index).</li>
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="libraries-and-modules" class="callout-inner">
-<h3 class="callout-title">Libraries and modules<a class="anchor" aria-label="anchor" href="#callout1"></a>
+<div id="libraries-packages-and-modules" class="callout-inner">
+<h3 class="callout-title">Libraries, packages, and modules<a class="anchor" aria-label="anchor" href="#callout1"></a>
 </h3>
 <div class="callout-content">
-<p>A library is a collection of modules, but the terms are often used
-interchangeably, especially since many libraries only consist of a
-single module, so don’t worry if you mix them.</p>
+<p>A module is a typically defined set of code located within a single
+Python file which is intended to be imported into scripts or other
+modules. A package is a set of related modules, often contained in a
+single directory. A library is a more general term referring to a
+collection of modules and packages. For instance, the <a href="https://docs.python.org/3/library/index.html" class="external-link">Python Standard
+Library</a> contains functionality from compressing files to parallel
+programming.</p>
+<p>However, these definitions are not particularly formal or strict.
+Module, package, and library are often used interchangeably, especially
+since many libraries only consist of a single module.</p>
 </div>
 </div>
 </div>
@@ -5514,11 +5708,10 @@ programs.<a class="anchor" aria-label="anchor" href="#create-an-alias-for-a-libr
 <pre class="output" tabindex="0"><code>cos(pi) is -1.0</code></pre>
 </div>
 <ul>
-<li>Commonly used for libraries that are frequently used or have long
-names.
+<li>Allows less typing for long and/or frequently used packages.
 <ul>
-<li>E.g., the <code>matplotlib</code> plotting library is often aliased
-as <code>mpl</code>.</li>
+<li>E.g., the <code>matplotlib.pyplot</code> plotting package is often
+aliased as <code>plt</code>.</li>
 </ul>
 </li>
 <li>But can make programs harder to understand, since readers must learn
@@ -5548,7 +5741,7 @@ exist?</li>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li><p>Using <code>help(math)</code> we see that we’ve got
@@ -5590,6 +5783,9 @@ library</a> module could help you?</li>
 alternatives?</li>
 <li>Try to write a program that uses the function.</li>
 </ol>
+<p>While you can use <code>help</code> from within Jupyter Lab, often
+when working with Python searching on the internet can yield a faster
+result.</p>
 </div>
 </div>
 </div>
@@ -5600,7 +5796,7 @@ alternatives?</li>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>The <a href="https://docs.python.org/3/library/random.html" class="external-link">random
 module</a> seems like it could help.</p>
@@ -5683,7 +5879,7 @@ Feel free to use/add intermediate variables.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -5725,7 +5921,7 @@ reports an error:</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p>Importing the math module (<code>import math</code>)</p>
 </div>
@@ -5764,7 +5960,7 @@ reports an error:</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -5824,7 +6020,7 @@ calls.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li>Library calls 1 and 4. In order to directly refer to
@@ -5886,7 +6082,7 @@ convey this information.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
+<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb21">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -5935,7 +6131,7 @@ it?</li>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution8" class="accordion-collapse collapse" aria-labelledby="headingSolution8" data-bs-parent="#accordionSolution8">
+<div id="collapseSolution8" class="accordion-collapse collapse" data-bs-parent="#accordionSolution8" aria-labelledby="headingSolution8">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -6341,7 +6537,7 @@ change your view of the data.)</li>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li>
@@ -6455,7 +6651,7 @@ can use <code>help</code> to get information on how to use
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>In order to write the DataFrame <code>rnaseq_df</code> to a file
 called <code>processed.csv</code>, execute the following command:</p>
@@ -7297,7 +7493,7 @@ protein. Display the result.</p>
   solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -7361,7 +7557,7 @@ your dictionary? Display the result as a Boolean value.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -7461,7 +7657,7 @@ regulator</td>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -7658,7 +7854,7 @@ we do with members of a <code>list</code>:</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb35">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -7788,7 +7984,7 @@ returns any <em>values</em> associated with it:</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb46">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -7938,7 +8134,7 @@ to extract the <em>values</em> associated with the following
   DIY ANSWER
   </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb60">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -8078,7 +8274,7 @@ cDNA.</p></li>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
+<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
 <div class="accordion-body">
 <p>Q1:</p>
 <div class="codewrapper sourceCode" id="cb65">
@@ -10070,7 +10266,7 @@ result of call is: None</code></pre>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -10111,7 +10307,7 @@ result of call is: None</code></pre>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -10188,7 +10384,7 @@ result of call is: None</code></pre>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li><p>The problem with the example is that the function
@@ -10239,7 +10435,7 @@ returns the minimum value in that data.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -10284,7 +10480,7 @@ negative numbers?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb27">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -10350,7 +10546,7 @@ print?</li>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li><code>2003/2/1</code></li>
@@ -10441,7 +10637,7 @@ error conditions. Sample output could be
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
+<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb34">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -10518,7 +10714,7 @@ values. Is the population trending toward a steady state?</p></li>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution8" class="accordion-collapse collapse" aria-labelledby="headingSolution8" data-bs-parent="#accordionSolution8">
+<div id="collapseSolution8" class="accordion-collapse collapse" data-bs-parent="#accordionSolution8" aria-labelledby="headingSolution8">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li><div class="codewrapper sourceCode" id="cb35">
@@ -10932,7 +11128,7 @@ opposed to treatment.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>

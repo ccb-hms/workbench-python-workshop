@@ -373,7 +373,7 @@ programs.</a></li>
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Libraries</h1>
-        <p> Last updated on 2023-04-14 | 
+        <p> Last updated on 2023-04-18 | 
         
         <a href="https://github.com/ccb-hms/workbench-python-workshop/edit/main/episodes/07-packages.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -453,13 +453,20 @@ Index).</li>
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="libraries-and-modules" class="callout-inner">
-<h3 class="callout-title">Libraries and modules<a class="anchor" aria-label="anchor" href="#callout1"></a>
+<div id="libraries-packages-and-modules" class="callout-inner">
+<h3 class="callout-title">Libraries, packages, and modules<a class="anchor" aria-label="anchor" href="#callout1"></a>
 </h3>
 <div class="callout-content">
-<p>A library is a collection of modules, but the terms are often used
-interchangeably, especially since many libraries only consist of a
-single module, so don’t worry if you mix them.</p>
+<p>A module is a typically defined set of code located within a single
+Python file which is intended to be imported into scripts or other
+modules. A package is a set of related modules, often contained in a
+single directory. A library is a more general term referring to a
+collection of modules and packages. For instance, the <a href="https://docs.python.org/3/library/index.html" class="external-link">Python Standard
+Library</a> contains functionality from compressing files to parallel
+programming.</p>
+<p>However, these definitions are not particularly formal or strict.
+Module, package, and library are often used interchangeably, especially
+since many libraries only consist of a single module.</p>
 </div>
 </div>
 </div>
@@ -563,10 +570,9 @@ programs.<a class="anchor" aria-label="anchor" href="#create-an-alias-for-a-libr
 </h3>
 <pre class="output" tabindex="0"><code>cos(pi) is -1.0</code></pre>
 </div>
-<ul><li>Commonly used for libraries that are frequently used or have long
-names.
-<ul><li>E.g., the <code>matplotlib</code> plotting library is often aliased
-as <code>mpl</code>.</li>
+<ul><li>Allows less typing for long and/or frequently used packages.
+<ul><li>E.g., the <code>matplotlib.pyplot</code> plotting package is often
+aliased as <code>plt</code>.</li>
 </ul></li>
 <li>But can make programs harder to understand, since readers must learn
 your program’s aliases.</li>
@@ -592,7 +598,7 @@ exist?</li>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <ol style="list-style-type: decimal"><li><p>Using <code>help(math)</code> we see that we’ve got
 <code>pow(x,y)</code> in addition to <code>sqrt(x)</code>, so we could
@@ -630,7 +636,10 @@ library</a> module could help you?</li>
 <li>Which function would you select from that module? Are there
 alternatives?</li>
 <li>Try to write a program that uses the function.</li>
-</ol></div>
+</ol><p>While you can use <code>help</code> from within Jupyter Lab, often
+when working with Python searching on the internet can yield a faster
+result.</p>
+</div>
 </div>
 </div>
 <div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
@@ -640,7 +649,7 @@ alternatives?</li>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>The <a href="https://docs.python.org/3/library/random.html" class="external-link">random
 module</a> seems like it could help.</p>
@@ -723,7 +732,7 @@ Feel free to use/add intermediate variables.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -765,7 +774,7 @@ reports an error:</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p>Importing the math module (<code>import math</code>)</p>
 </div>
@@ -802,7 +811,7 @@ reports an error:</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -858,7 +867,7 @@ calls.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
 <div class="accordion-body">
 <ol style="list-style-type: decimal"><li>Library calls 1 and 4. In order to directly refer to
 <code>sin</code> and <code>pi</code> without the library name as prefix,
@@ -916,7 +925,7 @@ convey this information.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
+<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb21">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -963,7 +972,7 @@ it?</li>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution8" class="accordion-collapse collapse" aria-labelledby="headingSolution8" data-bs-parent="#accordionSolution8">
+<div id="collapseSolution8" class="accordion-collapse collapse" data-bs-parent="#accordionSolution8" aria-labelledby="headingSolution8">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1042,7 +1051,7 @@ any links that you are not going to use.
   "url": "https://ccb-hms.github.io/workbench-python-workshop/instructor/07-packages.html",
   "identifier": "https://ccb-hms.github.io/workbench-python-workshop/instructor/07-packages.html",
   "dateCreated": "2023-04-01",
-  "dateModified": "2023-04-14",
+  "dateModified": "2023-04-18",
   "datePublished": "2023-04-18"
 }
 
