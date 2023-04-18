@@ -268,9 +268,9 @@ first is 2 and second is 5
 :::
 
 ::: challenge
- ## Automatic Type Conversion
+## Automatic Type Conversion
 
- What type of value is 3.25 + 4?
+What type of value is 3.25 + 4?
 
 ::: solution
  
