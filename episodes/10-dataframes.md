@@ -43,6 +43,8 @@ What makes Pandas so attractive is the powerful interface to access individual r
 of the table, proper handling of missing values, and relational-databases operations
 between DataFrames.
 
+The [Pandas cheatsheet](https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf) is a great quick reference for popular dataframe operations. 
+
 ## Data description
 
 We will be using the same data as the previous lesson from [Blackmore *et al.*
@@ -434,7 +436,7 @@ While we could add another row to our dataframe indicating time, it makes more s
 We will learn about other ways to combine dataframes in a future lesson, but for now since `metadata` and `rnadeq_df` have the same index values we can use the following syntax:
 
 ```python
-filled_df = rnaseq_df.T
+flipped_df = rnaseq_df.T
 flipped_df['time'] = metadata['time']
 print(flipped_df.head())
 ```
@@ -615,9 +617,34 @@ AW551984   238.000000   302.250   342.285714   64.250000   0.344781   0.524240
 Aamp      4602.571429  4870.000  4762.571429  267.428571   0.081482   0.049301
 Abca12       5.285714     4.250     4.142857   -1.035714  -0.314636  -0.351472
 ```
+:::
+:::
 
-:::
-:::
+We can also use the [assign](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.assign.html#pandas.DataFrame.assign) dataframe method to create new columns.
+
+
+```python
+time_means = time_means.assign(fc_0_8 = 2**time_means["logfc_0_8"])
+print(time_means.iloc[:,5:])
+```
+
+```output
+time      logfc_0_8    fc_0_8
+gene                         
+AI504432  -0.027979  0.980793
+AW046200  -0.938931  0.521619
+AW551984   0.524240  1.438175
+Aamp       0.049301  1.034763
+Abca12    -0.351472  0.783784
+...             ...       ...
+Zkscan3   -0.339185  0.790488
+Zranb1     0.445010  1.361324
+Zranb3     0.002155  1.001495
+Zscan22   -0.544646  0.685560
+Zw10      -0.066695  0.954823
+
+[1474 rows x 2 columns]
+```
 
 ::: challenge
 ## Extent of Slicing
