@@ -106,7 +106,7 @@ print(rnaseq_df)
 ## Use `index_col` to specify that a column's values should be used as row headings.
 
 *   Row headings are numbers (0 and 1 in this case).
-*   Really want to index by country.
+*   Really want to index by gene.
 *   Pass the name of the column to `read_csv` as its `index_col` parameter to do this.
 
 ```python
@@ -154,7 +154,7 @@ memory usage: 230.3+ KB
 
 *   This is a `DataFrame`
 *   It has 7370 rows, with the first rowname being Asl and the last bveing Pbx1
-*   It has 3, two of which are 64-bit integer values.
+*   It has 3 columns, two of which are 64-bit integer values.
     *   We will talk later about null values, which are used to represent missing observations.
 *   Uses 230.3 KB of memory.
 
@@ -245,7 +245,7 @@ to find out what `DataFrame.head` and `DataFrame.tail` do.
    to `rnaseq_df.head()`. To view the first three rows, execute:
 
    ```python
-   rnaseq_df.head(n=3)
+   print(rnaseq_df.head(n=3))
    ```
 
    ```output
@@ -268,11 +268,10 @@ to find out what `DataFrame.head` and `DataFrame.tail` do.
    We can then view the last three columns of `rnaseq_df` by viewing the last three rows
    of `rnaseq_df_flipped`:
    ```python
-   rnaseq_df_flipped.tail(n=3)
+   print(rnaseq_df_flipped.tail(n=3))
    ```
 
    ```output
- 
     gene 	Asl 	Apod 	Cyp2d22 	Klk6 	Fcrls 	Slc2a4 	Exd2 	Gjc2 	Plp1 	Gnb4 	... 	Dusp27 	Mael 	Gm16418 	Gm16701 	Aldh9a1 	Mgst3 	Lrrc52 	Rxrg 	Lmx1a 	Pbx1
     sample 	GSM2545336 	GSM2545336 	GSM2545336 	GSM2545336 	GSM2545336 	GSM2545336 	GSM2545336 	GSM2545336 	GSM2545336 	GSM2545336 	... 	GSM2545340 	GSM2545340 	GSM2545340 	GSM2545340 	GSM2545340 	GSM2545340 	GSM2545340 	GSM2545340 	GSM2545340 	GSM2545340
     expression 	1170 	36194 	4060 	287 	85 	782 	1619 	288 	43217 	1071 	... 	20 	4 	15 	149 	1462 	1563 	2 	26 	81 	3805
@@ -283,7 +282,7 @@ to find out what `DataFrame.head` and `DataFrame.tail` do.
    This shows the data that we want, but we may prefer to display three columns instead of three rows,
    so we can flip it back:
    ```python
-   rnaseq_df_flipped.tail(n=3).T    
+   print(rnaseq_df_flipped.tail(n=3).T)
    ```
 
    ```output

@@ -13,13 +13,18 @@ exercises: 15
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- 
+- Determine which kind of combination is desired between two dataframes. 
+- Combine two dataframes row-wise or column-wise. 
+- Identify the different types of joins. 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: keypoints
 
-- 
+- Concatenate dataframes to add additional *rows*. 
+- Merge/join data frames to add additional *columns*.
+- Change the `on` argument to choose what is matched between dataframes when joining. 
+- The different types of joins control how missing data is handled for the left and right dataframes.
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 There are a variety of ways we might want to combine data when performing a data analysis. 
@@ -246,8 +251,8 @@ Gnb4     guanine nucleotide binding protein (G protein)...
 
 We have combined the two dataframes to add the `gene_description` column. 
 By default, `join` looks at the index column of the left and right dataframe, combining rows when it finds matches. 
-The data used to determine which rows should be combined between the dataframes is referred to as what is being joined on. 
-Here, we would say we are joining on the index columns. 
+The data used to determine which rows should be combined between the dataframes is referred to as what is being joined on, or the *keys*. 
+Here, we would say we are joining on the index columns, or the index columns are the keys. 
 The row order and column order depends on which dataframe is on the left.
 
 ```python
@@ -519,5 +524,160 @@ Gnb4     guanine nucleotide binding protein (G protein)...
 
 The reason we see the above behavior is because by default pandas performs a **left join**.
 
+We can change the type of join performed by changing the `how` argument of the `join` method. 
 
+[A summary of the types of joins and what they keep and drop.](fig/home05_join_types_fig.png)
 
+A **right join** saves all genes in the right dataframe, but drops and genes unique to `rnaseq_mini`. 
+
+```python
+print(rnaseq_mini.join(annot3, how = 'right'))
+```
+
+```output
+             sample  expression  \
+gene                              
+Plp1     GSM2545336     43217.0   
+Exd2     GSM2545336      1619.0   
+Gjc2     GSM2545336       288.0   
+mt-Rnr2         NaN         NaN   
+Gnb4     GSM2545336      1071.0   
+mt-Rnr1         NaN         NaN   
+Apod     GSM2545336     36194.0   
+Fcrls    GSM2545336        85.0   
+mt-Tv           NaN         NaN   
+mt-Tf           NaN         NaN   
+Slc2a4   GSM2545336       782.0   
+Cyp2d22  GSM2545336      4060.0   
+mt-Tl1          NaN         NaN   
+Asl      GSM2545336      1170.0   
+
+                                          gene_description  
+gene                                                        
+Plp1     proteolipid protein (myelin) 1 [Source:MGI Sym...  
+Exd2     exonuclease 3'-5' domain containing 2 [Source:...  
+Gjc2     gap junction protein, gamma 2 [Source:MGI Symb...  
+mt-Rnr2  mitochondrially encoded 16S rRNA [Source:MGI S...  
+Gnb4     guanine nucleotide binding protein (G protein)...  
+mt-Rnr1  mitochondrially encoded 12S rRNA [Source:MGI S...  
+Apod     apolipoprotein D [Source:MGI Symbol;Acc:MGI:88...  
+Fcrls    Fc receptor-like S, scavenger receptor [Source...  
+mt-Tv    mitochondrially encoded tRNA valine [Source:MG...  
+mt-Tf    mitochondrially encoded tRNA phenylalanine [So...  
+Slc2a4   solute carrier family 2 (facilitated glucose t...  
+Cyp2d22  cytochrome P450, family 2, subfamily d, polype...  
+mt-Tl1   mitochondrially encoded tRNA leucine 1 [Source...  
+Asl      argininosuccinate lyase [Source:MGI Symbol;Acc...  
+```
+
+An **inner join** only keeps genes shared by the dataframes, and drops all genes which are only in one dataframe. 
+
+```python
+print(rnaseq_mini.join(annot3, how = 'inner'))
+```
+
+```output
+             sample  expression  \
+gene                              
+Asl      GSM2545336        1170   
+Apod     GSM2545336       36194   
+Cyp2d22  GSM2545336        4060   
+Fcrls    GSM2545336          85   
+Slc2a4   GSM2545336         782   
+Exd2     GSM2545336        1619   
+Gjc2     GSM2545336         288   
+Plp1     GSM2545336       43217   
+Gnb4     GSM2545336        1071   
+
+                                          gene_description  
+gene                                                        
+Asl      argininosuccinate lyase [Source:MGI Symbol;Acc...  
+Apod     apolipoprotein D [Source:MGI Symbol;Acc:MGI:88...  
+Cyp2d22  cytochrome P450, family 2, subfamily d, polype...  
+Fcrls    Fc receptor-like S, scavenger receptor [Source...  
+Slc2a4   solute carrier family 2 (facilitated glucose t...  
+Exd2     exonuclease 3'-5' domain containing 2 [Source:...  
+Gjc2     gap junction protein, gamma 2 [Source:MGI Symb...  
+Plp1     proteolipid protein (myelin) 1 [Source:MGI Sym...  
+Gnb4     guanine nucleotide binding protein (G protein)...  
+```
+
+Finally, an **outer join** keeps all genes across both dataframes. 
+
+```python
+print(rnaseq_mini.join(annot3, how = 'outer'))
+```
+
+```output
+             sample  expression  \
+gene                              
+Apod     GSM2545336     36194.0   
+Asl      GSM2545336      1170.0   
+Cyp2d22  GSM2545336      4060.0   
+Exd2     GSM2545336      1619.0   
+Fcrls    GSM2545336        85.0   
+Gjc2     GSM2545336       288.0   
+Gnb4     GSM2545336      1071.0   
+Klk6     GSM2545336       287.0   
+Plp1     GSM2545336     43217.0   
+Slc2a4   GSM2545336       782.0   
+mt-Rnr1         NaN         NaN   
+mt-Rnr2         NaN         NaN   
+mt-Tf           NaN         NaN   
+mt-Tl1          NaN         NaN   
+mt-Tv           NaN         NaN   
+
+                                          gene_description  
+gene                                                        
+Apod     apolipoprotein D [Source:MGI Symbol;Acc:MGI:88...  
+Asl      argininosuccinate lyase [Source:MGI Symbol;Acc...  
+Cyp2d22  cytochrome P450, family 2, subfamily d, polype...  
+Exd2     exonuclease 3'-5' domain containing 2 [Source:...  
+Fcrls    Fc receptor-like S, scavenger receptor [Source...  
+Gjc2     gap junction protein, gamma 2 [Source:MGI Symb...  
+Gnb4     guanine nucleotide binding protein (G protein)...  
+Klk6                                                   NaN  
+Plp1     proteolipid protein (myelin) 1 [Source:MGI Sym...  
+Slc2a4   solute carrier family 2 (facilitated glucose t...  
+mt-Rnr1  mitochondrially encoded 12S rRNA [Source:MGI S...  
+mt-Rnr2  mitochondrially encoded 16S rRNA [Source:MGI S...  
+mt-Tf    mitochondrially encoded tRNA phenylalanine [So...  
+mt-Tl1   mitochondrially encoded tRNA leucine 1 [Source...  
+mt-Tv    mitochondrially encoded tRNA valine [Source:MG...   
+```
+
+::: challenge
+## Duplicate column names
+
+One common challenge we encounter when combining datasets from different sources is that they have identical column names. 
+
+Imagine that you've collected a second set of observations from samples which are stored in a identically structured file. 
+We can simulate this by generating some random numbers in a copy of `rnaseq_mini`.
+
+```python
+new_mini = rnaseq_mini.copy()
+new_mini["expression"] = pd.Series(range(50,50000)).sample(int(10), replace=True).array
+print(new_mini)
+```
+*Note: as these are random numbers your exact values will be different*
+
+```output
+             sample  expression
+gene                           
+Asl      GSM2545336       48562
+Apod     GSM2545336         583
+Cyp2d22  GSM2545336       39884
+Klk6     GSM2545336        6161
+Fcrls    GSM2545336       10318
+Slc2a4   GSM2545336       15991
+Exd2     GSM2545336       44471
+Gjc2     GSM2545336       40629
+Plp1     GSM2545336       23146
+Gnb4     GSM2545336       22506
+```
+
+Try joining `rnaseq_mini` and `new_mini`. What happens?
+Take a look at the `lsuffix` and `rsuffix` arguments for `join`. 
+How can you use these to improve your joined dataframe?
+
+:::
