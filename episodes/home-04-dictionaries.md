@@ -137,8 +137,7 @@ True
 False
 ```
 :::::::::::::::::::::::::::::: challenge 
-
-## Do it Yourself
+## Using `in`
 
 Using the `proteins` dictionary you created in the above challenge, test to see whether or not a protein called **ERK** exists as a *key* in your dictionary? Display the result as a Boolean value.
 	
