@@ -4,7 +4,7 @@ teaching: 10
 exercises: 15
 ---
 
-:::::::::::::::::::::::::::::::::::::: questions 
+:::::::::::::::::::::::::::::::::::::: questions
 
 - How can I make a program do many things?
 - How can I do something for each thing in a list?
