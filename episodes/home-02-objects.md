@@ -193,4 +193,12 @@ Take a look at the official documentation for Pandas and try to find how to crea
 Is what you found a function or a method?
 You can find the documentation [here](https://pandas.pydata.org/docs/index.html)
 
+
+::: solution
+
+Dataframes in Pandas have a `copy` *method* found [here](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.copy.html).
+This method by default performs a deep copy as the `deep` argument's default value is `True`. 
+
+:::
+
 :::

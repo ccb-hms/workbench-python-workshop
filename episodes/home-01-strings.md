@@ -340,4 +340,25 @@ Sample is 0min RABA7A knockout, replicate 1.
 
 Using f-strings, slicing and indexing, and built-in string functions. 
 You can try to use lists as a challenge, but its fine to instead get each piece of information separately from `sample_info`. 
+
+::: solution
+
+```python
+s_info = sample_info.split('_')
+genotype = s_info[0]
+time = s_info[1]
+rep = s_info[2]
+
+#Cleaning the parts up
+genotype = genotype.split('.')[-1]
+time = time.lower()
+
+print(f"Sample is {genotype} {time} knockout, replicate {rep}")
+```
+
+```output
+Sample is RAB7A 0min knockout, replicate 1
+```
+
+:::
 :::

@@ -371,6 +371,7 @@ list_for_slicing = [['fluorine', 'F'],
                    ['astatine', 'At']]
 ```
 
+Desired output:
 
 ```output
 '2013'

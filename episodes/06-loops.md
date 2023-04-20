@@ -289,7 +289,6 @@ for word in ["red", "green", "blue"]:
 print(total)
 ```
 :::
-:::
 
 ```python
 # List of word lengths: ["red", "green", "blue"] => [3, 5, 4]
@@ -306,7 +305,6 @@ for word in ["red", "green", "blue"]:
     lengths.append(len(word))
 print(lengths)
 ```
-:::
 :::
 
 ```python
