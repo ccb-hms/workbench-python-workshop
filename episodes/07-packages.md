@@ -38,7 +38,6 @@ exercises: 10
 *   The Python [standard library][stdlib] is an extensive suite of modules that comes
     with Python itself.
 *   Many additional libraries are available from [PyPI][pypi] (the Python Package Index).
-*   We will see later how to write new libraries.
 
 ::: callout
 ## Libraries, packages, and modules
@@ -214,9 +213,6 @@ from random import sample
 
 print(sample(bases, 1)[0])
 ```
-
-Note that this function returns a list of values. We will learn about
-lists in [episode 11]({{ page.root }}/11-lists/).
 
 The simplest and shortest solution is the [`random.choice`](https://docs.python.org/3/library/random.html#random.choice) 
 function that does exactly what we want:
