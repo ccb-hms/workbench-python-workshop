@@ -376,7 +376,7 @@ about data.</a></li>
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Reading tabular data</h1>
-        <p> Last updated on 2023-04-14 | 
+        <p> Last updated on 2023-04-20 | 
         
         <a href="https://github.com/ccb-hms/workbench-python-workshop/edit/main/episodes/08-loading.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -529,7 +529,7 @@ output is too wide to fit the screen.</li>
 be used as row headings.<a class="anchor" aria-label="anchor" href="#use-index_col-to-specify-that-a-columns-values-should-be-used-as-row-headings."></a>
 </h2>
 <hr class="half-width"><ul><li>Row headings are numbers (0 and 1 in this case).</li>
-<li>Really want to index by country.</li>
+<li>Really want to index by gene.</li>
 <li>Pass the name of the column to <code>read_csv</code> as its
 <code>index_col</code> parameter to do this.</li>
 </ul><div class="codewrapper sourceCode" id="cb3">
@@ -583,7 +583,7 @@ memory usage: 230.3+ KB</code></pre>
 </li>
 <li>It has 7370 rows, with the first rowname being Asl and the last
 bveing Pbx1</li>
-<li>It has 3, two of which are 64-bit integer values.
+<li>It has 3 columns, two of which are 64-bit integer values.
 <ul><li>We will talk later about null values, which are used to represent
 missing observations.</li>
 </ul></li>
@@ -693,7 +693,7 @@ change your view of the data.)</li>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <ol style="list-style-type: decimal"><li>
 <p>We can check out the first five rows of <code>rnaseq_df</code> by
@@ -705,7 +705,7 @@ execute:</p>
 <div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>rnaseq_df.head(n<span class="op">=</span><span class="dv">3</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(rnaseq_df.head(n<span class="op">=</span><span class="dv">3</span>))</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -734,13 +734,12 @@ viewing the last three rows of <code>rnaseq_df_flipped</code>:</p>
 <div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>rnaseq_df_flipped.tail(n<span class="op">=</span><span class="dv">3</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(rnaseq_df_flipped.tail(n<span class="op">=</span><span class="dv">3</span>))</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>
- gene 	Asl 	Apod 	Cyp2d22 	Klk6 	Fcrls 	Slc2a4 	Exd2 	Gjc2 	Plp1 	Gnb4 	... 	Dusp27 	Mael 	Gm16418 	Gm16701 	Aldh9a1 	Mgst3 	Lrrc52 	Rxrg 	Lmx1a 	Pbx1
+<pre class="output" tabindex="0"><code> gene 	Asl 	Apod 	Cyp2d22 	Klk6 	Fcrls 	Slc2a4 	Exd2 	Gjc2 	Plp1 	Gnb4 	... 	Dusp27 	Mael 	Gm16418 	Gm16701 	Aldh9a1 	Mgst3 	Lrrc52 	Rxrg 	Lmx1a 	Pbx1
  sample 	GSM2545336 	GSM2545336 	GSM2545336 	GSM2545336 	GSM2545336 	GSM2545336 	GSM2545336 	GSM2545336 	GSM2545336 	GSM2545336 	... 	GSM2545340 	GSM2545340 	GSM2545340 	GSM2545340 	GSM2545340 	GSM2545340 	GSM2545340 	GSM2545340 	GSM2545340 	GSM2545340
  expression 	1170 	36194 	4060 	287 	85 	782 	1619 	288 	43217 	1071 	... 	20 	4 	15 	149 	1462 	1563 	2 	26 	81 	3805
  time 	8 	8 	8 	8 	8 	8 	8 	8 	8 	8 	... 	4 	4 	4 	4 	4 	4 	4 	4 	4 	4</code></pre>
@@ -750,7 +749,7 @@ columns instead of three rows, so we can flip it back:</p>
 <div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>rnaseq_df_flipped.tail(n<span class="op">=</span><span class="dv">3</span>).T    </span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(rnaseq_df_flipped.tail(n<span class="op">=</span><span class="dv">3</span>).T)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -805,7 +804,7 @@ can use <code>help</code> to get information on how to use
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>In order to write the DataFrame <code>rnaseq_df</code> to a file
 called <code>processed.csv</code>, execute the following command:</p>
@@ -863,7 +862,7 @@ any links that you are not going to use.
         
         <p><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">Template licensed under CC-BY 4.0</a> by <a href="https://carpentries.org" class="external-link">The Carpentries</a></p>
         <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.11.15" class="external-link">sandpaper (0.11.15)</a>,
-        <a href="https://github.com/carpentries/pegboard/tree/0.5.2" class="external-link">pegboard (0.5.2)</a>,
+        <a href="https://github.com/carpentries/pegboard" class="external-link">pegboard (0.5.3)</a>,
       and <a href="https://github.com/carpentries/varnish/tree/0.2.16" class="external-link">varnish (0.2.16)</a>.</p>
 			</div>
 		</footer></div> <!-- / div.container -->
@@ -885,8 +884,8 @@ any links that you are not going to use.
   "url": "https://ccb-hms.github.io/workbench-python-workshop/08-loading.html",
   "identifier": "https://ccb-hms.github.io/workbench-python-workshop/08-loading.html",
   "dateCreated": "2023-04-01",
-  "dateModified": "2023-04-14",
-  "datePublished": "2023-04-19"
+  "dateModified": "2023-04-20",
+  "datePublished": "2023-04-20"
 }
 
   </script><script>

@@ -369,7 +369,7 @@ manipulation.</a></li>
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>String Manipulation</h1>
-        <p> Last updated on 2023-04-14 | 
+        <p> Last updated on 2023-04-20 | 
         
         <a href="https://github.com/ccb-hms/workbench-python-workshop/edit/main/episodes/home-01-strings.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -765,12 +765,12 @@ LITERS (COFFEE) PER MINUTE
 Liters (coffee) per minute
 Liters (Coffee) Per Minute</code></pre>
 </div>
-<div id="discussion1" class="callout discussion">
+<div id="challenge1" class="callout challenge">
 <div class="callout-square">
-<i class="callout-icon" data-feather="message-circle"></i>
+<i class="callout-icon" data-feather="zap"></i>
 </div>
 <div class="callout-inner">
-<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#discussion1"></a>
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge1"></a>
 </h3>
 <div class="callout-content">
 <p>A common problem when analyzing data is that multiple features of the
@@ -793,6 +793,38 @@ from a single column header.</p>
 <p>Using f-strings, slicing and indexing, and built-in string functions.
 You can try to use lists as a challenge, but its fine to instead get
 each piece of information separately from <code>sample_info</code>.</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1">
+  Show me the solution
+  </h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div class="accordion-body">
+<div class="codewrapper sourceCode" id="cb47">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>s_info <span class="op">=</span> sample_info.split(<span class="st">'_'</span>)</span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>genotype <span class="op">=</span> s_info[<span class="dv">0</span>]</span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>time <span class="op">=</span> s_info[<span class="dv">1</span>]</span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>rep <span class="op">=</span> s_info[<span class="dv">2</span>]</span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a><span class="co">#Cleaning the parts up</span></span>
+<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a>genotype <span class="op">=</span> genotype.split(<span class="st">'.'</span>)[<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a>time <span class="op">=</span> time.lower()</span>
+<span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-10"><a href="#cb47-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Sample is </span><span class="sc">{</span>genotype<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>time<span class="sc">}</span><span class="ss"> knockout, replicate </span><span class="sc">{</span>rep<span class="sc">}</span><span class="ss">"</span>)</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>Sample is RAB7A 0min knockout, replicate 1</code></pre>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -832,7 +864,7 @@ any links that you are not going to use.
         
         <p><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">Template licensed under CC-BY 4.0</a> by <a href="https://carpentries.org" class="external-link">The Carpentries</a></p>
         <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.11.15" class="external-link">sandpaper (0.11.15)</a>,
-        <a href="https://github.com/carpentries/pegboard/tree/0.5.2" class="external-link">pegboard (0.5.2)</a>,
+        <a href="https://github.com/carpentries/pegboard" class="external-link">pegboard (0.5.3)</a>,
       and <a href="https://github.com/carpentries/varnish/tree/0.2.16" class="external-link">varnish (0.2.16)</a>.</p>
 			</div>
 		</footer></div> <!-- / div.container -->
@@ -854,8 +886,8 @@ any links that you are not going to use.
   "url": "https://ccb-hms.github.io/workbench-python-workshop/instructor/home-01-strings.html",
   "identifier": "https://ccb-hms.github.io/workbench-python-workshop/instructor/home-01-strings.html",
   "dateCreated": "2023-04-01",
-  "dateModified": "2023-04-14",
-  "datePublished": "2023-04-19"
+  "dateModified": "2023-04-20",
+  "datePublished": "2023-04-20"
 }
 
   </script><script>

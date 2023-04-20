@@ -370,7 +370,7 @@ work differently on different objects.</a></li>
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Using Objects</h1>
-        <p> Last updated on 2023-04-14 | 
+        <p> Last updated on 2023-04-20 | 
         
         <a href="https://github.com/ccb-hms/workbench-python-workshop/edit/main/episodes/home-02-objects.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -609,12 +609,12 @@ opposed to altering existing objects, so as to avoid any confusion over
 different object versions. Additionally, we can perform a <em>deep
 copy</em> of an object, which is an object copy which copys and stored
 objects.</p>
-<div id="discussion1" class="callout discussion">
+<div id="challenge1" class="callout challenge">
 <div class="callout-square">
-<i class="callout-icon" data-feather="message-circle"></i>
+<i class="callout-icon" data-feather="zap"></i>
 </div>
 <div class="callout-inner">
-<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#discussion1"></a>
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge1"></a>
 </h3>
 <div class="callout-content">
 <p>Pandas is one of the most popular python libraries for manipulating
@@ -622,6 +622,23 @@ data which we will be diving into next week. Take a look at the official
 documentation for Pandas and try to find how to create a deep copy of a
 dataframe. Is what you found a function or a method? You can find the
 documentation <a href="https://pandas.pydata.org/docs/index.html" class="external-link">here</a></p>
+</div>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1">
+  Show me the solution
+  </h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div class="accordion-body">
+<p>Dataframes in Pandas have a <code>copy</code> <em>method</em> found
+<a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.copy.html" class="external-link">here</a>.
+This method by default performs a deep copy as the <code>deep</code>
+argument’s default value is <code>True</code>.</p>
+</div>
 </div>
 </div>
 </div>
@@ -660,7 +677,7 @@ any links that you are not going to use.
         
         <p><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">Template licensed under CC-BY 4.0</a> by <a href="https://carpentries.org" class="external-link">The Carpentries</a></p>
         <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.11.15" class="external-link">sandpaper (0.11.15)</a>,
-        <a href="https://github.com/carpentries/pegboard/tree/0.5.2" class="external-link">pegboard (0.5.2)</a>,
+        <a href="https://github.com/carpentries/pegboard" class="external-link">pegboard (0.5.3)</a>,
       and <a href="https://github.com/carpentries/varnish/tree/0.2.16" class="external-link">varnish (0.2.16)</a>.</p>
 			</div>
 		</footer></div> <!-- / div.container -->
@@ -682,8 +699,8 @@ any links that you are not going to use.
   "url": "https://ccb-hms.github.io/workbench-python-workshop/instructor/home-02-objects.html",
   "identifier": "https://ccb-hms.github.io/workbench-python-workshop/instructor/home-02-objects.html",
   "dateCreated": "2023-04-01",
-  "dateModified": "2023-04-14",
-  "datePublished": "2023-04-19"
+  "dateModified": "2023-04-20",
+  "datePublished": "2023-04-20"
 }
 
   </script><script>
