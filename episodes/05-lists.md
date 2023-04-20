@@ -27,8 +27,7 @@ exercises: 15
 
 - `[value1, value2, value3, ...]` creates a list.
 - Lists can contain any Python object, including lists (i.e., list of lists).
-- Lists are indexed and sliced with square brackets (e.g., list[0] and
-list[2:9]), in the same way as strings and arrays.
+- Lists are indexed and sliced with square brackets (e.g., list[0] and list[2:9]), in the same way as strings and arrays.
 - Lists are mutable (i.e., their values can be changed in place).
 - Strings are immutable (i.e., the characters in them cannot be changed).
 ::::::::::::::::::::::::::::::::::::::::::::::::

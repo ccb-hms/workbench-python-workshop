@@ -160,7 +160,6 @@ a range is not a list: range(0, 3)
 2
 ```
 
-
 ## The Accumulator pattern turns many values into one.
 
 *   A common pattern in programs is to:
@@ -205,6 +204,7 @@ We can *trace* the program output by looking at which line of code is being exec
 
 Let's double check our work by [visualizing the code](https://pythontutor.com/visualize.html#code=%23%20Sum%20the%20first%205%20integers.%0Amy_sum%20%3D%200%20%23%20Line%201%0Afor%20number%20in%20range%285%29%3A%20%23%20Line%202%0A%20%20%20my_sum%20%3D%20my_sum%20%2B%20%28number%20%2B%201%29%20%23%20Line%203%0Aprint%28my_sum%29%20%23%20Line%204&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false).
 
+
 ::: challenge
 ## Classifying Errors
 
@@ -214,6 +214,7 @@ Is an indentation error a syntax error or a runtime error?
 
 An indentation error (`IndentationError`) is a syntax error. Programs with syntax errors cannot be started.
 A program with a runtime error will start but an error will be thrown under certain conditions.
+
 :::
 :::
 
@@ -240,6 +241,7 @@ for char in "tin": # Line 2
 | 3       | total = 2 char = 'i' |
 | 2       | total = 2 char = 'n' |
 | 3       | total = 3 char = 'n' |
+
 :::
 :::
 
@@ -266,8 +268,10 @@ for char in original:
     result = char + result
 print(result)
 ```
+
 :::
 :::
+
 
 ::: challenge
 ## Practice Accumulating
@@ -334,7 +338,9 @@ print(result)
 Starting from the list `["red", "green", "blue"]`, create the acronym `"RGB"` using a for loop.
 
 ::: hint
+
 You may need to use a string method to properly format the acronym.
+
 :::
 
 ::: solution
