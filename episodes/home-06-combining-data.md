@@ -526,7 +526,7 @@ The reason we see the above behavior is because by default pandas performs a **l
 
 We can change the type of join performed by changing the `how` argument of the `join` method. 
 
-[A summary of the types of joins and what they keep and drop.](fig/home05_join_types_fig.png)
+![A summary of the types of joins and what they keep and drop.](fig/home05_join_types_fig.png)
 
 A **right join** saves all genes in the right dataframe, but drops and genes unique to `rnaseq_mini`. 
 
