@@ -281,14 +281,14 @@ for word in ["red", "green", "blue"]:
 print(total)
 ```
 
-::: solution
 ```python
-total = 0
-for word in ["red", "green", "blue"]:
-    total = total + len(word)
-print(total)
+# Concatenate all words: ["red", "green", "blue"] => "redgreenblue"
+words = ["red", "green", "blue"]
+result = ____
+for ____ in ____:
+    ____
+print(result)
 ```
-:::
 
 ```python
 # List of word lengths: ["red", "green", "blue"] => [3, 5, 4]
@@ -300,23 +300,19 @@ print(lengths)
 
 ::: solution
 ```python
+total = 0
+for word in ["red", "green", "blue"]:
+    total = total + len(word)
+print(total)
+```
+
+```python
 lengths = []
 for word in ["red", "green", "blue"]:
     lengths.append(len(word))
 print(lengths)
 ```
-:::
 
-```python
-# Concatenate all words: ["red", "green", "blue"] => "redgreenblue"
-words = ["red", "green", "blue"]
-result = ____
-for ____ in ____:
-    ____
-print(result)
-```
-
-::: solution
 ```python
 words = ["red", "green", "blue"]
 result = ""

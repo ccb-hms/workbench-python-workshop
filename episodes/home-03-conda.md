@@ -320,7 +320,7 @@ We need to perform a few extra steps to make our conda environments available in
 First, we're going to break convention and install the `nb_conda_kernels` into our base environment.
 
 ```bash
-$ conda activate base
+$ conda activate
 $ conda install nb_conda_kernels
 ```
 
@@ -334,7 +334,7 @@ $ conda install ipykernel
 We then want to go back to our base environment and start Jupyter Lab:
 
 ```bash
-$ conda activate base
+$ conda activate
 $ jupyter lab
 ```
 
