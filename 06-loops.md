@@ -218,6 +218,7 @@ A program with a runtime error will start but an error will be thrown under cert
 :::
 :::
 
+
 ::: challenge
 ## Tracing Execution
 
@@ -315,18 +316,18 @@ print(total)
 
 # B
 # Concatenate all words: ["red", "green", "blue"] => "redgreenblue"
-lengths = []
-for word in ["red", "green", "blue"]:
-    lengths.append(len(word))
-print(lengths)
-
-# C
-# List of word lengths: ["red", "green", "blue"] => [3, 5, 4]
 words = ["red", "green", "blue"]
 result = ""
 for word in words:
     result = result + word
 print(result)
+
+# C
+# List of word lengths: ["red", "green", "blue"] => [3, 5, 4]
+lengths = []
+for word in ["red", "green", "blue"]:
+    lengths.append(len(word))
+print(lengths)
 ```
 
 :::
