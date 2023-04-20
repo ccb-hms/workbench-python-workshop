@@ -42,9 +42,10 @@ Consider the following scenario:
 >Suppose we have a number of protein kinases, and we would like to associate them with their descriptions for future reference.
 
 
-This is an example of association in arrays. We may visualise this problem as displayed in [Figure](#assArr).
+This is an example of association in arrays. We may visualise this problem as displayed below:
 
-![Illustrative diagram of associative arrays, showing the sets of *keys* and their association with some of the values.](fig/associative_arrays.png){#assArr}
+![Illustrative diagram of associative arrays, showing the sets of *keys* and their association with some of the values.](fig/home04_associative_arrays.png)
+
 One way to associate the proteins with their definitions would be to use nested arrays. However, it would make it difficult to retrieve the values at a later time. This is because to retrieve the values, we would need to know the index at which a given protein is stored. 
 
 Instead of using normal arrays, in such circumstances, we use *associative arrays*. The most popular method to create construct an associative array in Python is to create dictionaries or ```dict```.
@@ -52,18 +53,18 @@ Instead of using normal arrays, in such circumstances, we use *associative array
 :::::::::::::::::::::::::::::::::::: callout
 ## Remember	
 
-To implement a ```dict``` in Python, we place our entries in curly bracket, separated using a comma. We separate *keys* and *values* using a colon --- e.g.  {<span style="color: rgb(32, 121, 77);">'key'</span>: <span style="color: rgb(32, 121, 77);">'value'</span>}. The combination of dictionary *key* and its associating *value* is known as a dictionary *item*. 
+To implement a `dict` in Python, we place our entries in curly bracket, separated using a comma. We separate *keys* and *values* using a colon --- e.g.  {<span style="color: rgb(32, 121, 77);">'key'</span>: <span style="color: rgb(32, 121, 77);">'value'</span>}. The combination of dictionary *key* and its associating *value* is known as a dictionary *item*. 
 	
 :::::::::::::::::::::::::::::::::::: 
 
 :::::::::::::::::::::::::::::::::::: callout
 ## Note	
-When constructing a long ```dict``` with several *items* that span over several lines, it is not necessary to write one *item* per line or use indentations for each *item* or line. All we must is to write the \emph{items} as {<span style="color: rgb(32, 121, 77);">'key'</span>: <span style="color: rgb(32, 121, 77);">'value'</span>} in curly brackets and separate each pair with a comma. However, it is good practice to write one *item* per line and use indentations as it makes it considerably easier to read the code and understand the hierarchy.
+When constructing a long `dict` with several *items* that span over several lines, it is not necessary to write one *item* per line or use indentations for each *item* or line. All we must is to write the \emph{items} as {<span style="color: rgb(32, 121, 77);">'key'</span>: <span style="color: rgb(32, 121, 77);">'value'</span>} in curly brackets and separate each pair with a comma. However, it is good practice to write one *item* per line and use indentations as it makes it considerably easier to read the code and understand the hierarchy.
 	
 ::::::::::::::::::::::::::::::::::::
 
 	
-We can therefore implement the diagram displayed in [Figure](#assArr) in Python as follows:
+We can therefore implement the diagram displayed above in Python as follows:
 
 ```python
 
