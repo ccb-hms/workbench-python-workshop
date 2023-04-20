@@ -55,6 +55,54 @@ additional packages into your `base` software environment. Additional packages n
 project should always be installed into a newly created Conda environment.
 :::
 
+::: prereq
+## Working from the command line
+
+So far, we have been working inside Jupyter Lab. 
+However, we now want to manipulate the Python kernels and will be working from outside Jupyter. 
+
+For installing packages and manipulating conda environments, **we will be working from the terminal or Anaconda prompt**. 
+
+### macOS - Command Line
+To start the JupyterLab server you will need to access the command line through the Terminal. 
+There are two ways to open Terminal on Mac.
+
+1. In your Applications folder, open Utilities and double-click on Terminal
+2. Press <kbd>Command</kbd> + <kbd>spacebar</kbd> to launch Spotlight. Type `Terminal` and then 
+double-click the search result or hit <kbd>Enter</kbd>
+
+After you have launched Terminal, run `conda init`.
+
+```bash
+$ conda init
+```
+
+You should now see `(base)` at the start of your terminal line. 
+
+```bash
+(base) $ 
+```
+
+### Windows Users - Command Line
+To start the JupyterLab server you will need to access the Anaconda Prompt.
+
+Press <kbd>Windows Logo Key</kbd> and search for `Anaconda Prompt`, click the result or press enter.
+
+After you have launched Terminal, run `conda init`.
+
+```bash
+$ conda init
+```
+
+You should now see `(base)` at the start of your terminal line. 
+
+```bash
+(base)
+```
+
+:::
+
+
 ## Creating environments
 
 To create a new environment for Python development using `conda` you can use the `conda create` 
@@ -166,13 +214,12 @@ sometimes at all!). Activation of an environment does two things.
 2. Runs any activation scripts that the environment may contain.
 
 Step 2 is particularly important as activation scripts are how packages can set arbitrary 
-environment variables that may be necessary for their operation. Aou activate the 
+environment variables that may be necessary for their operation. You can activate the 
 `basic-scipy-env` environment by name using the `activate` command.
 
 ```bash
 $ conda activate basic-scipy-env
 ```
-
 
 You can see that an environment has been activated because the shell prompt will now include the 
 name of the active environment.
@@ -273,7 +320,7 @@ We need to perform a few extra steps to make our conda environments available in
 First, we're going to break convention and install the `nb_conda_kernels` into our base environment.
 
 ```bash
-$ conda activate base
+$ conda activate
 $ conda install nb_conda_kernels
 ```
 
@@ -287,11 +334,11 @@ $ conda install ipykernel
 We then want to go back to our base environment and start Jupyter Lab:
 
 ```bash
-$ conda activate base
+$ conda activate
 $ jupyter lab
 ```
 
-Now, from Jupyter Lab our environments should be available as a **kernel**. 
+Now, when we launch Jupyter Lab our environments should be available as **kernels**. 
 You can change your kernel in the top-right of the screen:
 
 ![Changing the kernel](fig/home03-jupyter-changing-kernel.png)

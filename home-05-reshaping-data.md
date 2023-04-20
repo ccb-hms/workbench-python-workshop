@@ -4,7 +4,7 @@ teaching: 10
 exercises: 15
 ---
 
-:::::::::::::::::::::::::::::::::::::: questions 
+:::::::::::::::::::::::::::::::::::::: questions
 
 - How can change the shape of my data?
 - What is the difference between long and wide data?

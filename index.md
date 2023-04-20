@@ -108,8 +108,8 @@ Participants will also be introduced to popular packages for machine learning an
 
 ### At-home Lessons 3
 
-- Data Wranging Practice *not started*
-- Preparing data for plotting *not started*
+- Data Wranging Practice 
+- Preparing data for plotting 
 
 ### Day 4
 
@@ -135,6 +135,8 @@ Materials for this workshop have been based on materials from the following:
 
 [Introduction to Conda for (Data) Scientists ](https://github.com/carpentries-incubator/introduction-to-conda-for-data-scientists/)
 
-This lesson is based on [The Carpentries Workbench](https://carpentries.org/blog/2022/01/live-lesson-infrastructure/) template.
+[Introduction to data analysis with R and Bioconductor](https://carpentries-incubator.github.io/bioc-intro/index.html)
+
+This lesson is made from the [The Carpentries Workbench](https://carpentries.org/blog/2022/01/live-lesson-infrastructure/) template.
 
 

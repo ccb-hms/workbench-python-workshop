@@ -4,7 +4,7 @@ teaching: 10
 exercises: 15
 ---
 
-:::::::::::::::::::::::::::::::::::::: questions 
+:::::::::::::::::::::::::::::::::::::: questions
 
 - How can I make a program do many things?
 - How can I do something for each thing in a list?
@@ -99,7 +99,7 @@ firstName = "Jon"
   lastName = "Smith"
 ```
 
-```output
+```error
   File "<ipython-input-7-f65f2962bf9c>", line 2
     lastName = "Smith"
     ^
@@ -160,7 +160,6 @@ a range is not a list: range(0, 3)
 2
 ```
 
-
 ## The Accumulator pattern turns many values into one.
 
 *   A common pattern in programs is to:
@@ -205,14 +204,17 @@ We can *trace* the program output by looking at which line of code is being exec
 
 Let's double check our work by [visualizing the code](https://pythontutor.com/visualize.html#code=%23%20Sum%20the%20first%205%20integers.%0Amy_sum%20%3D%200%20%23%20Line%201%0Afor%20number%20in%20range%285%29%3A%20%23%20Line%202%0A%20%20%20my_sum%20%3D%20my_sum%20%2B%20%28number%20%2B%201%29%20%23%20Line%203%0Aprint%28my_sum%29%20%23%20Line%204&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false).
 
+
 ::: challenge
 ## Classifying Errors
 
 Is an indentation error a syntax error or a runtime error?
 
 ::: solution
+
 An indentation error (`IndentationError`) is a syntax error. Programs with syntax errors cannot be started.
 A program with a runtime error will start but an error will be thrown under certain conditions.
+
 :::
 :::
 
@@ -239,6 +241,7 @@ for char in "tin": # Line 2
 | 3       | total = 2 char = 'i' |
 | 2       | total = 2 char = 'n' |
 | 3       | total = 3 char = 'n' |
+
 :::
 :::
 
@@ -257,6 +260,7 @@ print(result)
 ```
 
 ::: solution
+
 ```python
 original = "tin"
 result = ""
@@ -264,8 +268,10 @@ for char in original:
     result = char + result
 print(result)
 ```
+
 :::
 :::
+
 
 ::: challenge
 ## Practice Accumulating
@@ -274,24 +280,22 @@ Fill in the blanks in each of the programs below
 to produce the indicated result.
 
 ```python
+# A
 # Total length of the strings in the list: ["red", "green", "blue"] => 12
 total = 0
 for word in ["red", "green", "blue"]:
     ____ = ____ + len(word)
 print(total)
-```
 
-::: solution
-```python
-total = 0
-for word in ["red", "green", "blue"]:
-    total = total + len(word)
-print(total)
-```
-:::
-:::
+# B
+# Concatenate all words: ["red", "green", "blue"] => "redgreenblue"
+words = ["red", "green", "blue"]
+result = ____
+for ____ in ____:
+    ____
+print(result)
 
-```python
+# C
 # List of word lengths: ["red", "green", "blue"] => [3, 5, 4]
 lengths = ____
 for word in ["red", "green", "blue"]:
@@ -300,32 +304,31 @@ print(lengths)
 ```
 
 ::: solution
+
 ```python
+# A
+# Total length of the strings in the list: ["red", "green", "blue"] => 12
+total = 0
+for word in ["red", "green", "blue"]:
+    total = total + len(word)
+print(total)
+
+# B
+# Concatenate all words: ["red", "green", "blue"] => "redgreenblue"
 lengths = []
 for word in ["red", "green", "blue"]:
     lengths.append(len(word))
 print(lengths)
-```
-:::
-:::
 
-```python
-# Concatenate all words: ["red", "green", "blue"] => "redgreenblue"
-words = ["red", "green", "blue"]
-result = ____
-for ____ in ____:
-    ____
-print(result)
-```
-
-::: solution
-```python
+# C
+# List of word lengths: ["red", "green", "blue"] => [3, 5, 4]
 words = ["red", "green", "blue"]
 result = ""
 for word in words:
     result = result + word
 print(result)
 ```
+
 :::
 :::
 
@@ -335,10 +338,13 @@ print(result)
 Starting from the list `["red", "green", "blue"]`, create the acronym `"RGB"` using a for loop.
 
 ::: hint
+
 You may need to use a string method to properly format the acronym.
+
 :::
 
 ::: solution
+
 ```python
 acronym = ""
 for word in ["red", "green", "blue"]:
@@ -366,6 +372,7 @@ data = [1,2,2,5]
 ```
 
 ::: solution
+
 ```python
 total = 0
 data = [1,2,2,5]
@@ -405,6 +412,7 @@ print(message)
 ```
 
 ::: solution
+
 - Python variable names are case sensitive: `number` and `Number` refer to different variables.
 - The variable `message` needs to be initialized as an empty string.
 - We want to add the string `"a"` to `message`, not the undefined variable `a`.
@@ -436,6 +444,7 @@ print('My favorite season is ', seasons[4])
 ```
 
 ::: solution
+
 This list has 4 elements and the index to access the last element in the list is `3`.
 ```python
 seasons = ['Spring', 'Summer', 'Fall', 'Winter']
