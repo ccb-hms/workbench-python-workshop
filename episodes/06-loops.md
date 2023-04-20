@@ -99,7 +99,7 @@ firstName = "Jon"
   lastName = "Smith"
 ```
 
-```output
+```error
   File "<ipython-input-7-f65f2962bf9c>", line 2
     lastName = "Smith"
     ^
@@ -211,6 +211,7 @@ Let's double check our work by [visualizing the code](https://pythontutor.com/vi
 Is an indentation error a syntax error or a runtime error?
 
 ::: solution
+
 An indentation error (`IndentationError`) is a syntax error. Programs with syntax errors cannot be started.
 A program with a runtime error will start but an error will be thrown under certain conditions.
 :::
@@ -257,6 +258,7 @@ print(result)
 ```
 
 ::: solution
+
 ```python
 original = "tin"
 result = ""
@@ -274,23 +276,22 @@ Fill in the blanks in each of the programs below
 to produce the indicated result.
 
 ```python
+# A
 # Total length of the strings in the list: ["red", "green", "blue"] => 12
 total = 0
 for word in ["red", "green", "blue"]:
     ____ = ____ + len(word)
 print(total)
-```
 
-```python
+# B
 # Concatenate all words: ["red", "green", "blue"] => "redgreenblue"
 words = ["red", "green", "blue"]
 result = ____
 for ____ in ____:
     ____
 print(result)
-```
 
-```python
+# C
 # List of word lengths: ["red", "green", "blue"] => [3, 5, 4]
 lengths = ____
 for word in ["red", "green", "blue"]:
@@ -299,27 +300,31 @@ print(lengths)
 ```
 
 ::: solution
+
 ```python
+# A
+# Total length of the strings in the list: ["red", "green", "blue"] => 12
 total = 0
 for word in ["red", "green", "blue"]:
     total = total + len(word)
 print(total)
-```
 
-```python
+# B
+# Concatenate all words: ["red", "green", "blue"] => "redgreenblue"
 lengths = []
 for word in ["red", "green", "blue"]:
     lengths.append(len(word))
 print(lengths)
-```
 
-```python
+# C
+# List of word lengths: ["red", "green", "blue"] => [3, 5, 4]
 words = ["red", "green", "blue"]
 result = ""
 for word in words:
     result = result + word
 print(result)
 ```
+
 :::
 :::
 
@@ -333,6 +338,7 @@ You may need to use a string method to properly format the acronym.
 :::
 
 ::: solution
+
 ```python
 acronym = ""
 for word in ["red", "green", "blue"]:
@@ -360,6 +366,7 @@ data = [1,2,2,5]
 ```
 
 ::: solution
+
 ```python
 total = 0
 data = [1,2,2,5]
@@ -399,6 +406,7 @@ print(message)
 ```
 
 ::: solution
+
 - Python variable names are case sensitive: `number` and `Number` refer to different variables.
 - The variable `message` needs to be initialized as an empty string.
 - We want to add the string `"a"` to `message`, not the undefined variable `a`.
@@ -430,6 +438,7 @@ print('My favorite season is ', seasons[4])
 ```
 
 ::: solution
+
 This list has 4 elements and the index to access the last element in the list is `3`.
 ```python
 seasons = ['Spring', 'Summer', 'Fall', 'Winter']

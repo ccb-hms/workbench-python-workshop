@@ -338,7 +338,7 @@ $ conda activate
 $ jupyter lab
 ```
 
-Now, from Jupyter Lab our environments should be available as a **kernel**. 
+Now, when we launch Jupyter Lab our environments should be available as **kernels**. 
 You can change your kernel in the top-right of the screen:
 
 ![Changing the kernel](fig/home03-jupyter-changing-kernel.png)
