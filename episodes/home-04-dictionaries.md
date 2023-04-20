@@ -29,7 +29,7 @@ exercises: 25
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Dictionary {#sec:dict}
+## Dictionary 
 
 One of the most useful built-in tools in Python, dictionaries associate a set of *values* with a number of *keys*. 
 
@@ -89,7 +89,7 @@ print(type(protein_kinases))
 
 :::::::::::::::::::::::::::::: challenge 
 
-## Do it Yourself
+## Constructing dictionaries
 Use [Universal Protein Resource](https://uniprot.org/) (UniProt) to find the following proteins for humans:
   - Axin-1
 	- Rhodopsin
@@ -98,7 +98,7 @@ Construct a dictionary for these proteins and the number amino acids for each of
 	
 ::::::::::::::::: solution
 
-## solution {#diy:firstDictExample}
+## solution 
 ```python
 proteins = {
   'Axin-1': 862,
@@ -140,7 +140,7 @@ False
 
 ## Do it Yourself
 
-Using the dictionary you created in [Do it Yourself](#diy:firstDictExample), test to see whether or not a protein called **ERK** exists as a *key* in your dictionary? Display the result as a Boolean value.
+Using the `proteins` dictionary you created in the above challenge, test to see whether or not a protein called **ERK** exists as a *key* in your dictionary? Display the result as a Boolean value.
 	
 	
 ::::::::::::::::: solution
@@ -156,10 +156,10 @@ False
 
 ::::::::::::::::::::::::::::::: 
 
-### **Interacting with a dictionary** {#subsec:dict:InteractingWithDicts}
+### Interacting with a dictionary
 We have already learnt that in programming, the more explicit our code, the better it is. Interacting with dictionaries in Python is very easy, coherent, and explicit. This makes them a powerful tool that we can exploit for different purposes.
 
-In arrays, specifically in ```list``` and ```tuple```, we routinely use [indexing](#sec:list:indexing) techniques to retrieve *values*. In dictionaries, however, we use *keys* to do that. Because we can define the *keys* of a dictionary ourselves, we no longer have to rely exclusively on numeric indices.  
+In `list`s and `tuple`s, we use indexing and slicing to retrieve *values*. In dictionaries, however, we use *keys* to do that. Because we can define the *keys* of a dictionary ourselves, we no longer have to rely exclusively on numeric indices.  
 
 As a result, we can retrieve the *values* of a dictionary using their respective *keys* as follows:
 
@@ -178,7 +178,7 @@ However, if we attempt to retrieve the *value* for a *key* that does not exist i
 
 print(protein_kinases['GSK3'])
 ```
-```output
+```error
 Error in py_call_impl(callable, dots$args, dots$keywords): KeyError: 'GSK3'
 
 Detailed traceback:
@@ -187,7 +187,7 @@ Detailed traceback:
 
 :::::::::::::::::::::::::::::: challenge 
 
-## Do it Yourself {#diy:dict:implement:fromTable}
+## Dictionary lookup
 
 Implement a ```dict``` to represent the following set of information:
 
@@ -235,7 +235,7 @@ test_dict = {
   }
 ```
 
-```output
+```error
 Error in py_call_impl(callable, dots$args, dots$keywords): TypeError: unhashable type: 'list'
 
 Detailed traceback:
@@ -286,7 +286,7 @@ print(signal)
 {'name': 'Wnt', 'pathway': 'Canonical'}
 ```
 
-### **Mutability**
+### Dictionaries are mutable
 Dictionaries are mutable. This means that we can alter their contents. We can make any alterations to a dictionary as long as we use *immutable* values for the *keys*. 
 
 Suppose we have a dictionary stored in a variable called ```protein```, holding some information about a specific protein:
@@ -335,7 +335,7 @@ print(protein)
 ```
 :::::::::::::::::::::::::::::: challenge 
 
-## Do it Yourself
+## Altering values
 
 Implement the following dictionary:
 
@@ -395,6 +395,7 @@ del protein['chromosome']
 
 print(protein)
 ```
+
 ```output
 {'full name': 'Cystic fibrosis transmembrane conductance regulator', 'alias': 'CFTR', 'gene': 'CFTR', 'type': 'Membrane Protein', 'common mutations': ['Delta-F508', 'G542X', 'G551D', 'N1303K', 'W1282X'], 'human chromosome': 7}
 ```
@@ -413,7 +414,7 @@ print(protein)
 
 ::::::::::::::::::::::::::::::: challenge 
 
-## Do it Yourself
+## Reassigning values
 
 Implement a dictionary as:
 
@@ -463,7 +464,7 @@ Contains the new key, but not the old one.
 
 ::::::::::::::::::::::::::::::: 
 
-### **Useful methods for dictionary** {#subsec:dict:usefulMethods}
+### **Useful methods for dictionary** 
 Now we use some snippets to demonstrate some of the useful *methods* associated with ```dict``` in Python.
 
 Given a dictionary as:
@@ -529,7 +530,7 @@ Not found...
 ```
 ::::::::::::::::::::::::::::::: challenge 
 
-## Do it Yourself
+## Getting multiple values
 
 Implement the <span style="color: rgb(32, 121, 77);">lac_repressor</span> dictionary and try to extract the *values* associated with the following *keys*:
 
@@ -574,12 +575,12 @@ for key in requested_keys:
 :::::::::::::::::
 
 ::::::::::::::::::::::::::::::: 
-### ```for```-loop and dictionary
+### ```for```-loops and dictionaries
 Dictionaries and ```for```-loops create a powerful combination. We can leverage the accessibility of dictionary *values* through specific *keys* that we define ourselves in a loop to extract data iteratively and repeatedly. 
 
 One of the most useful tools that we can create using nothing more than a ```for```-loop and a dictionary, in only a few lines of code, is a sequence converter.
 
-Here, we are essentially iterating through a sequence of DNA nucleotides (<span style="color: rgb(32, 121, 77);">sequence</span>), extracting one character per loop cycle from our string (<span style="color: rgb(32, 121, 77);">nucleotide</span>). We then use that character as a *key* to retrieve its corresponding *value* from our a dictionary (<span style="color: rgb(32, 121, 77);">dna2rna</span>). Once we get the *value*, we add it to the variable that we initialised using an empty string outside the scope of our ```for```-loop (<span style="color: rgb(32, 121, 77);">rna_sequence</span>) as discussed in [subsection](#subsubsec:mathematicalOperations:nonNumerics). At the end of the process, the variable <span style="color: rgb(32, 121, 77);">rna_sequence</span> will contain a converted version of our sequence. 
+Here, we are essentially iterating through a sequence of DNA nucleotides (<span style="color: rgb(32, 121, 77);">sequence</span>), extracting one character per loop cycle from our string (<span style="color: rgb(32, 121, 77);">nucleotide</span>). We then use that character as a *key* to retrieve its corresponding *value* from our a dictionary (<span style="color: rgb(32, 121, 77);">dna2rna</span>). Once we get the *value*, we add it to the variable that we initialised using an empty string outside the scope of our ```for```-loop (<span style="color: rgb(32, 121, 77);">rna_sequence</span>). At the end of the process, the variable <span style="color: rgb(32, 121, 77);">rna_sequence</span> will contain a converted version of our sequence. 
 
 ```python
 sequence = 'CCCATCTTAAGACTTCACAAGACTTGTGAAATCAGACCACTGCTCAATGCGGAACGCCCG'
@@ -602,7 +603,7 @@ RNA: GGGUAGAAUUCUGAAGUGUUCUGAACACUUUAGUCUGGUGACGAGUUACGCCUUGCGGGC
 
 ::::::::::::::::::::::::::::::: challenge 
 
-## Do it Yourself
+## Using dictionaries as maps
 
 We know that in reverse transcription, RNA nucleotides are converted to their complementary DNA as shown:
 	
