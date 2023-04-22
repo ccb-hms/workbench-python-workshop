@@ -30,6 +30,20 @@ exercises: 3
 
 ## Scikit-learn is a popular package for machine learning in Python. 
 
+[Scikit-learn](https://scikit-learn.org/stable/) (also called `sklearn`) is a popular machine learning package in Python.
+It has a wide variety of functionality which aid in creating, training, and evaluating machine learning models.
+
+Some of its functionality includes:
+
+- Classification: predicting a category such as active/inactive or what animal a picture is of. 
+- Regression: predicting a quantity such as temperature, survival time, or age.  
+- Clustering: determining groupings such as trying to create groups based on the structure of the data, such as disease subtypes or celltypes. 
+- Dimentionality reduction: projecting data from a high-dimensional to a low-dimensional space for visualization and exploration. PCA, UMAP, and TSNE are all dimensionality reduction methods. 
+- Model selection: choosing which model to use. This module includes methods for splitting data for training, evaluation metrics, hyperparameter optimization, and more.
+- Preprocessing: cleaning and transforming data for machine learning. This includes imputing missing data, normalization, denoising, and extracting features (for instance, creating a "season" feature from dates, or creating a "brightness" feature from an image). 
+
+Let's import the modules and other packages we need. 
+
 ``` python
 import pandas as pd
 from sklearn import model_selection, ensemble, metrics
@@ -129,14 +143,31 @@ X_train, X_test, y_train, y_test = \
                                      random_state=0) # random seed
 ```
 
-Now that we have our data split up, we can select and train our model, in machine learning tasks like this also called our **classifier**.
+Setting a test set aside from the training and validation sets from the beginning, and only using it once for a final evaluation, is very important to be able to properly evaluate how well a machine learning algorithm learned. If this **data leakage** occurs it contaminates the evaluation, making the evaluation not accurately reflect how well the model actually performs. Letting the machine learning method learn from the test set can be seen as giving a student the answers to an exam; once a student sees any exam answers, their exam score will no longer reflect their true understanding of the material.
 
+In other words, improper data splitting and data leakage means that *we will not know if our model works or not*.
+
+Now that we have our data split up, we can select and train our model, in machine learning tasks like this also called our **classifier**.
 We want to further split our training data into a traiing set and validation set so that we can freely explore different models before making our final choice. 
 
 ![Holdout validation strategy](fig/14_holdout.png)
 
 However, in this case we are simply going to go with a **random forest classifier**. 
 [Random forests](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html) are a fast classifier which tends to perform well, and is often reccomended as a first classifier to try. 
+
+::: callout
+## Definitions
+
+Training set - The training set is a part of the original dataset that trains or fits the model. This is the data that the model uses to learn patterns and set the model parameters.
+
+Validation set - Part of the training set is used to validate that the fitted model works on new data. This is not the final evaluation of the model. This step is used to change hyperparameters and then train the model again.
+
+Test set - The test set checks how well we expect the model to work on new data in the future. The test set is used in the final phase of the workflow, and it evaluates the final model. It can only be used one time, and the model cannot be adjusted after using it.
+
+Parameters - These are the aspects of a machine learning model that are learned from the training data. The parameters define the prediction rules of the trained model.
+
+Hyperparameters - These are the user-specified settings of a machine learning model. Each machine learning method has different hyperparameters, and they control various trade-offs which change how the model learns. Hyperparameters control parts of a machine learning method such as how much emphasis the method should place on being perfectly correct versus becoming overly complex, how fast the method should learn, the type of mathematical model the method should use for learning, and more. 
+:::
 
 ### Model Creation
 
