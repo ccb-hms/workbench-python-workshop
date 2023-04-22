@@ -1,5 +1,5 @@
 ---
-title: "Perform Statistical Tests with Scipy"
+title: "Visualizing data with matplotlib and seaborn"
 teaching: 40
 exercises: 20
 ---
