@@ -318,3 +318,18 @@ plt.show()
 ```
 
 ![Confusion Matrix](fig/14_confusion.png)
+
+## Resources for learning more
+
+The [Google machine learning glossary](https://developers.google.com/machine-learning/glossary) and [ML4Bio guides](https://github.com/carpentries-incubator/ml4bio-workshop/tree/gh-pages/guide) define common machine learning terms.
+
+The [scikit-learn tutorials](https://scikit-learn.org/stable/tutorial/index.html) provide a Python-based introduction to machine learning.
+There is also a third-party [scikit-learn tutorial](https://github.com/jakevdp/sklearn_tutorial) and a Carpentries [lesson](https://carpentries-incubator.github.io/machine-learning-novice-sklearn/).
+
+The book Python Machine Learning has machine learning [example code](https://github.com/rasbt/python-machine-learning-book-3rd-edition).
+
+The [Elements of AI](https://course.elementsofai.com/) course presents general introductory materials to machine learning and related topics.
+
+[Galaxy ML](https://galaxyproject.org/community/machine-learning/) provides access to classification and regression workflows through the Galaxy interface.
+
+You can find additional resources at these links for [beginners](https://github.com/carpentries-incubator/ml4bio-workshop/issues/43) and [intermediate users](https://github.com/carpentries-incubator/ml4bio-workshop/issues/94).
