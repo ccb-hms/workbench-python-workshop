@@ -77,8 +77,8 @@ episodes:
 - 12-scipy.md
 - home-05-reshaping-data.md #pivoting 
 - home-06-combining-data.md #joining
-# - 13-plotting.md
-# - 14-sklearn.md
+- 13-plotting.md
+- 14-sklearn.md
 # - 15-biomart.md
 # - 16-conclusion.md
 
