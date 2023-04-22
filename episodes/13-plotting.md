@@ -135,7 +135,7 @@ plt.xlabel('Time (days)')
 plt.ylabel('Mean Expression')
 ```
 
-[Multiple lines on the same plot with a legend](fig/13_6_multiline.png)
+![Multiple lines on the same plot with a legend](fig/13_6_multiline.png)
 
 ::: callout
 ## Adding a Legend
