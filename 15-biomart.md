@@ -205,4 +205,12 @@ Add columns to the dataframe with entrez gene ids and at least one other field f
 
 :::
 
+## Other bioinformatics resources
+
+[Biopython](https://biopython.org/) is a library with a wide variety of bioinformatics applications.
+You can find its tutorial/cookbook [here](https://biopython.org/DIST/docs/tutorial/Tutorial.html)
+
+
+---
+
 *This lesson was adapted from the [official mygene python tutorial](https://nbviewer.org/gist/newgene/6771106)*
