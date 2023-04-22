@@ -56,10 +56,10 @@ Participants will also be introduced to popular packages for machine learning an
 - [Combining Data](episodes/home-06-combining-data.md)
 
 ### Session 4: April 27 from 2:00pm - 4:00pm
-- Plotting with Seaborn and Matplotlib
+- [Plotting with Seaborn and Matplotlib](episodes/13-plotting.md)
 - Break (10 min)
-- Using scikit-learn for machine learning
-- Using BioMart get gene annotations
+- [Using scikit-learn for machine learning](episodes/14-sklearn.md)
+- [Using mygene to get gene annotations](episodes/15-biomart.md)
 - Wrap-up and next steps
 
 ::::::::::::::::::: instructor
