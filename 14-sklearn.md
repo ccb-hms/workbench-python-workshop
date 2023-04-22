@@ -1,7 +1,7 @@
 ---
-title: "Perform Statistical Tests with Scipy"
-teaching: 7
-exercises: 3
+title: "Perform machine learning with Scikit-learn"
+teaching: 20
+exercises: 0
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions 
