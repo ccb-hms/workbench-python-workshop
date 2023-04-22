@@ -447,7 +447,30 @@ training, and evaluation.</li>
 <section id="scikit-learn-is-a-popular-package-for-machine-learning-in-python."><h2 class="section-heading">Scikit-learn is a popular package for machine learning in
 Python.<a class="anchor" aria-label="anchor" href="#scikit-learn-is-a-popular-package-for-machine-learning-in-python."></a>
 </h2>
-<hr class="half-width"><div class="codewrapper sourceCode" id="cb1">
+<hr class="half-width"><p><a href="https://scikit-learn.org/stable/" class="external-link">Scikit-learn</a> (also
+called <code>sklearn</code>) is a popular machine learning package in
+Python. It has a wide variety of functionality which aid in creating,
+training, and evaluating machine learning models.</p>
+<p>Some of its functionality includes:</p>
+<ul><li>Classification: predicting a category such as active/inactive or
+what animal a picture is of.</li>
+<li>Regression: predicting a quantity such as temperature, survival
+time, or age.<br></li>
+<li>Clustering: determining groupings such as trying to create groups
+based on the structure of the data, such as disease subtypes or
+celltypes.</li>
+<li>Dimentionality reduction: projecting data from a high-dimensional to
+a low-dimensional space for visualization and exploration. PCA, UMAP,
+and TSNE are all dimensionality reduction methods.</li>
+<li>Model selection: choosing which model to use. This module includes
+methods for splitting data for training, evaluation metrics,
+hyperparameter optimization, and more.</li>
+<li>Preprocessing: cleaning and transforming data for machine learning.
+This includes imputing missing data, normalization, denoising, and
+extracting features (for instance, creating a “season” feature from
+dates, or creating a “brightness” feature from an image).</li>
+</ul><p>Let’s import the modules and other packages we need.</p>
+<div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -555,16 +578,60 @@ as more generally in machine learning) is to call our feactures
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>                                     stratify<span class="op">=</span>y,         <span class="co"># stratified sampling</span></span>
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>                                     random_state<span class="op">=</span><span class="dv">0</span>) <span class="co"># random seed</span></span></code></pre>
 </div>
+<p>Setting a test set aside from the training and validation sets from
+the beginning, and only using it once for a final evaluation, is very
+important to be able to properly evaluate how well a machine learning
+algorithm learned. If this <strong>data leakage</strong> occurs it
+contaminates the evaluation, making the evaluation not accurately
+reflect how well the model actually performs. Letting the machine
+learning method learn from the test set can be seen as giving a student
+the answers to an exam; once a student sees any exam answers, their exam
+score will no longer reflect their true understanding of the
+material.</p>
+<p>In other words, improper data splitting and data leakage means that
+<em>we will not know if our model works or not</em>.</p>
 <p>Now that we have our data split up, we can select and train our
 model, in machine learning tasks like this also called our
-<strong>classifier</strong>.</p>
-<p>We want to further split our training data into a traiing set and
-validation set so that we can freely explore different models before
-making our final choice.</p>
+<strong>classifier</strong>. We want to further split our training data
+into a traiing set and validation set so that we can freely explore
+different models before making our final choice.</p>
 <figure><img src="../fig/14_holdout.png" alt="" class="figure mx-auto d-block"><figcaption>Holdout validation strategy</figcaption></figure><p>However, in this case we are simply going to go with a <strong>random
 forest classifier</strong>. <a href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html" class="external-link">Random
 forests</a> are a fast classifier which tends to perform well, and is
 often reccomended as a first classifier to try.</p>
+<div id="callout1" class="callout callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="definitions" class="callout-inner">
+<h3 class="callout-title">Definitions<a class="anchor" aria-label="anchor" href="#callout1"></a>
+</h3>
+<div class="callout-content">
+<p>Training set - The training set is a part of the original dataset
+that trains or fits the model. This is the data that the model uses to
+learn patterns and set the model parameters.</p>
+<p>Validation set - Part of the training set is used to validate that
+the fitted model works on new data. This is not the final evaluation of
+the model. This step is used to change hyperparameters and then train
+the model again.</p>
+<p>Test set - The test set checks how well we expect the model to work
+on new data in the future. The test set is used in the final phase of
+the workflow, and it evaluates the final model. It can only be used one
+time, and the model cannot be adjusted after using it.</p>
+<p>Parameters - These are the aspects of a machine learning model that
+are learned from the training data. The parameters define the prediction
+rules of the trained model.</p>
+<p>Hyperparameters - These are the user-specified settings of a machine
+learning model. Each machine learning method has different
+hyperparameters, and they control various trade-offs which change how
+the model learns. Hyperparameters control parts of a machine learning
+method such as how much emphasis the method should place on being
+perfectly correct versus becoming overly complex, how fast the method
+should learn, the type of mathematical model the method should use for
+learning, and more.</p>
+</div>
+</div>
+</div>
 <div class="section level3">
 <h3 id="model-creation">Model Creation<a class="anchor" aria-label="anchor" href="#model-creation"></a></h3>
 <div class="codewrapper sourceCode" id="cb5">
