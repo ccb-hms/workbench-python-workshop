@@ -620,6 +620,22 @@ sns.clustermap(corr_df.iloc[:,:-8],
 ::: challenge
 ## Creating a boxplot
 
+Create a boxplot of mean gene expression by sample, colored by some other variable of choice in `rnaseq_df`.
+Take some time to try to get this plot close to publication ready for either a poster, presentation, or paper. 
+
+::: hint
+
+You may need want to rotate the x labels of the plot, which can be done with `plt.xticks(rotation = degrees)` where `degrees` is the number of degrees you wish to rotate by. 
+
+:::
+
+::: hint
+
+Check out some of the details of `sns.set_context()` [here](https://seaborn.pydata.org/tutorial/aesthetics.html#scaling-plot-elements).
+Seaborn has useful size default for different figure types. 
+
+:::
+
 :::
 
 ::: callout
