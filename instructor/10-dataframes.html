@@ -406,7 +406,7 @@ a named slice.</a></li>
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Pandas DataFrames</h1>
-        <p> Last updated on 2023-04-19 | 
+        <p> Last updated on 2023-04-24 | 
         
         <a href="https://github.com/ccb-hms/workbench-python-workshop/edit/main/episodes/10-dataframes.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -751,17 +751,20 @@ min    1230.000000  1085.000000      3797.0  1284.000000      4095.0
 75%    4523.250000  3308.000000      3797.0  3602.250000      4095.0
 max    5621.000000  4049.000000      3797.0  4375.000000      4095.0</code></pre>
 </div>
-<div id="discussion1" class="callout discussion">
+<div id="challenge1" class="callout challenge">
 <div class="callout-square">
-<i class="callout-icon" data-feather="message-circle"></i>
+<i class="callout-icon" data-feather="zap"></i>
 </div>
 <div class="callout-inner">
-<h3 class="callout-title">Discussion<a class="anchor" aria-label="anchor" href="#discussion1"></a>
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge1"></a>
 </h3>
 <div class="callout-content">
 <p>Why are there still <code>NaN</code>s in this output, when in Pandas
 methods like <code>min</code> and <code>max</code> igonre
 <code>Nan</code> by default?</p>
+</div>
+</div>
+</div>
 <div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
@@ -774,9 +777,6 @@ methods like <code>min</code> and <code>max</code> igonre
 <p>We still see <code>NaN</code> because GSM2545337 and GSM2545340 only
 have a single value over 1000 in this subset. The standard deviation
 (<code>std</code>) is undefined for a single value.</p>
-</div>
-</div>
-</div>
 </div>
 </div>
 </div>
@@ -1073,12 +1073,12 @@ Kif5a   36079.571429  37911.750  33410.714286  1832.178571
 Pink1   15454.571429  17252.375  23305.285714  1797.803571
 Itih3    2467.714286   3976.500   5534.571429  1508.785714</code></pre>
 </div>
-<div id="challenge1" class="callout challenge">
+<div id="challenge2" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="creating-new-columns" class="callout-inner">
-<h3 class="callout-title">Creating new columns<a class="anchor" aria-label="anchor" href="#challenge1"></a>
+<h3 class="callout-title">Creating new columns<a class="anchor" aria-label="anchor" href="#challenge2"></a>
 </h3>
 <div class="callout-content">
 <p>We looked at the absolute expression change when finding top genes,
@@ -1161,12 +1161,12 @@ Zw10      -0.066695  0.954823
 
 [1474 rows x 2 columns]</code></pre>
 </div>
-<div id="challenge2" class="callout challenge">
+<div id="challenge3" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="extent-of-slicing" class="callout-inner">
-<h3 class="callout-title">Extent of Slicing<a class="anchor" aria-label="anchor" href="#challenge2"></a>
+<h3 class="callout-title">Extent of Slicing<a class="anchor" aria-label="anchor" href="#challenge3"></a>
 </h3>
 <div class="callout-content">
 <ol style="list-style-type: decimal"><li>Do the two statements below produce the same output?</li>
@@ -1236,12 +1236,12 @@ final element.</p>
 </div>
 </div>
 </div>
-<div id="challenge3" class="callout challenge">
+<div id="challenge4" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="reconstructing-data" class="callout-inner">
-<h3 class="callout-title">Reconstructing Data<a class="anchor" aria-label="anchor" href="#challenge3"></a>
+<h3 class="callout-title">Reconstructing Data<a class="anchor" aria-label="anchor" href="#challenge4"></a>
 </h3>
 <div class="callout-content">
 <p>Explain what each line in the following short program does: what is
@@ -1321,12 +1321,12 @@ started the Jupyter or Python session.</p>
 </div>
 </div>
 </div>
-<div id="challenge4" class="callout challenge">
+<div id="challenge5" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="selecting-indices" class="callout-inner">
-<h3 class="callout-title">Selecting Indices<a class="anchor" aria-label="anchor" href="#challenge4"></a>
+<h3 class="callout-title">Selecting Indices<a class="anchor" aria-label="anchor" href="#challenge5"></a>
 </h3>
 <div class="callout-content">
 <p>Explain in simple terms what <code>idxmin</code> and
@@ -1414,12 +1414,12 @@ the minimum/maximum value and not the actual minimum/maximum value.</p>
 </div>
 </div>
 </div>
-<div id="challenge5" class="callout challenge">
+<div id="challenge6" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="many-ways-of-access" class="callout-inner">
-<h3 class="callout-title">Many Ways of Access<a class="anchor" aria-label="anchor" href="#challenge5"></a>
+<h3 class="callout-title">Many Ways of Access<a class="anchor" aria-label="anchor" href="#challenge6"></a>
 </h3>
 <div class="callout-content">
 <p>There are at least two ways of accessing a value or slice of a
@@ -1427,11 +1427,15 @@ DataFrame: by name or index. However, there are many others. For
 example, a single column or row can be accessed either as a
 <code>DataFrame</code> or a <code>Series</code> object.</p>
 <p>Suggest different ways of doing the following operations on a
-DataFrame: 1. Access a single column 2. Access a single row 3. Access an
-individual DataFrame element 4. Access several columns 5. Access several
-rows 6. Access a subset of specific rows and columns 7. Access a subset
-of row and column ranges</p>
-</div>
+DataFrame:</p>
+<ol style="list-style-type: decimal"><li>Access a single column</li>
+<li>Access a single row</li>
+<li>Access an individual DataFrame element</li>
+<li>Access several columns</li>
+<li>Access several rows</li>
+<li>Access a subset of specific rows and columns</li>
+<li>Access a subset of row and column ranges</li>
+</ol></div>
 </div>
 </div>
 <div id="accordionSolution6" class="accordion challenge-accordion accordion-flush">
@@ -1638,8 +1642,8 @@ any links that you are not going to use.
   "url": "https://ccb-hms.github.io/workbench-python-workshop/instructor/10-dataframes.html",
   "identifier": "https://ccb-hms.github.io/workbench-python-workshop/instructor/10-dataframes.html",
   "dateCreated": "2023-04-01",
-  "dateModified": "2023-04-19",
-  "datePublished": "2023-04-22"
+  "dateModified": "2023-04-24",
+  "datePublished": "2023-04-24"
 }
 
   </script><script>
