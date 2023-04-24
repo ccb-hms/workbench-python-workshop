@@ -298,7 +298,7 @@ min    1230.000000  1085.000000      3797.0  1284.000000      4095.0
 max    5621.000000  4049.000000      3797.0  4375.000000      4095.0
 ```
 
-::: discussion
+::: challenge
 
 Why are there still `NaN`s in this output, when in Pandas methods like `min` and `max` igonre `Nan` by default?
 
@@ -843,6 +843,7 @@ However, there are many others. For example, a single column or row can be acces
 or a `Series` object.
 
 Suggest different ways of doing the following operations on a DataFrame:
+
 1. Access a single column
 2. Access a single row
 3. Access an individual DataFrame element
