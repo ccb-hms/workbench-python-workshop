@@ -357,7 +357,7 @@ print(f"Sample is {genotype} {time} knockout, replicate {rep}")
 ```
 
 ```output
-Sample is RAB7A 0min knockout, replicate 1
+Sample is RABA7A 0min knockout, replicate 1
 ```
 
 :::

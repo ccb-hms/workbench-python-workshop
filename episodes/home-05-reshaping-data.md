@@ -172,12 +172,22 @@ Note that any columns in the dataframe which are not used as values are dropped.
 ::: challenge
 
 Create a dataframe of the rnaseq dataset where each row is a gene and each column is a timepoint instead of a sample. 
-The values in each column should be the mean count accross all samples at that timepoint. 
+The values in each column should be the mean count across all samples at that timepoint. 
 
 ::: hint
 
 Take a look at the `aggfunc` argument in [pivot_table](https://pandas.pydata.org/docs/reference/api/pandas.pivot_table.html). 
 What is the default?
+
+:::
+
+::: solution
+
+By default, `pivot_table` aggregates values by mean. 
+
+```python
+rnaseq_df.pivot_table(columns = "time", values = "expression", index="gene")
+```
 
 :::
 

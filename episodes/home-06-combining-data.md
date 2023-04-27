@@ -477,7 +477,8 @@ Plp1     proteolipid protein (myelin) 1 [Source:MGI Sym...
 
 What data is missing between `annot3` and `rnaseq_mini`?
 
-Try joining them, how is this missing data handled?
+Try joining them. 
+How is this missing data handled?
 
 ::: solution
 
@@ -659,7 +660,7 @@ new_mini = rnaseq_mini.copy()
 new_mini["expression"] = pd.Series(range(50,50000)).sample(int(10), replace=True).array
 print(new_mini)
 ```
-*Note: as these are random numbers your exact values will be different*
+*Note: as these are pseudo-random numbers your exact values will be different*
 
 ```output
              sample  expression
@@ -679,5 +680,190 @@ Gnb4     GSM2545336       22506
 Try joining `rnaseq_mini` and `new_mini`. What happens?
 Take a look at the `lsuffix` and `rsuffix` arguments for `join`. 
 How can you use these to improve your joined dataframe?
+
+::: solution
+
+When we try to join these dataframes we get an error.
+
+```python
+rnaseq_mini.join(new_mini)
+```
+
+```error
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+Cell In[17], line 1
+----> 1 rnaseq_mini.join(new_mini)
+
+File ~\anaconda3\envs\ml-env\lib\site-packages\pandas\core\frame.py:9976, in DataFrame.join(self, other, on, how, lsuffix, rsuffix, sort, validate)
+   9813 def join(
+   9814     self,
+   9815     other: DataFrame | Series | list[DataFrame | Series],
+   (...)
+   9821     validate: str | None = None,
+   9822 ) -> DataFrame:
+   9823     """
+   9824     Join columns of another DataFrame.
+   9825 
+   (...)
+   9974     5  K1  A5   B1
+   9975     """
+-> 9976     return self._join_compat(
+   9977         other,
+   9978         on=on,
+   9979         how=how,
+   9980         lsuffix=lsuffix,
+   9981         rsuffix=rsuffix,
+   9982         sort=sort,
+   9983         validate=validate,
+   9984     )
+
+File ~\anaconda3\envs\ml-env\lib\site-packages\pandas\core\frame.py:10015, in DataFrame._join_compat(self, other, on, how, lsuffix, rsuffix, sort, validate)
+  10005     if how == "cross":
+  10006         return merge(
+  10007             self,
+  10008             other,
+   (...)
+  10013             validate=validate,
+  10014         )
+> 10015     return merge(
+  10016         self,
+  10017         other,
+  10018         left_on=on,
+  10019         how=how,
+  10020         left_index=on is None,
+  10021         right_index=True,
+  10022         suffixes=(lsuffix, rsuffix),
+  10023         sort=sort,
+  10024         validate=validate,
+  10025     )
+  10026 else:
+  10027     if on is not None:
+
+File ~\anaconda3\envs\ml-env\lib\site-packages\pandas\core\reshape\merge.py:124, in merge(left, right, how, on, left_on, right_on, left_index, right_index, sort, suffixes, copy, indicator, validate)
+     93 @Substitution("\nleft : DataFrame or named Series")
+     94 @Appender(_merge_doc, indents=0)
+     95 def merge(
+   (...)
+    108     validate: str | None = None,
+    109 ) -> DataFrame:
+    110     op = _MergeOperation(
+    111         left,
+    112         right,
+   (...)
+    122         validate=validate,
+    123     )
+--> 124     return op.get_result(copy=copy)
+
+File ~\anaconda3\envs\ml-env\lib\site-packages\pandas\core\reshape\merge.py:775, in _MergeOperation.get_result(self, copy)
+    771     self.left, self.right = self._indicator_pre_merge(self.left, self.right)
+    773 join_index, left_indexer, right_indexer = self._get_join_info()
+--> 775 result = self._reindex_and_concat(
+    776     join_index, left_indexer, right_indexer, copy=copy
+    777 )
+    778 result = result.__finalize__(self, method=self._merge_type)
+    780 if self.indicator:
+
+File ~\anaconda3\envs\ml-env\lib\site-packages\pandas\core\reshape\merge.py:729, in _MergeOperation._reindex_and_concat(self, join_index, left_indexer, right_indexer, copy)
+    726 left = self.left[:]
+    727 right = self.right[:]
+--> 729 llabels, rlabels = _items_overlap_with_suffix(
+    730     self.left._info_axis, self.right._info_axis, self.suffixes
+    731 )
+    733 if left_indexer is not None:
+    734     # Pinning the index here (and in the right code just below) is not
+    735     #  necessary, but makes the `.take` more performant if we have e.g.
+    736     #  a MultiIndex for left.index.
+    737     lmgr = left._mgr.reindex_indexer(
+    738         join_index,
+    739         left_indexer,
+   (...)
+    744         use_na_proxy=True,
+    745     )
+
+File ~\anaconda3\envs\ml-env\lib\site-packages\pandas\core\reshape\merge.py:2458, in _items_overlap_with_suffix(left, right, suffixes)
+   2455 lsuffix, rsuffix = suffixes
+   2457 if not lsuffix and not rsuffix:
+-> 2458     raise ValueError(f"columns overlap but no suffix specified: {to_rename}")
+   2460 def renamer(x, suffix):
+   2461     """
+   2462     Rename the left and right indices.
+   2463 
+   (...)
+   2474     x : renamed column name
+   2475     """
+
+ValueError: columns overlap but no suffix specified: Index(['sample', 'expression'], dtype='object')
+```
+
+We need to give the datasets suffixes so that there is no column name collision.
+
+```python
+print(rnaseq_mini.join(new_mini, lsuffix="_exp1", rsuffix="_exp2"))
+```
+
+```output
+        sample_exp1  expression_exp1 sample_exp2  expression_exp2
+gene                                                             
+Asl      GSM2545336             1170  GSM2545336            29016
+Apod     GSM2545336            36194  GSM2545336            46560
+Cyp2d22  GSM2545336             4060  GSM2545336             1823
+Klk6     GSM2545336              287  GSM2545336            27428
+Fcrls    GSM2545336               85  GSM2545336            45369
+Slc2a4   GSM2545336              782  GSM2545336            31129
+Exd2     GSM2545336             1619  GSM2545336            21478
+Gjc2     GSM2545336              288  GSM2545336            34747
+Plp1     GSM2545336            43217  GSM2545336            46074
+Gnb4     GSM2545336             1071  GSM2545336            16370
+```
+
+While this works, we now have duplicate `sample` columns. 
+
+To avoid this, we could either `drop` the sample column in one of the dataframes before joining, or use `merge` to join on multiple columns and reset the index afterward. 
+
+```python
+#Option 1: Drop the column
+print(rnaseq_mini.join(new_mini.drop('sample',axis=1), lsuffix="_exp1", rsuffix="_exp2"))
+```
+
+```output
+             sample  expression_exp1  expression_exp2
+gene                                                 
+Asl      GSM2545336             1170            29016
+Apod     GSM2545336            36194            46560
+Cyp2d22  GSM2545336             4060             1823
+Klk6     GSM2545336              287            27428
+Fcrls    GSM2545336               85            45369
+Slc2a4   GSM2545336              782            31129
+Exd2     GSM2545336             1619            21478
+Gjc2     GSM2545336              288            34747
+Plp1     GSM2545336            43217            46074
+Gnb4     GSM2545336             1071            16370
+```
+
+```python
+#Option 2: Merging on gene and sample
+print(pd.merge(rnaseq_mini, new_mini, on=["gene","sample"]))
+```
+
+```output
+             sample  expression_x  expression_y
+gene                                           
+Asl      GSM2545336          1170         29016
+Apod     GSM2545336         36194         46560
+Cyp2d22  GSM2545336          4060          1823
+Klk6     GSM2545336           287         27428
+Fcrls    GSM2545336            85         45369
+Slc2a4   GSM2545336           782         31129
+Exd2     GSM2545336          1619         21478
+Gjc2     GSM2545336           288         34747
+Plp1     GSM2545336         43217         46074
+Gnb4     GSM2545336          1071         16370
+```
+
+Note that `pd.merge` does not throw an error when dealing with duplicate column names, but instead automatically uses the suffixes `_x` and `_y`.
+We could change these defaults with the `suffixes` argument. 
+
+:::
 
 :::
