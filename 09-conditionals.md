@@ -195,7 +195,6 @@ above, suppose you have
 mass     = [ 3.54,  2.07,  9.22,  1.86,  1.71]
 velocity = [10.00, 20.00, 30.00, 25.00, 20.00]
 
-i = 0
 for i in range(5):
     if mass[i] > 5 and velocity[i] > 20:
         print("Fast heavy object.  Duck!")
