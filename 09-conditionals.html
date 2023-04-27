@@ -399,7 +399,7 @@ code is executed.</a></li>
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Conditionals</h1>
-        <p> Last updated on 2023-04-14 | 
+        <p> Last updated on 2023-04-27 | 
         
         <a href="https://github.com/ccb-hms/workbench-python-workshop/edit/main/episodes/09-conditionals.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -642,16 +642,15 @@ combine relations within a conditional using <code>and</code> and
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>mass     <span class="op">=</span> [ <span class="fl">3.54</span>,  <span class="fl">2.07</span>,  <span class="fl">9.22</span>,  <span class="fl">1.86</span>,  <span class="fl">1.71</span>]</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>velocity <span class="op">=</span> [<span class="fl">10.00</span>, <span class="fl">20.00</span>, <span class="fl">30.00</span>, <span class="fl">25.00</span>, <span class="fl">20.00</span>]</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>i <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> mass[i] <span class="op">&gt;</span> <span class="dv">5</span> <span class="kw">and</span> velocity[i] <span class="op">&gt;</span> <span class="dv">20</span>:</span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Fast heavy object.  Duck!"</span>)</span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> mass[i] <span class="op">&gt;</span> <span class="dv">2</span> <span class="kw">and</span> mass[i] <span class="op">&lt;=</span> <span class="dv">5</span> <span class="kw">and</span> velocity[i] <span class="op">&lt;=</span> <span class="dv">20</span>:</span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Normal traffic"</span>)</span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> mass[i] <span class="op">&lt;=</span> <span class="dv">2</span> <span class="kw">and</span> velocity[i] <span class="op">&lt;=</span> <span class="dv">20</span>:</span>
-<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Slow light object.  Ignore it"</span>)</span>
-<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Whoa!  Something is up with the data.  Check it"</span>)</span></code></pre>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> mass[i] <span class="op">&gt;</span> <span class="dv">5</span> <span class="kw">and</span> velocity[i] <span class="op">&gt;</span> <span class="dv">20</span>:</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Fast heavy object.  Duck!"</span>)</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> mass[i] <span class="op">&gt;</span> <span class="dv">2</span> <span class="kw">and</span> mass[i] <span class="op">&lt;=</span> <span class="dv">5</span> <span class="kw">and</span> velocity[i] <span class="op">&lt;=</span> <span class="dv">20</span>:</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Normal traffic"</span>)</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> mass[i] <span class="op">&lt;=</span> <span class="dv">2</span> <span class="kw">and</span> velocity[i] <span class="op">&lt;=</span> <span class="dv">20</span>:</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Slow light object.  Ignore it"</span>)</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Whoa!  Something is up with the data.  Check it"</span>)</span></code></pre>
 </div>
 <p>Just like with arithmetic, you can and should use parentheses
 whenever there is possible ambiguity. A good general rule is to
@@ -914,8 +913,8 @@ any links that you are not going to use.
   "url": "https://ccb-hms.github.io/workbench-python-workshop/09-conditionals.html",
   "identifier": "https://ccb-hms.github.io/workbench-python-workshop/09-conditionals.html",
   "dateCreated": "2023-04-01",
-  "dateModified": "2023-04-14",
-  "datePublished": "2023-04-25"
+  "dateModified": "2023-04-27",
+  "datePublished": "2023-04-27"
 }
 
   </script><script>
