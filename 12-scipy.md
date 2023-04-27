@@ -204,7 +204,7 @@ There are a number of arguments we could use to change the test, such as account
 
 ::: challenge
 
-Peform a t-test looking at whether there is a different by sex as opposed to treatment. 
+Peform a t-test looking at whether there is a difference by sex as opposed to treatment. 
 
 ::: solution
 
