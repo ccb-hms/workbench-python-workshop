@@ -404,7 +404,7 @@ defaults</a></li>
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Visualizing data with matplotlib and seaborn</h1>
-        <p> Last updated on 2023-04-22 | 
+        <p> Last updated on 2023-04-27 | 
         
         <a href="https://github.com/ccb-hms/workbench-python-workshop/edit/main/episodes/13-plotting.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -783,6 +783,21 @@ argument.</p>
 set the <code>hue</code> of the scatterplot to the column name. We’re
 also going to make some more room for the plot by changing matplotlib’s
 <code>rcParams</code>, which are the global plotting settings.</p>
+<div id="callout3" class="callout callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="global-plot-settings-with-rcparams" class="callout-inner">
+<h3 class="callout-title">Global plot settings with
+<code>rcParams</code><a class="anchor" aria-label="anchor" href="#callout3"></a>
+</h3>
+<div class="callout-content">
+<p><code>rcParams</code> is a specialized dictionary used by
+<code>matplotlib</code> to store all global plot settings. You can
+change <code>rcParams</code> to set things like the</p>
+</div>
+</div>
+</div>
 <div class="codewrapper sourceCode" id="cb20">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -897,7 +912,7 @@ more to clean up the plot.</p>
 <span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>                alpha <span class="op">=</span> <span class="fl">0.6</span>, </span>
 <span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>                hue <span class="op">=</span> <span class="st">"is_protein_coding"</span>, </span>
 <span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>                <span class="co">#Sets the color pallete to map values to</span></span>
-<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>                palette <span class="op">=</span> <span class="st">"make"</span>)</span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>                palette <span class="op">=</span> <span class="st">"mako"</span>)</span>
 <span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"0min to 4min (log FC)"</span>)</span>
 <span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"0min to 8min (log FC)"</span>)</span>
 <span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a></span>
@@ -1093,10 +1108,10 @@ groupings.</p>
 <h3 class="callout-title">Creating a boxplot<a class="anchor" aria-label="anchor" href="#challenge3"></a>
 </h3>
 <div class="callout-content">
-<p>Create a boxplot of mean gene expression by sample, colored by some
-other variable of choice in <code>rnaseq_df</code>. Take some time to
-try to get this plot close to publication ready for either a poster,
-presentation, or paper.</p>
+<p>Visualize log mean gene expression by sample and some other variable
+of choice in <code>rnaseq_df</code>. Take some time to try to get this
+plot close to publication ready for either a poster, presentation, or
+paper.</p>
 </div>
 </div>
 </div>
@@ -1131,22 +1146,88 @@ Seaborn has useful size default for different figure types.</p>
 </div>
 </div>
 </div>
-<div id="callout3" class="callout callout">
+<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
+  <h4 class="accordion-header" id="headingSolution3">
+  Show me the solution
+  </h4>
+</button>
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div class="accordion-body">
+<p>Your plot will of course vary, but here are some examples of what we
+can do:</p>
+<div class="codewrapper sourceCode" id="cb33">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>sns.set_context(<span class="st">"talk"</span>)</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Things like this will depend on your screen resolution and size</span></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="co">#plt.rcParams['figure.figsize'] = [8, 6]</span></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="co">#plt.rcParams['figure.dpi'] = 300</span></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="co">#sns.set(font_scale=1.25)</span></span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>sns.set_palette(sns.color_palette(<span class="st">"rocket_r"</span>, n_colors<span class="op">=</span><span class="dv">3</span>))</span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>sns.boxplot(rnaseq_df, </span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>            x <span class="op">=</span> <span class="st">"sample"</span>, </span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a>            y <span class="op">=</span> <span class="st">"log_exp"</span>,</span>
+<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a>            hue <span class="op">=</span> <span class="st">"time"</span>, </span>
+<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a>            dodge<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb33-12"><a href="#cb33-12" aria-hidden="true" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">45</span>, ha<span class="op">=</span><span class="st">'right'</span>)<span class="op">;</span></span>
+<span id="cb33-13"><a href="#cb33-13" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Log Expression"</span>)</span>
+<span id="cb33-14"><a href="#cb33-14" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">""</span>)</span>
+<span id="cb33-15"><a href="#cb33-15" aria-hidden="true" tabindex="-1"></a><span class="co"># See this thread for more discussion of legend positions: https://stackoverflow.com/a/43439132</span></span>
+<span id="cb33-16"><a href="#cb33-16" aria-hidden="true" tabindex="-1"></a>plt.legend(title<span class="op">=</span><span class="st">'Days Post Infection'</span>, loc<span class="op">=</span>(<span class="fl">1.04</span>, <span class="fl">0.5</span>), labels<span class="op">=</span>[<span class="st">'0 days'</span>,<span class="st">'4 days'</span>,<span class="st">'8 days'</span>])</span></code></pre>
+</div>
+<figure><img src="fig/13_16_challenge1.png" class="figure mx-auto d-block"></figure><div class="codewrapper sourceCode" id="cb34">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>sns.set_palette([<span class="st">"#A51C30"</span>,<span class="st">"#8996A0"</span>])</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>sns.violinplot(rnaseq_df, </span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>            x <span class="op">=</span> <span class="st">"sample"</span>, </span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>            y <span class="op">=</span> <span class="st">"log_exp"</span>,</span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>            hue <span class="op">=</span> <span class="st">"infection"</span>, </span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>            dodge<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">45</span>, ha<span class="op">=</span><span class="st">'right'</span>)<span class="op">;</span></span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>plt.legend(loc <span class="op">=</span> <span class="st">'lower right'</span>)</span></code></pre>
+</div>
+<figure><img src="fig/13_17_challenge2.png" class="figure mx-auto d-block"></figure><div class="codewrapper sourceCode" id="cb35">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>sns.set_context(<span class="st">"talk"</span>)</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>pal <span class="op">=</span> sns.color_palette(<span class="st">"blend:#A51C30,#FFDB6D"</span>, <span class="dv">24</span>)</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>g <span class="op">=</span> sns.catplot(rnaseq_df,</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>            kind <span class="op">=</span> <span class="st">"box"</span>,</span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>            x <span class="op">=</span> <span class="st">"sample"</span>, </span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>            y <span class="op">=</span> <span class="st">"log_exp"</span>,</span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>            col <span class="op">=</span> <span class="st">"sex"</span>,</span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>            dodge<span class="op">=</span><span class="va">False</span>, </span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>            hue <span class="op">=</span> <span class="st">"sample"</span>,</span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>            palette <span class="op">=</span> pal,</span>
+<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a>            sharex <span class="op">=</span> <span class="va">False</span>)</span>
+<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> axes <span class="kw">in</span> g.axes.flat:</span>
+<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a>    _ <span class="op">=</span> axes.set_xticklabels(axes.get_xticklabels(), rotation<span class="op">=</span><span class="dv">45</span>, ha<span class="op">=</span><span class="st">'right'</span>)</span>
+<span id="cb35-14"><a href="#cb35-14" aria-hidden="true" tabindex="-1"></a>g.set_axis_labels(<span class="st">""</span>, <span class="st">"Log Expression"</span>)</span>
+<span id="cb35-15"><a href="#cb35-15" aria-hidden="true" tabindex="-1"></a>plt.subplots_adjust(wspace<span class="op">=</span><span class="fl">0.1</span>)</span></code></pre>
+</div>
+<figure><img src="fig/13_18_challenge3.png" class="figure mx-auto d-block"></figure></div>
+</div>
+</div>
+</div>
+<div id="callout4" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="saving-your-plot-to-a-file" class="callout-inner">
-<h3 class="callout-title">Saving your plot to a file<a class="anchor" aria-label="anchor" href="#callout3"></a>
+<h3 class="callout-title">Saving your plot to a file<a class="anchor" aria-label="anchor" href="#callout4"></a>
 </h3>
 <div class="callout-content">
 <p>If you are satisfied with the plot you see you may want to save it to
 a file, perhaps to include it in a publication. There is a function in
 the matplotlib.pyplot module that accomplishes this: <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.savefig.html" class="external-link">savefig</a>.
 Calling this function, e.g. with</p>
-<div class="codewrapper sourceCode" id="cb33">
+<div class="codewrapper sourceCode" id="cb36">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>plt.savefig(<span class="st">'my_figure.png'</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>plt.savefig(<span class="st">'my_figure.png'</span>)</span></code></pre>
 </div>
 <p>will save the current figure to the file <code>my_figure.png</code>.
 The file format will automatically be deduced from the file name
@@ -1162,22 +1243,24 @@ in one line. In addition to using <code>plt.savefig</code>, we can save
 a reference to the current figure in a local variable (with
 <code>plt.gcf</code>) and call the <code>savefig</code> class method
 from that variable to save the figure to file.</p>
-<div class="codewrapper sourceCode" id="cb34">
+<div class="codewrapper sourceCode" id="cb37">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>data.plot(kind<span class="op">=</span><span class="st">'bar'</span>)</span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.gcf() <span class="co"># get current figure</span></span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>fig.savefig(<span class="st">'my_figure.png'</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>data.plot(kind<span class="op">=</span><span class="st">'bar'</span>)</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.gcf() <span class="co"># get current figure</span></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>fig.savefig(<span class="st">'my_figure.png'</span>)</span></code></pre>
+</div>
+<p>This supports most common image formats such as <code>png</code>,
+<code>svg</code>, <code>pdf</code>, etc.</p>
 </div>
 </div>
 </div>
-</div>
-<div id="callout4" class="callout callout">
+<div id="callout5" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="making-your-plots-accessible" class="callout-inner">
-<h3 class="callout-title">Making your plots accessible<a class="anchor" aria-label="anchor" href="#callout4"></a>
+<h3 class="callout-title">Making your plots accessible<a class="anchor" aria-label="anchor" href="#callout5"></a>
 </h3>
 <div class="callout-content">
 <p>Whenever you are generating plots to go into a paper or a
@@ -1258,7 +1341,7 @@ any links that you are not going to use.
   "url": "https://ccb-hms.github.io/workbench-python-workshop/13-plotting.html",
   "identifier": "https://ccb-hms.github.io/workbench-python-workshop/13-plotting.html",
   "dateCreated": "2023-04-01",
-  "dateModified": "2023-04-22",
+  "dateModified": "2023-04-27",
   "datePublished": "2023-04-27"
 }
 
