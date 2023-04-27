@@ -13,8 +13,10 @@ exercises: 20
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- Create a time series plot showing a single data set.
-- Create a scatter plot showing relationship between two data sets.
+- Visualize list-type data using matplotlib.
+- Visualize dataframe data with matplotlib and seaborn.
+- Customize plot aesthetics.
+- Create publication-ready plots for a particular context.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -24,7 +26,7 @@ exercises: 20
 - Plot data directly from a Pandas dataframe.
 - Select and transform data, then plot it.
 - Many styles of plot are available: see the [Python Graph Gallery](https://python-graph-gallery.com/matplotlib/) for more options.
-- Can plot many sets of data together.
+- Seaborn extends matplotlib and provides useful defaults and integration with dataframes. 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
