@@ -328,6 +328,14 @@ Now let's incorporate `gene_biotype`.
 To do this, we can set the `hue` of the scatterplot to the column name. 
 We're also going to make some more room for the plot by changing matplotlib's `rcParams`, which are the global plotting settings. 
 
+::: callout
+## Global plot settings with `rcParams`
+
+`rcParams` is a specialized dictionary used by `matplotlib` to store all global plot settings. 
+You can change `rcParams` to set things like the
+
+:::
+
 
 ```python
 plt.rcParams['figure.figsize'] = [12, 8]
@@ -426,7 +434,7 @@ sns.scatterplot(data = time_matrix,
                 alpha = 0.6, 
                 hue = "is_protein_coding", 
                 #Sets the color pallete to map values to
-                palette = "make")
+                palette = "mako")
 plt.xlabel("0min to 4min (log FC)")
 plt.ylabel("0min to 8min (log FC)")
 
@@ -620,7 +628,7 @@ sns.clustermap(corr_df.iloc[:,:-8],
 ::: challenge
 ## Creating a boxplot
 
-Create a boxplot of mean gene expression by sample, colored by some other variable of choice in `rnaseq_df`.
+Visualize log mean gene expression by sample and some other variable of choice in `rnaseq_df`.
 Take some time to try to get this plot close to publication ready for either a poster, presentation, or paper. 
 
 ::: hint
@@ -633,6 +641,66 @@ You may need want to rotate the x labels of the plot, which can be done with `pl
 
 Check out some of the details of `sns.set_context()` [here](https://seaborn.pydata.org/tutorial/aesthetics.html#scaling-plot-elements).
 Seaborn has useful size default for different figure types. 
+
+:::
+
+::: solution
+
+Your plot will of course vary, but here are some examples of what we can do:
+
+```python
+sns.set_context("talk")
+# Things like this will depend on your screen resolution and size
+#plt.rcParams['figure.figsize'] = [8, 6]
+#plt.rcParams['figure.dpi'] = 300
+#sns.set(font_scale=1.25)
+sns.set_palette(sns.color_palette("rocket_r", n_colors=3))
+sns.boxplot(rnaseq_df, 
+            x = "sample", 
+            y = "log_exp",
+            hue = "time", 
+            dodge=False)
+plt.xticks(rotation=45, ha='right');
+plt.ylabel("Log Expression")
+plt.xlabel("")
+# See this thread for more discussion of legend positions: https://stackoverflow.com/a/43439132
+plt.legend(title='Days Post Infection', loc=(1.04, 0.5), labels=['0 days','4 days','8 days'])
+```
+
+![](fig/13_16_challenge1.png)
+
+```python
+sns.set_palette(["#A51C30","#8996A0"])
+sns.violinplot(rnaseq_df, 
+            x = "sample", 
+            y = "log_exp",
+            hue = "infection", 
+            dodge=False)
+plt.xticks(rotation=45, ha='right');
+plt.legend(loc = 'lower right')
+```
+
+![](fig/13_17_challenge2.png)
+
+```python
+sns.set_context("talk")
+pal = sns.color_palette("blend:#A51C30,#FFDB6D", 24)
+g = sns.catplot(rnaseq_df,
+            kind = "box",
+            x = "sample", 
+            y = "log_exp",
+            col = "sex",
+            dodge=False, 
+            hue = "sample",
+            palette = pal,
+            sharex = False)
+for axes in g.axes.flat:
+    _ = axes.set_xticklabels(axes.get_xticklabels(), rotation=45, ha='right')
+g.set_axis_labels("", "Log Expression")
+plt.subplots_adjust(wspace=0.1)
+```
+
+![](fig/13_18_challenge3.png)
 
 :::
 
@@ -671,6 +739,10 @@ data.plot(kind='bar')
 fig = plt.gcf() # get current figure
 fig.savefig('my_figure.png')
 ```
+
+
+This supports most common image formats such as `png`, `svg`, `pdf`, etc.
+
 :::
 
 ::: callout
