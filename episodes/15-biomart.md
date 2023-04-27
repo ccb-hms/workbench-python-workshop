@@ -6,24 +6,21 @@ exercises: 3
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- What is Scikit-learn
-- How is Scikit-learn used for a typical machine learning workflow?
+- How can I get gene annotations in Python?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- Explore the `sklearn` library.
-- Walk through a typical machine learning workflow in Scikit-learn. 
-- Examine machine learning evaluation plots.
+- Explore the `mygene` library.
+- Access and merge gene annotations using `mygene`.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: keypoints
 
-- Scikit-learn is a popular package for machine learning in Python. 
-- Scikit-learn has a variety of useful functionality for creating predictive models. 
-- A machine learning workflow involves preprocessing, model selection, training, and evaluation. 
+- `mygene` is Python module which allows access to a gene annotation database. 
+- You can query `mygene` with multiple identifiers using `querymany`.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
