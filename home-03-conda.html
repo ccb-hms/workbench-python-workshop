@@ -483,13 +483,13 @@ while another environment associated with an finished project has NumPy
 at the time the project finished). If you change one environment, your
 other environments are not affected. You can easily activate or
 deactivate environments, which is how you switch between them.</p>
-<div id="callout1" class="callout callout">
+<div id="avoid-installing-packages-into-your-base-conda-environment" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="avoid-installing-packages-into-your-base-conda-environment" class="callout-inner">
 <h3 class="callout-title">Avoid installing packages into your
-<code>base</code> Conda environment<a class="anchor" aria-label="anchor" href="#callout1"></a>
+<code>base</code> Conda environment<a class="anchor" aria-label="anchor" href="#avoid-installing-packages-into-your-base-conda-environment"></a>
 </h3>
 <div class="callout-content">
 <p>Conda has a default environment called <code>base</code> that include
@@ -501,12 +501,12 @@ Conda environment.</p>
 </div>
 </div>
 </div>
-<div id="prereq1" class="callout prereq">
+<div id="working-from-the-command-line" class="callout prereq">
 <div class="callout-square">
 <i class="callout-icon" data-feather="check"></i>
 </div>
 <div id="working-from-the-command-line" class="callout-inner">
-<h3 class="callout-title">Working from the command line<a class="anchor" aria-label="anchor" href="#prereq1"></a>
+<h3 class="callout-title">Working from the command line<a class="anchor" aria-label="anchor" href="#working-from-the-command-line"></a>
 </h3>
 <div class="callout-content">
 <p>So far, we have been working inside Jupyter Lab. However, we now want
@@ -589,13 +589,13 @@ to install when creating the environment.</p>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> conda create <span class="at">--name</span> python36-env python=3.6</span></code></pre>
 </div>
-<div id="callout2" class="callout callout">
+<div id="always-specify-a-version-number-for-each-package-you-wish-to-install" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="always-specify-a-version-number-for-each-package-you-wish-to-install" class="callout-inner">
 <h3 class="callout-title">Always specify a version number for each
-package you wish to install<a class="anchor" aria-label="anchor" href="#callout2"></a>
+package you wish to install<a class="anchor" aria-label="anchor" href="#always-specify-a-version-number-for-each-package-you-wish-to-install"></a>
 </h3>
 <div class="callout-content">
 <p>In order to make your results more reproducible and to make it easier
@@ -636,12 +636,12 @@ is not listed as a packaged to install into the
 <code>basic-scipy-env</code> environment above, <code>conda</code> will
 still install Python into the environment because it is a required
 dependency of at least one of the listed packages.</p>
-<div id="challenge1" class="callout challenge">
+<div id="creating-a-new-environment" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="creating-a-new-environment" class="callout-inner">
-<h3 class="callout-title">Creating a new environment<a class="anchor" aria-label="anchor" href="#challenge1"></a>
+<h3 class="callout-title">Creating a new environment<a class="anchor" aria-label="anchor" href="#creating-a-new-environment"></a>
 </h3>
 <div class="callout-content">
 <p>Create a new environment called “machine-learning-env” with Python
@@ -733,13 +733,13 @@ environment.</p>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span></span></code></pre>
 </div>
-<div id="callout3" class="callout callout">
+<div id="returning-to-the-base-environment" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="returning-to-the-base-environment" class="callout-inner">
 <h3 class="callout-title">Returning to the <code>base</code>
-environment<a class="anchor" aria-label="anchor" href="#callout3"></a>
+environment<a class="anchor" aria-label="anchor" href="#returning-to-the-base-environment"></a>
 </h3>
 <div class="callout-content">
 <p>To return to the <code>base</code> Conda environment, it’s better to
@@ -752,12 +752,12 @@ a new shell.</strong></p>
 </div>
 </div>
 </div>
-<div id="challenge2" class="callout challenge">
+<div id="activate-an-existing-environment-by-name" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="activate-an-existing-environment-by-name" class="callout-inner">
-<h3 class="callout-title">Activate an existing environment by name<a class="anchor" aria-label="anchor" href="#challenge2"></a>
+<h3 class="callout-title">Activate an existing environment by name<a class="anchor" aria-label="anchor" href="#activate-an-existing-environment-by-name"></a>
 </h3>
 <div class="callout-content">
 <p>Activate the <code>machine-learning-env</code> environment created in
@@ -785,12 +785,12 @@ the previous challenge by name.</p>
 </div>
 </div>
 </div>
-<div id="challenge3" class="callout challenge">
+<div id="deactivate-the-active-environment" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="deactivate-the-active-environment" class="callout-inner">
-<h3 class="callout-title">Deactivate the active environment<a class="anchor" aria-label="anchor" href="#challenge3"></a>
+<h3 class="callout-title">Deactivate the active environment<a class="anchor" aria-label="anchor" href="#deactivate-the-active-environment"></a>
 </h3>
 <div class="callout-content">
 <p>Deactivate the <code>machine-learning-env</code> environment that you
@@ -853,12 +853,12 @@ Scikit-Learn, into the current, active environment.</p>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> conda install scikit-learn=0.22</span></code></pre>
 </div>
-<div id="checklist1" class="callout checklist">
+<div id="using-your-environment-in-jupyter" class="callout checklist">
 <div class="callout-square">
 <i class="callout-icon" data-feather="check-square"></i>
 </div>
 <div id="using-your-environment-in-jupyter" class="callout-inner">
-<h3 class="callout-title">Using your environment in Jupyter<a class="anchor" aria-label="anchor" href="#checklist1"></a>
+<h3 class="callout-title">Using your environment in Jupyter<a class="anchor" aria-label="anchor" href="#using-your-environment-in-jupyter"></a>
 </h3>
 <div class="callout-content">
 <p>We need to perform a few extra steps to make our conda environments
@@ -894,12 +894,12 @@ of the screen:</p>
 <figure><img src="fig/home03-jupyter-selecting-kernel.png" alt="" class="figure mx-auto d-block"><figcaption>Selecting conda kernels in Jupyer Lab</figcaption></figure></div>
 </div>
 </div>
-<div id="callout4" class="callout callout">
+<div id="freezing-installed-packages" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="freezing-installed-packages" class="callout-inner">
-<h3 class="callout-title">Freezing installed packages<a class="anchor" aria-label="anchor" href="#callout4"></a>
+<h3 class="callout-title">Freezing installed packages<a class="anchor" aria-label="anchor" href="#freezing-installed-packages"></a>
 </h3>
 <div class="callout-content">
 <p>To prevent existing packages from being updating when using the
@@ -986,13 +986,13 @@ environment on your machine.</p>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> conda list <span class="at">--prefix</span> /path/to/conda-env</span></code></pre>
 </div>
-<div id="challenge4" class="callout challenge">
+<div id="listing-the-contents-of-a-particular-environment." class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="listing-the-contents-of-a-particular-environment." class="callout-inner">
 <h3 class="callout-title">Listing the contents of a particular
-environment.<a class="anchor" aria-label="anchor" href="#challenge4"></a>
+environment.<a class="anchor" aria-label="anchor" href="#listing-the-contents-of-a-particular-environment."></a>
 </h3>
 <div class="callout-content">
 <p>List the packages installed in the <code>machine-learning-env</code>
@@ -1050,12 +1050,12 @@ again when removing the environment.</p>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> conda remove <span class="at">--prefix</span> /path/to/conda-env/ <span class="at">--all</span></span></code></pre>
 </div>
-<div id="challenge5" class="callout challenge">
+<div id="delete-an-entire-environment" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="delete-an-entire-environment" class="callout-inner">
-<h3 class="callout-title">Delete an entire environment<a class="anchor" aria-label="anchor" href="#challenge5"></a>
+<h3 class="callout-title">Delete an entire environment<a class="anchor" aria-label="anchor" href="#delete-an-entire-environment"></a>
 </h3>
 <div class="callout-content">
 <p>Delete the entire “basic-scipy-env” environment.</p>
@@ -1120,7 +1120,7 @@ any links that you are not going to use.
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
         
         <p><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">Template licensed under CC-BY 4.0</a> by <a href="https://carpentries.org" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.11.16" class="external-link">sandpaper (0.11.16)</a>,
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.12.0" class="external-link">sandpaper (0.12.0)</a>,
         <a href="https://github.com/carpentries/pegboard" class="external-link">pegboard (0.5.3)</a>,
       and <a href="https://github.com/carpentries/varnish/tree/0.2.16" class="external-link">varnish (0.2.16)</a>.</p>
 			</div>
@@ -1144,7 +1144,7 @@ any links that you are not going to use.
   "identifier": "https://ccb-hms.github.io/workbench-python-workshop/home-03-conda.html",
   "dateCreated": "2023-04-01",
   "dateModified": "2023-04-20",
-  "datePublished": "2023-05-16"
+  "datePublished": "2023-05-23"
 }
 
   </script><script>
