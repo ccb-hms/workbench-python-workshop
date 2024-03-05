@@ -492,13 +492,13 @@ while another environment associated with an finished project has NumPy
 at the time the project finished). If you change one environment, your
 other environments are not affected. You can easily activate or
 deactivate environments, which is how you switch between them.</p>
-<div id="avoid-installing-packages-into-your-base-conda-environment" class="callout callout">
+<div id="callout1" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="avoid-installing-packages-into-your-base-conda-environment" class="callout-inner">
-<h3 class="callout-title">Avoid installing packages into your<code>base</code>Conda environment<a class="anchor" aria-label="anchor" href="#avoid-installing-packages-into-your-base-conda-environment"></a>
-</h3>
+<div class="section level3 callout-title callout-inner">
+<h3 class="callout-title" id="avoid-installing-packages-into-your-base-conda-environment">Avoid installing packages into your
+<code>base</code> Conda environment<a class="anchor" aria-label="anchor" href="#avoid-installing-packages-into-your-base-conda-environment"></a></h3>
 <div class="callout-content">
 <p>Conda has a default environment called <code>base</code> that include
 a Python installation and some core system libraries and dependencies of
@@ -538,14 +538,14 @@ hit <kbd>Enter</kbd>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> conda init</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">$</span> conda init</span></code></pre>
 </div>
 <p>You should now see <code>(base)</code> at the start of your terminal
 line.</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">base</span><span class="kw">)</span> <span class="ex">$</span> </span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="kw">(</span><span class="ex">base</span><span class="kw">)</span> <span class="ex">$</span> </span></code></pre>
 </div>
 </div>
 <div class="section level3">
@@ -558,14 +558,14 @@ Prompt.</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> conda init</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="ex">$</span> conda init</span></code></pre>
 </div>
 <p>You should now see <code>(base)</code> at the start of your terminal
 line.</p>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">base</span><span class="kw">)</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="kw">(</span><span class="ex">base</span><span class="kw">)</span></span></code></pre>
 </div>
 </div>
 </div>
@@ -579,7 +579,7 @@ command.</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> conda create <span class="at">--name</span> python3-env python</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="ex">$</span> conda create <span class="at">--name</span> python3-env python</span></code></pre>
 </div>
 <p>For a list of all commands, take a look at <a href="https://docs.conda.io/projects/conda/en/latest/commands.html" class="external-link">Conda
 general commands</a>.</p>
@@ -595,16 +595,15 @@ to install when creating the environment.</p>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> conda create <span class="at">--name</span> python36-env python=3.6</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="ex">$</span> conda create <span class="at">--name</span> python36-env python=3.6</span></code></pre>
 </div>
-<div id="always-specify-a-version-number-for-each-package-you-wish-to-install" class="callout callout">
+<div id="callout2" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="always-specify-a-version-number-for-each-package-you-wish-to-install" class="callout-inner">
-<h3 class="callout-title">Always specify a version number for each
-package you wish to install<a class="anchor" aria-label="anchor" href="#always-specify-a-version-number-for-each-package-you-wish-to-install"></a>
-</h3>
+<div class="section level3 callout-title callout-inner">
+<h3 class="callout-title" id="always-specify-a-version-number-for-each-package-you-wish-to-install">Always specify a version number for each
+package you wish to install<a class="anchor" aria-label="anchor" href="#always-specify-a-version-number-for-each-package-you-wish-to-install"></a></h3>
 <div class="callout-content">
 <p>In order to make your results more reproducible and to make it easier
 for research colleagues to recreate your Conda environments on their
@@ -616,7 +615,7 @@ then you can use search to see what versions are available using the
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> conda search <span class="va">$PACKAGE_NAME</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="ex">$</span> conda search <span class="va">$PACKAGE_NAME</span></span></code></pre>
 </div>
 <p>So, for example, if you wanted to see which versions of <a href="https://scikit-learn.org/stable/" class="external-link">Scikit-learn</a>, a popular
 Python library for machine learning, were available, you would run the
@@ -624,7 +623,7 @@ following.</p>
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> conda search scikit-learn</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="ex">$</span> conda search scikit-learn</span></code></pre>
 </div>
 <p>As always you can run <code>conda search --help</code> to learn about
 available options.</p>
@@ -636,7 +635,7 @@ listing the packages that you wish to install.</p>
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> conda create <span class="at">--name</span> basic-scipy-env ipython=7.13 matplotlib=3.1 numpy=1.18 scipy=1.4</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="ex">$</span> conda create <span class="at">--name</span> basic-scipy-env ipython=7.13 matplotlib=3.1 numpy=1.18 scipy=1.4</span></code></pre>
 </div>
 <p>When <code>conda</code> installs a package into an environment it
 also installs any required dependencies. For example, even though Python
@@ -662,20 +661,20 @@ and the most current versions of <a href="https://ipython.org/" class="external-
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>In order to create a new environment you use the
 <code>conda create</code> command as follows.</p>
 <div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> conda create <span class="at">--name</span> machine-learning-env <span class="dt">\</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a> ipython <span class="dt">\</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a> matplotlib <span class="dt">\</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a> pandas <span class="dt">\</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a> python <span class="dt">\</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a> scikit-learn <span class="dt">\</span></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a> numba</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="ex">$</span> conda create <span class="at">--name</span> machine-learning-env <span class="dt">\</span></span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a> ipython <span class="dt">\</span></span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a> matplotlib <span class="dt">\</span></span>
+<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a> pandas <span class="dt">\</span></span>
+<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a> python <span class="dt">\</span></span>
+<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a> scikit-learn <span class="dt">\</span></span>
+<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a> numba</span></code></pre>
 </div>
 <p>Since no version numbers are provided for any of the Python packages,
 Conda will download the most current, mutually compatible versions of
@@ -685,13 +684,13 @@ solution.</p>
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> conda create <span class="at">--name</span> machine-learning-env <span class="dt">\</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a> ipython=7.19 <span class="dt">\</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a> matplotlib=3.3 <span class="dt">\</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a> pandas=1.2 <span class="dt">\</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a> python=3.8 <span class="dt">\</span></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a> scikit-learn=0.23 <span class="dt">\</span></span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a> numba=0.51</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="ex">$</span> conda create <span class="at">--name</span> machine-learning-env <span class="dt">\</span></span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a> ipython=7.19 <span class="dt">\</span></span>
+<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a> matplotlib=3.3 <span class="dt">\</span></span>
+<span id="cb11-4"><a href="#cb11-4" tabindex="-1"></a> pandas=1.2 <span class="dt">\</span></span>
+<span id="cb11-5"><a href="#cb11-5" tabindex="-1"></a> python=3.8 <span class="dt">\</span></span>
+<span id="cb11-6"><a href="#cb11-6" tabindex="-1"></a> scikit-learn=0.23 <span class="dt">\</span></span>
+<span id="cb11-7"><a href="#cb11-7" tabindex="-1"></a> numba=0.51</span></code></pre>
 </div>
 <p>However, please be aware that the version numbers for each packages
 may not be the latest available and would need to be adjusted.</p>
@@ -713,14 +712,14 @@ environment by name using the <code>activate</code> command.</p>
 <div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> conda activate basic-scipy-env</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="ex">$</span> conda activate basic-scipy-env</span></code></pre>
 </div>
 <p>You can see that an environment has been activated because the shell
 prompt will now include the name of the active environment.</p>
 <div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">basic-scipy-env</span><span class="kw">)</span> <span class="ex">$</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="kw">(</span><span class="ex">basic-scipy-env</span><span class="kw">)</span> <span class="ex">$</span></span></code></pre>
 </div>
 </section><section id="deactivate-the-current-environment"><h2 class="section-heading">Deactivate the current environment<a class="anchor" aria-label="anchor" href="#deactivate-the-current-environment"></a>
 </h2>
@@ -729,7 +728,7 @@ prompt will now include the name of the active environment.</p>
 <div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">basic-scipy-env</span><span class="kw">)</span> <span class="ex">$</span> conda deactivate</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="kw">(</span><span class="ex">basic-scipy-env</span><span class="kw">)</span> <span class="ex">$</span> conda deactivate</span></code></pre>
 </div>
 <p>You can see that an environment has been deactivated because the
 shell prompt will no longer include the name of the previously active
@@ -737,15 +736,15 @@ environment.</p>
 <div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="ex">$</span></span></code></pre>
 </div>
-<div id="returning-to-the-base-environment" class="callout callout">
+<div id="callout3" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="returning-to-the-base-environment" class="callout-inner">
-<h3 class="callout-title">Returning to the<code>base</code>environment<a class="anchor" aria-label="anchor" href="#returning-to-the-base-environment"></a>
-</h3>
+<div class="section level3 callout-title callout-inner">
+<h3 class="callout-title" id="returning-to-the-base-environment">Returning to the <code>base</code>
+environment<a class="anchor" aria-label="anchor" href="#returning-to-the-base-environment"></a></h3>
 <div class="callout-content">
 <p>To return to the <code>base</code> Conda environment, it’s better to
 call <code>conda activate</code> with no environment specified, rather
@@ -775,14 +774,14 @@ the previous challenge by name.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>In order to activate an existing environment by name you use the
 <code>conda activate</code> command as follows.</p>
 <div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> conda activate machine-learning-env</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="ex">$</span> conda activate machine-learning-env</span></code></pre>
 </div>
 </div>
 </div>
@@ -806,14 +805,14 @@ activated in the previous challenge.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3">Show me the solution</h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>In order to deactivate the active environment you use the
 <code>conda deactivate</code> command.</p>
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">active-environment-name</span><span class="kw">)</span> <span class="ex">$</span> conda deactivate</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="kw">(</span><span class="ex">active-environment-name</span><span class="kw">)</span> <span class="ex">$</span> conda deactivate</span></code></pre>
 </div>
 </div>
 </div>
@@ -837,8 +836,8 @@ machine code, into the active environment.</p>
 <div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> conda activate basic-scipy-env</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> conda install numba</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="ex">$</span> conda activate basic-scipy-env</span>
+<span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a><span class="ex">$</span> conda install numba</span></code></pre>
 </div>
 <p>As was the case when listing packages to install when using the
 <code>conda create</code> command, if version numbers are not explicitly
@@ -852,7 +851,7 @@ Scikit-Learn, into the current, active environment.</p>
 <div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> conda install scikit-learn=0.22</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="ex">$</span> conda install scikit-learn=0.22</span></code></pre>
 </div>
 <div id="using-your-environment-in-jupyter" class="callout checklist">
 <div class="callout-square">
@@ -869,39 +868,40 @@ available in Jupyter Lab.</p>
 <div class="codewrapper sourceCode" id="cb20">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> conda activate</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> conda install nb_conda_kernels</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a><span class="ex">$</span> conda activate</span>
+<span id="cb20-2"><a href="#cb20-2" tabindex="-1"></a><span class="ex">$</span> conda install nb_conda_kernels</span></code></pre>
 </div>
 <p>Now for any environment we want to be available in Jupyter Lab we
 simply install the <code>ipykernel</code> package.</p>
 <div class="codewrapper sourceCode" id="cb21">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> conda activate basic-scipy-env</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> conda install ipykernel</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a><span class="ex">$</span> conda activate basic-scipy-env</span>
+<span id="cb21-2"><a href="#cb21-2" tabindex="-1"></a><span class="ex">$</span> conda install ipykernel</span></code></pre>
 </div>
 <p>We then want to go back to our base environment and start Jupyter
 Lab:</p>
 <div class="codewrapper sourceCode" id="cb22">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> conda activate</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> jupyter lab</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a><span class="ex">$</span> conda activate</span>
+<span id="cb22-2"><a href="#cb22-2" tabindex="-1"></a><span class="ex">$</span> jupyter lab</span></code></pre>
 </div>
 <p>Now, when we launch Jupyter Lab our environments should be available
 as <strong>kernels</strong>. You can change your kernel in the top-right
 of the screen:</p>
-<figure><img src="fig/home03-jupyter-changing-kernel.png" alt="" class="figure mx-auto d-block"><figcaption>Changing the kernel</figcaption></figure><p>And you should see your conda environments available:</p>
-<figure><img src="fig/home03-jupyter-selecting-kernel.png" alt="" class="figure mx-auto d-block"><figcaption>Selecting conda kernels in Jupyer Lab</figcaption></figure></div>
+<figure><img src="fig/home03-jupyter-changing-kernel.png" alt="Changing the kernel" class="figure mx-auto d-block"><div class="figcaption">Changing the kernel</div>
+</figure><p>And you should see your conda environments available:</p>
+<figure><img src="fig/home03-jupyter-selecting-kernel.png" alt="Selecting conda kernels in Jupyer Lab" class="figure mx-auto d-block"><div class="figcaption">Selecting conda kernels in Jupyer Lab</div>
+</figure></div>
 </div>
 </div>
-<div id="freezing-installed-packages" class="callout callout">
+<div id="callout4" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="freezing-installed-packages" class="callout-inner">
-<h3 class="callout-title">Freezing installed packages<a class="anchor" aria-label="anchor" href="#freezing-installed-packages"></a>
-</h3>
+<div class="section level3 callout-title callout-inner">
+<h3 class="callout-title" id="freezing-installed-packages">Freezing installed packages<a class="anchor" aria-label="anchor" href="#freezing-installed-packages"></a></h3>
 <div class="callout-content">
 <p>To prevent existing packages from being updating when using the
 <code>conda install</code> command, you can use the
@@ -932,14 +932,14 @@ the current working directory called <code>env</code>.</p>
 <div class="codewrapper sourceCode" id="cb23">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> conda create <span class="at">--prefix</span> ./env ipython=7.13 matplotlib=3.1 pandas=1.0 python=3.6</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a><span class="ex">$</span> conda create <span class="at">--prefix</span> ./env ipython=7.13 matplotlib=3.1 pandas=1.0 python=3.6</span></code></pre>
 </div>
 <p>You activate an environment created with a prefix using the same
 command used to activate environments created by name.</p>
 <div class="codewrapper sourceCode" id="cb24">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> conda activate ./env</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a><span class="ex">$</span> conda activate ./env</span></code></pre>
 </div>
 <p>It is often a good idea to specify a path to a sub-directory of your
 project directory when creating an environment. Why?</p>
@@ -963,7 +963,7 @@ together with their locations.</p>
 <div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> conda env list</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a><span class="ex">$</span> conda env list</span></code></pre>
 </div>
 </section><section id="listing-the-contents-of-an-environment"><h2 class="section-heading">Listing the contents of an environment<a class="anchor" aria-label="anchor" href="#listing-the-contents-of-an-environment"></a>
 </h2>
@@ -976,7 +976,7 @@ following command.</p>
 <div class="codewrapper sourceCode" id="cb26">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> conda list <span class="at">--name</span> basic-scipy-env</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a><span class="ex">$</span> conda list <span class="at">--name</span> basic-scipy-env</span></code></pre>
 </div>
 <p>If you created your Conda environment using the <code>--prefix</code>
 option to install packages into a particular directory, then you will
@@ -985,7 +985,7 @@ environment on your machine.</p>
 <div class="codewrapper sourceCode" id="cb27">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> conda list <span class="at">--prefix</span> /path/to/conda-env</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a><span class="ex">$</span> conda list <span class="at">--prefix</span> /path/to/conda-env</span></code></pre>
 </div>
 <div id="listing-the-contents-of-a-particular-environment." class="callout challenge">
 <div class="callout-square">
@@ -1006,7 +1006,7 @@ environment that you created in a previous challenge.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4">Show me the solution</h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <p>You can list the packages and their versions installed in
 <code>machine-learning-env</code> using the <code>conda list</code>
@@ -1014,7 +1014,7 @@ command as follows.</p>
 <div class="codewrapper sourceCode" id="cb28">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> conda list <span class="at">--name</span> machine-learning-env</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" tabindex="-1"></a><span class="ex">$</span> conda list <span class="at">--name</span> machine-learning-env</span></code></pre>
 </div>
 <p>To list the packages and their versions installed in the active
 environment leave off the <code>--name</code> or <code>--prefix</code>
@@ -1022,7 +1022,7 @@ option.</p>
 <div class="codewrapper sourceCode" id="cb29">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> conda list</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" tabindex="-1"></a><span class="ex">$</span> conda list</span></code></pre>
 </div>
 </div>
 </div>
@@ -1039,7 +1039,7 @@ the following.</p>
 <div class="codewrapper sourceCode" id="cb30">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> conda remove <span class="at">--name</span> my-first-conda-env <span class="at">--all</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" tabindex="-1"></a><span class="ex">$</span> conda remove <span class="at">--name</span> my-first-conda-env <span class="at">--all</span></span></code></pre>
 </div>
 <p>If you wish to delete and environment that you created with a
 <code>--prefix</code> option, then you will need to provide the prefix
@@ -1047,7 +1047,7 @@ again when removing the environment.</p>
 <div class="codewrapper sourceCode" id="cb31">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> conda remove <span class="at">--prefix</span> /path/to/conda-env/ <span class="at">--all</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" tabindex="-1"></a><span class="ex">$</span> conda remove <span class="at">--prefix</span> /path/to/conda-env/ <span class="at">--all</span></span></code></pre>
 </div>
 <div id="delete-an-entire-environment" class="callout challenge">
 <div class="callout-square">
@@ -1066,14 +1066,14 @@ again when removing the environment.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5">Show me the solution</h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
 <p>In order to delete an entire environment you use the
 <code>conda remove</code> command as follows.</p>
 <div class="codewrapper sourceCode" id="cb32">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> conda remove <span class="at">--name</span> basic-scipy-env <span class="at">--all</span> <span class="at">--yes</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" tabindex="-1"></a><span class="ex">$</span> conda remove <span class="at">--name</span> basic-scipy-env <span class="at">--all</span> <span class="at">--yes</span></span></code></pre>
 </div>
 <p>This command will remove all packages from the named environment
 before removing the environment itself. The use of the
@@ -1146,7 +1146,7 @@ any links that you are not going to use.
   "identifier": "https://ccb-hms.github.io/workbench-python-workshop/home-03-conda.html",
   "dateCreated": "2023-04-01",
   "dateModified": "2023-04-20",
-  "datePublished": "2024-02-27"
+  "datePublished": "2024-03-05"
 }
 
   </script><script>

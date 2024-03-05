@@ -476,8 +476,8 @@ name in quotes to a variable <code>first_name</code>.</li>
 </ul><div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="dv">42</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>first_name <span class="op">=</span> <span class="st">'Ahmed'</span></span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a>age <span class="op">=</span> <span class="dv">42</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>first_name <span class="op">=</span> <span class="st">'Ahmed'</span></span></code></pre>
 </div>
 <ul><li>Variable names
 <ul><li>can <strong>only</strong> contain letters, digits, and underscore
@@ -492,13 +492,12 @@ different variables)</li>
 that until we understand the convention.</li>
 </ul></section><section id="use-print-to-display-values."><h2 class="section-heading">Use <code>print</code> to display values.<a class="anchor" aria-label="anchor" href="#use-print-to-display-values."></a>
 </h2>
-<hr class="half-width"><div id="callout1" class="callout callout">
+<hr class="half-width"><div id="callout1" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div class="callout-inner">
-<h3 class="callout-title">Callout<a class="anchor" aria-label="anchor" href="#callout1"></a>
-</h3>
+<div class="section level3 callout-title callout-inner">
+<h3 class="callout-title">Callout</h3>
 <div class="callout-content">
 <p>A <strong>string</strong> is the <strong>type</strong> which stores
 text in Python. Strings can be thought of as sequences or
@@ -519,13 +518,12 @@ quotes.</li>
 <li>The values passed to the function are called
 <strong>arguments</strong>
 </li>
-</ul><div id="single-vs.-double-quotes" class="callout callout">
+</ul><div id="callout2" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="single-vs.-double-quotes" class="callout-inner">
-<h3 class="callout-title">Single vs. double quotes<a class="anchor" aria-label="anchor" href="#single-vs.-double-quotes"></a>
-</h3>
+<div class="section level3 callout-title callout-inner">
+<h3 class="callout-title" id="single-vs--double-quotes">Single vs. double quotes<a class="anchor" aria-label="anchor" href="#single-vs--double-quotes"></a></h3>
 <div class="callout-content">
 <p>In Python, you can use single quotes or double quotes to denote a
 string, but you need to use the same one for both the beginning and the
@@ -533,10 +531,10 @@ end.</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="st">"mouse"</span> <span class="co"># is a string</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="st">'mouse'</span> <span class="co"># is a string</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="st">"mouse'nt"</span> <span class="co"># we can use a single quote inside double quotes without ending the string</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="st">'mouse" #This doesn'</span>t work</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>a <span class="op">=</span> <span class="st">"mouse"</span> <span class="co"># is a string</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>a <span class="op">=</span> <span class="st">'mouse'</span> <span class="co"># is a string</span></span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>a <span class="op">=</span> <span class="st">"mouse'nt"</span> <span class="co"># we can use a single quote inside double quotes without ending the string</span></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>a <span class="op">=</span> <span class="st">'mouse" #This doesn'</span>t work</span></code></pre>
 </div>
 </div>
 </div>
@@ -545,7 +543,7 @@ end.</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(first_name, <span class="st">'is'</span>, age, <span class="st">'years old'</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="bu">print</span>(first_name, <span class="st">'is'</span>, age, <span class="st">'years old'</span>)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -560,7 +558,7 @@ name and its value will be displayed:</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>age</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a>age</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -578,7 +576,7 @@ mis-spelled, Python reports an error. (Unlike some languages, which
 </ul><div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(last_name)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="bu">print</span>(last_name)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -593,13 +591,12 @@ NameError: name 'last_name' is not defined</code></pre>
 <ul><li>The last line of an error message is usually the most
 informative.</li>
 <li>We will look at error messages in detail later.</li>
-</ul><div id="variables-persist-between-cells" class="callout callout">
+</ul><div id="callout3" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="variables-persist-between-cells" class="callout-inner">
-<h3 class="callout-title">Variables Persist Between Cells<a class="anchor" aria-label="anchor" href="#variables-persist-between-cells"></a>
-</h3>
+<div class="section level3 callout-title callout-inner">
+<h3 class="callout-title" id="variables-persist-between-cells">Variables Persist Between Cells<a class="anchor" aria-label="anchor" href="#variables-persist-between-cells"></a></h3>
 <div class="callout-content">
 <p>Be aware that it is the <em>order</em> of execution of cells that is
 important in a Jupyter notebook, not the order in which they appear.
@@ -612,12 +609,12 @@ in this order:</p>
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(myval)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="bu">print</span>(myval)</span></code></pre>
 </div>
 <div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>myval <span class="op">=</span> <span class="dv">1</span></span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a>myval <span class="op">=</span> <span class="dv">1</span></span></code></pre>
 </div>
 <p>If you execute this in order, the first cell will give an error.
 However, if you run the first cell <em>after</em> the second cell it
@@ -637,8 +634,8 @@ a few lines ago.</li>
 </ul><div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> age <span class="op">+</span> <span class="dv">3</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Age in three years:'</span>, age)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a>age <span class="op">=</span> age <span class="op">+</span> <span class="dv">3</span></span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Age in three years:'</span>, age)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -658,9 +655,9 @@ rules (alphanumeric characters and the underscore).</li>
 </ul><div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>flabadab <span class="op">=</span> <span class="dv">42</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>ewr_422_yY <span class="op">=</span> <span class="st">'Ahmed'</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ewr_422_yY, <span class="st">'is'</span>, flabadab, <span class="st">'years old'</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a>flabadab <span class="op">=</span> <span class="dv">42</span></span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a>ewr_422_yY <span class="op">=</span> <span class="st">'Ahmed'</span></span>
+<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a><span class="bu">print</span>(ewr_422_yY, <span class="st">'is'</span>, flabadab, <span class="st">'years old'</span>)</span></code></pre>
 </div>
 <ul><li>Use meaningful variable names to help other people understand what
 the program does.</li>
@@ -678,12 +675,12 @@ the program does.</li>
 <div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Command  # Value of x   # Value of y   # Value of swap #</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="fl">1.0</span>    <span class="co">#              #              #               #</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="fl">3.0</span>    <span class="co">#              #              #               #</span></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>swap <span class="op">=</span> x   <span class="co">#              #              #               #</span></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> y      <span class="co">#              #              #               #</span></span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> swap   <span class="co">#              #              #               #</span></span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="co"># Command  # Value of x   # Value of y   # Value of swap #</span></span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a>x <span class="op">=</span> <span class="fl">1.0</span>    <span class="co">#              #              #               #</span></span>
+<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a>y <span class="op">=</span> <span class="fl">3.0</span>    <span class="co">#              #              #               #</span></span>
+<span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a>swap <span class="op">=</span> x   <span class="co">#              #              #               #</span></span>
+<span id="cb14-5"><a href="#cb14-5" tabindex="-1"></a>x <span class="op">=</span> y      <span class="co">#              #              #               #</span></span>
+<span id="cb14-6"><a href="#cb14-6" tabindex="-1"></a>y <span class="op">=</span> swap   <span class="co">#              #              #               #</span></span></code></pre>
 </div>
 </div>
 </div>
@@ -739,9 +736,9 @@ your prediction.)</p>
 <div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>initial <span class="op">=</span> <span class="st">'left'</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>position <span class="op">=</span> initial</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>initial <span class="op">=</span> <span class="st">'right'</span></span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a>initial <span class="op">=</span> <span class="st">'left'</span></span>
+<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a>position <span class="op">=</span> initial</span>
+<span id="cb16-3"><a href="#cb16-3" tabindex="-1"></a>initial <span class="op">=</span> <span class="st">'right'</span></span></code></pre>
 </div>
 </div>
 </div>
@@ -756,7 +753,7 @@ your prediction.)</p>
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(position)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="bu">print</span>(position)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -879,7 +876,7 @@ any links that you are not going to use.
   "identifier": "https://ccb-hms.github.io/workbench-python-workshop/instructor/02-variables.html",
   "dateCreated": "2023-04-01",
   "dateModified": "2023-04-18",
-  "datePublished": "2024-02-27"
+  "datePublished": "2024-03-05"
 }
 
   </script><script>

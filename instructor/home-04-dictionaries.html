@@ -477,9 +477,10 @@ associate them with their descriptions for future reference.</p>
 </blockquote>
 <p>This is an example of association in arrays. We may visualise this
 problem as displayed below:</p>
-<figure><img src="../fig/home04_associative_arrays.png" alt="" class="figure mx-auto d-block"><figcaption>Illustrative diagram of associative arrays, showing
-the sets of <em>keys</em> and their association with some of the
-values.</figcaption></figure><p>One way to associate the proteins with their definitions would be to
+<figure><img src="../fig/home04_associative_arrays.png" alt="Illustrative diagram of associative arrays, showing the sets of keys and their association with some of the values." class="figure mx-auto d-block"><div class="figcaption">Illustrative diagram of associative arrays,
+showing the sets of <em>keys</em> and their association with some of the
+values.</div>
+</figure><p>One way to associate the proteins with their definitions would be to
 use nested arrays. However, it would make it difficult to retrieve the
 values at a later time. This is because to retrieve the values, we would
 need to know the index at which a given protein is stored.</p>
@@ -487,13 +488,12 @@ need to know the index at which a given protein is stored.</p>
 <em>associative arrays</em>. The most popular method to create construct
 an associative array in Python is to create dictionaries or
 <code>dict</code>.</p>
-<div id="remember" class="callout callout">
+<div id="callout1" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="remember" class="callout-inner">
-<h3 class="callout-title">Remember<a class="anchor" aria-label="anchor" href="#remember"></a>
-</h3>
+<div class="section level3 callout-title callout-inner">
+<h3 class="callout-title" id="remember">Remember<a class="anchor" aria-label="anchor" href="#remember"></a></h3>
 <div class="callout-content">
 <p>To implement a <code>dict</code> in Python, we place our entries in
 curly bracket, separated using a comma. We separate <em>keys</em> and
@@ -503,13 +503,12 @@ dictionary <em>item</em>.</p>
 </div>
 </div>
 </div>
-<div id="note" class="callout callout">
+<div id="callout2" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="note" class="callout-inner">
-<h3 class="callout-title">Note<a class="anchor" aria-label="anchor" href="#note"></a>
-</h3>
+<div class="section level3 callout-title callout-inner">
+<h3 class="callout-title" id="note">Note<a class="anchor" aria-label="anchor" href="#note"></a></h3>
 <div class="callout-content">
 <p>When constructing a long <code>dict</code> with several
 <em>items</em> that span over several lines, it is not necessary to
@@ -526,14 +525,14 @@ follows:</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>protein_kinases <span class="op">=</span> {</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">'PKA'</span>: <span class="st">'Involved in regulation of glycogen, sugar, and lipid metabolism.'</span>,</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">'PKC'</span>: <span class="st">'Regulates signal transduction pathways such as the Wnt pathway.'</span>,</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">'CK1'</span>: <span class="st">'Controls the function of other proteins through phosphorylation.'</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>	</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(protein_kinases)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>protein_kinases <span class="op">=</span> {</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>  <span class="st">'PKA'</span>: <span class="st">'Involved in regulation of glycogen, sugar, and lipid metabolism.'</span>,</span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>  <span class="st">'PKC'</span>: <span class="st">'Regulates signal transduction pathways such as the Wnt pathway.'</span>,</span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>  <span class="st">'CK1'</span>: <span class="st">'Controls the function of other proteins through phosphorylation.'</span></span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a>  }</span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a>	</span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a><span class="bu">print</span>(protein_kinases)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -543,7 +542,7 @@ follows:</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(protein_kinases))</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(protein_kinases))</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -577,12 +576,12 @@ protein. Display the result.</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>proteins <span class="op">=</span> {</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">'Axin-1'</span>: <span class="dv">862</span>,</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">'Rhodopsin'</span>: <span class="dv">348</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>		</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(proteins)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a>proteins <span class="op">=</span> {</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>  <span class="st">'Axin-1'</span>: <span class="dv">862</span>,</span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>  <span class="st">'Rhodopsin'</span>: <span class="dv">348</span></span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a>  }</span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a>		</span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a><span class="bu">print</span>(proteins)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -598,7 +597,7 @@ specific <em>key</em> exists our dictionary:</p>
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">'CK1'</span> <span class="kw">in</span> protein_kinases</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="co">'CK1'</span> <span class="kw">in</span> protein_kinases</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -608,7 +607,7 @@ specific <em>key</em> exists our dictionary:</p>
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">'GSK3'</span> <span class="kw">in</span> protein_kinases</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="co">'GSK3'</span> <span class="kw">in</span> protein_kinases</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -640,7 +639,7 @@ Display the result as a Boolean value.</p>
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'ERK'</span> <span class="kw">in</span> proteins)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'ERK'</span> <span class="kw">in</span> proteins)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -667,7 +666,7 @@ using their respective <em>keys</em> as follows:</p>
 <div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(protein_kinases[<span class="st">'CK1'</span>])</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="bu">print</span>(protein_kinases[<span class="st">'CK1'</span>])</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -680,9 +679,9 @@ using their respective <em>keys</em> as follows:</p>
 <div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">'GSK3'</span> <span class="kw">in</span> protein_kinases</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(protein_kinases[<span class="st">'GSK3'</span>])</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="co">'GSK3'</span> <span class="kw">in</span> protein_kinases</span>
+<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a><span class="bu">print</span>(protein_kinases[<span class="st">'GSK3'</span>])</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -725,13 +724,13 @@ regulator</td>
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>cystic_fibrosis <span class="op">=</span> {</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">'full name'</span>: <span class="st">'Cystic fibrosis transmembrane conductance regulator'</span>,</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">'gene'</span>: <span class="st">'CFTR'</span>,</span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">'type'</span>: <span class="st">'Membrane Protein'</span></span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>		</span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cystic_fibrosis[<span class="st">'gene'</span>])</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a>cystic_fibrosis <span class="op">=</span> {</span>
+<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a>  <span class="st">'full name'</span>: <span class="st">'Cystic fibrosis transmembrane conductance regulator'</span>,</span>
+<span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a>  <span class="st">'gene'</span>: <span class="st">'CFTR'</span>,</span>
+<span id="cb17-4"><a href="#cb17-4" tabindex="-1"></a>  <span class="st">'type'</span>: <span class="st">'Membrane Protein'</span></span>
+<span id="cb17-5"><a href="#cb17-5" tabindex="-1"></a>  }</span>
+<span id="cb17-6"><a href="#cb17-6" tabindex="-1"></a>		</span>
+<span id="cb17-7"><a href="#cb17-7" tabindex="-1"></a><span class="bu">print</span>(cystic_fibrosis[<span class="st">'gene'</span>])</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -742,13 +741,12 @@ regulator</td>
 </div>
 </div>
 </div>
-<div id="remember-1" class="callout callout">
+<div id="callout3" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="remember-1" class="callout-inner">
-<h3 class="callout-title">Remember<a class="anchor" aria-label="anchor" href="#remember-1"></a>
-</h3>
+<div class="section level3 callout-title callout-inner">
+<h3 class="callout-title" id="remember-1">Remember<a class="anchor" aria-label="anchor" href="#remember-1"></a></h3>
 <div class="callout-content">
 <p>Whilst the <em>values</em> in a <code>dict</code> can be of virtually
 any type supported in Python, the <em>keys</em> may only be defined
@@ -765,9 +763,9 @@ cannot be used as a <em>key</em>:</p>
 <div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>test_dict <span class="op">=</span> {</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  [<span class="st">'a'</span>, <span class="st">'b'</span>]: <span class="st">'some value'</span></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  }</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a>test_dict <span class="op">=</span> {</span>
+<span id="cb19-2"><a href="#cb19-2" tabindex="-1"></a>  [<span class="st">'a'</span>, <span class="st">'b'</span>]: <span class="st">'some value'</span></span>
+<span id="cb19-3"><a href="#cb19-3" tabindex="-1"></a>  }</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -781,11 +779,11 @@ Detailed traceback:
 <div class="codewrapper sourceCode" id="cb21">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>test_dict <span class="op">=</span> {</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">'ab'</span>: <span class="st">'some value'</span></span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(test_dict)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a>test_dict <span class="op">=</span> {</span>
+<span id="cb21-2"><a href="#cb21-2" tabindex="-1"></a>  <span class="st">'ab'</span>: <span class="st">'some value'</span></span>
+<span id="cb21-3"><a href="#cb21-3" tabindex="-1"></a>  }</span>
+<span id="cb21-4"><a href="#cb21-4" tabindex="-1"></a>  </span>
+<span id="cb21-5"><a href="#cb21-5" tabindex="-1"></a><span class="bu">print</span>(test_dict)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -795,11 +793,11 @@ Detailed traceback:
 <div class="codewrapper sourceCode" id="cb23">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>test_dict <span class="op">=</span> {</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  (<span class="st">'a'</span>, <span class="st">'b'</span>): <span class="st">'some value'</span></span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(test_dict)  </span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a>test_dict <span class="op">=</span> {</span>
+<span id="cb23-2"><a href="#cb23-2" tabindex="-1"></a>  (<span class="st">'a'</span>, <span class="st">'b'</span>): <span class="st">'some value'</span></span>
+<span id="cb23-3"><a href="#cb23-3" tabindex="-1"></a>  }</span>
+<span id="cb23-4"><a href="#cb23-4" tabindex="-1"></a>  </span>
+<span id="cb23-5"><a href="#cb23-5" tabindex="-1"></a><span class="bu">print</span>(test_dict)  </span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -814,13 +812,13 @@ case represents the value <span style="color: rgb(32, 121, 77);">‘Canonical’
 <div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>signal <span class="op">=</span> {</span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">'name'</span>: <span class="st">'Wnt'</span>, </span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">'pathway'</span>: <span class="st">'Non-Canonical'</span>,  <span class="co"># first instance</span></span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">'pathway'</span>: <span class="st">'Canonical'</span>  <span class="co"># second instance</span></span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(signal)	</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a>signal <span class="op">=</span> {</span>
+<span id="cb25-2"><a href="#cb25-2" tabindex="-1"></a>  <span class="st">'name'</span>: <span class="st">'Wnt'</span>, </span>
+<span id="cb25-3"><a href="#cb25-3" tabindex="-1"></a>  <span class="st">'pathway'</span>: <span class="st">'Non-Canonical'</span>,  <span class="co"># first instance</span></span>
+<span id="cb25-4"><a href="#cb25-4" tabindex="-1"></a>  <span class="st">'pathway'</span>: <span class="st">'Canonical'</span>  <span class="co"># second instance</span></span>
+<span id="cb25-5"><a href="#cb25-5" tabindex="-1"></a>  }</span>
+<span id="cb25-6"><a href="#cb25-6" tabindex="-1"></a></span>
+<span id="cb25-7"><a href="#cb25-7" tabindex="-1"></a><span class="bu">print</span>(signal)	</span></code></pre>
 </div>
 <pre><code>{'name': 'Wnt', 'pathway': 'Canonical'}</code></pre>
 </div>
@@ -835,25 +833,25 @@ protein:</p>
 <div class="codewrapper sourceCode" id="cb27">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>protein <span class="op">=</span> {</span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">'full name'</span>: <span class="st">'Cystic fibrosis transmembrane conductance regulator'</span>, </span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">'alias'</span>: <span class="st">'CFTR'</span>,</span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">'gene'</span>: <span class="st">'CFTR'</span>,</span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">'type'</span>: <span class="st">'Membrane Protein'</span>,</span>
-<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">'common mutations'</span>: [<span class="st">'Delta-F508'</span>, <span class="st">'G542X'</span>, <span class="st">'G551D'</span>, <span class="st">'N1303K'</span>]</span>
-<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>  }</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a>protein <span class="op">=</span> {</span>
+<span id="cb27-2"><a href="#cb27-2" tabindex="-1"></a>  <span class="st">'full name'</span>: <span class="st">'Cystic fibrosis transmembrane conductance regulator'</span>, </span>
+<span id="cb27-3"><a href="#cb27-3" tabindex="-1"></a>  <span class="st">'alias'</span>: <span class="st">'CFTR'</span>,</span>
+<span id="cb27-4"><a href="#cb27-4" tabindex="-1"></a>  <span class="st">'gene'</span>: <span class="st">'CFTR'</span>,</span>
+<span id="cb27-5"><a href="#cb27-5" tabindex="-1"></a>  <span class="st">'type'</span>: <span class="st">'Membrane Protein'</span>,</span>
+<span id="cb27-6"><a href="#cb27-6" tabindex="-1"></a>  <span class="st">'common mutations'</span>: [<span class="st">'Delta-F508'</span>, <span class="st">'G542X'</span>, <span class="st">'G551D'</span>, <span class="st">'N1303K'</span>]</span>
+<span id="cb27-7"><a href="#cb27-7" tabindex="-1"></a>  }</span></code></pre>
 </div>
 <p>We can add new <em>items</em> to our dictionary or alter the existing
 ones:</p>
 <div class="codewrapper sourceCode" id="cb28">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Adding a new item:</span></span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>protein[<span class="st">'chromosome'</span>] <span class="op">=</span> <span class="dv">7</span></span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>	</span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(protein)</span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(protein[<span class="st">'chromosome'</span>])</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" tabindex="-1"></a><span class="co"># Adding a new item:</span></span>
+<span id="cb28-2"><a href="#cb28-2" tabindex="-1"></a>protein[<span class="st">'chromosome'</span>] <span class="op">=</span> <span class="dv">7</span></span>
+<span id="cb28-3"><a href="#cb28-3" tabindex="-1"></a>	</span>
+<span id="cb28-4"><a href="#cb28-4" tabindex="-1"></a><span class="bu">print</span>(protein)</span>
+<span id="cb28-5"><a href="#cb28-5" tabindex="-1"></a></span>
+<span id="cb28-6"><a href="#cb28-6" tabindex="-1"></a><span class="bu">print</span>(protein[<span class="st">'chromosome'</span>])</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -868,7 +866,7 @@ we do with members of a <code>list</code>:</p>
 <div class="codewrapper sourceCode" id="cb30">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(protein[<span class="st">'common mutations'</span>])</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" tabindex="-1"></a><span class="bu">print</span>(protein[<span class="st">'common mutations'</span>])</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -878,8 +876,8 @@ we do with members of a <code>list</code>:</p>
 <div class="codewrapper sourceCode" id="cb32">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>protein[<span class="st">'common mutations'</span>].append(<span class="st">'W1282X'</span>)</span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(protein)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" tabindex="-1"></a>protein[<span class="st">'common mutations'</span>].append(<span class="st">'W1282X'</span>)</span>
+<span id="cb32-2"><a href="#cb32-2" tabindex="-1"></a><span class="bu">print</span>(protein)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -916,12 +914,12 @@ we do with members of a <code>list</code>:</p>
 <div class="codewrapper sourceCode" id="cb35">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>signal <span class="op">=</span> {<span class="st">'name'</span>: <span class="st">'Wnt'</span>, <span class="st">'pathway'</span>: <span class="st">'Non-Canonical'</span>}</span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>	</span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>signal[<span class="st">'pathway'</span>] <span class="op">=</span> <span class="st">'Canonical'</span></span>
-<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>signal[<span class="st">'receptors'</span>] <span class="op">=</span> (<span class="st">'Frizzled'</span>, <span class="st">'LRP'</span>)</span>
-<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>	</span>
-<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(signal)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" tabindex="-1"></a>signal <span class="op">=</span> {<span class="st">'name'</span>: <span class="st">'Wnt'</span>, <span class="st">'pathway'</span>: <span class="st">'Non-Canonical'</span>}</span>
+<span id="cb35-2"><a href="#cb35-2" tabindex="-1"></a>	</span>
+<span id="cb35-3"><a href="#cb35-3" tabindex="-1"></a>signal[<span class="st">'pathway'</span>] <span class="op">=</span> <span class="st">'Canonical'</span></span>
+<span id="cb35-4"><a href="#cb35-4" tabindex="-1"></a>signal[<span class="st">'receptors'</span>] <span class="op">=</span> (<span class="st">'Frizzled'</span>, <span class="st">'LRP'</span>)</span>
+<span id="cb35-5"><a href="#cb35-5" tabindex="-1"></a>	</span>
+<span id="cb35-6"><a href="#cb35-6" tabindex="-1"></a><span class="bu">print</span>(signal)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -932,13 +930,12 @@ we do with members of a <code>list</code>:</p>
 </div>
 </div>
 </div>
-<div id="advanced-topic" class="callout callout">
+<div id="callout4" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="advanced-topic" class="callout-inner">
-<h3 class="callout-title">Advanced Topic<a class="anchor" aria-label="anchor" href="#advanced-topic"></a>
-</h3>
+<div class="section level3 callout-title callout-inner">
+<h3 class="callout-title" id="advanced-topic">Advanced Topic<a class="anchor" aria-label="anchor" href="#advanced-topic"></a></h3>
 <div class="callout-content">
 <p>Displaying an entire dictionary using the <kbd>print()</kbd> function
 can look a little messy because it is not properly structured. There is,
@@ -962,11 +959,11 @@ dictionary is to use the syntax <kbd>del</kbd>:</p>
 <div class="codewrapper sourceCode" id="cb37">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a new key and assigning to it the </span></span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="co"># values of the old key:</span></span>
-<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>protein[<span class="st">'human chromosome'</span>] <span class="op">=</span> protein[<span class="st">'chromosome'</span>]</span>
-<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(protein)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" tabindex="-1"></a><span class="co"># Creating a new key and assigning to it the </span></span>
+<span id="cb37-2"><a href="#cb37-2" tabindex="-1"></a><span class="co"># values of the old key:</span></span>
+<span id="cb37-3"><a href="#cb37-3" tabindex="-1"></a>protein[<span class="st">'human chromosome'</span>] <span class="op">=</span> protein[<span class="st">'chromosome'</span>]</span>
+<span id="cb37-4"><a href="#cb37-4" tabindex="-1"></a></span>
+<span id="cb37-5"><a href="#cb37-5" tabindex="-1"></a><span class="bu">print</span>(protein)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -976,10 +973,10 @@ dictionary is to use the syntax <kbd>del</kbd>:</p>
 <div class="codewrapper sourceCode" id="cb39">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Now we remove the old item from the dictionary:</span></span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="kw">del</span> protein[<span class="st">'chromosome'</span>]</span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(protein)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" tabindex="-1"></a><span class="co"># Now we remove the old item from the dictionary:</span></span>
+<span id="cb39-2"><a href="#cb39-2" tabindex="-1"></a><span class="kw">del</span> protein[<span class="st">'chromosome'</span>]</span>
+<span id="cb39-3"><a href="#cb39-3" tabindex="-1"></a></span>
+<span id="cb39-4"><a href="#cb39-4" tabindex="-1"></a><span class="bu">print</span>(protein)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -992,9 +989,9 @@ returns any <em>values</em> associated with it:</p>
 <div class="codewrapper sourceCode" id="cb41">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>protein[<span class="st">'common mutations in caucasians'</span>] <span class="op">=</span> protein.pop(<span class="st">'common mutations'</span>)</span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(protein)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" tabindex="-1"></a>protein[<span class="st">'common mutations in caucasians'</span>] <span class="op">=</span> protein.pop(<span class="st">'common mutations'</span>)</span>
+<span id="cb41-2"><a href="#cb41-2" tabindex="-1"></a></span>
+<span id="cb41-3"><a href="#cb41-3" tabindex="-1"></a><span class="bu">print</span>(protein)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1013,7 +1010,7 @@ returns any <em>values</em> associated with it:</p>
 <div class="codewrapper sourceCode" id="cb43">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>signal <span class="op">=</span> {<span class="st">'name'</span>: <span class="st">'Beta-Galactosidase'</span>, <span class="st">'pdb'</span>: <span class="st">'4V40'</span>}</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" tabindex="-1"></a>signal <span class="op">=</span> {<span class="st">'name'</span>: <span class="st">'Beta-Galactosidase'</span>, <span class="st">'pdb'</span>: <span class="st">'4V40'</span>}</span></code></pre>
 </div>
 <p>with respect to <span style="color: rgb(32, 121, 77);">signal</span>:</p>
 <ul><li><p>Change the <em>key</em> name from <span style="color: rgb(32, 121, 77);">‘pdb’</span> to <span style="color: rgb(32, 121, 77);">‘pdb id’</span> using the
@@ -1040,18 +1037,18 @@ returns any <em>values</em> associated with it:</p>
 <div class="codewrapper sourceCode" id="cb46">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>signal <span class="op">=</span> {</span>
-<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>		    <span class="st">'name'</span>: <span class="st">'Beta-Galactosidase'</span>, </span>
-<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>		    <span class="st">'pdb'</span>: <span class="st">'4V40'</span></span>
-<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>	}</span>
-<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>	</span>
-<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a>signal[<span class="st">'pdb id'</span>] <span class="op">=</span> signal.pop(<span class="st">'pdb'</span>)</span>
-<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a>	</span>
-<span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="st">'pdb id'</span> <span class="kw">in</span> signal <span class="kw">and</span> <span class="st">'pdb'</span> <span class="kw">not</span> <span class="kw">in</span> signal:</span>
-<span id="cb46-9"><a href="#cb46-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'Contains the new key, but not the old one.'</span>)</span>
-<span id="cb46-10"><a href="#cb46-10" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
-<span id="cb46-11"><a href="#cb46-11" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'Failed to alter the dictionary.'</span>)</span>
-<span id="cb46-12"><a href="#cb46-12" aria-hidden="true" tabindex="-1"></a>    </span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" tabindex="-1"></a>signal <span class="op">=</span> {</span>
+<span id="cb46-2"><a href="#cb46-2" tabindex="-1"></a>		    <span class="st">'name'</span>: <span class="st">'Beta-Galactosidase'</span>, </span>
+<span id="cb46-3"><a href="#cb46-3" tabindex="-1"></a>		    <span class="st">'pdb'</span>: <span class="st">'4V40'</span></span>
+<span id="cb46-4"><a href="#cb46-4" tabindex="-1"></a>	}</span>
+<span id="cb46-5"><a href="#cb46-5" tabindex="-1"></a>	</span>
+<span id="cb46-6"><a href="#cb46-6" tabindex="-1"></a>signal[<span class="st">'pdb id'</span>] <span class="op">=</span> signal.pop(<span class="st">'pdb'</span>)</span>
+<span id="cb46-7"><a href="#cb46-7" tabindex="-1"></a>	</span>
+<span id="cb46-8"><a href="#cb46-8" tabindex="-1"></a><span class="cf">if</span> <span class="st">'pdb id'</span> <span class="kw">in</span> signal <span class="kw">and</span> <span class="st">'pdb'</span> <span class="kw">not</span> <span class="kw">in</span> signal:</span>
+<span id="cb46-9"><a href="#cb46-9" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'Contains the new key, but not the old one.'</span>)</span>
+<span id="cb46-10"><a href="#cb46-10" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb46-11"><a href="#cb46-11" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'Failed to alter the dictionary.'</span>)</span>
+<span id="cb46-12"><a href="#cb46-12" tabindex="-1"></a>    </span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1071,20 +1068,20 @@ returns any <em>values</em> associated with it:</p>
 <div class="codewrapper sourceCode" id="cb48">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>lac_repressor <span class="op">=</span> {</span>
-<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>	    <span class="st">'pdb id'</span>: <span class="st">'1LBI'</span>,</span>
-<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>	    <span class="st">'deposit data'</span>: <span class="st">'1996-02-17'</span>,</span>
-<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>	    <span class="st">'organism'</span>: <span class="st">'Escherichia coli'</span>,</span>
-<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a>	    <span class="st">'method'</span>: <span class="st">'x-ray'</span>,</span>
-<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a>	    <span class="st">'resolution'</span>: <span class="fl">2.7</span>,</span>
-<span id="cb48-7"><a href="#cb48-7" aria-hidden="true" tabindex="-1"></a>}</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" tabindex="-1"></a>lac_repressor <span class="op">=</span> {</span>
+<span id="cb48-2"><a href="#cb48-2" tabindex="-1"></a>	    <span class="st">'pdb id'</span>: <span class="st">'1LBI'</span>,</span>
+<span id="cb48-3"><a href="#cb48-3" tabindex="-1"></a>	    <span class="st">'deposit data'</span>: <span class="st">'1996-02-17'</span>,</span>
+<span id="cb48-4"><a href="#cb48-4" tabindex="-1"></a>	    <span class="st">'organism'</span>: <span class="st">'Escherichia coli'</span>,</span>
+<span id="cb48-5"><a href="#cb48-5" tabindex="-1"></a>	    <span class="st">'method'</span>: <span class="st">'x-ray'</span>,</span>
+<span id="cb48-6"><a href="#cb48-6" tabindex="-1"></a>	    <span class="st">'resolution'</span>: <span class="fl">2.7</span>,</span>
+<span id="cb48-7"><a href="#cb48-7" tabindex="-1"></a>}</span></code></pre>
 </div>
 <p>We can create an array of all <em>items</em> in the dictionary using
 the <kbd>.items()</kbd> method:</p>
 <div class="codewrapper sourceCode" id="cb49">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lac_repressor.items())</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" tabindex="-1"></a><span class="bu">print</span>(lac_repressor.items())</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1099,8 +1096,8 @@ follows:</p>
 <div class="codewrapper sourceCode" id="cb51">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> key, value <span class="kw">in</span> lac_repressor.items():</span>
-<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(key, value, sep<span class="op">=</span><span class="st">': '</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" tabindex="-1"></a><span class="cf">for</span> key, value <span class="kw">in</span> lac_repressor.items():</span>
+<span id="cb51-2"><a href="#cb51-2" tabindex="-1"></a>    <span class="bu">print</span>(key, value, sep<span class="op">=</span><span class="st">': '</span>)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1122,7 +1119,7 @@ the requested <em>key</em> does not exist:</p>
 <div class="codewrapper sourceCode" id="cb53">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lac_repressor[<span class="st">'gene'</span>])</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" tabindex="-1"></a><span class="bu">print</span>(lac_repressor[<span class="st">'gene'</span>])</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1135,7 +1132,7 @@ Detailed traceback:
 <div class="codewrapper sourceCode" id="cb55">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lac_repressor.get(<span class="st">'gene'</span>))</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" tabindex="-1"></a><span class="bu">print</span>(lac_repressor.get(<span class="st">'gene'</span>))</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1145,7 +1142,7 @@ Detailed traceback:
 <div class="codewrapper sourceCode" id="cb57">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lac_repressor.get(<span class="st">'gene'</span>, <span class="st">'Not found...'</span>))</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" tabindex="-1"></a><span class="bu">print</span>(lac_repressor.get(<span class="st">'gene'</span>, <span class="st">'Not found...'</span>))</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1184,18 +1181,18 @@ to extract the <em>values</em> associated with the following
 <div class="codewrapper sourceCode" id="cb60">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>lac_repressor <span class="op">=</span> {</span>
-<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'pdb id'</span>: <span class="st">'1LBI'</span>,</span>
-<span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'deposit data'</span>: <span class="st">'1996-02-17'</span>,</span>
-<span id="cb60-4"><a href="#cb60-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'organism'</span>: <span class="st">'Escherichia coli'</span>,</span>
-<span id="cb60-5"><a href="#cb60-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'method'</span>: <span class="st">'x-ray'</span>,</span>
-<span id="cb60-6"><a href="#cb60-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'resolution'</span>: <span class="fl">2.7</span>,</span>
-<span id="cb60-7"><a href="#cb60-7" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb60-8"><a href="#cb60-8" aria-hidden="true" tabindex="-1"></a>	</span>
-<span id="cb60-9"><a href="#cb60-9" aria-hidden="true" tabindex="-1"></a>requested_keys <span class="op">=</span> [<span class="st">'organism'</span>, <span class="st">'authors'</span>, <span class="st">'subunits'</span>, <span class="st">'method'</span>]</span>
-<span id="cb60-10"><a href="#cb60-10" aria-hidden="true" tabindex="-1"></a>	</span>
-<span id="cb60-11"><a href="#cb60-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> key <span class="kw">in</span> requested_keys:</span>
-<span id="cb60-12"><a href="#cb60-12" aria-hidden="true" tabindex="-1"></a>    lac_repressor.get(key, <span class="st">'No entry'</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" tabindex="-1"></a>lac_repressor <span class="op">=</span> {</span>
+<span id="cb60-2"><a href="#cb60-2" tabindex="-1"></a>    <span class="st">'pdb id'</span>: <span class="st">'1LBI'</span>,</span>
+<span id="cb60-3"><a href="#cb60-3" tabindex="-1"></a>    <span class="st">'deposit data'</span>: <span class="st">'1996-02-17'</span>,</span>
+<span id="cb60-4"><a href="#cb60-4" tabindex="-1"></a>    <span class="st">'organism'</span>: <span class="st">'Escherichia coli'</span>,</span>
+<span id="cb60-5"><a href="#cb60-5" tabindex="-1"></a>    <span class="st">'method'</span>: <span class="st">'x-ray'</span>,</span>
+<span id="cb60-6"><a href="#cb60-6" tabindex="-1"></a>    <span class="st">'resolution'</span>: <span class="fl">2.7</span>,</span>
+<span id="cb60-7"><a href="#cb60-7" tabindex="-1"></a>}</span>
+<span id="cb60-8"><a href="#cb60-8" tabindex="-1"></a>	</span>
+<span id="cb60-9"><a href="#cb60-9" tabindex="-1"></a>requested_keys <span class="op">=</span> [<span class="st">'organism'</span>, <span class="st">'authors'</span>, <span class="st">'subunits'</span>, <span class="st">'method'</span>]</span>
+<span id="cb60-10"><a href="#cb60-10" tabindex="-1"></a>	</span>
+<span id="cb60-11"><a href="#cb60-11" tabindex="-1"></a><span class="cf">for</span> key <span class="kw">in</span> requested_keys:</span>
+<span id="cb60-12"><a href="#cb60-12" tabindex="-1"></a>    lac_repressor.get(key, <span class="st">'No entry'</span>)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1232,17 +1229,17 @@ converted version of our sequence.</p>
 <div class="codewrapper sourceCode" id="cb62">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>sequence <span class="op">=</span> <span class="st">'CCCATCTTAAGACTTCACAAGACTTGTGAAATCAGACCACTGCTCAATGCGGAACGCCCG'</span></span>
-<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>	</span>
-<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a>dna2rna <span class="op">=</span> {<span class="st">"A"</span>: <span class="st">"U"</span>, <span class="st">"T"</span>: <span class="st">"A"</span>, <span class="st">"C"</span>: <span class="st">"G"</span>, <span class="st">"G"</span>: <span class="st">"C"</span>}</span>
-<span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a>	</span>
-<span id="cb62-5"><a href="#cb62-5" aria-hidden="true" tabindex="-1"></a>rna_sequence <span class="op">=</span> <span class="bu">str</span>()  <span class="co"># Creating an empty string.</span></span>
-<span id="cb62-6"><a href="#cb62-6" aria-hidden="true" tabindex="-1"></a>	</span>
-<span id="cb62-7"><a href="#cb62-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> nucleotide <span class="kw">in</span> sequence:</span>
-<span id="cb62-8"><a href="#cb62-8" aria-hidden="true" tabindex="-1"></a>    rna_sequence <span class="op">+=</span> dna2rna[nucleotide]</span>
-<span id="cb62-9"><a href="#cb62-9" aria-hidden="true" tabindex="-1"></a>	</span>
-<span id="cb62-10"><a href="#cb62-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'DNA:'</span>, sequence)</span>
-<span id="cb62-11"><a href="#cb62-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'RNA:'</span>, rna_sequence)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1" tabindex="-1"></a>sequence <span class="op">=</span> <span class="st">'CCCATCTTAAGACTTCACAAGACTTGTGAAATCAGACCACTGCTCAATGCGGAACGCCCG'</span></span>
+<span id="cb62-2"><a href="#cb62-2" tabindex="-1"></a>	</span>
+<span id="cb62-3"><a href="#cb62-3" tabindex="-1"></a>dna2rna <span class="op">=</span> {<span class="st">"A"</span>: <span class="st">"U"</span>, <span class="st">"T"</span>: <span class="st">"A"</span>, <span class="st">"C"</span>: <span class="st">"G"</span>, <span class="st">"G"</span>: <span class="st">"C"</span>}</span>
+<span id="cb62-4"><a href="#cb62-4" tabindex="-1"></a>	</span>
+<span id="cb62-5"><a href="#cb62-5" tabindex="-1"></a>rna_sequence <span class="op">=</span> <span class="bu">str</span>()  <span class="co"># Creating an empty string.</span></span>
+<span id="cb62-6"><a href="#cb62-6" tabindex="-1"></a>	</span>
+<span id="cb62-7"><a href="#cb62-7" tabindex="-1"></a><span class="cf">for</span> nucleotide <span class="kw">in</span> sequence:</span>
+<span id="cb62-8"><a href="#cb62-8" tabindex="-1"></a>    rna_sequence <span class="op">+=</span> dna2rna[nucleotide]</span>
+<span id="cb62-9"><a href="#cb62-9" tabindex="-1"></a>	</span>
+<span id="cb62-10"><a href="#cb62-10" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'DNA:'</span>, sequence)</span>
+<span id="cb62-11"><a href="#cb62-11" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'RNA:'</span>, rna_sequence)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1279,22 +1276,22 @@ cDNA.</p></li>
 </ol><div class="codewrapper sourceCode" id="cb64">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>human_gpcr <span class="op">=</span> (</span>
-<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'AUGGAUGUGACUUCCCAAGCCCGGGGCGUGGGCCUGGAGAUGUACCCAGGCACCGCGCAGCCUGCGGCCCCCAACACCACCUC'</span></span>
-<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'CCCCGAGCUCAACCUGUCCCACCCGCUCCUGGGCACCGCCCUGGCCAAUGGGACAGGUGAGCUCUCGGAGCACCAGCAGUACG'</span></span>
-<span id="cb64-4"><a href="#cb64-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'UGAUCGGCCUGUUCCUCUCGUGCCUCUACACCAUCUUCCUCUUCCCCAUCGGCUUUGUGGGCAACAUCCUGAUCCUGGUGGUG'</span></span>
-<span id="cb64-5"><a href="#cb64-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'AACAUCAGCUUCCGCGAGAAGAUGACCAUCCCCGACCUGUACUUCAUCAACCUGGCGGUGGCGGACCUCAUCCUGGUGGCCGA'</span></span>
-<span id="cb64-6"><a href="#cb64-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'CUCCCUCAUUGAGGUGUUCAACCUGCACGAGCGGUACUACGACAUCGCCGUCCUGUGCACCUUCAUGUCGCUCUUCCUGCAGG'</span></span>
-<span id="cb64-7"><a href="#cb64-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">'UCAACAUGUACAGCAGCGUCUUCUUCCUCACCUGGAUGAGCUUCGACCGCUACAUCGCCCUGGCCAGGGCCAUGCGCUGCAGC'</span></span>
-<span id="cb64-8"><a href="#cb64-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">'CUGUUCCGCACCAAGCACCACGCCCGGCUGAGCUGUGGCCUCAUCUGGAUGGCAUCCGUGUCAGCCACGCUGGUGCCCUUCAC'</span></span>
-<span id="cb64-9"><a href="#cb64-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">'CGCCGUGCACCUGCAGCACACCGACGAGGCCUGCUUCUGUUUCGCGGAUGUCCGGGAGGUGCAGUGGCUCGAGGUCACGCUGG'</span></span>
-<span id="cb64-10"><a href="#cb64-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">'GCUUCAUCGUGCCCUUCGCCAUCAUCGGCCUGUGCUACUCCCUCAUUGUCCGGGUGCUGGUCAGGGCGCACCGGCACCGUGGG'</span></span>
-<span id="cb64-11"><a href="#cb64-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">'CUGCGGCCCCGGCGGCAGAAGGCGCUCCGCAUGAUCCUCGCGGUGGUGCUGGUCUUCUUCGUCUGCUGGCUGCCGGAGAACGU'</span></span>
-<span id="cb64-12"><a href="#cb64-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">'CUUCAUCAGCGUGCACCUCCUGCAGCGGACGCAGCCUGGGGCCGCUCCCUGCAAGCAGUCUUUCCGCCAUGCCCACCCCCUCA'</span></span>
-<span id="cb64-13"><a href="#cb64-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">'CGGGCCACAUUGUCAACCUCACCGCCUUCUCCAACAGCUGCCUAAACCCCCUCAUCUACAGCUUUCUCGGGGAGACCUUCAGG'</span></span>
-<span id="cb64-14"><a href="#cb64-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">'GACAAGCUGAGGCUGUACAUUGAGCAGAAAACAAAUUUGCCGGCCCUGAACCGCUUCUGUCACGCUGCCCUGAAGGCCGUCAU'</span></span>
-<span id="cb64-15"><a href="#cb64-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">'UCCAGACAGCACCGAGCAGUCGGAUGUGAGGUUCAGCAGUGCCGUG'</span></span>
-<span id="cb64-16"><a href="#cb64-16" aria-hidden="true" tabindex="-1"></a>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1" tabindex="-1"></a>human_gpcr <span class="op">=</span> (</span>
+<span id="cb64-2"><a href="#cb64-2" tabindex="-1"></a>    <span class="st">'AUGGAUGUGACUUCCCAAGCCCGGGGCGUGGGCCUGGAGAUGUACCCAGGCACCGCGCAGCCUGCGGCCCCCAACACCACCUC'</span></span>
+<span id="cb64-3"><a href="#cb64-3" tabindex="-1"></a>    <span class="st">'CCCCGAGCUCAACCUGUCCCACCCGCUCCUGGGCACCGCCCUGGCCAAUGGGACAGGUGAGCUCUCGGAGCACCAGCAGUACG'</span></span>
+<span id="cb64-4"><a href="#cb64-4" tabindex="-1"></a>    <span class="st">'UGAUCGGCCUGUUCCUCUCGUGCCUCUACACCAUCUUCCUCUUCCCCAUCGGCUUUGUGGGCAACAUCCUGAUCCUGGUGGUG'</span></span>
+<span id="cb64-5"><a href="#cb64-5" tabindex="-1"></a>    <span class="st">'AACAUCAGCUUCCGCGAGAAGAUGACCAUCCCCGACCUGUACUUCAUCAACCUGGCGGUGGCGGACCUCAUCCUGGUGGCCGA'</span></span>
+<span id="cb64-6"><a href="#cb64-6" tabindex="-1"></a>    <span class="st">'CUCCCUCAUUGAGGUGUUCAACCUGCACGAGCGGUACUACGACAUCGCCGUCCUGUGCACCUUCAUGUCGCUCUUCCUGCAGG'</span></span>
+<span id="cb64-7"><a href="#cb64-7" tabindex="-1"></a>    <span class="st">'UCAACAUGUACAGCAGCGUCUUCUUCCUCACCUGGAUGAGCUUCGACCGCUACAUCGCCCUGGCCAGGGCCAUGCGCUGCAGC'</span></span>
+<span id="cb64-8"><a href="#cb64-8" tabindex="-1"></a>    <span class="st">'CUGUUCCGCACCAAGCACCACGCCCGGCUGAGCUGUGGCCUCAUCUGGAUGGCAUCCGUGUCAGCCACGCUGGUGCCCUUCAC'</span></span>
+<span id="cb64-9"><a href="#cb64-9" tabindex="-1"></a>    <span class="st">'CGCCGUGCACCUGCAGCACACCGACGAGGCCUGCUUCUGUUUCGCGGAUGUCCGGGAGGUGCAGUGGCUCGAGGUCACGCUGG'</span></span>
+<span id="cb64-10"><a href="#cb64-10" tabindex="-1"></a>    <span class="st">'GCUUCAUCGUGCCCUUCGCCAUCAUCGGCCUGUGCUACUCCCUCAUUGUCCGGGUGCUGGUCAGGGCGCACCGGCACCGUGGG'</span></span>
+<span id="cb64-11"><a href="#cb64-11" tabindex="-1"></a>    <span class="st">'CUGCGGCCCCGGCGGCAGAAGGCGCUCCGCAUGAUCCUCGCGGUGGUGCUGGUCUUCUUCGUCUGCUGGCUGCCGGAGAACGU'</span></span>
+<span id="cb64-12"><a href="#cb64-12" tabindex="-1"></a>    <span class="st">'CUUCAUCAGCGUGCACCUCCUGCAGCGGACGCAGCCUGGGGCCGCUCCCUGCAAGCAGUCUUUCCGCCAUGCCCACCCCCUCA'</span></span>
+<span id="cb64-13"><a href="#cb64-13" tabindex="-1"></a>    <span class="st">'CGGGCCACAUUGUCAACCUCACCGCCUUCUCCAACAGCUGCCUAAACCCCCUCAUCUACAGCUUUCUCGGGGAGACCUUCAGG'</span></span>
+<span id="cb64-14"><a href="#cb64-14" tabindex="-1"></a>    <span class="st">'GACAAGCUGAGGCUGUACAUUGAGCAGAAAACAAAUUUGCCGGCCCUGAACCGCUUCUGUCACGCUGCCCUGAAGGCCGUCAU'</span></span>
+<span id="cb64-15"><a href="#cb64-15" tabindex="-1"></a>    <span class="st">'UCCAGACAGCACCGAGCAGUCGGAUGUGAGGUUCAGCAGUGCCGUG'</span></span>
+<span id="cb64-16"><a href="#cb64-16" tabindex="-1"></a>)</span></code></pre>
 </div>
 </div>
 </div>
@@ -1310,29 +1307,29 @@ cDNA.</p></li>
 <div class="codewrapper sourceCode" id="cb65">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a>mrna2cdna <span class="op">=</span> {</span>
-<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'U'</span>: <span class="st">'A'</span>,</span>
-<span id="cb65-3"><a href="#cb65-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'A'</span>: <span class="st">'T'</span>,</span>
-<span id="cb65-4"><a href="#cb65-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'G'</span>: <span class="st">'C'</span>,</span>
-<span id="cb65-5"><a href="#cb65-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'C'</span>: <span class="st">'G'</span></span>
-<span id="cb65-6"><a href="#cb65-6" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb65-7"><a href="#cb65-7" aria-hidden="true" tabindex="-1"></a>		</span>
-<span id="cb65-8"><a href="#cb65-8" aria-hidden="true" tabindex="-1"></a>cdna2dna <span class="op">=</span> {</span>
-<span id="cb65-9"><a href="#cb65-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">'A'</span>: <span class="st">'T'</span>,</span>
-<span id="cb65-10"><a href="#cb65-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">'T'</span>: <span class="st">'A'</span>,</span>
-<span id="cb65-11"><a href="#cb65-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">'C'</span>: <span class="st">'G'</span>,</span>
-<span id="cb65-12"><a href="#cb65-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">'G'</span>: <span class="st">'C'</span></span>
-<span id="cb65-13"><a href="#cb65-13" aria-hidden="true" tabindex="-1"></a>}</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1" tabindex="-1"></a>mrna2cdna <span class="op">=</span> {</span>
+<span id="cb65-2"><a href="#cb65-2" tabindex="-1"></a>    <span class="st">'U'</span>: <span class="st">'A'</span>,</span>
+<span id="cb65-3"><a href="#cb65-3" tabindex="-1"></a>    <span class="st">'A'</span>: <span class="st">'T'</span>,</span>
+<span id="cb65-4"><a href="#cb65-4" tabindex="-1"></a>    <span class="st">'G'</span>: <span class="st">'C'</span>,</span>
+<span id="cb65-5"><a href="#cb65-5" tabindex="-1"></a>    <span class="st">'C'</span>: <span class="st">'G'</span></span>
+<span id="cb65-6"><a href="#cb65-6" tabindex="-1"></a>}</span>
+<span id="cb65-7"><a href="#cb65-7" tabindex="-1"></a>		</span>
+<span id="cb65-8"><a href="#cb65-8" tabindex="-1"></a>cdna2dna <span class="op">=</span> {</span>
+<span id="cb65-9"><a href="#cb65-9" tabindex="-1"></a>    <span class="st">'A'</span>: <span class="st">'T'</span>,</span>
+<span id="cb65-10"><a href="#cb65-10" tabindex="-1"></a>    <span class="st">'T'</span>: <span class="st">'A'</span>,</span>
+<span id="cb65-11"><a href="#cb65-11" tabindex="-1"></a>    <span class="st">'C'</span>: <span class="st">'G'</span>,</span>
+<span id="cb65-12"><a href="#cb65-12" tabindex="-1"></a>    <span class="st">'G'</span>: <span class="st">'C'</span></span>
+<span id="cb65-13"><a href="#cb65-13" tabindex="-1"></a>}</span></code></pre>
 </div>
 <p>Q2:</p>
 <div class="codewrapper sourceCode" id="cb66">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>cdna <span class="op">=</span> <span class="bu">str</span>()</span>
-<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> nucleotide <span class="kw">in</span> human_gpcr:</span>
-<span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a>    cdna <span class="op">+=</span> mrna2cdna[nucleotide]</span>
-<span id="cb66-4"><a href="#cb66-4" aria-hidden="true" tabindex="-1"></a>		</span>
-<span id="cb66-5"><a href="#cb66-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cdna)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1" tabindex="-1"></a>cdna <span class="op">=</span> <span class="bu">str</span>()</span>
+<span id="cb66-2"><a href="#cb66-2" tabindex="-1"></a><span class="cf">for</span> nucleotide <span class="kw">in</span> human_gpcr:</span>
+<span id="cb66-3"><a href="#cb66-3" tabindex="-1"></a>    cdna <span class="op">+=</span> mrna2cdna[nucleotide]</span>
+<span id="cb66-4"><a href="#cb66-4" tabindex="-1"></a>		</span>
+<span id="cb66-5"><a href="#cb66-5" tabindex="-1"></a><span class="bu">print</span>(cdna)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1407,7 +1404,7 @@ any links that you are not going to use.
   "identifier": "https://ccb-hms.github.io/workbench-python-workshop/instructor/home-04-dictionaries.html",
   "dateCreated": "2023-04-01",
   "dateModified": "2023-04-20",
-  "datePublished": "2024-02-27"
+  "datePublished": "2024-03-05"
 }
 
   </script><script>

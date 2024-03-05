@@ -473,7 +473,7 @@ to search.</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> conda install <span class="at">-c</span> bioconda mygene</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">$</span> conda install <span class="at">-c</span> bioconda mygene</span></code></pre>
 </div>
 <p>Once installed, we can import <code>mygene</code> and create a
 <code>MyGeneInfo</code> object, which is used for accessing and
@@ -481,9 +481,9 @@ downloading genetic annotations.</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> mygene</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>mg <span class="op">=</span> mygene.MyGeneInfo()</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="im">import</span> mygene</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>mg <span class="op">=</span> mygene.MyGeneInfo()</span></code></pre>
 </div>
 <div class="section level3">
 <h3 id="mapping-gene-symbols">Mapping gene symbols<a class="anchor" aria-label="anchor" href="#mapping-gene-symbols"></a></h3>
@@ -492,16 +492,16 @@ convert to entrez gene ids:</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>xli <span class="op">=</span> [<span class="st">'DDX26B'</span>,</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="st">'CCDC83'</span>,</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="st">'MAST3'</span>,</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="st">'FLOT1'</span>,</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="st">'RPL11'</span>,</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="st">'ZDHHC20'</span>,</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="st">'LUC7L3'</span>,</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="st">'SNORD49A'</span>,</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="st">'CTSH'</span>,</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="st">'ACOT8'</span>]</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>xli <span class="op">=</span> [<span class="st">'DDX26B'</span>,</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="st">'CCDC83'</span>,</span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="st">'MAST3'</span>,</span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="st">'FLOT1'</span>,</span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="st">'RPL11'</span>,</span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a><span class="st">'ZDHHC20'</span>,</span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a><span class="st">'LUC7L3'</span>,</span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a><span class="st">'SNORD49A'</span>,</span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a><span class="st">'CTSH'</span>,</span>
+<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a><span class="st">'ACOT8'</span>]</span></code></pre>
 </div>
 <p>We can then use the <strong>querymany</strong> method to get entrez
 gene ids for this list, telling it your input is “symbol” with the
@@ -510,8 +510,8 @@ ids) back with the <code>fields</code> argument.</p>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>out <span class="op">=</span> mg.querymany(xli, scopes<span class="op">=</span><span class="st">'symbol'</span>, fields<span class="op">=</span><span class="st">'entrezgene'</span>, species<span class="op">=</span><span class="st">'human'</span>)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(out)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a>out <span class="op">=</span> mg.querymany(xli, scopes<span class="op">=</span><span class="st">'symbol'</span>, fields<span class="op">=</span><span class="st">'entrezgene'</span>, species<span class="op">=</span><span class="st">'human'</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="bu">print</span>(out)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -536,8 +536,8 @@ dataframe.</p>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>ensembl_res <span class="op">=</span> mg.querymany(xli, scopes<span class="op">=</span><span class="st">'symbol'</span>, fields<span class="op">=</span><span class="st">'ensembl.gene'</span>, species<span class="op">=</span><span class="st">'human'</span>, as_dataframe<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ensembl_res)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a>ensembl_res <span class="op">=</span> mg.querymany(xli, scopes<span class="op">=</span><span class="st">'symbol'</span>, fields<span class="op">=</span><span class="st">'ensembl.gene'</span>, species<span class="op">=</span><span class="st">'human'</span>, as_dataframe<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="bu">print</span>(ensembl_res)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -579,12 +579,12 @@ ACOT8                                                   NaN </code></pre>
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>xli <span class="op">=</span> [<span class="st">'ENSG00000150676'</span>,</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a> <span class="st">'MAST3'</span>,</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a> <span class="st">'FLOT1'</span>,</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a> <span class="st">'RPL11'</span>,</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a> <span class="st">'1007_s_at'</span>,</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a> <span class="st">'AK125780'</span>]</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a>xli <span class="op">=</span> [<span class="st">'ENSG00000150676'</span>,</span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a> <span class="st">'MAST3'</span>,</span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a> <span class="st">'FLOT1'</span>,</span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a> <span class="st">'RPL11'</span>,</span>
+<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a> <span class="st">'1007_s_at'</span>,</span>
+<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a> <span class="st">'AK125780'</span>]</span></code></pre>
 </div>
 <p>The above id list contains multiple types of identifiers. Let’s try
 taking this list and trying to get back both Entrez gene ids and uniprot
@@ -594,8 +594,8 @@ values, either a list or a comma-separated string.</p>
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>query_res <span class="op">=</span> mg.querymany(xli, scopes<span class="op">=</span><span class="st">'symbol,reporter,accession,ensembl.gene'</span>, fields<span class="op">=</span><span class="st">'entrezgene,uniprot'</span>, species<span class="op">=</span><span class="st">'human'</span>, as_dataframe<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(query_res)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a>query_res <span class="op">=</span> mg.querymany(xli, scopes<span class="op">=</span><span class="st">'symbol,reporter,accession,ensembl.gene'</span>, fields<span class="op">=</span><span class="st">'entrezgene,uniprot'</span>, species<span class="op">=</span><span class="st">'human'</span>, as_dataframe<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a><span class="bu">print</span>(query_res)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -630,8 +630,8 @@ offer by setting <code>fields</code> to “all”.</p>
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>query_res <span class="op">=</span> mg.querymany(xli, scopes<span class="op">=</span><span class="st">'symbol,reporter,accession,ensembl.gene'</span>, fields<span class="op">=</span><span class="st">'all'</span>, species<span class="op">=</span><span class="st">'human'</span>, as_dataframe<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">list</span>(query_res.columns))</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a>query_res <span class="op">=</span> mg.querymany(xli, scopes<span class="op">=</span><span class="st">'symbol,reporter,accession,ensembl.gene'</span>, fields<span class="op">=</span><span class="st">'all'</span>, species<span class="op">=</span><span class="st">'human'</span>, as_dataframe<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">list</span>(query_res.columns))</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -728,7 +728,7 @@ any links that you are not going to use.
   "identifier": "https://ccb-hms.github.io/workbench-python-workshop/instructor/15-biomart.html",
   "dateCreated": "2023-04-01",
   "dateModified": "2023-04-27",
-  "datePublished": "2024-02-27"
+  "datePublished": "2024-03-05"
 }
 
   </script><script>

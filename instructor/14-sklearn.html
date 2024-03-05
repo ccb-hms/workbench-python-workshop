@@ -493,12 +493,12 @@ dates, or creating a “brightness” feature from an image).</li>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn <span class="im">import</span> model_selection, ensemble, metrics</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib <span class="im">import</span> pyplot <span class="im">as</span> plt</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>sns.set_theme(style<span class="op">=</span><span class="st">'ticks'</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="im">from</span> sklearn <span class="im">import</span> model_selection, ensemble, metrics</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="im">from</span> matplotlib <span class="im">import</span> pyplot <span class="im">as</span> plt</span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a>sns.set_theme(style<span class="op">=</span><span class="st">'ticks'</span>)</span></code></pre>
 </div>
 </section><section id="data-description"><h2 class="section-heading">Data description<a class="anchor" aria-label="anchor" href="#data-description"></a>
 </h2>
@@ -519,11 +519,11 @@ sample’s telomeres by percent.</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load data</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pd.read_csv(<span class="st">"https://raw.githubusercontent.com/HMS-Data-Club/python-environments/main/data/telomere_ALT/telomere.csv"</span>, sep<span class="op">=</span><span class="st">'</span><span class="ch">\t</span><span class="st">'</span>)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>num_row <span class="op">=</span> data.shape[<span class="dv">0</span>]     <span class="co"># number of samples in the dataset</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>num_col <span class="op">=</span> data.shape[<span class="dv">1</span>]     <span class="co"># number of features in the dataset (plus the label column)</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="co"># Load data</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>data <span class="op">=</span> pd.read_csv(<span class="st">"https://raw.githubusercontent.com/HMS-Data-Club/python-environments/main/data/telomere_ALT/telomere.csv"</span>, sep<span class="op">=</span><span class="st">'</span><span class="ch">\t</span><span class="st">'</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>num_row <span class="op">=</span> data.shape[<span class="dv">0</span>]     <span class="co"># number of samples in the dataset</span></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>num_col <span class="op">=</span> data.shape[<span class="dv">1</span>]     <span class="co"># number of features in the dataset (plus the label column)</span></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a><span class="bu">print</span>(data)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -579,7 +579,8 @@ data and get it ready for use in the machine learning model. 2.
 train it on the data. 3. <strong>Evaluation</strong>: Measure how well
 the model performed. Can we trust the predictions of the trained
 model?</p>
-<figure><img src="../fig/14_ml_workflow.png" alt="" class="figure mx-auto d-block"><figcaption>Supervised Machine Learning Workflow</figcaption></figure><p>In this case, our data is already preprocessed. In order to perform
+<figure><img src="../fig/14_ml_workflow.png" alt="Supervised Machine Learning Workflow" class="figure mx-auto d-block"><div class="figcaption">Supervised Machine Learning Workflow</div>
+</figure><p>In this case, our data is already preprocessed. In order to perform
 <strong>training</strong>, we need to split our data into a
 <strong>training set</strong> and a <strong>testing set</strong>.</p>
 <p><img src="../fig/14_trainingset.png" alt="Splitting a training set" class="figure">.</p>
@@ -591,13 +592,13 @@ as more generally in machine learning) is to call our feactures
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> data.iloc[:, <span class="dv">0</span>: num_col<span class="op">-</span><span class="dv">1</span>]    <span class="co"># feature columns</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> data[<span class="st">'TMM'</span>]                   <span class="co"># label column</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>X_train, X_test, y_train, y_test <span class="op">=</span> <span class="op">\</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    model_selection.train_test_split(X, y, </span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>                                     test_size<span class="op">=</span><span class="fl">0.2</span>,      <span class="co"># reserve 20 percent data for testing</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>                                     stratify<span class="op">=</span>y,         <span class="co"># stratified sampling</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>                                     random_state<span class="op">=</span><span class="dv">0</span>) <span class="co"># random seed</span></span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a>X <span class="op">=</span> data.iloc[:, <span class="dv">0</span>: num_col<span class="op">-</span><span class="dv">1</span>]    <span class="co"># feature columns</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a>y <span class="op">=</span> data[<span class="st">'TMM'</span>]                   <span class="co"># label column</span></span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a>X_train, X_test, y_train, y_test <span class="op">=</span> <span class="op">\</span></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a>    model_selection.train_test_split(X, y, </span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a>                                     test_size<span class="op">=</span><span class="fl">0.2</span>,      <span class="co"># reserve 20 percent data for testing</span></span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a>                                     stratify<span class="op">=</span>y,         <span class="co"># stratified sampling</span></span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a>                                     random_state<span class="op">=</span><span class="dv">0</span>) <span class="co"># random seed</span></span></code></pre>
 </div>
 <p>Setting a test set aside from the training and validation sets from
 the beginning, and only using it once for a final evaluation, is very
@@ -616,17 +617,17 @@ model, in machine learning tasks like this also called our
 <strong>classifier</strong>. We want to further split our training data
 into a traiing set and validation set so that we can freely explore
 different models before making our final choice.</p>
-<figure><img src="../fig/14_holdout.png" alt="" class="figure mx-auto d-block"><figcaption>Holdout validation strategy</figcaption></figure><p>However, in this case we are simply going to go with a <strong>random
+<figure><img src="../fig/14_holdout.png" alt="Holdout validation strategy" class="figure mx-auto d-block"><div class="figcaption">Holdout validation strategy</div>
+</figure><p>However, in this case we are simply going to go with a <strong>random
 forest classifier</strong>. <a href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html" class="external-link">Random
 forests</a> are a fast classifier which tends to perform well, and is
 often reccomended as a first classifier to try.</p>
-<div id="definitions" class="callout callout">
+<div id="callout1" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="definitions" class="callout-inner">
-<h3 class="callout-title">Definitions<a class="anchor" aria-label="anchor" href="#definitions"></a>
-</h3>
+<div class="section level3 callout-title callout-inner">
+<h3 class="callout-title" id="definitions">Definitions<a class="anchor" aria-label="anchor" href="#definitions"></a></h3>
 <div class="callout-content">
 <p>Training set - The training set is a part of the original dataset
 that trains or fits the model. This is the data that the model uses to
@@ -658,13 +659,13 @@ learning, and more.</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>rf <span class="op">=</span> ensemble.RandomForestClassifier(</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    n_estimators <span class="op">=</span> <span class="dv">10</span>,           <span class="co"># 10 random trees in the forest</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    criterion <span class="op">=</span> <span class="st">'entropy'</span>,       <span class="co"># use entropy as the measure of uncertainty</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    max_depth <span class="op">=</span> <span class="dv">3</span>,               <span class="co"># maximum depth of each tree is 3</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    min_samples_split <span class="op">=</span> <span class="dv">5</span>,       <span class="co"># generate a split only when there are at least 5 samples at current node</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    class_weight <span class="op">=</span> <span class="st">'balanced'</span>,   <span class="co"># class weight is inversely proportional to class frequencies</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    random_state <span class="op">=</span> <span class="dv">0</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a>rf <span class="op">=</span> ensemble.RandomForestClassifier(</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>    n_estimators <span class="op">=</span> <span class="dv">10</span>,           <span class="co"># 10 random trees in the forest</span></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>    criterion <span class="op">=</span> <span class="st">'entropy'</span>,       <span class="co"># use entropy as the measure of uncertainty</span></span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a>    max_depth <span class="op">=</span> <span class="dv">3</span>,               <span class="co"># maximum depth of each tree is 3</span></span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a>    min_samples_split <span class="op">=</span> <span class="dv">5</span>,       <span class="co"># generate a split only when there are at least 5 samples at current node</span></span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a>    class_weight <span class="op">=</span> <span class="st">'balanced'</span>,   <span class="co"># class weight is inversely proportional to class frequencies</span></span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a>    random_state <span class="op">=</span> <span class="dv">0</span>)</span></code></pre>
 </div>
 <p>Each model in Scikit-learn has a wide variety of possible
 <strong>hyperparameters</strong> to choose from. These can be thought of
@@ -678,12 +679,12 @@ score on the testing data using the <code>score</code> method.</p>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Refit the classifier using the full training set</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>rf <span class="op">=</span> rf.fit(X_train, y_train)</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute classifier's accuracy on the test set</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>test_accuracy <span class="op">=</span> rf.score(X_test, y_test)</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Test accuracy: </span><span class="sc">{</span>test_accuracy<span class="sc">: 0.3f}</span><span class="ss">'</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="co"># Refit the classifier using the full training set</span></span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>rf <span class="op">=</span> rf.fit(X_train, y_train)</span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a><span class="co"># Compute classifier's accuracy on the test set</span></span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a>test_accuracy <span class="op">=</span> rf.score(X_test, y_test)</span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Test accuracy: </span><span class="sc">{</span>test_accuracy<span class="sc">: 0.3f}</span><span class="ss">'</span>)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -701,11 +702,11 @@ confidence score.</p>
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Predict labels for the test set</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> rf.predict(X_test)             <span class="co"># Solid prediction</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>y_prob <span class="op">=</span> rf.predict_proba(X_test)  <span class="co"># Soft prediction</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(y)</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(y_prob)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="co"># Predict labels for the test set</span></span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a>y <span class="op">=</span> rf.predict(X_test)             <span class="co"># Solid prediction</span></span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a>y_prob <span class="op">=</span> rf.predict_proba(X_test)  <span class="co"># Soft prediction</span></span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a><span class="bu">print</span>(y)</span>
+<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a><span class="bu">print</span>(y_prob)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -753,64 +754,67 @@ curve.</p>
 <div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute the ROC and PR curves for the test set</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>fpr, tpr, _ <span class="op">=</span> metrics.roc_curve(y_test, y_prob[:, <span class="dv">0</span>], pos_label<span class="op">=</span><span class="st">'+'</span>)</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>precision_plus, recall_plus, _ <span class="op">=</span> metrics.precision_recall_curve(y_test, y_prob[:, <span class="dv">0</span>], pos_label<span class="op">=</span><span class="st">'+'</span>)</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>precision_minus, recall_minus, _ <span class="op">=</span> metrics.precision_recall_curve(y_test, y_prob[:, <span class="dv">1</span>], pos_label<span class="op">=</span><span class="st">'-'</span>)</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute the AUROC and AUPRCs for the test set</span></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>auroc <span class="op">=</span> metrics.auc(fpr, tpr)</span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>auprc_plus <span class="op">=</span> metrics.auc(recall_plus, precision_plus)</span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>auprc_minus <span class="op">=</span> metrics.auc(recall_minus, precision_minus)</span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the ROC curve for the test set</span></span>
-<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>plt.plot(fpr, tpr, label<span class="op">=</span><span class="st">'test (area = </span><span class="sc">%.3f</span><span class="st">)'</span> <span class="op">%</span> auroc)</span>
-<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>plt.plot([<span class="dv">0</span>,<span class="dv">1</span>], [<span class="dv">0</span>,<span class="dv">1</span>], linestyle<span class="op">=</span><span class="st">'--'</span>, color<span class="op">=</span>(<span class="fl">0.6</span>, <span class="fl">0.6</span>, <span class="fl">0.6</span>))</span>
-<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>plt.plot([<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>], [<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>], linestyle<span class="op">=</span><span class="st">'--'</span>, color<span class="op">=</span>(<span class="fl">0.6</span>, <span class="fl">0.6</span>, <span class="fl">0.6</span>))</span>
-<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>plt.xlim([<span class="op">-</span><span class="fl">0.05</span>, <span class="fl">1.05</span>])</span>
-<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>plt.ylim([<span class="op">-</span><span class="fl">0.05</span>, <span class="fl">1.05</span>])</span>
-<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'FPR'</span>)</span>
-<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'TPR'</span>)</span>
-<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>plt.legend(loc<span class="op">=</span><span class="st">'lower right'</span>)</span>
-<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'ROC curve'</span>)</span>
-<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
-<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the PR curve for the test set</span></span>
-<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a>plt.plot(recall_plus, precision_plus, label<span class="op">=</span><span class="st">'positive class (area = </span><span class="sc">%.3f</span><span class="st">)'</span> <span class="op">%</span> auprc_plus)</span>
-<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a>plt.plot(recall_minus, precision_minus, label<span class="op">=</span><span class="st">'negative class (area = </span><span class="sc">%.3f</span><span class="st">)'</span> <span class="op">%</span> auprc_minus)</span>
-<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a>plt.plot([<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>], [<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>], linestyle<span class="op">=</span><span class="st">'--'</span>, color<span class="op">=</span>(<span class="fl">0.6</span>, <span class="fl">0.6</span>, <span class="fl">0.6</span>))</span>
-<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a>plt.xlim([<span class="op">-</span><span class="fl">0.05</span>, <span class="fl">1.05</span>])</span>
-<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a>plt.ylim([<span class="op">-</span><span class="fl">0.05</span>, <span class="fl">1.05</span>])</span>
-<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'recall'</span>)</span>
-<span id="cb10-31"><a href="#cb10-31" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'precision'</span>)</span>
-<span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a>plt.legend(loc<span class="op">=</span><span class="st">'lower left'</span>)</span>
-<span id="cb10-33"><a href="#cb10-33" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Precision-recall curve'</span>)</span>
-<span id="cb10-34"><a href="#cb10-34" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="co"># Compute the ROC and PR curves for the test set</span></span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>fpr, tpr, _ <span class="op">=</span> metrics.roc_curve(y_test, y_prob[:, <span class="dv">0</span>], pos_label<span class="op">=</span><span class="st">'+'</span>)</span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a>precision_plus, recall_plus, _ <span class="op">=</span> metrics.precision_recall_curve(y_test, y_prob[:, <span class="dv">0</span>], pos_label<span class="op">=</span><span class="st">'+'</span>)</span>
+<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a>precision_minus, recall_minus, _ <span class="op">=</span> metrics.precision_recall_curve(y_test, y_prob[:, <span class="dv">1</span>], pos_label<span class="op">=</span><span class="st">'-'</span>)</span>
+<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a><span class="co"># Compute the AUROC and AUPRCs for the test set</span></span>
+<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a>auroc <span class="op">=</span> metrics.auc(fpr, tpr)</span>
+<span id="cb10-8"><a href="#cb10-8" tabindex="-1"></a>auprc_plus <span class="op">=</span> metrics.auc(recall_plus, precision_plus)</span>
+<span id="cb10-9"><a href="#cb10-9" tabindex="-1"></a>auprc_minus <span class="op">=</span> metrics.auc(recall_minus, precision_minus)</span>
+<span id="cb10-10"><a href="#cb10-10" tabindex="-1"></a></span>
+<span id="cb10-11"><a href="#cb10-11" tabindex="-1"></a><span class="co"># Plot the ROC curve for the test set</span></span>
+<span id="cb10-12"><a href="#cb10-12" tabindex="-1"></a>plt.plot(fpr, tpr, label<span class="op">=</span><span class="st">'test (area = </span><span class="sc">%.3f</span><span class="st">)'</span> <span class="op">%</span> auroc)</span>
+<span id="cb10-13"><a href="#cb10-13" tabindex="-1"></a>plt.plot([<span class="dv">0</span>,<span class="dv">1</span>], [<span class="dv">0</span>,<span class="dv">1</span>], linestyle<span class="op">=</span><span class="st">'--'</span>, color<span class="op">=</span>(<span class="fl">0.6</span>, <span class="fl">0.6</span>, <span class="fl">0.6</span>))</span>
+<span id="cb10-14"><a href="#cb10-14" tabindex="-1"></a>plt.plot([<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>], [<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>], linestyle<span class="op">=</span><span class="st">'--'</span>, color<span class="op">=</span>(<span class="fl">0.6</span>, <span class="fl">0.6</span>, <span class="fl">0.6</span>))</span>
+<span id="cb10-15"><a href="#cb10-15" tabindex="-1"></a></span>
+<span id="cb10-16"><a href="#cb10-16" tabindex="-1"></a>plt.xlim([<span class="op">-</span><span class="fl">0.05</span>, <span class="fl">1.05</span>])</span>
+<span id="cb10-17"><a href="#cb10-17" tabindex="-1"></a>plt.ylim([<span class="op">-</span><span class="fl">0.05</span>, <span class="fl">1.05</span>])</span>
+<span id="cb10-18"><a href="#cb10-18" tabindex="-1"></a>plt.xlabel(<span class="st">'FPR'</span>)</span>
+<span id="cb10-19"><a href="#cb10-19" tabindex="-1"></a>plt.ylabel(<span class="st">'TPR'</span>)</span>
+<span id="cb10-20"><a href="#cb10-20" tabindex="-1"></a>plt.legend(loc<span class="op">=</span><span class="st">'lower right'</span>)</span>
+<span id="cb10-21"><a href="#cb10-21" tabindex="-1"></a>plt.title(<span class="st">'ROC curve'</span>)</span>
+<span id="cb10-22"><a href="#cb10-22" tabindex="-1"></a>plt.show()</span>
+<span id="cb10-23"><a href="#cb10-23" tabindex="-1"></a></span>
+<span id="cb10-24"><a href="#cb10-24" tabindex="-1"></a><span class="co"># Plot the PR curve for the test set</span></span>
+<span id="cb10-25"><a href="#cb10-25" tabindex="-1"></a>plt.plot(recall_plus, precision_plus, label<span class="op">=</span><span class="st">'positive class (area = </span><span class="sc">%.3f</span><span class="st">)'</span> <span class="op">%</span> auprc_plus)</span>
+<span id="cb10-26"><a href="#cb10-26" tabindex="-1"></a>plt.plot(recall_minus, precision_minus, label<span class="op">=</span><span class="st">'negative class (area = </span><span class="sc">%.3f</span><span class="st">)'</span> <span class="op">%</span> auprc_minus)</span>
+<span id="cb10-27"><a href="#cb10-27" tabindex="-1"></a>plt.plot([<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>], [<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>], linestyle<span class="op">=</span><span class="st">'--'</span>, color<span class="op">=</span>(<span class="fl">0.6</span>, <span class="fl">0.6</span>, <span class="fl">0.6</span>))</span>
+<span id="cb10-28"><a href="#cb10-28" tabindex="-1"></a>plt.xlim([<span class="op">-</span><span class="fl">0.05</span>, <span class="fl">1.05</span>])</span>
+<span id="cb10-29"><a href="#cb10-29" tabindex="-1"></a>plt.ylim([<span class="op">-</span><span class="fl">0.05</span>, <span class="fl">1.05</span>])</span>
+<span id="cb10-30"><a href="#cb10-30" tabindex="-1"></a>plt.xlabel(<span class="st">'recall'</span>)</span>
+<span id="cb10-31"><a href="#cb10-31" tabindex="-1"></a>plt.ylabel(<span class="st">'precision'</span>)</span>
+<span id="cb10-32"><a href="#cb10-32" tabindex="-1"></a>plt.legend(loc<span class="op">=</span><span class="st">'lower left'</span>)</span>
+<span id="cb10-33"><a href="#cb10-33" tabindex="-1"></a>plt.title(<span class="st">'Precision-recall curve'</span>)</span>
+<span id="cb10-34"><a href="#cb10-34" tabindex="-1"></a>plt.show()</span></code></pre>
 </div>
-<figure><img src="../fig/14_roccurve.png" alt="" class="figure mx-auto d-block"><figcaption>ROC curve</figcaption></figure><figure><img src="../fig/14_prcurve.png" alt="" class="figure mx-auto d-block"><figcaption>PR curve</figcaption></figure><p>Finally, we can also look at the <strong>confusion matrix</strong>,
+<figure><img src="../fig/14_roccurve.png" alt="ROC curve" class="figure mx-auto d-block"><div class="figcaption">ROC curve</div>
+</figure><figure><img src="../fig/14_prcurve.png" alt="PR curve" class="figure mx-auto d-block"><div class="figcaption">PR curve</div>
+</figure><p>Finally, we can also look at the <strong>confusion matrix</strong>,
 another useful summary of model performance.</p>
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute the confusion matrix for the test set</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>cm <span class="op">=</span> metrics.confusion_matrix(y_test, y)</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the confusion matrix for the test set</span></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>plt.matshow(cm, interpolation<span class="op">=</span><span class="st">'nearest'</span>, cmap<span class="op">=</span>plt.cm.Blues, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>plt.xticks(np.arange(<span class="dv">2</span>), (<span class="st">'+'</span>, <span class="st">'-'</span>))</span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>plt.yticks(np.arange(<span class="dv">2</span>), (<span class="st">'+'</span>, <span class="st">'-'</span>))</span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>):</span>
-<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>):</span>
-<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>        plt.text(j, i, cm[i, j], ha<span class="op">=</span><span class="st">'center'</span>, va<span class="op">=</span><span class="st">'center'</span>)</span>
-<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Predicted label'</span>)</span>
-<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'True label'</span>)</span>
-<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="co"># Compute the confusion matrix for the test set</span></span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a>cm <span class="op">=</span> metrics.confusion_matrix(y_test, y)</span>
+<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" tabindex="-1"></a><span class="co"># Plot the confusion matrix for the test set</span></span>
+<span id="cb11-6"><a href="#cb11-6" tabindex="-1"></a>plt.matshow(cm, interpolation<span class="op">=</span><span class="st">'nearest'</span>, cmap<span class="op">=</span>plt.cm.Blues, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb11-7"><a href="#cb11-7" tabindex="-1"></a>plt.xticks(np.arange(<span class="dv">2</span>), (<span class="st">'+'</span>, <span class="st">'-'</span>))</span>
+<span id="cb11-8"><a href="#cb11-8" tabindex="-1"></a>plt.yticks(np.arange(<span class="dv">2</span>), (<span class="st">'+'</span>, <span class="st">'-'</span>))</span>
+<span id="cb11-9"><a href="#cb11-9" tabindex="-1"></a></span>
+<span id="cb11-10"><a href="#cb11-10" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>):</span>
+<span id="cb11-11"><a href="#cb11-11" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>):</span>
+<span id="cb11-12"><a href="#cb11-12" tabindex="-1"></a>        plt.text(j, i, cm[i, j], ha<span class="op">=</span><span class="st">'center'</span>, va<span class="op">=</span><span class="st">'center'</span>)</span>
+<span id="cb11-13"><a href="#cb11-13" tabindex="-1"></a></span>
+<span id="cb11-14"><a href="#cb11-14" tabindex="-1"></a>plt.xlabel(<span class="st">'Predicted label'</span>)</span>
+<span id="cb11-15"><a href="#cb11-15" tabindex="-1"></a>plt.ylabel(<span class="st">'True label'</span>)</span>
+<span id="cb11-16"><a href="#cb11-16" tabindex="-1"></a>plt.show()</span></code></pre>
 </div>
-<figure><img src="../fig/14_confusion.png" alt="" class="figure mx-auto d-block"><figcaption>Confusion Matrix</figcaption></figure></div>
+<figure><img src="../fig/14_confusion.png" alt="Confusion Matrix" class="figure mx-auto d-block"><div class="figcaption">Confusion Matrix</div>
+</figure></div>
 </section><section id="resources-for-learning-more"><h2 class="section-heading">Resources for learning more<a class="anchor" aria-label="anchor" href="#resources-for-learning-more"></a>
 </h2>
 <hr class="half-width"><p>The <a href="https://developers.google.com/machine-learning/glossary" class="external-link">Google
@@ -894,7 +898,7 @@ any links that you are not going to use.
   "identifier": "https://ccb-hms.github.io/workbench-python-workshop/instructor/14-sklearn.html",
   "dateCreated": "2023-04-01",
   "dateModified": "2023-04-22",
-  "datePublished": "2024-02-27"
+  "datePublished": "2024-03-05"
 }
 
   </script><script>

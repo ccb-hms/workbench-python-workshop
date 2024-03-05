@@ -467,10 +467,10 @@ performing a data analysis. We can generally group these into
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://raw.githubusercontent.com/ccb-hms/workbench-python-workshop/main/episodes/data/rnaseq.csv"</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>rnaseq_df <span class="op">=</span> pd.read_csv(url, index_col<span class="op">=</span><span class="dv">0</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://raw.githubusercontent.com/ccb-hms/workbench-python-workshop/main/episodes/data/rnaseq.csv"</span></span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>rnaseq_df <span class="op">=</span> pd.read_csv(url, index_col<span class="op">=</span><span class="dv">0</span>)</span></code></pre>
 </div>
 <section id="concatenate-dataframes-to-add-additional-rows."><h2 class="section-heading">Concatenate dataframes to add additional <em>rows</em>.<a class="anchor" aria-label="anchor" href="#concatenate-dataframes-to-add-additional-rows."></a>
 </h2>
@@ -482,10 +482,10 @@ rows of the data:</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>rnaseq_mini <span class="op">=</span> rnaseq_df.loc[:,[<span class="st">"sample"</span>, <span class="st">"expression"</span>]].head(<span class="dv">10</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>rnaseq_mini_tail <span class="op">=</span> rnaseq_df.loc[:,[<span class="st">"sample"</span>, <span class="st">"expression"</span>]].tail(<span class="dv">10</span>)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(rnaseq_mini)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(rnaseq_mini_tail)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>rnaseq_mini <span class="op">=</span> rnaseq_df.loc[:,[<span class="st">"sample"</span>, <span class="st">"expression"</span>]].head(<span class="dv">10</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>rnaseq_mini_tail <span class="op">=</span> rnaseq_df.loc[:,[<span class="st">"sample"</span>, <span class="st">"expression"</span>]].tail(<span class="dv">10</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="bu">print</span>(rnaseq_mini)</span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="bu">print</span>(rnaseq_mini_tail)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -520,8 +520,8 @@ Pbx1     GSM2545380        4795</code></pre>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>combined_df <span class="op">=</span> pd.concat([rnaseq_mini, rnaseq_mini_tail])</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(combined_df)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a>combined_df <span class="op">=</span> pd.concat([rnaseq_mini, rnaseq_mini_tail])</span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="bu">print</span>(combined_df)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -558,8 +558,8 @@ values are filled in with <code>NaN</code>.</p>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>rnaseq_mini_time <span class="op">=</span> rnaseq_df.loc[:,[<span class="st">"sample"</span>, <span class="st">"expression"</span>,<span class="st">"time"</span>]].iloc[<span class="dv">10</span>:<span class="dv">20</span>,:]</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(rnaseq_mini_time)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a>rnaseq_mini_time <span class="op">=</span> rnaseq_df.loc[:,[<span class="st">"sample"</span>, <span class="st">"expression"</span>,<span class="st">"time"</span>]].iloc[<span class="dv">10</span>:<span class="dv">20</span>,:]</span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="bu">print</span>(rnaseq_mini_time)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -580,9 +580,9 @@ Tm6sf2  GSM2545336          32     8</code></pre>
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>mini_dfs <span class="op">=</span> [rnaseq_mini, rnaseq_mini_time, rnaseq_mini_tail]</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>combined_df <span class="op">=</span> pd.concat(mini_dfs)</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(combined_df)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a>mini_dfs <span class="op">=</span> [rnaseq_mini, rnaseq_mini_time, rnaseq_mini_tail]</span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a>combined_df <span class="op">=</span> pd.concat(mini_dfs)</span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a><span class="bu">print</span>(combined_df)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -632,19 +632,19 @@ case.</p>
 <div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># There is an ongoing idelogical debate among developers whether variables like this should be named:</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co"># url1, url2, and url3</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co"># url0, url1, and url2 or</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># url, url2, and url3</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>url1 <span class="op">=</span> <span class="st">"https://raw.githubusercontent.com/ccb-hms/workbench-python-workshop/main/episodes/data/annot1.csv"</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>url2 <span class="op">=</span> <span class="st">"https://raw.githubusercontent.com/ccb-hms/workbench-python-workshop/main/episodes/data/annot2.csv"</span></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>url3 <span class="op">=</span> <span class="st">"https://raw.githubusercontent.com/ccb-hms/workbench-python-workshop/main/episodes/data/annot3.csv"</span></span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Here .sample is being used to shuffle the dataframe rows into a random order</span></span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>annot1 <span class="op">=</span> pd.read_csv(url1, index_col<span class="op">=</span><span class="dv">0</span>).sample(frac<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>annot2 <span class="op">=</span> pd.read_csv(url2, index_col<span class="op">=</span><span class="dv">0</span>).sample(frac<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>annot3 <span class="op">=</span> pd.read_csv(url3, index_col<span class="op">=</span><span class="dv">0</span>).sample(frac<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(annot1)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="co"># There is an ongoing idelogical debate among developers whether variables like this should be named:</span></span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a><span class="co"># url1, url2, and url3</span></span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a><span class="co"># url0, url1, and url2 or</span></span>
+<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a><span class="co"># url, url2, and url3</span></span>
+<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a>url1 <span class="op">=</span> <span class="st">"https://raw.githubusercontent.com/ccb-hms/workbench-python-workshop/main/episodes/data/annot1.csv"</span></span>
+<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a>url2 <span class="op">=</span> <span class="st">"https://raw.githubusercontent.com/ccb-hms/workbench-python-workshop/main/episodes/data/annot2.csv"</span></span>
+<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a>url3 <span class="op">=</span> <span class="st">"https://raw.githubusercontent.com/ccb-hms/workbench-python-workshop/main/episodes/data/annot3.csv"</span></span>
+<span id="cb10-8"><a href="#cb10-8" tabindex="-1"></a></span>
+<span id="cb10-9"><a href="#cb10-9" tabindex="-1"></a><span class="co"># Here .sample is being used to shuffle the dataframe rows into a random order</span></span>
+<span id="cb10-10"><a href="#cb10-10" tabindex="-1"></a>annot1 <span class="op">=</span> pd.read_csv(url1, index_col<span class="op">=</span><span class="dv">0</span>).sample(frac<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb10-11"><a href="#cb10-11" tabindex="-1"></a>annot2 <span class="op">=</span> pd.read_csv(url2, index_col<span class="op">=</span><span class="dv">0</span>).sample(frac<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb10-12"><a href="#cb10-12" tabindex="-1"></a>annot3 <span class="op">=</span> pd.read_csv(url3, index_col<span class="op">=</span><span class="dv">0</span>).sample(frac<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb10-13"><a href="#cb10-13" tabindex="-1"></a><span class="bu">print</span>(annot1)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -665,7 +665,7 @@ Exd2     exonuclease 3'-5' domain containing 2 [Source:...</code></pre>
 <div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(rnaseq_mini.join(annot1))</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="bu">print</span>(rnaseq_mini.join(annot1))</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -707,7 +707,7 @@ column order depends on which dataframe is on the left.</p>
 <div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(annot1.join(rnaseq_mini))</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="bu">print</span>(annot1.join(rnaseq_mini))</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -743,7 +743,7 @@ Exd2           1619
 <div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(annot2)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="bu">print</span>(annot2)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -764,7 +764,7 @@ Asl                 argininosuccinate lyase [Source:MGI Symbol;Acc...</code></pr
 <div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(rnaseq_mini.join(annot2))</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="bu">print</span>(rnaseq_mini.join(annot2))</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -802,9 +802,9 @@ instance, let’s say we want to combine our sample metadata back with
 <div class="codewrapper sourceCode" id="cb20">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://raw.githubusercontent.com/ccb-hms/workbench-python-workshop/main/episodes/data/metadata.csv"</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>metadata <span class="op">=</span> pd.read_csv(url, index_col<span class="op">=</span><span class="dv">0</span>)</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(metadata)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://raw.githubusercontent.com/ccb-hms/workbench-python-workshop/main/episodes/data/metadata.csv"</span></span>
+<span id="cb20-2"><a href="#cb20-2" tabindex="-1"></a>metadata <span class="op">=</span> pd.read_csv(url, index_col<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb20-3"><a href="#cb20-3" tabindex="-1"></a><span class="bu">print</span>(metadata)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -862,7 +862,7 @@ GSM2545380     19  </code></pre>
 <div class="codewrapper sourceCode" id="cb22">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(rnaseq_mini.join(metadata, on<span class="op">=</span><span class="st">"sample"</span>))</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a><span class="bu">print</span>(rnaseq_mini.join(metadata, on<span class="op">=</span><span class="st">"sample"</span>))</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -912,7 +912,7 @@ missing data with another example:</p>
 <div class="codewrapper sourceCode" id="cb24">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(annot3)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a><span class="bu">print</span>(annot3)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -963,7 +963,7 @@ drop rows from <code>annot3</code> with missing data.</p>
 <div class="codewrapper sourceCode" id="cb26">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(rnaseq_mini.join(annot3))</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a><span class="bu">print</span>(rnaseq_mini.join(annot3))</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1005,13 +1005,14 @@ Gnb4     guanine nucleotide binding protein (G protein)...  </code></pre>
 performs a <strong>left join</strong>.</p>
 <p>We can change the type of join performed by changing the
 <code>how</code> argument of the <code>join</code> method.</p>
-<figure><img src="../fig/home05_join_types_fig.png" alt="" class="figure mx-auto d-block"><figcaption>A summary of the types of joins and what they keep
-and drop.</figcaption></figure><p>A <strong>right join</strong> saves all genes in the right dataframe,
+<figure><img src="../fig/home05_join_types_fig.png" alt="A summary of the types of joins and what they keep and drop." class="figure mx-auto d-block"><div class="figcaption">A summary of the types of joins and what they
+keep and drop.</div>
+</figure><p>A <strong>right join</strong> saves all genes in the right dataframe,
 but drops and genes unique to <code>rnaseq_mini</code>.</p>
 <div class="codewrapper sourceCode" id="cb28">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(rnaseq_mini.join(annot3, how <span class="op">=</span> <span class="st">'right'</span>))</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" tabindex="-1"></a><span class="bu">print</span>(rnaseq_mini.join(annot3, how <span class="op">=</span> <span class="st">'right'</span>))</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1055,7 +1056,7 @@ dataframes, and drops all genes which are only in one dataframe.</p>
 <div class="codewrapper sourceCode" id="cb30">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(rnaseq_mini.join(annot3, how <span class="op">=</span> <span class="st">'inner'</span>))</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" tabindex="-1"></a><span class="bu">print</span>(rnaseq_mini.join(annot3, how <span class="op">=</span> <span class="st">'inner'</span>))</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1089,7 +1090,7 @@ dataframes.</p>
 <div class="codewrapper sourceCode" id="cb32">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(rnaseq_mini.join(annot3, how <span class="op">=</span> <span class="st">'outer'</span>))</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" tabindex="-1"></a><span class="bu">print</span>(rnaseq_mini.join(annot3, how <span class="op">=</span> <span class="st">'outer'</span>))</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1147,9 +1148,9 @@ simulate this by generating some random numbers in a copy of
 <div class="codewrapper sourceCode" id="cb34">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>new_mini <span class="op">=</span> rnaseq_mini.copy()</span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>new_mini[<span class="st">"expression"</span>] <span class="op">=</span> pd.Series(<span class="bu">range</span>(<span class="dv">50</span>,<span class="dv">50000</span>)).sample(<span class="bu">int</span>(<span class="dv">10</span>), replace<span class="op">=</span><span class="va">True</span>).array</span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(new_mini)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" tabindex="-1"></a>new_mini <span class="op">=</span> rnaseq_mini.copy()</span>
+<span id="cb34-2"><a href="#cb34-2" tabindex="-1"></a>new_mini[<span class="st">"expression"</span>] <span class="op">=</span> pd.Series(<span class="bu">range</span>(<span class="dv">50</span>,<span class="dv">50000</span>)).sample(<span class="bu">int</span>(<span class="dv">10</span>), replace<span class="op">=</span><span class="va">True</span>).array</span>
+<span id="cb34-3"><a href="#cb34-3" tabindex="-1"></a><span class="bu">print</span>(new_mini)</span></code></pre>
 </div>
 <p><em>Note: as these are pseudo-random numbers your exact values will
 be different</em></p>
@@ -1187,7 +1188,7 @@ these to improve your joined dataframe?</p>
 <div class="codewrapper sourceCode" id="cb36">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>rnaseq_mini.join(new_mini)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" tabindex="-1"></a>rnaseq_mini.join(new_mini)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1302,7 +1303,7 @@ collision.</p>
 <div class="codewrapper sourceCode" id="cb38">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(rnaseq_mini.join(new_mini, lsuffix<span class="op">=</span><span class="st">"_exp1"</span>, rsuffix<span class="op">=</span><span class="st">"_exp2"</span>))</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" tabindex="-1"></a><span class="bu">print</span>(rnaseq_mini.join(new_mini, lsuffix<span class="op">=</span><span class="st">"_exp1"</span>, rsuffix<span class="op">=</span><span class="st">"_exp2"</span>))</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1328,8 +1329,8 @@ on multiple columns and reset the index afterward.</p>
 <div class="codewrapper sourceCode" id="cb40">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Option 1: Drop the column</span></span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(rnaseq_mini.join(new_mini.drop(<span class="st">'sample'</span>,axis<span class="op">=</span><span class="dv">1</span>), lsuffix<span class="op">=</span><span class="st">"_exp1"</span>, rsuffix<span class="op">=</span><span class="st">"_exp2"</span>))</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" tabindex="-1"></a><span class="co">#Option 1: Drop the column</span></span>
+<span id="cb40-2"><a href="#cb40-2" tabindex="-1"></a><span class="bu">print</span>(rnaseq_mini.join(new_mini.drop(<span class="st">'sample'</span>,axis<span class="op">=</span><span class="dv">1</span>), lsuffix<span class="op">=</span><span class="st">"_exp1"</span>, rsuffix<span class="op">=</span><span class="st">"_exp2"</span>))</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1350,8 +1351,8 @@ Gnb4     GSM2545336             1071            16370</code></pre>
 <div class="codewrapper sourceCode" id="cb42">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Option 2: Merging on gene and sample</span></span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pd.merge(rnaseq_mini, new_mini, on<span class="op">=</span>[<span class="st">"gene"</span>,<span class="st">"sample"</span>]))</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" tabindex="-1"></a><span class="co">#Option 2: Merging on gene and sample</span></span>
+<span id="cb42-2"><a href="#cb42-2" tabindex="-1"></a><span class="bu">print</span>(pd.merge(rnaseq_mini, new_mini, on<span class="op">=</span>[<span class="st">"gene"</span>,<span class="st">"sample"</span>]))</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1441,7 +1442,7 @@ any links that you are not going to use.
   "identifier": "https://ccb-hms.github.io/workbench-python-workshop/instructor/home-06-combining-data.html",
   "dateCreated": "2023-04-01",
   "dateModified": "2023-04-27",
-  "datePublished": "2024-02-27"
+  "datePublished": "2024-03-05"
 }
 
   </script><script>

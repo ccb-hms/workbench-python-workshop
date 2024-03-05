@@ -468,10 +468,10 @@ lesson, strings in Python can be <strong>indexed</strong> and
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>my_string <span class="op">=</span> <span class="st">"What a lovely day."</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Indexing</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>my_string[<span class="dv">2</span>]</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a>my_string <span class="op">=</span> <span class="st">"What a lovely day."</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="co"># Indexing</span></span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>my_string[<span class="dv">2</span>]</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -481,8 +481,8 @@ lesson, strings in Python can be <strong>indexed</strong> and
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Slicing</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>my_string[<span class="dv">1</span>:<span class="dv">3</span>]</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="co"># Slicing</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>my_string[<span class="dv">1</span>:<span class="dv">3</span>]</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -492,7 +492,7 @@ lesson, strings in Python can be <strong>indexed</strong> and
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>my_string[:<span class="dv">3</span>] <span class="co"># Same as my_string[0:3]</span></span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a>my_string[:<span class="dv">3</span>] <span class="co"># Same as my_string[0:3]</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -502,7 +502,7 @@ lesson, strings in Python can be <strong>indexed</strong> and
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>my_string[<span class="dv">1</span>:] <span class="co"># Same as my_string[1:len(my_string)]</span></span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a>my_string[<span class="dv">1</span>:] <span class="co"># Same as my_string[1:len(my_string)]</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -518,10 +518,10 @@ altered</em> in Python. Instead, a new value is created.</p>
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">10</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co"># While this line appears to be changing the value 10 to 11, in reality a new integer with the value 11 is created and assigned to x. </span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> x <span class="op">+</span> <span class="dv">1</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>x</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a><span class="co"># While this line appears to be changing the value 10 to 11, in reality a new integer with the value 11 is created and assigned to x. </span></span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a>x <span class="op">=</span> x <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a>x</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -533,8 +533,8 @@ change them directly:</p>
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This attempts to change the last character to 'g' </span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>my_string[<span class="op">-</span><span class="dv">1</span>] <span class="op">=</span> <span class="st">"g"</span></span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="co"># This attempts to change the last character to 'g' </span></span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a>my_string[<span class="op">-</span><span class="dv">1</span>] <span class="op">=</span> <span class="st">"g"</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -551,8 +551,8 @@ strings. In this instance, we can build a new string using indexing:</p>
 <div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>my_new_string <span class="op">=</span> my_string[:<span class="op">-</span><span class="dv">2</span>] <span class="op">+</span> <span class="st">"g"</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>my_new_string</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a>my_new_string <span class="op">=</span> my_string[:<span class="op">-</span><span class="dv">2</span>] <span class="op">+</span> <span class="st">"g"</span></span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a>my_new_string</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -564,8 +564,8 @@ to replace a larger portion of the string.</p>
 <div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>my_new_string <span class="op">=</span> my_string.replace(<span class="st">"day"</span>, <span class="st">'dog'</span>)</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_new_string)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a>my_new_string <span class="op">=</span> my_string.replace(<span class="st">"day"</span>, <span class="st">'dog'</span>)</span>
+<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a><span class="bu">print</span>(my_new_string)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -582,16 +582,16 @@ samples we have:</p>
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>good_samples <span class="op">=</span> <span class="dv">964</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>bad_samples <span class="op">=</span> <span class="dv">117</span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>percent_dropped <span class="op">=</span> bad_samples<span class="op">/</span>(good_samples <span class="op">+</span> bad_samples)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a>good_samples <span class="op">=</span> <span class="dv">964</span></span>
+<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a>bad_samples <span class="op">=</span> <span class="dv">117</span></span>
+<span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a>percent_dropped <span class="op">=</span> bad_samples<span class="op">/</span>(good_samples <span class="op">+</span> bad_samples)</span></code></pre>
 </div>
 <p>One option would be to simply put everything in
 <code>print</code>:</p>
 <div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Dropped"</span>, percent_dropped, <span class="st">"percent samples"</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Dropped"</span>, percent_dropped, <span class="st">"percent samples"</span>)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -602,8 +602,8 @@ samples we have:</p>
 <div class="codewrapper sourceCode" id="cb20">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>out_str <span class="op">=</span> <span class="st">"Dropped "</span> <span class="op">+</span> <span class="bu">str</span>(percent_dropped) <span class="op">+</span> <span class="st">"</span><span class="sc">% s</span><span class="st">amples"</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(out_str)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a>out_str <span class="op">=</span> <span class="st">"Dropped "</span> <span class="op">+</span> <span class="bu">str</span>(percent_dropped) <span class="op">+</span> <span class="st">"</span><span class="sc">% s</span><span class="st">amples"</span></span>
+<span id="cb20-2"><a href="#cb20-2" tabindex="-1"></a><span class="bu">print</span>(out_str)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -619,7 +619,7 @@ better-looking text:</p>
 <div class="codewrapper sourceCode" id="cb22">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Dropped </span><span class="sc">{0:.2%}</span><span class="st"> of samples, with </span><span class="sc">{1:n}</span><span class="st"> samples remaining.'</span>.<span class="bu">format</span>(percent_dropped, good_samples))</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Dropped </span><span class="sc">{0:.2%}</span><span class="st"> of samples, with </span><span class="sc">{1:n}</span><span class="st"> samples remaining.'</span>.<span class="bu">format</span>(percent_dropped, good_samples))</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -642,8 +642,8 @@ the indices referenced in replacement fields.</li>
 <div class="codewrapper sourceCode" id="cb24">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Dropped </span><span class="sc">{1:.2%}</span><span class="st"> of samples, with </span><span class="sc">{0:n}</span><span class="st"> samples remaining.'</span>.<span class="bu">format</span>(percent_dropped, good_samples))</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Dropped </span><span class="sc">{0:.2%}</span><span class="st"> of samples, with </span><span class="sc">{0:n}</span><span class="st"> samples remaining.'</span>.<span class="bu">format</span>(percent_dropped, good_samples))</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Dropped </span><span class="sc">{1:.2%}</span><span class="st"> of samples, with </span><span class="sc">{0:n}</span><span class="st"> samples remaining.'</span>.<span class="bu">format</span>(percent_dropped, good_samples))</span>
+<span id="cb24-2"><a href="#cb24-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Dropped </span><span class="sc">{0:.2%}</span><span class="st"> of samples, with </span><span class="sc">{0:n}</span><span class="st"> samples remaining.'</span>.<span class="bu">format</span>(percent_dropped, good_samples))</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -658,8 +658,8 @@ by putting <code>f</code> in front of the string definition:</p>
 <div class="codewrapper sourceCode" id="cb26">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Dropped </span><span class="sc">{</span>percent_dropped<span class="sc">:.2%}</span><span class="ss"> of samples, with </span><span class="sc">{</span>good_samples<span class="sc">:n}</span><span class="ss"> samples remaining.'</span>)</span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Dropped </span><span class="sc">{</span><span class="dv">100</span><span class="op">*</span>(bad_samples<span class="op">/</span>(good_samples <span class="op">+</span> bad_samples))<span class="sc">:.2f}</span><span class="ss">% of samples, with </span><span class="sc">{</span>good_samples<span class="sc">:n}</span><span class="ss"> samples remaining.'</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Dropped </span><span class="sc">{</span>percent_dropped<span class="sc">:.2%}</span><span class="ss"> of samples, with </span><span class="sc">{</span>good_samples<span class="sc">:n}</span><span class="ss"> samples remaining.'</span>)</span>
+<span id="cb26-2"><a href="#cb26-2" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Dropped </span><span class="sc">{</span><span class="dv">100</span><span class="op">*</span>(bad_samples<span class="op">/</span>(good_samples <span class="op">+</span> bad_samples))<span class="sc">:.2f}</span><span class="ss">% of samples, with </span><span class="sc">{</span>good_samples<span class="sc">:n}</span><span class="ss"> samples remaining.'</span>)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -689,7 +689,7 @@ which might have hidden spaces or tabs at the end of lines.</p>
 <div class="codewrapper sourceCode" id="cb28">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co">"  a   </span><span class="ch">\t\t</span><span class="co">"</span>.strip()</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" tabindex="-1"></a><span class="co">"  a   </span><span class="ch">\t\t</span><span class="co">"</span>.strip()</span></code></pre>
 </div>
 <p>Note that <code>\t</code> denotes a tab character.</p>
 <div class="codewrapper">
@@ -704,7 +704,7 @@ session.</p>
 <div class="codewrapper sourceCode" id="cb30">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co">"My favorite sentence I hope nothing bad happens to it"</span>.split()</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" tabindex="-1"></a><span class="co">"My favorite sentence I hope nothing bad happens to it"</span>.split()</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -723,7 +723,7 @@ session.</p>
 <div class="codewrapper sourceCode" id="cb32">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co">"2023-:04-:12"</span>.split(<span class="st">'-:'</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" tabindex="-1"></a><span class="co">"2023-:04-:12"</span>.split(<span class="st">'-:'</span>)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -739,7 +739,7 @@ last.</p>
 <div class="codewrapper sourceCode" id="cb34">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co">"(collected)ENSG00000010404(inprogress)ENSG000000108888"</span>.find(<span class="st">'ENSG'</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" tabindex="-1"></a><span class="co">"(collected)ENSG00000010404(inprogress)ENSG000000108888"</span>.find(<span class="st">'ENSG'</span>)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -749,7 +749,7 @@ last.</p>
 <div class="codewrapper sourceCode" id="cb36">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co">"(collected)ENSG00000010404(inprogress)ENSG000000108888"</span>.rfind(<span class="st">'ENSG'</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" tabindex="-1"></a><span class="co">"(collected)ENSG00000010404(inprogress)ENSG000000108888"</span>.rfind(<span class="st">'ENSG'</span>)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -762,7 +762,7 @@ the string starts or ends with a particular string.</p>
 <div class="codewrapper sourceCode" id="cb38">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co">"(collected)ENSG00000010404"</span>.startswith(<span class="st">'ENSG'</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" tabindex="-1"></a><span class="co">"(collected)ENSG00000010404"</span>.startswith(<span class="st">'ENSG'</span>)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -772,7 +772,7 @@ the string starts or ends with a particular string.</p>
 <div class="codewrapper sourceCode" id="cb40">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co">"ENSG00000010404"</span>.startswith(<span class="st">'ENSG'</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" tabindex="-1"></a><span class="co">"ENSG00000010404"</span>.startswith(<span class="st">'ENSG'</span>)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -788,11 +788,11 @@ the capitalization of strings.</p>
 <div class="codewrapper sourceCode" id="cb42">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>my_string <span class="op">=</span> <span class="st">"liters (coffee) per minute"</span></span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_string.lower())</span>
-<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_string.upper())</span>
-<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_string.capitalize())</span>
-<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_string.title())</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" tabindex="-1"></a>my_string <span class="op">=</span> <span class="st">"liters (coffee) per minute"</span></span>
+<span id="cb42-2"><a href="#cb42-2" tabindex="-1"></a><span class="bu">print</span>(my_string.lower())</span>
+<span id="cb42-3"><a href="#cb42-3" tabindex="-1"></a><span class="bu">print</span>(my_string.upper())</span>
+<span id="cb42-4"><a href="#cb42-4" tabindex="-1"></a><span class="bu">print</span>(my_string.capitalize())</span>
+<span id="cb42-5"><a href="#cb42-5" tabindex="-1"></a><span class="bu">print</span>(my_string.title())</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -823,7 +823,7 @@ from a single column header.</p>
 <div class="codewrapper sourceCode" id="cb45">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>sample_info <span class="op">=</span> <span class="st">"X.RAB7A_0Min_1"</span></span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" tabindex="-1"></a>sample_info <span class="op">=</span> <span class="st">"X.RAB7A_0Min_1"</span></span></code></pre>
 </div>
 <p>Try to print the string:</p>
 <pre><code>Sample is 0min RABA7A knockout, replicate 1. </code></pre>
@@ -843,16 +843,16 @@ each piece of information separately from <code>sample_info</code>.</p>
 <div class="codewrapper sourceCode" id="cb47">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>s_info <span class="op">=</span> sample_info.split(<span class="st">'_'</span>)</span>
-<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>genotype <span class="op">=</span> s_info[<span class="dv">0</span>]</span>
-<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>time <span class="op">=</span> s_info[<span class="dv">1</span>]</span>
-<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>rep <span class="op">=</span> s_info[<span class="dv">2</span>]</span>
-<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a><span class="co">#Cleaning the parts up</span></span>
-<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a>genotype <span class="op">=</span> genotype.split(<span class="st">'.'</span>)[<span class="op">-</span><span class="dv">1</span>]</span>
-<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a>time <span class="op">=</span> time.lower()</span>
-<span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-10"><a href="#cb47-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Sample is </span><span class="sc">{</span>genotype<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>time<span class="sc">}</span><span class="ss"> knockout, replicate </span><span class="sc">{</span>rep<span class="sc">}</span><span class="ss">"</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" tabindex="-1"></a>s_info <span class="op">=</span> sample_info.split(<span class="st">'_'</span>)</span>
+<span id="cb47-2"><a href="#cb47-2" tabindex="-1"></a>genotype <span class="op">=</span> s_info[<span class="dv">0</span>]</span>
+<span id="cb47-3"><a href="#cb47-3" tabindex="-1"></a>time <span class="op">=</span> s_info[<span class="dv">1</span>]</span>
+<span id="cb47-4"><a href="#cb47-4" tabindex="-1"></a>rep <span class="op">=</span> s_info[<span class="dv">2</span>]</span>
+<span id="cb47-5"><a href="#cb47-5" tabindex="-1"></a></span>
+<span id="cb47-6"><a href="#cb47-6" tabindex="-1"></a><span class="co">#Cleaning the parts up</span></span>
+<span id="cb47-7"><a href="#cb47-7" tabindex="-1"></a>genotype <span class="op">=</span> genotype.split(<span class="st">'.'</span>)[<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb47-8"><a href="#cb47-8" tabindex="-1"></a>time <span class="op">=</span> time.lower()</span>
+<span id="cb47-9"><a href="#cb47-9" tabindex="-1"></a></span>
+<span id="cb47-10"><a href="#cb47-10" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Sample is </span><span class="sc">{</span>genotype<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>time<span class="sc">}</span><span class="ss"> knockout, replicate </span><span class="sc">{</span>rep<span class="sc">}</span><span class="ss">"</span>)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -927,7 +927,7 @@ any links that you are not going to use.
   "identifier": "https://ccb-hms.github.io/workbench-python-workshop/instructor/home-01-strings.html",
   "dateCreated": "2023-04-01",
   "dateModified": "2023-04-27",
-  "datePublished": "2024-02-27"
+  "datePublished": "2024-03-05"
 }
 
   </script><script>

@@ -481,26 +481,26 @@ most widely used scientific plotting library in Python.<a class="anchor" aria-la
 </ul><div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code></pre>
 </div>
 <ul><li>Simple plots are then (fairly) simple to create.</li>
 </ul><div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>time <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>position <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">100</span>, <span class="dv">200</span>, <span class="dv">300</span>]</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>plt.plot(time, position)</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Time (hr)'</span>)</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Position (km)'</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>time <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>position <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">100</span>, <span class="dv">200</span>, <span class="dv">300</span>]</span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>plt.plot(time, position)</span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>plt.xlabel(<span class="st">'Time (hr)'</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a>plt.ylabel(<span class="st">'Position (km)'</span>)</span></code></pre>
 </div>
-<figure><img src="../fig/13_1_simpleplot.png" alt="" class="figure mx-auto d-block"><figcaption>Simple Position-Time Plot</figcaption></figure><div id="display-all-open-figures" class="callout callout">
+<figure><img src="../fig/13_1_simpleplot.png" alt="Simple Position-Time Plot" class="figure mx-auto d-block"><div class="figcaption">Simple Position-Time Plot</div>
+</figure><div id="callout1" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="display-all-open-figures" class="callout-inner">
-<h3 class="callout-title">Display All Open Figures<a class="anchor" aria-label="anchor" href="#display-all-open-figures"></a>
-</h3>
+<div class="section level3 callout-title callout-inner">
+<h3 class="callout-title" id="display-all-open-figures">Display All Open Figures<a class="anchor" aria-label="anchor" href="#display-all-open-figures"></a></h3>
 <div class="callout-content">
 <p>In our Jupyter Notebook example, running the cell should generate the
 figure directly below the code. The figure is also included in the
@@ -512,7 +512,7 @@ display the figure.</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>plt.show()</span></code></pre>
 </div>
 <p>This command can also be used within a Notebook - for instance, to
 display multiple figures if several are created by a single cell.</p>
@@ -527,14 +527,15 @@ dataframes</a>.</li>
 </ul><div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://raw.githubusercontent.com/ccb-hms/workbench-python-workshop/main/episodes/data/rnaseq.csv"</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>rnaseq_df <span class="op">=</span> pd.read_csv(url, index_col<span class="op">=</span><span class="dv">0</span>)</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>rnaseq_df.loc[:,<span class="st">'expression'</span>].plot(kind <span class="op">=</span> <span class="st">'hist'</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://raw.githubusercontent.com/ccb-hms/workbench-python-workshop/main/episodes/data/rnaseq.csv"</span></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a>rnaseq_df <span class="op">=</span> pd.read_csv(url, index_col<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a>rnaseq_df.loc[:,<span class="st">'expression'</span>].plot(kind <span class="op">=</span> <span class="st">'hist'</span>)</span></code></pre>
 </div>
-<figure><img src="../fig/13_2_pandahist.png" alt="" class="figure mx-auto d-block"><figcaption>Expression histogram</figcaption></figure></section><section id="select-and-transform-data-then-plot-it."><h2 class="section-heading">Select and transform data, then plot it.<a class="anchor" aria-label="anchor" href="#select-and-transform-data-then-plot-it."></a>
+<figure><img src="../fig/13_2_pandahist.png" alt="Expression histogram" class="figure mx-auto d-block"><div class="figcaption">Expression histogram</div>
+</figure></section><section id="select-and-transform-data-then-plot-it."><h2 class="section-heading">Select and transform data, then plot it.<a class="anchor" aria-label="anchor" href="#select-and-transform-data-then-plot-it."></a>
 </h2>
 <hr class="half-width"><ul><li>By default, <a href="https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.plot.html#pandas.DataFrame.plot" class="external-link"><code>DataFrame.plot</code></a>
 plots with the rows as the X axis.</li>
@@ -542,19 +543,21 @@ plots with the rows as the X axis.</li>
 </ul><div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>expression_matrix <span class="op">=</span> rnaseq_df.pivot_table(columns <span class="op">=</span> <span class="st">"time"</span>, values <span class="op">=</span> <span class="st">"expression"</span>, index<span class="op">=</span><span class="st">"gene"</span>)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>expression_matrix.plot(kind<span class="op">=</span><span class="st">"box"</span>, logy<span class="op">=</span><span class="va">True</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a>expression_matrix <span class="op">=</span> rnaseq_df.pivot_table(columns <span class="op">=</span> <span class="st">"time"</span>, values <span class="op">=</span> <span class="st">"expression"</span>, index<span class="op">=</span><span class="st">"gene"</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>expression_matrix.plot(kind<span class="op">=</span><span class="st">"box"</span>, logy<span class="op">=</span><span class="va">True</span>)</span></code></pre>
 </div>
-<figure><img src="../fig/13_3_timebox.png" alt="" class="figure mx-auto d-block"><figcaption>Boxplot by timepoint</figcaption></figure></section><section id="many-plot-options-are-available."><h2 class="section-heading">Many plot options are available.<a class="anchor" aria-label="anchor" href="#many-plot-options-are-available."></a>
+<figure><img src="../fig/13_3_timebox.png" alt="Boxplot by timepoint" class="figure mx-auto d-block"><div class="figcaption">Boxplot by timepoint</div>
+</figure></section><section id="many-plot-options-are-available."><h2 class="section-heading">Many plot options are available.<a class="anchor" aria-label="anchor" href="#many-plot-options-are-available."></a>
 </h2>
 <hr class="half-width"><ul><li>For example, we can use the <code>subplots</code> argument to
 separate our plot automatically by column.</li>
 </ul><div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>expression_matrix.plot(kind<span class="op">=</span><span class="st">"hist"</span>, subplots<span class="op">=</span><span class="va">True</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a>expression_matrix.plot(kind<span class="op">=</span><span class="st">"hist"</span>, subplots<span class="op">=</span><span class="va">True</span>)</span></code></pre>
 </div>
-<figure><img src="../fig/13_4_timehist_sub.png" alt="" class="figure mx-auto d-block"><figcaption>Histogram by timpoint as subplots.</figcaption></figure></section><section id="data-can-also-be-plotted-by-calling-the-matplotlib-plot-function-directly."><h2 class="section-heading">Data can also be plotted by calling the <code>matplotlib</code>
+<figure><img src="../fig/13_4_timehist_sub.png" alt="Histogram by timpoint as subplots." class="figure mx-auto d-block"><div class="figcaption">Histogram by timpoint as subplots.</div>
+</figure></section><section id="data-can-also-be-plotted-by-calling-the-matplotlib-plot-function-directly."><h2 class="section-heading">Data can also be plotted by calling the <code>matplotlib</code>
 <code>plot</code> function directly.<a class="anchor" aria-label="anchor" href="#data-can-also-be-plotted-by-calling-the-matplotlib-plot-function-directly."></a>
 </h2>
 <hr class="half-width"><ul><li>The command is <code>plt.plot(x, y)</code>
@@ -565,31 +568,33 @@ additional optional argument e.g., <code>b-</code> is a blue line,
 </ul><div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>expression_asl <span class="op">=</span> expression_matrix.loc[<span class="st">'Asl'</span>]</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>plt.plot(expression_asl, <span class="st">'g--'</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a>expression_asl <span class="op">=</span> expression_matrix.loc[<span class="st">'Asl'</span>]</span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>plt.plot(expression_asl, <span class="st">'g--'</span>)</span></code></pre>
 </div>
-<figure><img src="../fig/13_5_asltime.png" alt="" class="figure mx-auto d-block"><figcaption>Asl expression over time</figcaption></figure></section><section id="you-can-plot-many-sets-of-data-together."><h2 class="section-heading">You can plot many sets of data together.<a class="anchor" aria-label="anchor" href="#you-can-plot-many-sets-of-data-together."></a>
+<figure><img src="../fig/13_5_asltime.png" alt="Asl expression over time" class="figure mx-auto d-block"><div class="figcaption">Asl expression over time</div>
+</figure></section><section id="you-can-plot-many-sets-of-data-together."><h2 class="section-heading">You can plot many sets of data together.<a class="anchor" aria-label="anchor" href="#you-can-plot-many-sets-of-data-together."></a>
 </h2>
 <hr class="half-width"><div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>plt.plot(expression_matrix.loc[<span class="st">'Asl'</span>], <span class="st">'g--'</span>, label <span class="op">=</span> <span class="st">'Asl'</span>)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>plt.plot(expression_matrix.loc[<span class="st">'Apod'</span>], <span class="st">'r-'</span>, label <span class="op">=</span> <span class="st">'Apod'</span>)</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>plt.plot(expression_matrix.loc[<span class="st">'Cyp2d22'</span>], <span class="st">'b-'</span>, label <span class="op">=</span> <span class="st">'Cyp2d22'</span>)</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>plt.plot(expression_matrix.loc[<span class="st">'Klk6'</span>], <span class="st">'b--'</span>, label <span class="op">=</span> <span class="st">'Klk6'</span>)</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Create legend.</span></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>plt.legend(loc<span class="op">=</span><span class="st">'upper left'</span>)</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Time (days)'</span>)</span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Mean Expression'</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a>plt.plot(expression_matrix.loc[<span class="st">'Asl'</span>], <span class="st">'g--'</span>, label <span class="op">=</span> <span class="st">'Asl'</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a>plt.plot(expression_matrix.loc[<span class="st">'Apod'</span>], <span class="st">'r-'</span>, label <span class="op">=</span> <span class="st">'Apod'</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a>plt.plot(expression_matrix.loc[<span class="st">'Cyp2d22'</span>], <span class="st">'b-'</span>, label <span class="op">=</span> <span class="st">'Cyp2d22'</span>)</span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a>plt.plot(expression_matrix.loc[<span class="st">'Klk6'</span>], <span class="st">'b--'</span>, label <span class="op">=</span> <span class="st">'Klk6'</span>)</span>
+<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a><span class="co"># Create legend.</span></span>
+<span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a>plt.legend(loc<span class="op">=</span><span class="st">'upper left'</span>)</span>
+<span id="cb8-8"><a href="#cb8-8" tabindex="-1"></a>plt.xlabel(<span class="st">'Time (days)'</span>)</span>
+<span id="cb8-9"><a href="#cb8-9" tabindex="-1"></a>plt.ylabel(<span class="st">'Mean Expression'</span>)</span></code></pre>
 </div>
-<figure><img src="../fig/13_6_multiline.png" alt="" class="figure mx-auto d-block"><figcaption>Multiple lines on the same plot with a legend</figcaption></figure><div id="adding-a-legend" class="callout callout">
+<figure><img src="../fig/13_6_multiline.png" alt="Multiple lines on the same plot with a legend" class="figure mx-auto d-block"><div class="figcaption">Multiple lines on the same plot with a
+legend</div>
+</figure><div id="callout2" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="adding-a-legend" class="callout-inner">
-<h3 class="callout-title">Adding a Legend<a class="anchor" aria-label="anchor" href="#adding-a-legend"></a>
-</h3>
+<div class="section level3 callout-title callout-inner">
+<h3 class="callout-title" id="adding-a-legend">Adding a Legend<a class="anchor" aria-label="anchor" href="#adding-a-legend"></a></h3>
 <div class="callout-content">
 <p>Often when plotting multiple datasets on the same figure it is
 desirable to have a legend describing the data.</p>
@@ -598,14 +603,14 @@ desirable to have a legend describing the data.</p>
 </ul><div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>plt.plot(expression_matrix.loc[<span class="st">'Asl'</span>], <span class="st">'g--'</span>, label <span class="op">=</span> <span class="st">'Asl'</span>)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>plt.plot(expression_matrix.loc[<span class="st">'Apod'</span>], <span class="st">'r-'</span>, label <span class="op">=</span> <span class="st">'Apod'</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a>plt.plot(expression_matrix.loc[<span class="st">'Asl'</span>], <span class="st">'g--'</span>, label <span class="op">=</span> <span class="st">'Asl'</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a>plt.plot(expression_matrix.loc[<span class="st">'Apod'</span>], <span class="st">'r-'</span>, label <span class="op">=</span> <span class="st">'Apod'</span>)</span></code></pre>
 </div>
 <ul><li>Instruct <code>matplotlib</code> to create the legend.</li>
 </ul><div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>plt.legend()</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a>plt.legend()</span></code></pre>
 </div>
 <p>By default matplotlib will attempt to place the legend in a suitable
 position. If you would rather specify a position this can be done with
@@ -625,18 +630,19 @@ visualizations, and easily integrates with pandas dataframes.</p>
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co">#Use seaborn default styling</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>sns.set_theme()</span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co">#Add a log expression column with a pseudocount of 1</span></span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>rnaseq_df <span class="op">=</span> rnaseq_df.assign(log_exp <span class="op">=</span> np.log2(rnaseq_df[<span class="st">"expression"</span>]<span class="op">+</span><span class="dv">1</span>))</span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>sns.boxplot(data <span class="op">=</span> rnaseq_df, x <span class="op">=</span> <span class="st">"time"</span>, y <span class="op">=</span> <span class="st">"log_exp"</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" tabindex="-1"></a><span class="co">#Use seaborn default styling</span></span>
+<span id="cb11-5"><a href="#cb11-5" tabindex="-1"></a>sns.set_theme()</span>
+<span id="cb11-6"><a href="#cb11-6" tabindex="-1"></a></span>
+<span id="cb11-7"><a href="#cb11-7" tabindex="-1"></a><span class="co">#Add a log expression column with a pseudocount of 1</span></span>
+<span id="cb11-8"><a href="#cb11-8" tabindex="-1"></a>rnaseq_df <span class="op">=</span> rnaseq_df.assign(log_exp <span class="op">=</span> np.log2(rnaseq_df[<span class="st">"expression"</span>]<span class="op">+</span><span class="dv">1</span>))</span>
+<span id="cb11-9"><a href="#cb11-9" tabindex="-1"></a></span>
+<span id="cb11-10"><a href="#cb11-10" tabindex="-1"></a>sns.boxplot(data <span class="op">=</span> rnaseq_df, x <span class="op">=</span> <span class="st">"time"</span>, y <span class="op">=</span> <span class="st">"log_exp"</span>)</span></code></pre>
 </div>
-<figure><img src="../fig/13_7_simpbox.png" alt="" class="figure mx-auto d-block"><figcaption>A simple boxplot using seaborn</figcaption></figure><p>Instead of providing data to x and y directly, with seaborn we
+<figure><img src="../fig/13_7_simpbox.png" alt="A simple boxplot using seaborn" class="figure mx-auto d-block"><div class="figcaption">A simple boxplot using seaborn</div>
+</figure><p>Instead of providing data to x and y directly, with seaborn we
 instead give it a dataframe with the <code>data</code> argument, then
 tell seaborn which columns of the dataframe we want to be used for each
 axis.</p>
@@ -658,9 +664,9 @@ log-foldchange of our genes step-by-step.</p>
 <div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>time_matrix <span class="op">=</span> rnaseq_df.pivot_table(columns <span class="op">=</span> <span class="st">"time"</span>, values <span class="op">=</span> <span class="st">"log_exp"</span>, index<span class="op">=</span>[<span class="st">"gene"</span>, <span class="st">"chromosome_name"</span>, <span class="st">"gene_biotype"</span>])</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>time_matrix <span class="op">=</span> time_matrix.reset_index(level<span class="op">=</span>[<span class="st">"chromosome_name"</span>, <span class="st">"gene_biotype"</span>])</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(time_matrix)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a>time_matrix <span class="op">=</span> rnaseq_df.pivot_table(columns <span class="op">=</span> <span class="st">"time"</span>, values <span class="op">=</span> <span class="st">"log_exp"</span>, index<span class="op">=</span>[<span class="st">"gene"</span>, <span class="st">"chromosome_name"</span>, <span class="st">"gene_biotype"</span>])</span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a>time_matrix <span class="op">=</span> time_matrix.reset_index(level<span class="op">=</span>[<span class="st">"chromosome_name"</span>, <span class="st">"gene_biotype"</span>])</span>
+<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a><span class="bu">print</span>(time_matrix)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -700,17 +706,17 @@ hours.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>We already have the mean log expression each gene at each timepoint.
 We need to calculate the foldchange.</p>
 <div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We have to use loc here since our column name is a number</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>time_matrix[<span class="st">"logfc_0_4"</span>] <span class="op">=</span> time_matrix.loc[:,<span class="dv">4</span>] <span class="op">-</span> time_matrix.loc[:,<span class="dv">0</span>]</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>time_matrix[<span class="st">"logfc_0_8"</span>] <span class="op">=</span> time_matrix.loc[:,<span class="dv">8</span>] <span class="op">-</span> time_matrix.loc[:,<span class="dv">0</span>]</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(time_matrix)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="co"># We have to use loc here since our column name is a number</span></span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a>time_matrix[<span class="st">"logfc_0_4"</span>] <span class="op">=</span> time_matrix.loc[:,<span class="dv">4</span>] <span class="op">-</span> time_matrix.loc[:,<span class="dv">0</span>]</span>
+<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a>time_matrix[<span class="st">"logfc_0_8"</span>] <span class="op">=</span> time_matrix.loc[:,<span class="dv">8</span>] <span class="op">-</span> time_matrix.loc[:,<span class="dv">0</span>]</span>
+<span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a><span class="bu">print</span>(time_matrix)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -760,47 +766,52 @@ preferred.</p>
 <div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(data <span class="op">=</span> time_matrix, x <span class="op">=</span> <span class="st">"logfc_0_4"</span>, y <span class="op">=</span> <span class="st">"logfc_0_8"</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a>sns.scatterplot(data <span class="op">=</span> time_matrix, x <span class="op">=</span> <span class="st">"logfc_0_4"</span>, y <span class="op">=</span> <span class="st">"logfc_0_8"</span>)</span></code></pre>
 </div>
-<figure><img src="../fig/13_8_scatter1.png" alt="" class="figure mx-auto d-block"><figcaption>Basic foldchange scatterplot.</figcaption></figure><p>Let’s now improve this plot step-by-step. First we can give the axes
+<figure><img src="../fig/13_8_scatter1.png" alt="Basic foldchange scatterplot." class="figure mx-auto d-block"><div class="figcaption">Basic foldchange scatterplot.</div>
+</figure><p>Let’s now improve this plot step-by-step. First we can give the axes
 more human-readable names than the dataframe’s column names.</p>
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(data <span class="op">=</span> time_matrix, x <span class="op">=</span> <span class="st">"logfc_0_4"</span>, y <span class="op">=</span> <span class="st">"logfc_0_8"</span>)</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"0min to 4min (log FC)"</span>)</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"0min to 8min (log FC)"</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a>sns.scatterplot(data <span class="op">=</span> time_matrix, x <span class="op">=</span> <span class="st">"logfc_0_4"</span>, y <span class="op">=</span> <span class="st">"logfc_0_8"</span>)</span>
+<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a>plt.xlabel(<span class="st">"0min to 4min (log FC)"</span>)</span>
+<span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a>plt.ylabel(<span class="st">"0min to 8min (log FC)"</span>)</span></code></pre>
 </div>
-<figure><img src="../fig/13_9_scatter2.png" alt="" class="figure mx-auto d-block"><figcaption>Axis labels changed</figcaption></figure><p>It is difficult to see see the density of genes due to there being so
+<figure><img src="../fig/13_9_scatter2.png" alt="Axis labels changed" class="figure mx-auto d-block"><div class="figcaption">Axis labels changed</div>
+</figure><p>It is difficult to see see the density of genes due to there being so
 many points. Lets make the points a little transparent to help with this
 by changing their <code>alpha</code> level.</p>
 <div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(data <span class="op">=</span> time_matrix, x <span class="op">=</span> <span class="st">"logfc_0_4"</span>, y <span class="op">=</span> <span class="st">"logfc_0_8"</span>, alpha <span class="op">=</span> <span class="fl">0.4</span>)</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"0min to 4min (log FC)"</span>)</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"0min to 8min (log FC)"</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a>sns.scatterplot(data <span class="op">=</span> time_matrix, x <span class="op">=</span> <span class="st">"logfc_0_4"</span>, y <span class="op">=</span> <span class="st">"logfc_0_8"</span>, alpha <span class="op">=</span> <span class="fl">0.4</span>)</span>
+<span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a>plt.xlabel(<span class="st">"0min to 4min (log FC)"</span>)</span>
+<span id="cb18-3"><a href="#cb18-3" tabindex="-1"></a>plt.ylabel(<span class="st">"0min to 8min (log FC)"</span>)</span></code></pre>
 </div>
-<figure><img src="../fig/13_10_scatter3.png" alt="" class="figure mx-auto d-block"><figcaption>Adjusted alpha level</figcaption></figure><p>Or we could make the points smaller by adjusting the <code>s</code>
+<figure><img src="../fig/13_10_scatter3.png" alt="Adjusted alpha level" class="figure mx-auto d-block"><div class="figcaption">Adjusted alpha level</div>
+</figure><p>Or we could make the points smaller by adjusting the <code>s</code>
 argument.</p>
 <div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(data <span class="op">=</span> time_matrix, x <span class="op">=</span> <span class="st">"logfc_0_4"</span>, y <span class="op">=</span> <span class="st">"logfc_0_8"</span>, alpha <span class="op">=</span> <span class="fl">0.6</span>, s<span class="op">=</span><span class="dv">4</span>)</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"0min to 4min (log FC)"</span>)</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"0min to 8min (log FC)"</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a>sns.scatterplot(data <span class="op">=</span> time_matrix, x <span class="op">=</span> <span class="st">"logfc_0_4"</span>, y <span class="op">=</span> <span class="st">"logfc_0_8"</span>, alpha <span class="op">=</span> <span class="fl">0.6</span>, s<span class="op">=</span><span class="dv">4</span>)</span>
+<span id="cb19-2"><a href="#cb19-2" tabindex="-1"></a>plt.xlabel(<span class="st">"0min to 4min (log FC)"</span>)</span>
+<span id="cb19-3"><a href="#cb19-3" tabindex="-1"></a>plt.ylabel(<span class="st">"0min to 8min (log FC)"</span>)</span></code></pre>
 </div>
-<figure><img src="../fig/13_11_scatter4.png" alt="" class="figure mx-auto d-block"><figcaption>Adjusted point size</figcaption></figure><p>Now let’s incorporate <code>gene_biotype</code>. To do this, we can
+<figure><img src="../fig/13_11_scatter4.png" alt="Adjusted point size" class="figure mx-auto d-block"><div class="figcaption">Adjusted point size</div>
+</figure><p>Now let’s incorporate <code>gene_biotype</code>. To do this, we can
 set the <code>hue</code> of the scatterplot to the column name. We’re
 also going to make some more room for the plot by changing matplotlib’s
 <code>rcParams</code>, which are the global plotting settings.</p>
-<div id="global-plot-settings-with-rcparams" class="callout callout">
+<div id="callout3" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="global-plot-settings-with-rcparams" class="callout-inner">
-<h3 class="callout-title">Global plot settings with<code>rcParams</code><a class="anchor" aria-label="anchor" href="#global-plot-settings-with-rcparams"></a>
-</h3>
+<div class="section level3 callout-title callout-inner">
+<h3 class="callout-title" id="global-plot-settings-with-rcparams">Global plot settings with
+<code>rcParams</code>
+<a class="anchor" aria-label="anchor" href="#global-plot-settings-with-rcparams"></a></h3>
 <div class="callout-content">
 <p><code>rcParams</code> is a specialized dictionary used by
 <code>matplotlib</code> to store all global plot settings. You can
@@ -811,12 +822,13 @@ change <code>rcParams</code> to set things like the</p>
 <div class="codewrapper sourceCode" id="cb20">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'figure.figsize'</span>] <span class="op">=</span> [<span class="dv">12</span>, <span class="dv">8</span>]</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(data <span class="op">=</span> time_matrix, x <span class="op">=</span> <span class="st">"logfc_0_4"</span>, y <span class="op">=</span> <span class="st">"logfc_0_8"</span>, alpha <span class="op">=</span> <span class="fl">0.6</span>, hue<span class="op">=</span><span class="st">"gene_biotype"</span>)</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"0min to 4min (log FC)"</span>)</span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"0min to 8min (log FC)"</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a>plt.rcParams[<span class="st">'figure.figsize'</span>] <span class="op">=</span> [<span class="dv">12</span>, <span class="dv">8</span>]</span>
+<span id="cb20-2"><a href="#cb20-2" tabindex="-1"></a>sns.scatterplot(data <span class="op">=</span> time_matrix, x <span class="op">=</span> <span class="st">"logfc_0_4"</span>, y <span class="op">=</span> <span class="st">"logfc_0_8"</span>, alpha <span class="op">=</span> <span class="fl">0.6</span>, hue<span class="op">=</span><span class="st">"gene_biotype"</span>)</span>
+<span id="cb20-3"><a href="#cb20-3" tabindex="-1"></a>plt.xlabel(<span class="st">"0min to 4min (log FC)"</span>)</span>
+<span id="cb20-4"><a href="#cb20-4" tabindex="-1"></a>plt.ylabel(<span class="st">"0min to 8min (log FC)"</span>)</span></code></pre>
 </div>
-<figure><img src="../fig/13_12_scatter5.png" alt="" class="figure mx-auto d-block"><figcaption>Added gene_biotype as hue</figcaption></figure><p>It looks like we overwhelmingly have protein coding genes in the
+<figure><img src="../fig/13_12_scatter5.png" alt="Added gene_biotype as hue" class="figure mx-auto d-block"><div class="figcaption">Added gene_biotype as hue</div>
+</figure><p>It looks like we overwhelmingly have protein coding genes in the
 dataset. Instead of plotting every biotype, let’s just plot whether or
 not the genes are protein coding.</p>
 <div id="challenge2" class="callout challenge">
@@ -839,13 +851,13 @@ with <code>is_protein_coding</code>.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb21">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>time_matrix[<span class="st">"is_protein_coding"</span>] <span class="op">=</span> time_matrix[<span class="st">"gene_biotype"</span>]<span class="op">==</span><span class="st">"protein_coding"</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(time_matrix)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a>time_matrix[<span class="st">"is_protein_coding"</span>] <span class="op">=</span> time_matrix[<span class="st">"gene_biotype"</span>]<span class="op">==</span><span class="st">"protein_coding"</span></span>
+<span id="cb21-2"><a href="#cb21-2" tabindex="-1"></a><span class="bu">print</span>(time_matrix)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -883,11 +895,12 @@ Zw10       0.011447  -0.062295               True
 <div class="codewrapper sourceCode" id="cb23">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(data <span class="op">=</span> time_matrix, x <span class="op">=</span> <span class="st">"logfc_0_4"</span>, y <span class="op">=</span> <span class="st">"logfc_0_8"</span>, alpha <span class="op">=</span> <span class="fl">0.6</span>, style<span class="op">=</span><span class="st">"is_protein_coding"</span>)</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"0min to 4min (log FC)"</span>)</span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"0min to 8min (log FC)"</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a>sns.scatterplot(data <span class="op">=</span> time_matrix, x <span class="op">=</span> <span class="st">"logfc_0_4"</span>, y <span class="op">=</span> <span class="st">"logfc_0_8"</span>, alpha <span class="op">=</span> <span class="fl">0.6</span>, style<span class="op">=</span><span class="st">"is_protein_coding"</span>)</span>
+<span id="cb23-2"><a href="#cb23-2" tabindex="-1"></a>plt.xlabel(<span class="st">"0min to 4min (log FC)"</span>)</span>
+<span id="cb23-3"><a href="#cb23-3" tabindex="-1"></a>plt.ylabel(<span class="st">"0min to 8min (log FC)"</span>)</span></code></pre>
 </div>
-<figure><img src="../fig/13_13_scatter6.png" alt="" class="figure mx-auto d-block"><figcaption>Style set to is_protein_coding</figcaption></figure></div>
+<figure><img src="../fig/13_13_scatter6.png" alt="Style set to is_protein_coding" class="figure mx-auto d-block"><div class="figcaption">Style set to is_protein_coding</div>
+</figure></div>
 </div>
 </div>
 </div>
@@ -895,39 +908,41 @@ Zw10       0.011447  -0.062295               True
 <div class="codewrapper sourceCode" id="cb24">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co">#This hit my personal stylistic limit, so I'm spread the call to multiple lines</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(data <span class="op">=</span> time_matrix, </span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>                x <span class="op">=</span> <span class="st">"logfc_0_4"</span>, </span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>                y <span class="op">=</span> <span class="st">"logfc_0_8"</span>, </span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>                alpha <span class="op">=</span> <span class="fl">0.6</span>, </span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>                style <span class="op">=</span> <span class="st">"is_protein_coding"</span>,</span>
-<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>                hue <span class="op">=</span> <span class="st">"chromosome_name"</span>)</span>
-<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"0min to 4min (log FC)"</span>)</span>
-<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"0min to 8min (log FC)"</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a><span class="co">#This hit my personal stylistic limit, so I'm spread the call to multiple lines</span></span>
+<span id="cb24-2"><a href="#cb24-2" tabindex="-1"></a>sns.scatterplot(data <span class="op">=</span> time_matrix, </span>
+<span id="cb24-3"><a href="#cb24-3" tabindex="-1"></a>                x <span class="op">=</span> <span class="st">"logfc_0_4"</span>, </span>
+<span id="cb24-4"><a href="#cb24-4" tabindex="-1"></a>                y <span class="op">=</span> <span class="st">"logfc_0_8"</span>, </span>
+<span id="cb24-5"><a href="#cb24-5" tabindex="-1"></a>                alpha <span class="op">=</span> <span class="fl">0.6</span>, </span>
+<span id="cb24-6"><a href="#cb24-6" tabindex="-1"></a>                style <span class="op">=</span> <span class="st">"is_protein_coding"</span>,</span>
+<span id="cb24-7"><a href="#cb24-7" tabindex="-1"></a>                hue <span class="op">=</span> <span class="st">"chromosome_name"</span>)</span>
+<span id="cb24-8"><a href="#cb24-8" tabindex="-1"></a>plt.xlabel(<span class="st">"0min to 4min (log FC)"</span>)</span>
+<span id="cb24-9"><a href="#cb24-9" tabindex="-1"></a>plt.ylabel(<span class="st">"0min to 8min (log FC)"</span>)</span></code></pre>
 </div>
-<figure><img src="../fig/13_14_scatter7.png" alt="" class="figure mx-auto d-block"><figcaption>Adding chromosome</figcaption></figure><p>There doesn’t seem to be any interesting pattern. Let’s go back to
+<figure><img src="../fig/13_14_scatter7.png" alt="Adding chromosome" class="figure mx-auto d-block"><div class="figcaption">Adding chromosome</div>
+</figure><p>There doesn’t seem to be any interesting pattern. Let’s go back to
 just plotting whether or not the gene is protein coding, and do a little
 more to clean up the plot.</p>
 <div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This scales all text in the plot by 150%</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>sns.<span class="bu">set</span>(font_scale <span class="op">=</span> <span class="fl">1.5</span>)</span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(data <span class="op">=</span> time_matrix, </span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>                x <span class="op">=</span> <span class="st">"logfc_0_4"</span>, </span>
-<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>                y <span class="op">=</span> <span class="st">"logfc_0_8"</span>, </span>
-<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>                alpha <span class="op">=</span> <span class="fl">0.6</span>, </span>
-<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>                hue <span class="op">=</span> <span class="st">"is_protein_coding"</span>, </span>
-<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>                <span class="co">#Sets the color pallete to map values to</span></span>
-<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>                palette <span class="op">=</span> <span class="st">"mako"</span>)</span>
-<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"0min to 4min (log FC)"</span>)</span>
-<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"0min to 8min (log FC)"</span>)</span>
-<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Set a legend title and give it 2 columns</span></span>
-<span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a>plt.legend(ncol <span class="op">=</span> <span class="dv">2</span>, title<span class="op">=</span><span class="st">"Is Protein Coding"</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a><span class="co"># This scales all text in the plot by 150%</span></span>
+<span id="cb25-2"><a href="#cb25-2" tabindex="-1"></a>sns.<span class="bu">set</span>(font_scale <span class="op">=</span> <span class="fl">1.5</span>)</span>
+<span id="cb25-3"><a href="#cb25-3" tabindex="-1"></a></span>
+<span id="cb25-4"><a href="#cb25-4" tabindex="-1"></a>sns.scatterplot(data <span class="op">=</span> time_matrix, </span>
+<span id="cb25-5"><a href="#cb25-5" tabindex="-1"></a>                x <span class="op">=</span> <span class="st">"logfc_0_4"</span>, </span>
+<span id="cb25-6"><a href="#cb25-6" tabindex="-1"></a>                y <span class="op">=</span> <span class="st">"logfc_0_8"</span>, </span>
+<span id="cb25-7"><a href="#cb25-7" tabindex="-1"></a>                alpha <span class="op">=</span> <span class="fl">0.6</span>, </span>
+<span id="cb25-8"><a href="#cb25-8" tabindex="-1"></a>                hue <span class="op">=</span> <span class="st">"is_protein_coding"</span>, </span>
+<span id="cb25-9"><a href="#cb25-9" tabindex="-1"></a>                <span class="co">#Sets the color pallete to map values to</span></span>
+<span id="cb25-10"><a href="#cb25-10" tabindex="-1"></a>                palette <span class="op">=</span> <span class="st">"mako"</span>)</span>
+<span id="cb25-11"><a href="#cb25-11" tabindex="-1"></a>plt.xlabel(<span class="st">"0min to 4min (log FC)"</span>)</span>
+<span id="cb25-12"><a href="#cb25-12" tabindex="-1"></a>plt.ylabel(<span class="st">"0min to 8min (log FC)"</span>)</span>
+<span id="cb25-13"><a href="#cb25-13" tabindex="-1"></a></span>
+<span id="cb25-14"><a href="#cb25-14" tabindex="-1"></a><span class="co"># Set a legend title and give it 2 columns</span></span>
+<span id="cb25-15"><a href="#cb25-15" tabindex="-1"></a>plt.legend(ncol <span class="op">=</span> <span class="dv">2</span>, title<span class="op">=</span><span class="st">"Is Protein Coding"</span>)</span></code></pre>
 </div>
-<figure><img src="../fig/13_15_scatter.png" alt="" class="figure mx-auto d-block"><figcaption>Cleaning up the plot</figcaption></figure></div>
+<figure><img src="../fig/13_15_scatter.png" alt="Cleaning up the plot" class="figure mx-auto d-block"><div class="figcaption">Cleaning up the plot</div>
+</figure></div>
 </section><section id="heatmaps"><h2 class="section-heading">Heatmaps<a class="anchor" aria-label="anchor" href="#heatmaps"></a>
 </h2>
 <hr class="half-width"><p>Seaborn also has great built-in support for heatmaps.</p>
@@ -938,8 +953,8 @@ samples.</p>
 <div class="codewrapper sourceCode" id="cb26">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>sample_matrix <span class="op">=</span> rnaseq_df.pivot_table(columns <span class="op">=</span> <span class="st">"sample"</span>, values <span class="op">=</span> <span class="st">"log_exp"</span>, index<span class="op">=</span><span class="st">"gene"</span>)</span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sample_matrix.corr())</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a>sample_matrix <span class="op">=</span> rnaseq_df.pivot_table(columns <span class="op">=</span> <span class="st">"sample"</span>, values <span class="op">=</span> <span class="st">"log_exp"</span>, index<span class="op">=</span><span class="st">"gene"</span>)</span>
+<span id="cb26-2"><a href="#cb26-2" tabindex="-1"></a><span class="bu">print</span>(sample_matrix.corr())</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1051,23 +1066,25 @@ heatmap.</p>
 <div class="codewrapper sourceCode" id="cb28">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>sns.clustermap(sample_matrix.corr())</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" tabindex="-1"></a>sns.clustermap(sample_matrix.corr())</span></code></pre>
 </div>
-<figure><img src="../fig/13_16_heatmap1.png" alt="" class="figure mx-auto d-block"><figcaption>Default clustered heatmap</figcaption></figure><p>We can change the color mapping.</p>
+<figure><img src="../fig/13_16_heatmap1.png" alt="Default clustered heatmap" class="figure mx-auto d-block"><div class="figcaption">Default clustered heatmap</div>
+</figure><p>We can change the color mapping.</p>
 <div class="codewrapper sourceCode" id="cb29">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>sns.clustermap(sample_matrix.corr(), cmap <span class="op">=</span> <span class="st">"magma"</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" tabindex="-1"></a>sns.clustermap(sample_matrix.corr(), cmap <span class="op">=</span> <span class="st">"magma"</span>)</span></code></pre>
 </div>
-<figure><img src="../fig/13_17_heatmap2.png" alt="" class="figure mx-auto d-block"><figcaption>Using magma colormap</figcaption></figure><p>We can add sample information to the plot by changing the index.
+<figure><img src="../fig/13_17_heatmap2.png" alt="Using magma colormap" class="figure mx-auto d-block"><div class="figcaption">Using magma colormap</div>
+</figure><p>We can add sample information to the plot by changing the index.
 First we need to get the data.</p>
 <div class="codewrapper sourceCode" id="cb30">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We select all of the columns related to the samples we might want to look at, group by sample, then aggregate by the most common value, or mode</span></span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>sample_data <span class="op">=</span> rnaseq_df[[<span class="st">'sample'</span>,<span class="st">'organism'</span>, <span class="st">'age'</span>, <span class="st">'sex'</span>, <span class="st">'infection'</span>,</span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>       <span class="st">'strain'</span>, <span class="st">'time'</span>, <span class="st">'tissue'</span>, <span class="st">'mouse'</span>]].groupby(<span class="st">'sample'</span>).agg(pd.Series.mode)</span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sample_data)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" tabindex="-1"></a><span class="co"># We select all of the columns related to the samples we might want to look at, group by sample, then aggregate by the most common value, or mode</span></span>
+<span id="cb30-2"><a href="#cb30-2" tabindex="-1"></a>sample_data <span class="op">=</span> rnaseq_df[[<span class="st">'sample'</span>,<span class="st">'organism'</span>, <span class="st">'age'</span>, <span class="st">'sex'</span>, <span class="st">'infection'</span>,</span>
+<span id="cb30-3"><a href="#cb30-3" tabindex="-1"></a>       <span class="st">'strain'</span>, <span class="st">'time'</span>, <span class="st">'tissue'</span>, <span class="st">'mouse'</span>]].groupby(<span class="st">'sample'</span>).agg(pd.Series.mode)</span>
+<span id="cb30-4"><a href="#cb30-4" tabindex="-1"></a><span class="bu">print</span>(sample_data)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1102,13 +1119,14 @@ groupings.</p>
 <div class="codewrapper sourceCode" id="cb32">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>corr_df <span class="op">=</span> sample_matrix.corr()</span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>corr_df <span class="op">=</span> corr_df.join(sample_data)</span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>corr_df <span class="op">=</span> corr_df.set_index(<span class="st">"infection"</span>)</span>
-<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>sns.clustermap(corr_df.iloc[:,:<span class="op">-</span><span class="dv">8</span>],</span>
-<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>               cmap <span class="op">=</span> <span class="st">"magma"</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" tabindex="-1"></a>corr_df <span class="op">=</span> sample_matrix.corr()</span>
+<span id="cb32-2"><a href="#cb32-2" tabindex="-1"></a>corr_df <span class="op">=</span> corr_df.join(sample_data)</span>
+<span id="cb32-3"><a href="#cb32-3" tabindex="-1"></a>corr_df <span class="op">=</span> corr_df.set_index(<span class="st">"infection"</span>)</span>
+<span id="cb32-4"><a href="#cb32-4" tabindex="-1"></a>sns.clustermap(corr_df.iloc[:,:<span class="op">-</span><span class="dv">8</span>],</span>
+<span id="cb32-5"><a href="#cb32-5" tabindex="-1"></a>               cmap <span class="op">=</span> <span class="st">"magma"</span>)</span></code></pre>
 </div>
-<figure><img src="../fig/13_18_heatmap3.png" alt="" class="figure mx-auto d-block"><figcaption>Heatmap with infection information</figcaption></figure><div id="creating-a-boxplot" class="callout challenge">
+<figure><img src="../fig/13_18_heatmap3.png" alt="Heatmap with infection information" class="figure mx-auto d-block"><div class="figcaption">Heatmap with infection information</div>
+</figure><div id="creating-a-boxplot" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
@@ -1128,7 +1146,7 @@ paper.</p>
 <button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint1" aria-expanded="false" aria-controls="collapseHint1">
   <h4 class="accordion-header" id="headingHint1">Give me a hint</h4>
 </button>
-<div id="collapseHint1" class="accordion-collapse collapse" data-bs-parent="#accordionHint1" aria-labelledby="headingHint1">
+<div id="collapseHint1" class="accordion-collapse collapse" aria-labelledby="headingHint1" data-bs-parent="#accordionHint1">
 <div class="accordion-body">
 <p>You may need want to rotate the x labels of the plot, which can be
 done with <code>plt.xticks(rotation = degrees)</code> where
@@ -1142,7 +1160,7 @@ done with <code>plt.xticks(rotation = degrees)</code> where
 <button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint2" aria-expanded="false" aria-controls="collapseHint2">
   <h4 class="accordion-header" id="headingHint2">Give me a hint</h4>
 </button>
-<div id="collapseHint2" class="accordion-collapse collapse" data-bs-parent="#accordionHint2" aria-labelledby="headingHint2">
+<div id="collapseHint2" class="accordion-collapse collapse" aria-labelledby="headingHint2" data-bs-parent="#accordionHint2">
 <div class="accordion-body">
 <p>Check out some of the details of <code>sns.set_context()</code> <a href="https://seaborn.pydata.org/tutorial/aesthetics.html#scaling-plot-elements" class="external-link">here</a>.
 Seaborn has useful size default for different figure types.</p>
@@ -1155,72 +1173,71 @@ Seaborn has useful size default for different figure types.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3">Show me the solution</h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>Your plot will of course vary, but here are some examples of what we
 can do:</p>
 <div class="codewrapper sourceCode" id="cb33">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>sns.set_context(<span class="st">"talk"</span>)</span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Things like this will depend on your screen resolution and size</span></span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="co">#plt.rcParams['figure.figsize'] = [8, 6]</span></span>
-<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="co">#plt.rcParams['figure.dpi'] = 300</span></span>
-<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="co">#sns.set(font_scale=1.25)</span></span>
-<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>sns.set_palette(sns.color_palette(<span class="st">"rocket_r"</span>, n_colors<span class="op">=</span><span class="dv">3</span>))</span>
-<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>sns.boxplot(rnaseq_df, </span>
-<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>            x <span class="op">=</span> <span class="st">"sample"</span>, </span>
-<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a>            y <span class="op">=</span> <span class="st">"log_exp"</span>,</span>
-<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a>            hue <span class="op">=</span> <span class="st">"time"</span>, </span>
-<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a>            dodge<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb33-12"><a href="#cb33-12" aria-hidden="true" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">45</span>, ha<span class="op">=</span><span class="st">'right'</span>)<span class="op">;</span></span>
-<span id="cb33-13"><a href="#cb33-13" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Log Expression"</span>)</span>
-<span id="cb33-14"><a href="#cb33-14" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">""</span>)</span>
-<span id="cb33-15"><a href="#cb33-15" aria-hidden="true" tabindex="-1"></a><span class="co"># See this thread for more discussion of legend positions: https://stackoverflow.com/a/43439132</span></span>
-<span id="cb33-16"><a href="#cb33-16" aria-hidden="true" tabindex="-1"></a>plt.legend(title<span class="op">=</span><span class="st">'Days Post Infection'</span>, loc<span class="op">=</span>(<span class="fl">1.04</span>, <span class="fl">0.5</span>), labels<span class="op">=</span>[<span class="st">'0 days'</span>,<span class="st">'4 days'</span>,<span class="st">'8 days'</span>])</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" tabindex="-1"></a>sns.set_context(<span class="st">"talk"</span>)</span>
+<span id="cb33-2"><a href="#cb33-2" tabindex="-1"></a><span class="co"># Things like this will depend on your screen resolution and size</span></span>
+<span id="cb33-3"><a href="#cb33-3" tabindex="-1"></a><span class="co">#plt.rcParams['figure.figsize'] = [8, 6]</span></span>
+<span id="cb33-4"><a href="#cb33-4" tabindex="-1"></a><span class="co">#plt.rcParams['figure.dpi'] = 300</span></span>
+<span id="cb33-5"><a href="#cb33-5" tabindex="-1"></a><span class="co">#sns.set(font_scale=1.25)</span></span>
+<span id="cb33-6"><a href="#cb33-6" tabindex="-1"></a>sns.set_palette(sns.color_palette(<span class="st">"rocket_r"</span>, n_colors<span class="op">=</span><span class="dv">3</span>))</span>
+<span id="cb33-7"><a href="#cb33-7" tabindex="-1"></a>sns.boxplot(rnaseq_df, </span>
+<span id="cb33-8"><a href="#cb33-8" tabindex="-1"></a>            x <span class="op">=</span> <span class="st">"sample"</span>, </span>
+<span id="cb33-9"><a href="#cb33-9" tabindex="-1"></a>            y <span class="op">=</span> <span class="st">"log_exp"</span>,</span>
+<span id="cb33-10"><a href="#cb33-10" tabindex="-1"></a>            hue <span class="op">=</span> <span class="st">"time"</span>, </span>
+<span id="cb33-11"><a href="#cb33-11" tabindex="-1"></a>            dodge<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb33-12"><a href="#cb33-12" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">45</span>, ha<span class="op">=</span><span class="st">'right'</span>)<span class="op">;</span></span>
+<span id="cb33-13"><a href="#cb33-13" tabindex="-1"></a>plt.ylabel(<span class="st">"Log Expression"</span>)</span>
+<span id="cb33-14"><a href="#cb33-14" tabindex="-1"></a>plt.xlabel(<span class="st">""</span>)</span>
+<span id="cb33-15"><a href="#cb33-15" tabindex="-1"></a><span class="co"># See this thread for more discussion of legend positions: https://stackoverflow.com/a/43439132</span></span>
+<span id="cb33-16"><a href="#cb33-16" tabindex="-1"></a>plt.legend(title<span class="op">=</span><span class="st">'Days Post Infection'</span>, loc<span class="op">=</span>(<span class="fl">1.04</span>, <span class="fl">0.5</span>), labels<span class="op">=</span>[<span class="st">'0 days'</span>,<span class="st">'4 days'</span>,<span class="st">'8 days'</span>])</span></code></pre>
 </div>
 <figure><img src="../fig/13_16_challenge1.png" class="figure mx-auto d-block"></figure><div class="codewrapper sourceCode" id="cb34">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>sns.set_palette([<span class="st">"#A51C30"</span>,<span class="st">"#8996A0"</span>])</span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>sns.violinplot(rnaseq_df, </span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>            x <span class="op">=</span> <span class="st">"sample"</span>, </span>
-<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>            y <span class="op">=</span> <span class="st">"log_exp"</span>,</span>
-<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>            hue <span class="op">=</span> <span class="st">"infection"</span>, </span>
-<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>            dodge<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">45</span>, ha<span class="op">=</span><span class="st">'right'</span>)<span class="op">;</span></span>
-<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>plt.legend(loc <span class="op">=</span> <span class="st">'lower right'</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" tabindex="-1"></a>sns.set_palette([<span class="st">"#A51C30"</span>,<span class="st">"#8996A0"</span>])</span>
+<span id="cb34-2"><a href="#cb34-2" tabindex="-1"></a>sns.violinplot(rnaseq_df, </span>
+<span id="cb34-3"><a href="#cb34-3" tabindex="-1"></a>            x <span class="op">=</span> <span class="st">"sample"</span>, </span>
+<span id="cb34-4"><a href="#cb34-4" tabindex="-1"></a>            y <span class="op">=</span> <span class="st">"log_exp"</span>,</span>
+<span id="cb34-5"><a href="#cb34-5" tabindex="-1"></a>            hue <span class="op">=</span> <span class="st">"infection"</span>, </span>
+<span id="cb34-6"><a href="#cb34-6" tabindex="-1"></a>            dodge<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb34-7"><a href="#cb34-7" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">45</span>, ha<span class="op">=</span><span class="st">'right'</span>)<span class="op">;</span></span>
+<span id="cb34-8"><a href="#cb34-8" tabindex="-1"></a>plt.legend(loc <span class="op">=</span> <span class="st">'lower right'</span>)</span></code></pre>
 </div>
 <figure><img src="../fig/13_17_challenge2.png" class="figure mx-auto d-block"></figure><div class="codewrapper sourceCode" id="cb35">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>sns.set_context(<span class="st">"talk"</span>)</span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>pal <span class="op">=</span> sns.color_palette(<span class="st">"blend:#A51C30,#FFDB6D"</span>, <span class="dv">24</span>)</span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>g <span class="op">=</span> sns.catplot(rnaseq_df,</span>
-<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>            kind <span class="op">=</span> <span class="st">"box"</span>,</span>
-<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>            x <span class="op">=</span> <span class="st">"sample"</span>, </span>
-<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>            y <span class="op">=</span> <span class="st">"log_exp"</span>,</span>
-<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>            col <span class="op">=</span> <span class="st">"sex"</span>,</span>
-<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>            dodge<span class="op">=</span><span class="va">False</span>, </span>
-<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>            hue <span class="op">=</span> <span class="st">"sample"</span>,</span>
-<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>            palette <span class="op">=</span> pal,</span>
-<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a>            sharex <span class="op">=</span> <span class="va">False</span>)</span>
-<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> axes <span class="kw">in</span> g.axes.flat:</span>
-<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a>    _ <span class="op">=</span> axes.set_xticklabels(axes.get_xticklabels(), rotation<span class="op">=</span><span class="dv">45</span>, ha<span class="op">=</span><span class="st">'right'</span>)</span>
-<span id="cb35-14"><a href="#cb35-14" aria-hidden="true" tabindex="-1"></a>g.set_axis_labels(<span class="st">""</span>, <span class="st">"Log Expression"</span>)</span>
-<span id="cb35-15"><a href="#cb35-15" aria-hidden="true" tabindex="-1"></a>plt.subplots_adjust(wspace<span class="op">=</span><span class="fl">0.1</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" tabindex="-1"></a>sns.set_context(<span class="st">"talk"</span>)</span>
+<span id="cb35-2"><a href="#cb35-2" tabindex="-1"></a>pal <span class="op">=</span> sns.color_palette(<span class="st">"blend:#A51C30,#FFDB6D"</span>, <span class="dv">24</span>)</span>
+<span id="cb35-3"><a href="#cb35-3" tabindex="-1"></a>g <span class="op">=</span> sns.catplot(rnaseq_df,</span>
+<span id="cb35-4"><a href="#cb35-4" tabindex="-1"></a>            kind <span class="op">=</span> <span class="st">"box"</span>,</span>
+<span id="cb35-5"><a href="#cb35-5" tabindex="-1"></a>            x <span class="op">=</span> <span class="st">"sample"</span>, </span>
+<span id="cb35-6"><a href="#cb35-6" tabindex="-1"></a>            y <span class="op">=</span> <span class="st">"log_exp"</span>,</span>
+<span id="cb35-7"><a href="#cb35-7" tabindex="-1"></a>            col <span class="op">=</span> <span class="st">"sex"</span>,</span>
+<span id="cb35-8"><a href="#cb35-8" tabindex="-1"></a>            dodge<span class="op">=</span><span class="va">False</span>, </span>
+<span id="cb35-9"><a href="#cb35-9" tabindex="-1"></a>            hue <span class="op">=</span> <span class="st">"sample"</span>,</span>
+<span id="cb35-10"><a href="#cb35-10" tabindex="-1"></a>            palette <span class="op">=</span> pal,</span>
+<span id="cb35-11"><a href="#cb35-11" tabindex="-1"></a>            sharex <span class="op">=</span> <span class="va">False</span>)</span>
+<span id="cb35-12"><a href="#cb35-12" tabindex="-1"></a><span class="cf">for</span> axes <span class="kw">in</span> g.axes.flat:</span>
+<span id="cb35-13"><a href="#cb35-13" tabindex="-1"></a>    _ <span class="op">=</span> axes.set_xticklabels(axes.get_xticklabels(), rotation<span class="op">=</span><span class="dv">45</span>, ha<span class="op">=</span><span class="st">'right'</span>)</span>
+<span id="cb35-14"><a href="#cb35-14" tabindex="-1"></a>g.set_axis_labels(<span class="st">""</span>, <span class="st">"Log Expression"</span>)</span>
+<span id="cb35-15"><a href="#cb35-15" tabindex="-1"></a>plt.subplots_adjust(wspace<span class="op">=</span><span class="fl">0.1</span>)</span></code></pre>
 </div>
 <figure><img src="../fig/13_18_challenge3.png" class="figure mx-auto d-block"></figure></div>
 </div>
 </div>
 </div>
-<div id="saving-your-plot-to-a-file" class="callout callout">
+<div id="callout4" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="saving-your-plot-to-a-file" class="callout-inner">
-<h3 class="callout-title">Saving your plot to a file<a class="anchor" aria-label="anchor" href="#saving-your-plot-to-a-file"></a>
-</h3>
+<div class="section level3 callout-title callout-inner">
+<h3 class="callout-title" id="saving-your-plot-to-a-file">Saving your plot to a file<a class="anchor" aria-label="anchor" href="#saving-your-plot-to-a-file"></a></h3>
 <div class="callout-content">
 <p>If you are satisfied with the plot you see you may want to save it to
 a file, perhaps to include it in a publication. There is a function in
@@ -1229,7 +1246,7 @@ Calling this function, e.g. with</p>
 <div class="codewrapper sourceCode" id="cb36">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>plt.savefig(<span class="st">'my_figure.png'</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" tabindex="-1"></a>plt.savefig(<span class="st">'my_figure.png'</span>)</span></code></pre>
 </div>
 <p>will save the current figure to the file <code>my_figure.png</code>.
 The file format will automatically be deduced from the file name
@@ -1248,22 +1265,21 @@ from that variable to save the figure to file.</p>
 <div class="codewrapper sourceCode" id="cb37">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>data.plot(kind<span class="op">=</span><span class="st">'bar'</span>)</span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.gcf() <span class="co"># get current figure</span></span>
-<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>fig.savefig(<span class="st">'my_figure.png'</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" tabindex="-1"></a>data.plot(kind<span class="op">=</span><span class="st">'bar'</span>)</span>
+<span id="cb37-2"><a href="#cb37-2" tabindex="-1"></a>fig <span class="op">=</span> plt.gcf() <span class="co"># get current figure</span></span>
+<span id="cb37-3"><a href="#cb37-3" tabindex="-1"></a>fig.savefig(<span class="st">'my_figure.png'</span>)</span></code></pre>
 </div>
 <p>This supports most common image formats such as <code>png</code>,
 <code>svg</code>, <code>pdf</code>, etc.</p>
 </div>
 </div>
 </div>
-<div id="making-your-plots-accessible" class="callout callout">
+<div id="callout5" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="making-your-plots-accessible" class="callout-inner">
-<h3 class="callout-title">Making your plots accessible<a class="anchor" aria-label="anchor" href="#making-your-plots-accessible"></a>
-</h3>
+<div class="section level3 callout-title callout-inner">
+<h3 class="callout-title" id="making-your-plots-accessible">Making your plots accessible<a class="anchor" aria-label="anchor" href="#making-your-plots-accessible"></a></h3>
 <div class="callout-content">
 <p>Whenever you are generating plots to go into a paper or a
 presentation, there are a few things you can do to make sure that
@@ -1349,7 +1365,7 @@ any links that you are not going to use.
   "identifier": "https://ccb-hms.github.io/workbench-python-workshop/instructor/13-plotting.html",
   "dateCreated": "2023-04-01",
   "dateModified": "2023-04-27",
-  "datePublished": "2024-02-27"
+  "datePublished": "2024-03-05"
 }
 
   </script><script>

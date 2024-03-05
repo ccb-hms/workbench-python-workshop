@@ -467,11 +467,11 @@ all metadata included:</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://raw.githubusercontent.com/ccb-hms/workbench-python-workshop/main/episodes/data/rnaseq_reduced.csv"</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>rnaseq_df <span class="op">=</span> pd.read_csv(url)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(rnaseq_df)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://raw.githubusercontent.com/ccb-hms/workbench-python-workshop/main/episodes/data/rnaseq_reduced.csv"</span></span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>rnaseq_df <span class="op">=</span> pd.read_csv(url)</span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a><span class="bu">print</span>(rnaseq_df)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -498,9 +498,9 @@ expression data, where each sample was a column:</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://raw.githubusercontent.com/ccb-hms/workbench-python-workshop/main/episodes/data/expression_matrix.csv"</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>expression_matrix <span class="op">=</span> pd.read_csv(url, index_col<span class="op">=</span><span class="dv">0</span>)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(expression_matrix.iloc[:<span class="dv">10</span>, :<span class="dv">5</span>])</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://raw.githubusercontent.com/ccb-hms/workbench-python-workshop/main/episodes/data/expression_matrix.csv"</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>expression_matrix <span class="op">=</span> pd.read_csv(url, index_col<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="bu">print</span>(expression_matrix.iloc[:<span class="dv">10</span>, :<span class="dv">5</span>])</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -540,7 +540,8 @@ Thus, any missing data is shown as a <code>null</code> value. This can
 be more difficult to deal with, but makes missing data clear.</p>
 </section><section id="convert-from-wide-to-long-with-melt."><h2 class="section-heading">Convert from wide to long with <code>melt</code>.<a class="anchor" aria-label="anchor" href="#convert-from-wide-to-long-with-melt."></a>
 </h2>
-<hr class="half-width"><figure><img src="../fig/home05_melt.png" alt="" class="figure mx-auto d-block"><figcaption>Melt goes from wide to long data</figcaption></figure><p>We can convert from wide data to long data using <a href="https://pandas.pydata.org/docs/reference/api/pandas.melt.html" class="external-link">melt</a>.
+<hr class="half-width"><figure><img src="../fig/home05_melt.png" alt="Melt goes from wide to long data" class="figure mx-auto d-block"><div class="figcaption">Melt goes from wide to long data</div>
+</figure><p>We can convert from wide data to long data using <a href="https://pandas.pydata.org/docs/reference/api/pandas.melt.html" class="external-link">melt</a>.
 <code>melt</code> takes in the arguments <code>var_name</code> and
 <code>value_name</code>, which are strings that name the two created
 columns. We also typically want to set the <code>ignore_index</code>
@@ -552,8 +553,8 @@ the <code>id_vars</code> argument.</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>long_data <span class="op">=</span> expression_matrix.melt(var_name<span class="op">=</span><span class="st">"sample"</span>, value_name<span class="op">=</span><span class="st">"expression"</span>, ignore_index<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(long_data)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a>long_data <span class="op">=</span> expression_matrix.melt(var_name<span class="op">=</span><span class="st">"sample"</span>, value_name<span class="op">=</span><span class="st">"expression"</span>, ignore_index<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="bu">print</span>(long_data)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -576,7 +577,8 @@ Zw10      GSM2545380        1664
 </div>
 </section><section id="convert-from-long-to-wide-with-pivot."><h2 class="section-heading">Convert from long to wide with <code>pivot</code>.<a class="anchor" aria-label="anchor" href="#convert-from-long-to-wide-with-pivot."></a>
 </h2>
-<hr class="half-width"><figure><img src="../fig/home05_pivot_table.png" alt="" class="figure mx-auto d-block"><figcaption>Pivot_table goes from long to wide</figcaption></figure><p>To go the other way, we want to use the <a href="https://pandas.pydata.org/docs/reference/api/pandas.pivot_table.html" class="external-link">pivot_table</a>
+<hr class="half-width"><figure><img src="../fig/home05_pivot_table.png" alt="Pivot_table goes from long to wide" class="figure mx-auto d-block"><div class="figcaption">Pivot_table goes from long to wide</div>
+</figure><p>To go the other way, we want to use the <a href="https://pandas.pydata.org/docs/reference/api/pandas.pivot_table.html" class="external-link">pivot_table</a>
 method.</p>
 <p>This method takes in a <code>columns</code> the column to get new
 column names from, <code>values</code>, what to populate the matrix
@@ -585,8 +587,8 @@ be.</p>
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>wide_data <span class="op">=</span> rnaseq_df.pivot_table(columns <span class="op">=</span> <span class="st">"sample"</span>, values <span class="op">=</span> <span class="st">"expression"</span>, index <span class="op">=</span> <span class="st">"gene"</span>)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(wide_data)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a>wide_data <span class="op">=</span> rnaseq_df.pivot_table(columns <span class="op">=</span> <span class="st">"sample"</span>, values <span class="op">=</span> <span class="st">"expression"</span>, index <span class="op">=</span> <span class="st">"gene"</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a><span class="bu">print</span>(wide_data)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -629,7 +631,7 @@ timepoint.</p>
 <button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint1" aria-expanded="false" aria-controls="collapseHint1">
   <h4 class="accordion-header" id="headingHint1">Give me a hint</h4>
 </button>
-<div id="collapseHint1" class="accordion-collapse collapse" data-bs-parent="#accordionHint1" aria-labelledby="headingHint1">
+<div id="collapseHint1" class="accordion-collapse collapse" aria-labelledby="headingHint1" data-bs-parent="#accordionHint1">
 <div class="accordion-body">
 <p>Take a look at the <code>aggfunc</code> argument in <a href="https://pandas.pydata.org/docs/reference/api/pandas.pivot_table.html" class="external-link">pivot_table</a>.
 What is the default?</p>
@@ -642,13 +644,13 @@ What is the default?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>By default, <code>pivot_table</code> aggregates values by mean.</p>
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>rnaseq_df.pivot_table(columns <span class="op">=</span> <span class="st">"time"</span>, values <span class="op">=</span> <span class="st">"expression"</span>, index<span class="op">=</span><span class="st">"gene"</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a>rnaseq_df.pivot_table(columns <span class="op">=</span> <span class="st">"time"</span>, values <span class="op">=</span> <span class="st">"expression"</span>, index<span class="op">=</span><span class="st">"gene"</span>)</span></code></pre>
 </div>
 </div>
 </div>
@@ -717,7 +719,7 @@ any links that you are not going to use.
   "identifier": "https://ccb-hms.github.io/workbench-python-workshop/instructor/home-05-reshaping-data.html",
   "dateCreated": "2023-04-01",
   "dateModified": "2023-04-27",
-  "datePublished": "2024-02-27"
+  "datePublished": "2024-03-05"
 }
 
   </script><script>
