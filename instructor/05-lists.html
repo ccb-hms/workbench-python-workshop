@@ -481,12 +481,13 @@ separating the values with commas:</p>
 </h3>
 <pre class="output" tabindex="0"><code>odds are: [1, 3, 5, 7]</code></pre>
 </div>
-<div id="callout1" class="callout">
+<div id="the-empty-list" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div class="section level3 callout-title callout-inner">
-<h3 class="callout-title" id="the-empty-list">The empty list<a class="anchor" aria-label="anchor" href="#the-empty-list"></a></h3>
+<div id="the-empty-list" class="callout-inner">
+<h3 class="callout-title">The empty list<a class="anchor" aria-label="anchor" href="#the-empty-list"></a>
+</h3>
 <div class="callout-content">
 <p>Similar to an empty string, we can create an empty list with a
 <code>len</code> of 0 and no elements. We create an empty list as
@@ -554,12 +555,13 @@ TypeError: 'str' object does not support item assignment</code></pre>
 </div>
 <p>does not. This is because a list is <strong>mutable</strong> while a
 string is <strong>immutable</strong>.</p>
-<div id="callout2" class="callout">
+<div id="mutable-and-immutable" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div class="section level3 callout-title callout-inner">
-<h3 class="callout-title" id="mutable-and-immutable">Mutable and immutable<a class="anchor" aria-label="anchor" href="#mutable-and-immutable"></a></h3>
+<div id="mutable-and-immutable" class="callout-inner">
+<h3 class="callout-title">Mutable and immutable<a class="anchor" aria-label="anchor" href="#mutable-and-immutable"></a>
+</h3>
 <div class="callout-content">
 <p>Data which can be modified in place is called <a href="../%7B%7B%20page.root%20%7D%7D/reference.html#mutable">mutable</a>,
 while data which cannot be modified is called <a href="../%7B%7B%20page.root%20%7D%7D/reference.html#immutable">immutable</a>.
@@ -618,12 +620,13 @@ writing your code.</p>
 </div>
 </div>
 </div>
-<div id="callout3" class="callout">
+<div id="nested-lists" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div class="section level3 callout-title callout-inner">
-<h3 class="callout-title" id="nested-lists">Nested Lists<a class="anchor" aria-label="anchor" href="#nested-lists"></a></h3>
+<div id="nested-lists" class="callout-inner">
+<h3 class="callout-title">Nested Lists<a class="anchor" aria-label="anchor" href="#nested-lists"></a>
+</h3>
 <div class="callout-content">
 <p>Since a list can contain any Python variables, it can even contain
 other lists.</p>
@@ -700,12 +703,13 @@ second index represents the specific basket (from left to right). <img src="../f
 </div>
 </div>
 </div>
-<div id="callout4" class="callout">
+<div id="heterogeneous-lists" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div class="section level3 callout-title callout-inner">
-<h3 class="callout-title" id="heterogeneous-lists">Heterogeneous Lists<a class="anchor" aria-label="anchor" href="#heterogeneous-lists"></a></h3>
+<div id="heterogeneous-lists" class="callout-inner">
+<h3 class="callout-title">Heterogeneous Lists<a class="anchor" aria-label="anchor" href="#heterogeneous-lists"></a>
+</h3>
 <div class="callout-content">
 <p>Lists in Python can contain elements of different types. Example:</p>
 <div class="codewrapper sourceCode" id="cb22">
@@ -862,7 +866,7 @@ your approach to make it more robust.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>Use negative indices to count elements from the end of a container
 (such as list or string):</p>
@@ -943,7 +947,7 @@ through the end of the string)?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>To obtain every other character you need to provide a slice with the
 step size of 2:</p>
@@ -1001,13 +1005,13 @@ slice to the very end of the sequence:</p>
 Using len() to get last entry: ['sep', 'oct', 'nov', 'dec']
 Or omit the final index to go to the end of the list: ['sep', 'oct', 'nov', 'dec']</code></pre>
 </div>
-<div id="callout5" class="callout">
+<div id="going-past-len" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div class="section level3 callout-title callout-inner">
-<h3 class="callout-title" id="going-past-len">Going past <code>len</code>
-<a class="anchor" aria-label="anchor" href="#going-past-len"></a></h3>
+<div id="going-past-len" class="callout-inner">
+<h3 class="callout-title">Going past<code>len</code><a class="anchor" aria-label="anchor" href="#going-past-len"></a>
+</h3>
 <div class="callout-content">
 <p>Python does not consider it an error to go past the end of a list
 when slicing. Python will juse slice until the end of the list:</p>
@@ -1075,7 +1079,7 @@ things depending on what it’s applied to.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3">Show me the solution</h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>The multiplication operator <code>*</code> used on a list replicates
 elements of the list and concatenates them together:</p>
@@ -1135,7 +1139,7 @@ any links that you are not going to use.
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
         
         <p>Template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> by <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.16.2" class="external-link">sandpaper (0.16.2)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.4" class="external-link">pegboard (0.7.4)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.1" class="external-link">varnish (1.0.1)</a></p>
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.16.3" class="external-link">sandpaper (0.16.3)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.4" class="external-link">pegboard (0.7.4)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.1" class="external-link">varnish (1.0.1)</a></p>
 			</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
@@ -1158,7 +1162,7 @@ any links that you are not going to use.
   "identifier": "https://ccb-hms.github.io/workbench-python-workshop/instructor/05-lists.html",
   "dateCreated": "2023-04-01",
   "dateModified": "2023-04-20",
-  "datePublished": "2024-03-12"
+  "datePublished": "2024-03-19"
 }
 
   </script><script>

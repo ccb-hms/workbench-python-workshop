@@ -492,13 +492,13 @@ while another environment associated with an finished project has NumPy
 at the time the project finished). If you change one environment, your
 other environments are not affected. You can easily activate or
 deactivate environments, which is how you switch between them.</p>
-<div id="callout1" class="callout">
+<div id="avoid-installing-packages-into-your-base-conda-environment" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div class="section level3 callout-title callout-inner">
-<h3 class="callout-title" id="avoid-installing-packages-into-your-base-conda-environment">Avoid installing packages into your
-<code>base</code> Conda environment<a class="anchor" aria-label="anchor" href="#avoid-installing-packages-into-your-base-conda-environment"></a></h3>
+<div id="avoid-installing-packages-into-your-base-conda-environment" class="callout-inner">
+<h3 class="callout-title">Avoid installing packages into your<code>base</code>Conda environment<a class="anchor" aria-label="anchor" href="#avoid-installing-packages-into-your-base-conda-environment"></a>
+</h3>
 <div class="callout-content">
 <p>Conda has a default environment called <code>base</code> that include
 a Python installation and some core system libraries and dependencies of
@@ -597,13 +597,14 @@ to install when creating the environment.</p>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="ex">$</span> conda create <span class="at">--name</span> python36-env python=3.6</span></code></pre>
 </div>
-<div id="callout2" class="callout">
+<div id="always-specify-a-version-number-for-each-package-you-wish-to-install" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div class="section level3 callout-title callout-inner">
-<h3 class="callout-title" id="always-specify-a-version-number-for-each-package-you-wish-to-install">Always specify a version number for each
-package you wish to install<a class="anchor" aria-label="anchor" href="#always-specify-a-version-number-for-each-package-you-wish-to-install"></a></h3>
+<div id="always-specify-a-version-number-for-each-package-you-wish-to-install" class="callout-inner">
+<h3 class="callout-title">Always specify a version number for each
+package you wish to install<a class="anchor" aria-label="anchor" href="#always-specify-a-version-number-for-each-package-you-wish-to-install"></a>
+</h3>
 <div class="callout-content">
 <p>In order to make your results more reproducible and to make it easier
 for research colleagues to recreate your Conda environments on their
@@ -661,7 +662,7 @@ and the most current versions of <a href="https://ipython.org/" class="external-
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>In order to create a new environment you use the
 <code>conda create</code> command as follows.</p>
@@ -738,13 +739,13 @@ environment.</p>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="ex">$</span></span></code></pre>
 </div>
-<div id="callout3" class="callout">
+<div id="returning-to-the-base-environment" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div class="section level3 callout-title callout-inner">
-<h3 class="callout-title" id="returning-to-the-base-environment">Returning to the <code>base</code>
-environment<a class="anchor" aria-label="anchor" href="#returning-to-the-base-environment"></a></h3>
+<div id="returning-to-the-base-environment" class="callout-inner">
+<h3 class="callout-title">Returning to the<code>base</code>environment<a class="anchor" aria-label="anchor" href="#returning-to-the-base-environment"></a>
+</h3>
 <div class="callout-content">
 <p>To return to the <code>base</code> Conda environment, it’s better to
 call <code>conda activate</code> with no environment specified, rather
@@ -774,7 +775,7 @@ the previous challenge by name.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>In order to activate an existing environment by name you use the
 <code>conda activate</code> command as follows.</p>
@@ -805,7 +806,7 @@ activated in the previous challenge.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3">Show me the solution</h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>In order to deactivate the active environment you use the
 <code>conda deactivate</code> command.</p>
@@ -896,12 +897,13 @@ of the screen:</p>
 </figure></div>
 </div>
 </div>
-<div id="callout4" class="callout">
+<div id="freezing-installed-packages" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div class="section level3 callout-title callout-inner">
-<h3 class="callout-title" id="freezing-installed-packages">Freezing installed packages<a class="anchor" aria-label="anchor" href="#freezing-installed-packages"></a></h3>
+<div id="freezing-installed-packages" class="callout-inner">
+<h3 class="callout-title">Freezing installed packages<a class="anchor" aria-label="anchor" href="#freezing-installed-packages"></a>
+</h3>
 <div class="callout-content">
 <p>To prevent existing packages from being updating when using the
 <code>conda install</code> command, you can use the
@@ -1006,7 +1008,7 @@ environment that you created in a previous challenge.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4">Show me the solution</h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p>You can list the packages and their versions installed in
 <code>machine-learning-env</code> using the <code>conda list</code>
@@ -1066,7 +1068,7 @@ again when removing the environment.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5">Show me the solution</h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <p>In order to delete an entire environment you use the
 <code>conda remove</code> command as follows.</p>
@@ -1123,7 +1125,7 @@ any links that you are not going to use.
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
         
         <p>Template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> by <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.16.2" class="external-link">sandpaper (0.16.2)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.4" class="external-link">pegboard (0.7.4)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.1" class="external-link">varnish (1.0.1)</a></p>
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.16.3" class="external-link">sandpaper (0.16.3)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.4" class="external-link">pegboard (0.7.4)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.1" class="external-link">varnish (1.0.1)</a></p>
 			</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
@@ -1146,7 +1148,7 @@ any links that you are not going to use.
   "identifier": "https://ccb-hms.github.io/workbench-python-workshop/home-03-conda.html",
   "dateCreated": "2023-04-01",
   "dateModified": "2023-04-20",
-  "datePublished": "2024-03-12"
+  "datePublished": "2024-03-19"
 }
 
   </script><script>
